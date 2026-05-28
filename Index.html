@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yacht Update</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;background:#f5f5f5;color:#111;min-height:100vh}
+:root{--or:#E87722;--orL:#fff4ec;--orB:#ffd4a8;--bd:#e0e0e0;--sf:#f7f7f7;--sf2:#eeeeee;--mu:#777;--gr:#1a9648;--bl:#1a6faf;--pu:#7c3aed}
+
+/* SIDEBAR */
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:210px;background:#fff;border-right:1px solid var(--bd);display:flex;flex-direction:column;z-index:100;box-shadow:2px 0 8px rgba(0,0,0,.04)}
+.logo{padding:18px 16px 14px;border-bottom:2px solid var(--or)}
+.logo-title{font-size:14px;font-weight:800;color:var(--or);letter-spacing:1px;text-transform:uppercase}
+.logo-sub{font-size:10px;color:var(--mu);margin-top:2px}
+.nav{padding:10px 0;flex:1;overflow-y:auto}
+.nav-item{display:flex;align-items:center;gap:9px;padding:11px 16px;cursor:pointer;font-size:13px;color:#444;border-left:3px solid transparent;transition:all .12s}
+.nav-item:hover{color:var(--or);background:var(--orL)}
+.nav-item.active{color:var(--or);border-left-color:var(--or);background:var(--orL);font-weight:700}
+.sidebar-footer{padding:12px 16px;border-top:1px solid var(--bd);font-size:10px;color:var(--mu)}
+
+/* MOBILE */
+.topnav{display:none;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:2px solid var(--or);background:#fff;position:sticky;top:0;z-index:200}
+.topnav-logo{font-size:12px;font-weight:800;color:var(--or);letter-spacing:1px;text-transform:uppercase}
+.hamburger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:4px}
+.hamburger span{display:block;width:20px;height:2px;background:var(--or);border-radius:2px}
+.mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:300;flex-direction:column;padding:20px}
+.mobile-menu.open{display:flex}
+.mobile-menu-close{align-self:flex-end;background:none;border:none;font-size:22px;cursor:pointer;color:var(--mu);margin-bottom:20px}
+.mobile-nav-item{padding:14px 0;font-size:15px;font-weight:600;color:#333;border-bottom:1px solid var(--bd);cursor:pointer}
+.mobile-nav-item.active{color:var(--or)}
+
+/* LAYOUT */
+.main{margin-left:210px;min-height:100vh;display:flex;flex-direction:column}
+.page{display:none;flex-direction:column;flex:1}
+.page.active{display:flex}
+.topbar{background:#fff;border-bottom:1px solid var(--bd);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;gap:10px}
+.topbar h1{font-size:16px;font-weight:700}
+.topbar-left{display:flex;align-items:center;gap:12px;flex-wrap:wrap;flex:1}
+.topbar-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.date-badge{background:var(--orL);color:var(--or);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid var(--or)}
+.btn{background:#fff;border:1px solid var(--bd);color:#444;padding:6px 13px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;transition:all .12s;white-space:nowrap}
+.btn:hover{border-color:var(--or);color:var(--or)}
+.btn-or{background:var(--or);border-color:var(--or);color:#fff;font-weight:700}
+.btn-or:hover{background:#c96010}
+.btn-back{background:var(--sf);border:1px solid var(--bd);color:#444;padding:5px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:5px}
+.btn-back:hover{border-color:var(--or);color:var(--or)}
+.content{padding:20px 24px;flex:1}
+
+/* STATS */
+.summary-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.stat-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:13px 15px;border-top:3px solid transparent}
+.stat-card.new{border-top-color:var(--bl)}.stat-card.reduction{border-top-color:var(--or)}
+.stat-card.sold{border-top-color:var(--gr)}.stat-card.launch{border-top-color:var(--pu)}
+.stat-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.stat-num{font-size:26px;font-weight:800;margin-top:3px}
+.stat-card.new .stat-num{color:var(--bl)}.stat-card.reduction .stat-num{color:var(--or)}
+.stat-card.sold .stat-num{color:var(--gr)}.stat-card.launch .stat-num{color:var(--pu)}
+
+/* DATE */
+.date-scroll-wrap{display:flex;align-items:center;gap:8px;margin-bottom:18px}
+.date-scroll-wrap label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}
+.date-select{background:#fff;border:1px solid var(--bd);border-radius:6px;padding:6px 10px;font-size:13px;font-family:inherit;color:#333;cursor:pointer}
+.date-select:focus{outline:none;border-color:var(--or)}
+
+/* SECTIONS */
+.section{margin-bottom:24px}
+.section-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
+.section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px}
+.section-count{background:var(--sf2);color:var(--mu);font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* CARDS */
+.yacht-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.yacht-card{background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden;transition:box-shadow .12s}
+.yacht-card:hover{box-shadow:0 3px 14px rgba(232,119,34,.15);border-color:#ccc}
+.card-img{width:100%;height:160px;object-fit:cover;display:block;cursor:pointer;background:#f0f0f0}
+.card-img-placeholder{width:100%;height:160px;background:linear-gradient(135deg,#f0f0f0,#e8e8e8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
+.card-img-placeholder .ship-icon{font-size:34px;opacity:.35}
+.card-img-placeholder .ship-name{font-size:10px;color:#aaa;font-weight:600;text-align:center;padding:0 8px}
+.card-top{padding:12px 14px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.yacht-name-link{font-size:13px;font-weight:700;color:var(--bl);cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit;text-align:left;padding:0}
+.yacht-name-link:hover{color:var(--or)}
+.yacht-builder-link{font-size:11px;color:var(--mu);margin-top:2px;cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit;padding:0;display:block}
+.yacht-builder-link:hover{color:var(--or)}
+.type-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap;flex-shrink:0;text-transform:uppercase}
+.badge-new{background:#e8f0fb;color:var(--bl);border:1px solid #c5d9f5}
+.badge-reduction{background:var(--orL);color:var(--or);border:1px solid var(--orB)}
+.badge-sold{background:#e8f5ee;color:var(--gr);border:1px solid #b5dfc7}
+.badge-launch{background:#f3eeff;color:var(--pu);border:1px solid #d4b8f5}
+.badge-cachange{background:var(--sf2);color:#555;border:1px solid var(--bd)}
+.card-meta{padding:0 14px 9px;display:flex;gap:12px;flex-wrap:wrap}
+.meta-item{font-size:11px;color:var(--mu)}
+.card-price{padding:8px 14px;background:var(--sf);border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px}
+.price-main{font-size:13px;font-weight:700}
+.price-old{font-size:10px;color:var(--mu);text-decoration:line-through}
+.price-est{font-size:10px;color:var(--mu)}
+.reduc-arrow{font-size:10px;color:var(--or);font-weight:700}
+.card-brokers{padding:8px 14px;border-top:1px solid var(--bd);font-size:11px;color:var(--mu);display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.broker-link{color:var(--bl);font-size:11px;font-weight:600;cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit;padding:0}
+.broker-link:hover{color:var(--or)}
+.ca-tag{font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;text-transform:uppercase}
+.ca-CA{background:#e8f0fb;color:var(--bl)}.ca-Open{background:#e8f5ee;color:var(--gr)}.ca-JCA{background:var(--orL);color:var(--or)}
+.ca-change-info{padding:8px 14px;border-top:1px solid var(--bd);font-size:11px;color:var(--mu)}
+
+/* VESSEL DETAIL */
+.vessel-detail{background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden;margin-bottom:16px}
+.vessel-detail-img{width:100%;height:280px;object-fit:cover;display:block;background:#f0f0f0}
+.vessel-detail-img-placeholder{width:100%;height:280px;background:linear-gradient(135deg,#f0f0f0,#e4e4e4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.vessel-detail-body{padding:20px}
+.vessel-detail-name{font-size:22px;font-weight:800}
+.vessel-detail-builder{font-size:14px;color:var(--or);font-weight:600;margin-top:4px;cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit}
+.vessel-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.vessel-detail-item{background:var(--sf);border-radius:6px;padding:10px}
+.vessel-detail-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;font-weight:600}
+.vessel-detail-val{font-size:14px;font-weight:700;color:#111;margin-top:3px}
+
+/* BROKER / DETAIL */
+.detail-header{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:18px;margin-bottom:16px;display:flex;gap:16px;align-items:flex-start}
+.detail-header-info{flex:1}
+.detail-header h2{font-size:19px;font-weight:800}
+.detail-stats{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+.detail-stat{font-size:12px;color:#444}
+.detail-stat strong{color:var(--or);font-size:16px;font-weight:800;display:block}
+.broker-contact-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:14px;margin-bottom:10px;cursor:pointer}
+.broker-contact-card:hover{border-color:var(--or)}
+.broker-contact-name{font-size:14px;font-weight:700;color:#111}
+.broker-contact-firm{font-size:12px;color:var(--or);font-weight:600}
+.broker-contact-details{margin-top:8px;display:flex;flex-direction:column;gap:4px;font-size:12px;color:#555}
+.broker-contact-details a{color:var(--bl);text-decoration:none}
+.sold-brokers-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.sold-broker-panel{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:12px}
+.sold-broker-panel h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin-bottom:8px}
+.sold-broker-name{font-size:13px;font-weight:700;color:#111}
+.sold-broker-firm{font-size:12px;color:var(--or);margin-top:2px;font-weight:600}
+.sold-broker-info{margin-top:6px;font-size:11px;color:#555;display:flex;flex-direction:column;gap:3px}
+.sold-broker-info a{color:var(--bl);text-decoration:none}
+
+/* ANALYTICS */
+.analytics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.a-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:15px;border-top:3px solid var(--or)}
+.a-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.a-val{font-size:24px;font-weight:800;color:var(--or);margin-top:5px}
+.a-sub{font-size:11px;color:var(--mu);margin-top:3px}
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.chart-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:16px}
+.chart-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin-bottom:12px}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.bar-label{font-size:11px;color:#444;width:130px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.bar-label:hover{color:var(--or);text-decoration:underline}
+.bar-track{flex:1;height:5px;background:var(--sf2);border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px;background:var(--or)}
+.bar-val{font-size:10px;color:var(--mu);width:35px;text-align:right;flex-shrink:0}
+.pie-row{display:flex;align-items:center;gap:8px;margin-bottom:9px;cursor:pointer}
+.pie-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pie-label{font-size:12px;color:#333;flex:1}
+.pie-pct{font-size:12px;font-weight:700}
+.table-card{background:#fff;border:1px solid var(--bd);border-radius:8px;overflow:hidden;margin-bottom:12px}
+.table-header{padding:11px 14px;border-bottom:1px solid var(--bd);font-size:11px;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:500px}
+th{padding:8px 12px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--mu);border-bottom:1px solid var(--bd);background:var(--sf);font-weight:700;white-space:nowrap}
+td{padding:8px 12px;border-bottom:1px solid var(--bd);color:#444;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--sf)}
+.td-name{font-weight:700;color:#111}
+.trend-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:16px;margin-bottom:10px}
+.trend-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#444}
+.legend-dot{width:14px;height:3px;border-radius:2px;flex-shrink:0}
+.chart-tooltip{position:fixed;background:#fff;border:1px solid var(--bd);border-radius:6px;padding:8px 12px;font-size:11px;color:#333;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.1);display:none;z-index:9999}
+
+/* FILTERS / SORT */
+.filter-select{background:#fff;border:1px solid var(--bd);border-radius:5px;padding:5px 8px;font-size:11px;font-family:inherit;color:#333;cursor:pointer}
+.filter-select:focus{outline:none;border-color:var(--or)}
+.sort-btn{background:#fff;border:1px solid var(--bd);color:#444;padding:4px 9px;border-radius:5px;font-size:10px;cursor:pointer;font-family:inherit;transition:all .12s}
+.sort-btn:hover{background:var(--orL);border-color:var(--or);color:var(--or)}
+.sort-btn.active{background:var(--or);border-color:var(--or);color:#fff;font-weight:700}
+
+/* RANGE SLIDER */
+.range-wrap{display:flex;flex-direction:column;gap:2px;min-width:160px}
+.range-labels{display:flex;justify-content:space-between;font-size:10px;font-weight:700;color:#333}
+
+/* SEARCH */
+.search-input-wrap{position:relative;margin-bottom:20px}
+.search-input{width:100%;padding:11px 16px 11px 40px;font-size:14px;border:2px solid var(--bd);border-radius:8px;font-family:inherit;background:#fff;transition:border-color .12s}
+.search-input:focus{outline:none;border-color:var(--or)}
+.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--mu)}
+.search-result-section{margin-bottom:20px}
+.search-result-title{font-size:11px;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:1px;padding-bottom:6px;border-bottom:1px solid var(--orB);margin-bottom:10px}
+.search-hit{background:#fff;border:1px solid var(--bd);border-radius:7px;padding:11px 14px;margin-bottom:7px;cursor:pointer;transition:border-color .12s;display:flex;gap:12px;align-items:center}
+.search-hit:hover{border-color:var(--or);background:var(--orL)}
+.search-hit-img{width:52px;height:40px;border-radius:5px;flex-shrink:0;background:#eee;display:flex;align-items:center;justify-content:center;font-size:18px;overflow:hidden}
+.search-hit-img img{width:100%;height:100%;object-fit:cover}
+.search-hit-name{font-size:13px;font-weight:700;color:#111}
+.search-hit-sub{font-size:11px;color:var(--mu);margin-top:2px}
+.search-empty{text-align:center;color:var(--mu);padding:40px;font-size:14px}
+
+/* LOCATION */
+.location-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:8px}
+.location-item{background:var(--sf);border:1px solid var(--bd);border-radius:6px;padding:10px 12px}
+.location-country{font-size:12px;font-weight:700;color:#111}
+.location-count{font-size:11px;color:var(--or);font-weight:700}
+
+/* OWNER DB */
+.owner-link{color:var(--bl);cursor:pointer;text-decoration:underline dotted;font-weight:700;background:none;border:none;font-family:inherit;font-size:11px;padding:0}
+.owner-link:hover{color:var(--or)}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border:1px solid var(--bd);border-radius:10px;width:560px;max-height:88vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.1)}
+.modal-header{padding:16px 20px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:1}
+.modal-title{font-size:14px;font-weight:700;color:var(--or)}
+.modal-close{background:none;border:none;color:var(--mu);font-size:20px;cursor:pointer}
+.modal-body{padding:16px 20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mu)}
+input,select,textarea{background:#fff;border:1px solid var(--bd);border-radius:5px;color:#111;padding:7px 10px;font-size:12px;font-family:inherit;transition:border-color .12s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--or)}
+.form-section{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--or);margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--orB)}
+.modal-footer{padding:12px 20px;border-top:1px solid var(--bd);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:#fff}
+
+/* SETUP BANNER */
+.setup-banner{background:#1a6faf;color:#fff;padding:12px 24px;font-size:12px;display:flex;align-items:center;gap:10px}
+.setup-banner a{color:#ffd4a8;text-decoration:underline;cursor:pointer}
+.setup-banner input{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:5px 10px;border-radius:5px;font-size:12px;width:320px}
+.setup-banner input::placeholder{color:rgba(255,255,255,.6)}
+.setup-banner button{background:var(--or);border:none;color:#fff;padding:5px 12px;border-radius:5px;cursor:pointer;font-size:12px;font-weight:700}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;background:#111;color:#fff;padding:10px 18px;border-radius:8px;font-size:12px;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+
+footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:1px solid var(--bd);background:#fff;margin-top:auto}
+
+@media(max-width:768px){
+  .sidebar{display:none}.topnav{display:flex}.main{margin-left:0}.topbar{top:49px}
+  .summary-strip,.analytics-grid{grid-template-columns:1fr 1fr}.chart-row{grid-template-columns:1fr}
+  .yacht-grid{grid-template-columns:1fr}.content{padding:14px}.topbar{padding:10px 14px}
+  .form-row{grid-template-columns:1fr}.modal{width:96vw}
+  .sold-brokers-grid{grid-template-columns:1fr}.vessel-detail-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- SETUP BANNER (shown until token is saved) -->
+<div class="setup-banner" id="setup-banner">
+  ⚙️ First time setup: paste your GitHub token to enable saving.
+  <input type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+  <button onclick="saveToken()">Save</button>
+  <span style="opacity:.7;font-size:11px">Token is stored locally only, never sent anywhere except GitHub.</span>
+</div>
+
+<div class="topnav">
+  <div class="topnav-logo">⚓ Yacht Update</div>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</div>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+  <div class="mobile-nav-item active" onclick="gotoPage('daily');toggleMenu()">📅 Daily Update</div>
+  <div class="mobile-nav-item" onclick="gotoPage('search');toggleMenu()">🔍 Search</div>
+  <div class="mobile-nav-item" onclick="gotoPage('analytics');toggleMenu()">📊 Market Analytics</div>
+  <div class="mobile-nav-item" onclick="gotoPage('owners');toggleMenu()">👤 Owner's Database</div>
+</div>
+
+<div class="sidebar">
+  <div class="logo"><div class="logo-title">⚓ Yacht Update</div><div class="logo-sub">Market Intelligence</div></div>
+  <nav class="nav">
+    <div class="nav-item active" id="nav-daily" onclick="gotoPage('daily')">📅 Daily Update</div>
+    <div class="nav-item" id="nav-search" onclick="gotoPage('search')">🔍 Search</div>
+    <div class="nav-item" id="nav-analytics" onclick="gotoPage('analytics')">📊 Market Analytics</div>
+    <div class="nav-item" id="nav-owners" onclick="gotoPage('owners')">👤 Owner's Database</div>
+  </nav>
+  <div class="sidebar-footer">Yacht Update · v7.0</div>
+</div>
+
+<div class="main">
+<div class="page active" id="page-daily">
+  <div class="topbar">
+    <div class="topbar-left"><h1>Daily Market Update</h1><span class="date-badge" id="active-date-label"></span></div>
+    <div class="topbar-right">
+      <span id="sync-status" style="font-size:10px;color:var(--mu)"></span>
+      <button class="btn btn-or" onclick="openModal()">+ Add Entry</button>
+    </div>
+  </div>
+  <div class="content">
+    <div class="date-scroll-wrap"><label>Date</label><select class="date-select" id="date-select" onchange="switchDate(this.value)"></select></div>
+    <div class="summary-strip">
+      <div class="stat-card new"><div class="stat-label">New Listings</div><div class="stat-num" id="cnt-new">0</div></div>
+      <div class="stat-card reduction"><div class="stat-label">Reductions</div><div class="stat-num" id="cnt-red">0</div></div>
+      <div class="stat-card sold"><div class="stat-label">Sold</div><div class="stat-num" id="cnt-sold">0</div></div>
+      <div class="stat-card launch"><div class="stat-label">Launches</div><div class="stat-num" id="cnt-launch">0</div></div>
+    </div>
+    <div id="daily-content"></div>
+  </div>
+  <footer>Yacht Update · Daily Intelligence Platform</footer>
+</div>
+
+<div class="page" id="page-search">
+  <div class="topbar"><div class="topbar-left"><h1>Search</h1></div></div>
+  <div class="content">
+    <div class="search-input-wrap"><span class="search-icon">🔍</span><input class="search-input" id="search-q" type="text" placeholder="Search vessel, builder, brokerage, broker or owner…" oninput="runSearch()"></div>
+    <div id="search-results"><div class="search-empty">Start typing to search…</div></div>
+  </div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+
+<div class="page" id="page-analytics">
+  <div class="topbar"><div class="topbar-left"><h1>Market Analytics</h1><span class="date-badge">All-time</span></div></div>
+  <div class="content" id="analytics-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+
+<div class="page" id="page-owners">
+  <div class="topbar"><div class="topbar-left"><h1>Owner's Database</h1></div></div>
+  <div class="content" id="owners-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+
+<div class="page" id="page-broker">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="broker-page-title"></h1></div></div>
+  <div class="content" id="broker-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+<div class="page" id="page-category">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="cat-page-title"></h1></div></div>
+  <div class="content" id="cat-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+<div class="page" id="page-vessel">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="vessel-page-title"></h1></div></div>
+  <div class="content" id="vessel-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+<div class="page" id="page-contact">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="contact-page-title"></h1></div></div>
+  <div class="content" id="contact-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+<div class="page" id="page-owner-detail">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="owner-detail-title"></h1></div></div>
+  <div class="content" id="owner-detail-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+</div>
+
+<div class="chart-tooltip" id="chart-tooltip"></div>
+<div class="toast" id="toast"></div>
+
+<!-- ADD ENTRY MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title">Add Yacht Entry</div><button class="modal-close" onclick="closeModal()">✕</button></div>
+    <div class="modal-body">
+      <div class="form-group"><label>Date</label><input type="date" id="f-date"></div>
+      <div class="form-section">Category</div>
+      <div class="form-group"><label>Type</label><select id="f-type" onchange="toggleFields()"><option value="new">New Listing</option><option value="reduction">Price Reduction</option><option value="sold">Sold</option><option value="launch">New Launch</option><option value="cachange">CA Change</option></select></div>
+      <div class="form-section">Vessel</div>
+      <div class="form-row"><div class="form-group"><label>Name</label><input id="f-name" placeholder="DAYBREAK"></div><div class="form-group"><label>Builder</label><input id="f-builder" placeholder="BAGLIETTO"></div></div>
+      <div class="form-row"><div class="form-group"><label>Length (m)</label><input id="f-length" type="number" placeholder="52"></div><div class="form-group"><label>Year</label><input id="f-year" type="number" placeholder="2024"></div></div>
+      <div class="form-group"><label>Location</label><input id="f-location" placeholder="Bermuda"></div>
+      <div class="form-group"><label>Image URL (from GitHub raw link)</label><input id="f-img" placeholder="https://raw.githubusercontent.com/liamlilili/yacht-images/main/27.jpeg"></div>
+      <div class="form-section">Pricing</div>
+      <div class="form-row"><div class="form-group"><label>Price</label><input id="f-price" placeholder="34,999,000"></div><div class="form-group"><label>Currency</label><select id="f-cur"><option value="EUR">EUR €</option><option value="USD">USD $</option><option value="GBP">GBP £</option></select></div></div>
+      <div class="form-group"><label>EUR Estimate (if non-EUR)</label><input id="f-est" placeholder="e.g. 29,700,000"></div>
+      <div class="form-row" id="f-oldprice-row" style="display:none"><div class="form-group"><label>Previous Price</label><input id="f-oldprice" placeholder="36,000,000"></div><div class="form-group"><label>Previous Currency</label><select id="f-oldcur"><option value="EUR">EUR €</option><option value="USD">USD $</option><option value="GBP">GBP £</option></select></div></div>
+      <div class="form-section">Brokerage</div>
+      <div id="f-broker-row"><div class="form-row"><div class="form-group"><label>Broker</label><input id="f-broker" placeholder="Fraser"></div><div class="form-group"><label>Agreement</label><select id="f-catype"><option value="CA">CA</option><option value="Open">Open</option><option value="JCA">JCA</option></select></div></div></div>
+      <div id="f-sold-row" style="display:none"><div class="form-row"><div class="form-group"><label>Seller Broker</label><input id="f-soldseller" placeholder="Gilman Yachts"></div><div class="form-group"><label>Buyer Broker</label><input id="f-soldbuyer" placeholder="FGI Yacht Group"></div></div></div>
+      <div id="f-cachange-row" style="display:none"><div class="form-row"><div class="form-group"><label>Previous CA</label><input id="f-cafrom" placeholder="Ocean Independence"></div><div class="form-group"><label>New CA</label><input id="f-cato" placeholder="Fraser"></div></div></div>
+    </div>
+    <div class="modal-footer"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn btn-or" id="save-btn" onclick="saveEntry()">Save & Sync</button></div>
+  </div>
+</div>
+
+<script>
+// =============================================
+// CONFIGURATION — update these after setup
+// =============================================
+const GH_USER = 'liamlilili';
+const GH_REPO = 'yacht-update';
+const GH_FILE = 'data.json';
+const IMG_BASE = 'https://raw.githubusercontent.com/liamlilili/yacht-images/main/';
+
+// =============================================
+// VESSEL IMAGE MAP (number → yacht name)
+// =============================================
+const VESSEL_IMGS = {
+  'ALBUS': IMG_BASE + '1_jrxosg.jpeg',
+  'T-O52': IMG_BASE + '2_zlq8lz.jpeg',
+  'ALHAMBRA': IMG_BASE + '3_kswntl.jpeg',
+  'L88': IMG_BASE + '4_dm0dte.webp',
+  'KALANI': IMG_BASE + '5_khxzji.webp',
+  'SALIVITI': IMG_BASE + '6_givs2y.png',
+  'HOLIDAY': IMG_BASE + '7_uhetal.jpeg',
+  'SEASEID': IMG_BASE + '8_teao3j.jpeg',
+  'ABIDE': IMG_BASE + '9_etycep.jpeg',
+  'SPICA': IMG_BASE + '10_pgjio3.jpeg',
+  'SEDICI': IMG_BASE + '11_hfhvvu.webp',
+  'BURKUT': IMG_BASE + '12_lmlbrh.webp',
+  'DAYBREAK': IMG_BASE + '13_g56pez.jpeg',
+  'ATLANTIKA': IMG_BASE + '14_ibrpb7.jpeg',
+  'LE PIETRE': IMG_BASE + '15_eeb0vw.jpeg',
+  'ROCKET ONE': IMG_BASE + '16_njwvmw.jpeg',
+  'NO SURRENDER': IMG_BASE + '17_p0hrml.webp',
+  'MY WAY': IMG_BASE + '18_zn1fd6.jpeg',
+  'AURELIA': IMG_BASE + '19_o7nlra.webp',
+  'STARBURST III': IMG_BASE + '20_hcxdjt.jpeg',
+  'BLANCO XL': IMG_BASE + '21_jpfen0.jpeg',
+  'B HAPPY': IMG_BASE + '22_ob6dkb.jpeg',
+  'AMMIRAGLIO': IMG_BASE + '23_nop9eh.jpeg',
+  'WHITE LOTUS': IMG_BASE + '24_hiemlh.jpeg',
+  'GALENE': IMG_BASE + '25_sx4ekw.jpeg',
+  'ANTIOXIDANT': IMG_BASE + '26_lw2iki.jpeg',
+};
+function getImg(name,imgUrl){return imgUrl||VESSEL_IMGS[name]||null;}
+
+// =============================================
+// NORMALIZATION
+// =============================================
+const BN={'SANLORENZO YACHTS':'SANLORENZO','SAN LORENZO':'SANLORENZO','BENETTI YACHTS':'BENETTI','FERRETTI YACHTS':'FERRETTI','BILGIN YACHTS':'BILGIN','PRINCESS YACHTS':'PRINCESS','AZIMUT YACHTS':'AZIMUT','ADMIRAL YACHTS':'ADMIRAL','RIVA YACHT':'RIVA','HEESEN YACHTS':'HEESEN','OVERMARINE GROUP':'OVERMARINE'};
+const BRN={'Fraser Yachts':'Fraser','FRASER YACHTS':'Fraser','fraser':'Fraser','Edmiston & Company':'Edmiston','Camper & Nicholsons':'Camper & Nicholsons','IYC - Ft.Lauderdale':'IYC','IYC - Monaco':'IYC','IYC-London':'IYC','Drettmann Yachts GmbH':'Drettmann Yachts','Drettman Yachts':'Drettmann Yachts','IKONIC YACHTS':'Ikonik Yachts','Ikonic Yachts':'Ikonik Yachts','Worth Avenue Yachts LLC':'Worth Avenue Yachts','Merle Wood & Associates, Inc.':'Merle Wood & Associates','Aqua Marina Yachts':'Aqua Marine','AQUA MARINE':'Aqua Marine','Fraser':'Fraser','Y.CO':'Y.CO','Burgess':'Burgess','Denison Yachting':'Denison Yachting','Northrop & Johnson':'Northrop & Johnson','Ocean Independence':'Ocean Independence','FGI Yacht Group':'FGI Yacht Group'};
+function normB(b){if(!b)return b;return BN[b.toUpperCase().trim()]||b.trim();}
+function normBR(b){if(!b||b==='—')return b;return BRN[b.trim()]||b.trim();}
+const S={EUR:'€',USD:'$',GBP:'£'};
+
+// =============================================
+// GITHUB TOKEN
+// =============================================
+function getToken(){return localStorage.getItem('gh_token')||'';}
+function saveToken(){
+  const t=document.getElementById('token-input').value.trim();
+  if(!t){toast('Please paste your token');return;}
+  localStorage.setItem('gh_token',t);
+  document.getElementById('setup-banner').style.display='none';
+  toast('✅ Token saved — you can now add entries');
+  loadData();
+}
+// Hide banner if token already saved
+if(getToken()) document.getElementById('setup-banner').style.display='none';
+
+// =============================================
+// GITHUB DATA SYNC
+// =============================================
+let db={};
+let fileSHA='';
+
+async function loadData(){
+  setSyncStatus('⟳ Loading…');
+  try {
+    const r=await fetch(`https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}`,{
+      headers:{'Authorization':'token '+getToken(),'Accept':'application/vnd.github.v3+json'}
+    });
+    if(r.status===404){
+      // File doesn't exist yet — use seed data
+      db=deepCopy(SEED);
+      await pushData('Initial data');
+      setSyncStatus('✅ Initialized');
+    } else {
+      const j=await r.json();
+      fileSHA=j.sha;
+      db=JSON.parse(atob(j.content.replace(/\n/g,'')));
+      setSyncStatus('✅ Synced');
+    }
+  } catch(e){
+    // No token or offline — use seed + localStorage fallback
+    const local=localStorage.getItem('yu_fallback');
+    db=local?JSON.parse(local):deepCopy(SEED);
+    setSyncStatus('⚠️ Offline mode');
+  }
+  // Normalize
+  Object.keys(db).forEach(d=>{db[d]=db[d].map(normEntry);});
+  init();
+}
+
+async function pushData(msg='Update'){
+  const token=getToken();
+  if(!token){localStorage.setItem('yu_fallback',JSON.stringify(db));return;}
+  try {
+    setSyncStatus('⟳ Saving…');
+    const body={message:msg,content:btoa(unescape(encodeURIComponent(JSON.stringify(db,null,2))))};
+    if(fileSHA) body.sha=fileSHA;
+    const r=await fetch(`https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}`,{
+      method:'PUT',headers:{'Authorization':'token '+token,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
+      body:JSON.stringify(body)
+    });
+    const j=await r.json();
+    if(j.content) fileSHA=j.content.sha;
+    setSyncStatus('✅ Saved to GitHub');
+    toast('✅ Saved to GitHub');
+  } catch(e){
+    localStorage.setItem('yu_fallback',JSON.stringify(db));
+    setSyncStatus('⚠️ Saved locally');
+    toast('⚠️ GitHub unavailable — saved locally');
+  }
+}
+
+function setSyncStatus(s){const el=document.getElementById('sync-status');if(el)el.textContent=s;}
+function deepCopy(o){return JSON.parse(JSON.stringify(o));}
+function normEntry(e){const n={...e};if(n.builder)n.builder=normB(n.builder);if(n.broker)n.broker=normBR(n.broker);if(n.soldseller)n.soldseller=normBR(n.soldseller);if(n.soldbuyer)n.soldbuyer=normBR(n.soldbuyer);if(n.cafrom)n.cafrom=normBR(n.cafrom);if(n.cato)n.cato=normBR(n.cato);return n;}
+
+// =============================================
+// SEED DATA
+// =============================================
+const SEED={
+"2026-05-08":[
+  {type:'new',name:'ALBUS',builder:'CUSTOM LINE',length:41.81,year:2025,location:'Montenegro',price:'21,000,000',cur:'EUR',broker:'Smart Yachts',catype:'CA'},
+  {type:'new',name:'T-O52',builder:'TRINITY YACHTS',length:51.2,year:2024,location:'Turkey',price:'1,950,000',cur:'USD',est:'1,660,000',broker:'United Yacht Sales',catype:'CA'},
+  {type:'new',name:'ALHAMBRA',builder:'FEADSHIP',length:35.4,year:1970,location:'Italy',price:'4,995,000',cur:'EUR',broker:'Northrop & Johnson',catype:'CA'},
+  {type:'new',name:'L88',builder:'LADENSTEIN YACHT',length:26.82,year:2026,location:'United States',price:'4,100,000',cur:'USD',est:'3,495,000',broker:'United Yacht Sales',catype:'CA'},
+  {type:'new',name:'KALANI',builder:'CUSTOM',length:25.05,year:1972,location:'Malta',price:'925,000',cur:'EUR',broker:'TWW Yachts',catype:'CA'},
+  {type:'new',name:'SALIVITI',builder:'SUNSEEKER',length:26.3,year:2018,location:'Croatia',price:'3,950,000',cur:'EUR',broker:'Ocean Independence',catype:'CA'},
+  {type:'reduction',name:'HOLIDAY',builder:'MAIORA',length:42.95,year:2005,location:'Greece',price:'8,800,000',cur:'EUR',oldprice:'9,400,000',oldcur:'EUR',broker:'Fraser',catype:'CA'},
+  {type:'reduction',name:'SEASEID',builder:'HARGRAVE',length:28.95,year:2016,location:'United States',price:'3,895,000',cur:'USD',est:'3,320,000',oldprice:'3,995,000',oldcur:'USD',broker:'Gilman Yachts',catype:'CA'},
+  {type:'cachange',name:'ABIDE',builder:'JONGERT',length:41.45,year:2002,location:'United States',price:'6,600,000',cur:'USD',est:'5,630,000',cafrom:'Ocean Independence',cato:'Fraser'},
+  {type:'sold',name:'SPICA',builder:'FERRETTI',length:30.13,year:2023,price:'7,900,000',cur:'EUR',soldseller:'Fraser',soldbuyer:'Afroudakis Yachting'},
+  {type:'launch',name:'SEDICI',builder:'RIVA',length:30.2},
+],
+"2026-05-07":[
+  {type:'new',name:'BURKUT',builder:'BAGLIETTO',length:54,year:2009,location:'Italy',price:'17,500,000',cur:'EUR',broker:'Royal Yacht International',catype:'CA'},
+  {type:'new',name:'DAYBREAK',builder:'BAGLIETTO',length:52,year:2024,location:'Bermuda',price:'34,999,000',cur:'EUR',broker:'Fraser',catype:'CA'},
+  {type:'new',name:'ATLANTIKA',builder:'CNT CASTAGNOLA',length:40,year:2013,location:'Turkey',price:'3,900,000',cur:'EUR',broker:'IYC',catype:'CA'},
+  {type:'new',name:'LE PIETRE',builder:'ADA YACHT WORKS',length:39,year:2009,location:'Turkey',price:'4,500,000',cur:'EUR',broker:'Northrop & Johnson',catype:'CA'},
+  {type:'new',name:'ROCKET ONE',builder:'MAJESTY',length:36.57,year:2022,location:'Italy',price:'15,372,802',cur:'USD',est:'13,080,000',broker:'United Yacht Sales',catype:'CA'},
+  {type:'new',name:'NO SURRENDER',builder:'RIVA YACHT',length:33.52,year:2020,location:'United States',price:'9,950,000',cur:'USD',est:'8,470,000',broker:'Worth Avenue Yachts',catype:'CA'},
+  {type:'new',name:'MY WAY',builder:'CHEOY LEE',length:31.39,year:2002,location:'United States',price:'2,225,000',cur:'USD',est:'1,890,000',broker:'IYC',catype:'CA'},
+  {type:'reduction',name:'AURELIA',builder:'PRESIDENT YACHTS',length:26.51,year:2007,location:'United States',price:'1,749,999',cur:'USD',est:'1,490,000',oldprice:'1,995,000',oldcur:'USD',broker:'Luke Brown Yachts',catype:'CA'},
+  {type:'reduction',name:'STARBURST III',builder:'BILGIN',length:47.4,year:2017,location:'France',price:'18,750,000',cur:'EUR',oldprice:'20,900,000',oldcur:'EUR',broker:'Burgess',catype:'CA'},
+  {type:'sold',name:'BLANCO XL',builder:'SANLORENZO',length:26.76,year:2018,price:'3,750,000',cur:'EUR',soldseller:'Forward Yachts',soldbuyer:'Forward Yachts'},
+  {type:'sold',name:'B HAPPY',builder:'HARGRAVE',length:29.46,year:2004,price:'1,195,000',cur:'USD',est:'1,015,000',soldseller:'Gilman Yachts',soldbuyer:'FGI Yacht Group'},
+  {type:'sold',name:'AMMIRAGLIO',builder:'ADMIRAL',length:34.57,year:2003,price:'1,100,000',cur:'EUR',soldseller:'De Valk Yacht Brokers',soldbuyer:'My Yachts World'},
+  {type:'sold',name:'WHITE LOTUS',builder:'PRESIDENT YACHTS',length:32.61,year:2011,price:'3,490,000',cur:'USD',est:'2,965,000',soldseller:'Denison Yachting',soldbuyer:'Yacht Zero'},
+  {type:'sold',name:'GALENE',builder:'AMELS',length:55,year:2020,price:'35,500,000',cur:'EUR',soldseller:'Y.CO',soldbuyer:'—'},
+],
+"2026-05-06":[
+  {type:'new',name:'ANTIOXIDANT',builder:'RIVA YACHT',length:26.84,year:2017,location:'Turkey',price:'4,250,000',cur:'EUR',broker:'Niyana Yachts',catype:'CA'},
+  {type:'new',name:'PURA VIDA',builder:'SUNSEEKER',length:30.47,year:2024,location:'United States',price:'14,395,000',cur:'USD',est:'12,280,000',broker:'Northrop & Johnson',catype:'CA'},
+  {type:'reduction',name:'GALLOPIN',builder:'HATTERAS',length:24.38,year:2007,location:'United States',price:'2,149,000',cur:'USD',est:'1,830,000',oldprice:'2,349,000',oldcur:'USD',broker:'HMY Yacht Sales',catype:'CA'},
+  {type:'reduction',name:'TRIPLE EIGHT',builder:'SUNSEEKER',length:27.1,year:2021,location:'France',price:'5,495,000',cur:'EUR',oldprice:'5,625,000',oldcur:'EUR',broker:'IYC',catype:'CA'},
+  {type:'reduction',name:'NORDIC STAR',builder:'LANTANA SHIPYARD',length:28.04,year:1969,location:'United States',price:'1,450,000',cur:'USD',est:'1,240,000',oldprice:'1,750,000',oldcur:'USD',broker:'Northrop & Johnson',catype:'CA'},
+  {type:'reduction',name:'IMPETUS',builder:'INACE',length:28.95,year:2005,location:'United States',price:'5,200,000',cur:'USD',est:'4,435,000',oldprice:'5,450,000',oldcur:'USD',broker:'Yachtzoo',catype:'CA'},
+  {type:'reduction',name:'PRINCESS X95',builder:'PRINCESS',length:29.11,year:2021,location:'Turkey',price:'8,400,000',cur:'EUR',oldprice:'8,500,000',oldcur:'EUR',broker:'Princess Yachts Monaco',catype:'CA'},
+  {type:'sold',name:'GALENE',builder:'AMELS',length:55,year:2020,price:'35,500,000',cur:'EUR',soldseller:'Y.CO',soldbuyer:'—'},
+  {type:'cachange',name:'LOON',builder:'ICON YACHTS',length:67.5,year:2010,location:'Spain',price:'42,950,000',cur:'USD',est:'36,645,000',cafrom:'Merle Wood & Associates',cato:'IYC'},
+  {type:'launch',name:'HYBRID 75',builder:'DAMEN',length:75.2},
+  {type:'launch',name:'BOA KINGDOM',builder:'BOA YACHTS',length:40},
+],
+"2026-05-05":[
+  {type:'new',name:'SEA FALCON II',builder:'PUGLIA',length:46.67,year:1993,location:'Italy',price:'8,750,000',cur:'EUR',broker:'Camper & Nicholsons',catype:'CA'},
+  {type:'new',name:'EQUITY',builder:'PALMER JOHNSON',length:45.72,year:2008,location:'Italy',price:'9,950,000',cur:'EUR',broker:'breezeYachting - Edmiston',catype:'JCA'},
+  {type:'new',name:'HEYSEA ASTERIA 108',builder:'HEYSEA',length:35.83,year:2021,location:'Hong Kong',price:'2,500,000',cur:'USD',est:'2,140,000',broker:'TAG Yachting',catype:'Open'},
+  {type:'new',name:'FOOTLOOSE',builder:'CHEOY LEE',length:28.95,year:2008,location:'United States',price:'2,925,000',cur:'USD',est:'2,500,000',broker:'HMY Yacht Sales',catype:'CA'},
+  {type:'new',name:'SPECULATOR',builder:'VIKING',length:28.04,year:2017,location:'United States',price:'7,595,000',cur:'USD',est:'6,499,000',broker:'HMY Yacht Sales',catype:'CA'},
+  {type:'new',name:'THYKE',builder:'SANLORENZO',length:26.76,year:2019,location:'Croatia',price:'4,650,000',cur:'EUR',broker:'Viudes Yachts',catype:'CA'},
+  {type:'new',name:'AKIKO',builder:'ALLOY YACHTS',length:32.4,year:2007,location:'Spain',price:'9,750,000',cur:'EUR',broker:'Superyacht Partners',catype:'CA'},
+  {type:'reduction',name:'TRANQUILITY IV',builder:'LAZZARA YACHTS',length:28.65,year:2001,location:'United States',price:'2,349,000',cur:'USD',est:'2,000,000',oldprice:'2,399,000',oldcur:'USD',broker:'Yacht Habit',catype:'CA'},
+  {type:'reduction',name:'INTO THE SUNSET',builder:'SUNSEEKER',length:26.39,year:2024,location:'United States',price:'5,900,000',cur:'USD',est:'5,050,000',oldprice:'6,499,000',oldcur:'USD',broker:'IYC',catype:'CA'},
+  {type:'reduction',name:'REBECCA V',builder:'BENETTI',length:25.8,year:2009,location:'Italy',price:'1,950,000',cur:'EUR',oldprice:'1,990,000',oldcur:'EUR',broker:'Fraser',catype:'CA'},
+  {type:'reduction',name:'NGV',builder:'FERRETTI',length:24.51,year:2013,location:'Turkey',price:'2,300,000',cur:'EUR',oldprice:'2,600,000',oldcur:'EUR',broker:'Data Marin Brokerlik',catype:'CA'},
+  {type:'reduction',name:'MIRRACLE',builder:'SUNSEEKER',length:28.98,year:2018,location:'United States',price:'4,599,000',cur:'USD',est:'3,935,000',oldprice:'4,799,000',oldcur:'USD',broker:'Yacht Habit',catype:'CA'},
+  {type:'reduction',name:'EBYSHINE',builder:'BLAUNDUS YACHTS',length:30,year:2023,location:'Italy',price:'8,400,000',cur:'EUR',oldprice:'8,900,000',oldcur:'EUR',broker:'Burgess',catype:'CA'},
+  {type:'sold',name:'EXCELLENCE V',builder:'FEADSHIP',length:46.22,year:2014,price:'29,000,000',cur:'USD',est:'24,800,000',soldseller:'Edmiston',soldbuyer:'Luxury Yacht Group'},
+  {type:'sold',name:'VENTISETTE',builder:'AZIMUT',length:26.78,year:2020,price:'4,700,000',cur:'EUR',soldseller:'—',soldbuyer:'The Nautical Group'},
+  {type:'sold',name:'KITARO',builder:'SANLORENZO',length:29.1,year:2014,price:'3,500,000',cur:'EUR',soldseller:'MXG Yachts',soldbuyer:'Ocean Independence'},
+  {type:'sold',name:'SHADOWL',builder:'BURGER',length:43.59,year:2010,price:'19,500,000',cur:'USD',est:'16,690,000',soldseller:'Northrop & Johnson',soldbuyer:'Northrop & Johnson'},
+],
+"2026-05-04":[
+  {type:'new',name:'MOONSHOT',builder:'TANSU YACHTS',length:39.1,year:2017,location:'Spain',price:'9,500,000',cur:'EUR',broker:'Y.CO',catype:'CA'},
+  {type:'reduction',name:'ANYA',builder:'SUNSEEKER',length:40,year:2015,location:'France',price:'9,495,000',cur:'EUR',oldprice:'9,995,000',oldcur:'EUR',broker:'Burgess',catype:'CA'},
+  {type:'reduction',name:'MOONRAKER',builder:'BILGIN',length:47.4,year:2019,location:'United States',price:'18,500,000',cur:'EUR',oldprice:'19,500,000',oldcur:'EUR',broker:'Ikonik Yachts',catype:'CA'},
+  {type:'reduction',name:'THE WOLF',builder:'SANLORENZO',length:35.96,year:2023,location:'United States',price:'15,750,000',cur:'USD',est:'13,430,000',oldprice:'16,000,000',oldcur:'USD',broker:'Autograph Yacht Group',catype:'CA'},
+  {type:'sold',name:'NIXTUN',builder:'GULF CRAFT',length:31.68,year:2022,price:'6,350,000',cur:'EUR',soldseller:'Drettmann Yachts',soldbuyer:'Drettmann Yachts'},
+  {type:'sold',name:'NEVERLAND',builder:'SANLORENZO',length:44.5,year:2020,price:'24,500,000',cur:'USD',est:'20,955,000',soldseller:'FGI Yacht Group',soldbuyer:'Karma Yachting'},
+],
+"2026-05-02":[
+  {type:'new',name:'U WISH',builder:'ARNO LEOPARD',length:30.78,year:2008,location:'United States',price:'2,595,000',cur:'USD',est:'2,210,000',broker:'FGI Yacht Group',catype:'CA'},
+  {type:'new',name:'CAPTAIN MORGAN III',builder:'SUNSEEKER',length:40.05,year:2020,location:'Italy',price:'13,500,000',cur:'EUR',broker:'Y.CO',catype:'CA'},
+  {type:'new',name:'RELENTLESS',builder:'WESTPORT',length:39.62,year:2006,location:'United States',price:'9,999,000',cur:'USD',est:'8,530,000',broker:'Allied Marine',catype:'CA'},
+  {type:'reduction',name:'KING BENJI',builder:'DUNYA YACHTS',length:46.93,year:2024,location:'France',price:'26,499,000',cur:'EUR',oldprice:'26,999,000',oldcur:'EUR',broker:'FGI Yacht Group',catype:'CA'},
+  {type:'sold',name:'EIGHT',builder:'PALMER JOHNSON',length:36.57,year:2005,price:'5,950,000',cur:'EUR',soldseller:'—',soldbuyer:'Idea Yachting'},
+],
+"2026-05-01":[
+  {type:'new',name:'H',builder:'PRINCESS',length:25,year:2012,location:'Lebanon',price:'1,299,000',cur:'EUR',broker:'Yacht Masters Monaco',catype:'CA'},
+  {type:'new',name:'CONFESSA',builder:'BENETTI',length:40.8,year:2024,location:'Italy',price:'26,100,000',cur:'EUR',broker:'IYC',catype:'CA'},
+  {type:'reduction',name:'MESMERIZE',builder:'HARGRAVE',length:38.09,year:2013,location:'United States',price:'4,900,000',cur:'USD',est:'4,180,000',oldprice:'5,400,000',oldcur:'USD',broker:'Denison Yachting',catype:'CA'},
+  {type:'reduction',name:'YAMAKAY',builder:'CMN',length:42.36,year:1994,location:'France',price:'1,290,000',cur:'EUR',oldprice:'1,590,000',oldcur:'EUR',broker:'Bernard Gallay',catype:'CA'},
+  {type:'reduction',name:'METEOR',builder:'ROYAL HUISMAN',length:51.97,year:2007,location:'Italy',price:'11,500,000',cur:'EUR',oldprice:'12,500,000',oldcur:'EUR',broker:'Arcon Yachts',catype:'CA'},
+  {type:'launch',name:'OCTOPUS',builder:'CDM',length:35},
+  {type:'launch',name:'AMANTIS 7',builder:'SUNREEF',length:27},
+],
+"2026-04-30":[
+  {type:'new',name:'PROJECT PETRA',builder:'RMK MARINE',length:49.9,year:2026,location:'Turkey',price:'26,500,000',cur:'EUR',broker:'SuperYachtsMonaco - Denison Yachting',catype:'JCA'},
+  {type:'new',name:'PATIENCE',builder:'BENETTI',length:40.23,year:2012,location:'United States',price:'11,500,000',cur:'USD',est:'9,845,000',broker:'Ikonik Yachts',catype:'CA'},
+  {type:'new',name:'NURJA',builder:'ABEKING & RASMUSSEN',length:40.5,year:2008,location:'Spain',price:'38,000,000',cur:'EUR',broker:'Ocean Independence',catype:'CA'},
+  {type:'reduction',name:'NO RUSH',builder:'OVERMARINE',length:49.95,year:2023,location:'France',price:'30,900,000',cur:'EUR',oldprice:'33,500,000',oldcur:'EUR',broker:'Royal Yachts International',catype:'CA'},
+  {type:'sold',name:'PENELOPE',builder:'DELTA MARINE',length:36.3,year:1990,price:'7,950,000',cur:'USD',est:'6,800,000',soldseller:'Ikonik Yachts',soldbuyer:'Luke Brown Yachts'},
+  {type:'sold',name:'NEENAH',builder:'WESTPORT',length:49.95,year:2020,price:'33,900,000',cur:'USD',est:'29,000,000',soldseller:'Miles Yacht Group',soldbuyer:'RJC Yacht Sales & Charter'},
+],
+"2026-04-29":[
+  {type:'new',name:'DOLCE FAR NIENTE',builder:'SUNSEEKER',length:26.82,year:2026,location:'United States',price:'7,250,000',cur:'USD',est:'6,200,000',broker:'Autograph Yacht Group',catype:'CA'},
+  {type:'new',name:'MYSTERY',builder:'NAUTOR SWAN',length:34.34,year:2000,location:'Spain',price:'4,500,000',cur:'EUR',broker:'Berthon International',catype:'CA'},
+  {type:'new',name:'DAGUSHA',builder:'AZIMUT',length:35,year:2020,location:'Turkey',price:'9,950,000',cur:'EUR',broker:'Azimut Yachts Israel',catype:'CA'},
+  {type:'reduction',name:'HAIAMI',builder:'CUSTOM LINE',length:33,year:2022,location:'Italy',price:'10,950,000',cur:'EUR',oldprice:'11,950,000',oldcur:'EUR',broker:'Aqua Marine',catype:'CA'},
+  {type:'sold',name:'MS FELICE',builder:'PRINCESS',length:25.5,year:2016,price:'1,990,000',cur:'EUR',soldseller:'Smart Yachts',soldbuyer:'Ultimo Yachts'},
+  {type:'sold',name:'JOYS',builder:'ELEGANCE',length:28,year:2009,price:'1,850,000',cur:'EUR',soldseller:'Drettmann Yachts',soldbuyer:'—'},
+  {type:'launch',name:'PROJECT ARROW',builder:'TURQUOISE',length:76},
+],
+"2026-04-28":[
+  {type:'new',name:'BLUE MOON',builder:'ADMIRAL',length:45,year:2014,location:'Monaco',price:'14,500,000',cur:'EUR',broker:'Yacht Masters Monaco',catype:'CA'},
+  {type:'new',name:'CALM',builder:'SANLORENZO',length:29.1,year:2016,location:'France',price:'5,000,000',cur:'EUR',broker:'Fraser',catype:'CA'},
+  {type:'new',name:'GRACE III',builder:'SES CUSTOM',length:39.01,year:2021,location:'Turkey',price:'14,250,000',cur:'EUR',broker:'Hoek Brokerage - Camper & Nicholsons',catype:'JCA'},
+  {type:'reduction',name:'AT ONE',builder:'CUSTOM LINE',length:28.43,year:2024,location:'Italy',price:'8,950,000',cur:'EUR',oldprice:'9,600,000',oldcur:'EUR',broker:'Ventura Yachts',catype:'CA'},
+  {type:'reduction',name:'CHAMELEON',builder:'SANLORENZO',length:27,year:2024,location:'United States',price:'7,990,000',cur:'USD',est:'6,840,000',oldprice:'8,490,000',oldcur:'USD',broker:'FGI Yacht Group',catype:'CA'},
+  {type:'sold',name:'EVEREAST',builder:'SUNSEEKER',length:34.7,year:2014,price:'5,650,000',cur:'EUR',soldseller:'Denison Yachting',soldbuyer:'Denison Yachting'},
+  {type:'sold',name:"L'HIPPOCAMPE",builder:'NAUTOR SWAN',length:30,year:2008,price:'3,950,000',cur:'EUR',soldseller:'Northrop & Johnson',soldbuyer:'Ocean Independence'},
+  {type:'launch',name:'LEGACY 4',builder:'CODECASA',length:56.75,year:2026},
+],
+"2026-04-25":[
+  {type:'new',name:'GATSBY',builder:'SANLORENZO',length:29.26,year:2021,location:'United States',price:'7,390,000',cur:'USD',est:'6,324,066',broker:'Ikonik Yachts',catype:'CA'},
+  {type:'new',name:'PANTERA',builder:'AZIMUT',length:35,year:2019,location:'Italy',price:'8,500,000',cur:'EUR',broker:'Edmiston',catype:'CA'},
+  {type:'reduction',name:'YB',builder:'AZIMUT',length:28.5,year:2019,location:'Italy',price:'4,300,000',cur:'EUR',oldprice:'4,400,000',oldcur:'EUR',broker:'Fraser',catype:'CA'},
+  {type:'sold',name:'ONE',builder:'VAN DER VALK',length:34.13,year:2026,price:'17,950,000',cur:'EUR',soldseller:'—',soldbuyer:'Maspor Marine International'},
+  {type:'sold',name:'VON B II',builder:'PRINCESS',length:26.82,year:2015,price:'3,190,000',cur:'EUR',soldseller:'Seymour Yachts',soldbuyer:'Prime Wake Family Office'},
+],
+"2026-04-23":[
+  {type:'new',name:'M-SEA',builder:'RIVA YACHT',length:27.43,year:2022,location:'United States',price:'7,500,000',cur:'USD',est:'6,411,160',broker:'FGI Yacht Group',catype:'CA'},
+  {type:'new',name:'SUN PRINCE',builder:'ADMIRAL',length:38.6,year:2018,location:'Hong Kong',price:'9,480,000',cur:'EUR',broker:'Camper & Nicholsons',catype:'CA'},
+  {type:'new',name:'LASTOCHKA',builder:'AZIMUT',length:26.6,year:2019,location:'Turkey',price:'3,200,000',cur:'EUR',broker:'Aqua Marine',catype:'CA'},
+  {type:'reduction',name:'KING BENJI',builder:'DUNYA YACHTS',length:46.7,year:2024,location:'United States',price:'26,999,000',cur:'EUR',oldprice:'28,500,000',oldcur:'EUR',broker:'FGI Yacht Group',catype:'CA'},
+  {type:'reduction',name:'HEESEN 50M PROJECT SOPHIA',builder:'HEESEN',length:49.98,year:2026,location:'Netherlands',price:'44,900,000',cur:'EUR',oldprice:'47,900,000',oldcur:'EUR',broker:'Heesen Yacht Sales',catype:'CA'},
+  {type:'sold',name:'CHECKED OUT',builder:'GULF CRAFT',length:42.67,year:2019,price:'13,900,000',cur:'USD',est:'11,882,728',soldseller:'Miles Yacht Group',soldbuyer:'Elliman Yachts'},
+  {type:'sold',name:'WHITE STAR',builder:'SUNSEEKER',length:27.43,year:2022,price:'7,095,000',cur:'USD',est:'6,065,320',soldseller:'FGI Yacht Group',soldbuyer:'Wave Marine Group'},
+  {type:'launch',name:'SUZIE Q',builder:'GULF CRAFT',length:45.2},
+],
+"2026-04-22":[
+  {type:'new',name:'NORTHSTAR I',builder:'FALCON',length:31.08,year:2005,location:'Panama',price:'3,000,000',cur:'USD',est:'2,554,380',broker:'Northrop & Johnson',catype:'CA'},
+  {type:'reduction',name:'CARAT',builder:'WALLY',length:27.03,year:2024,location:'Italy',price:'7,000,000',cur:'EUR',oldprice:'7,500,000',oldcur:'EUR',broker:'Smart Yachts',catype:'CA'},
+  {type:'sold',name:'KIJO',builder:'HEESEN',length:44.5,year:2003,price:'—',cur:'EUR',soldseller:'—',soldbuyer:'—'},
+],
+"2026-04-21":[
+  {type:'new',name:'INFINITY',builder:'ALUMINIUM',length:29.78,year:2009,location:'Turkey',price:'3,500,000',cur:'EUR',broker:'Aqua Marine',catype:'CA'},
+  {type:'reduction',name:'CAFFEINE',builder:'PERSHING',length:35.35,year:2023,location:'United States',price:'16,000,000',cur:'USD',est:'13,578,880',oldprice:'16,499,000',oldcur:'USD',broker:'Allied Marine',catype:'CA'},
+  {type:'sold',name:'FREEDOM',builder:'HORIZON',length:33.38,year:2022,price:'9,900,000',cur:'USD',soldseller:'Ocean Independence',soldbuyer:'Denison Yachting'},
+  {type:'sold',name:'BELLA',builder:'VIKING',length:28.04,year:2018,price:'—',cur:'USD',soldseller:'Oyster Harbors Marine',soldbuyer:'Worth Avenue Yachts'},
+],
+"2026-04-18":[
+  {type:'new',name:'ANDROMEDA LA DEA',builder:'PERINI NAVI',length:47,year:1990,location:'Italy',price:'24,950,000',cur:'EUR',broker:'Edmiston',catype:'CA'},
+  {type:'reduction',name:'PENTA',builder:'SANLORENZO',length:35.75,year:2021,location:'Italy',price:'12,800,000',cur:'EUR',oldprice:'13,800,000',oldcur:'EUR',broker:'Y.CO',catype:'CA'},
+  {type:'sold',name:'MAVERICK',builder:'BENETTI',length:40.8,year:2023,price:'23,995,000',cur:'EUR',soldseller:'Bristow-Holmes',soldbuyer:'Bristow-Holmes'},
+  {type:'launch',name:'RAIJIN',builder:'NAUTOR SWAN',length:38.98},
+  {type:'launch',name:'UHV 100',builder:'LAZZARA',length:30.5},
+],
+"2026-04-17":[
+  {type:'new',name:'CAIPIRINHA',builder:'LURSSEN',length:60,year:2009,location:'Montenegro',price:'39,900,000',cur:'EUR',broker:'Edmiston',catype:'CA'},
+  {type:'sold',name:'LE GYPSY',builder:'SANLORENZO',length:31.8,year:2018,price:'6,950,000',cur:'EUR',soldseller:'BreezeYachting',soldbuyer:'EKKA Yachts'},
+  {type:'sold',name:'SOFIA OF TORTOLA',builder:'BENETTI',length:25.5,year:2008,price:'2,000,000',cur:'EUR',soldseller:'Ocean Independence',soldbuyer:'Althaus Yachts'},
+],
+"2026-04-16":[
+  {type:'new',name:'TRIPLE EIGHT',builder:'SUNSEEKER',length:27.1,year:2021,location:'France',price:'5,625,000',cur:'EUR',broker:'IYC',catype:'CA'},
+  {type:'launch',name:'MANGUSTA GRANSPORT 34',builder:'OVERMARINE',length:33.9},
+],
+"2026-04-15":[
+  {type:'new',name:'STEEL',builder:'PENDENNIS',length:54.9,year:2009,location:'Italy',price:'29,500,000',cur:'EUR',broker:'Villa Yachting',catype:'CA'},
+  {type:'reduction',name:'ENDLESS SUMMER',builder:'WESTPORT',length:39.62,year:2001,location:'Greece',price:'6,800,000',cur:'EUR',oldprice:'7,200,000',oldcur:'EUR',broker:'Athens Yachts',catype:'CA'},
+  {type:'sold',name:'MY WAY',builder:'SANLORENZO',length:34.1,year:2018,price:'8,200,000',cur:'EUR',soldseller:'Idea Yachting',soldbuyer:'DM Yachts'},
+  {type:'sold',name:'BLEU BLANC',builder:'CUSTOM LINE',length:29.7,year:2009,price:'2,850,000',cur:'EUR',soldseller:'EKKA Yachts',soldbuyer:'Sea Alliance Group'},
+  {type:'launch',name:'PROJECT SOLENT',builder:'FEADSHIP',length:83},
+],
+"2026-04-14":[
+  {type:'new',name:'MIRKA',builder:'SUNSEEKER',length:28.2,year:2013,location:'Turkey',price:'2,500,000',cur:'EUR',broker:'Aqua Marine',catype:'CA'},
+  {type:'reduction',name:'WILLOW',builder:'BENETTI',length:42,year:2017,location:'France',price:'13,950,000',cur:'EUR',oldprice:'14,950,000',oldcur:'EUR',broker:'Burgess',catype:'CA'},
+  {type:'sold',name:'DABMAR',builder:'AZIMUT',length:26.78,year:2020,price:'4,950,000',cur:'EUR',soldseller:'Fraser',soldbuyer:'breezeYachting.swiss'},
+],
+"2026-04-13":[
+  {type:'new',name:'ACALI',builder:'WIDER',length:28.04,year:2024,location:'Italy',price:'9,500,000',cur:'EUR',broker:'Sea-Alliance Group',catype:'CA'},
+  {type:'sold',name:"P'OCEAN",builder:'SUNSEEKER',length:26.47,year:2009,price:'1,750,000',cur:'EUR',soldseller:'Yacht Masters Monaco',soldbuyer:'Aqua Marine'},
+  {type:'sold',name:'CHEETAH MOON',builder:'CANTIERI NAVALINI NICOLINI',length:38.36,year:1986,price:'2,390,000',cur:'EUR',soldseller:'Judel / Vrolijk',soldbuyer:'Bernard Gallay'},
+],
+"2026-04-11":[
+  {type:'new',name:'LUZ DE MAR',builder:'AZIMUT',length:35.22,year:2024,location:'Dominican Republic',price:'15,900,000',cur:'USD',est:'13,554,273',broker:'MarineMax Yachts',catype:'CA'},
+  {type:'reduction',name:'ZARKAVA',builder:'HODGDON YACHTS',length:26.52,year:2010,location:'Italy',price:'1,750,000',cur:'EUR',oldprice:'2,750,000',oldcur:'EUR',broker:'Fraser',catype:'CA'},
+  {type:'sold',name:'WELLESLEY',builder:'OCEANCO',length:56.15,year:1993,price:'12,000,000',cur:'EUR',soldseller:'TWW Yachts',soldbuyer:'Y.CO'},
+  {type:'sold',name:'VIRTUOSITY',builder:'SANLORENZO',length:56.5,year:2023,price:'49,500,000',cur:'EUR',soldseller:'Edmiston',soldbuyer:'Edmiston'},
+],
+"2026-04-10":[
+  {type:'reduction',name:'LADY CHRISTINE',builder:'FEADSHIP',length:68,year:2010,location:'United Kingdom',price:'49,900,000',cur:'EUR',oldprice:'52,750,000',oldcur:'EUR',broker:'—',catype:'CA'},
+  {type:'sold',name:'CALLIOPE',builder:'RICHMOND',length:43.28,year:2007,price:'9,900,000',cur:'USD',soldseller:'—',soldbuyer:'—'},
+],
+"2026-04-09":[
+  {type:'new',name:'TNT LEISURE',builder:'SANLORENZO',length:26.76,year:2019,location:'Singapore',price:'4,480,000',cur:'EUR',broker:'Camper & Nicholsons',catype:'CA'},
+  {type:'sold',name:'SPACE CAT',builder:'SILVER YACHTS',length:35.9,year:2022,price:'15,000,000',cur:'USD',soldseller:'IYC',soldbuyer:'Camper & Nicholsons'},
+  {type:'launch',name:'GRAY WOLF',builder:'MENGI YAY',length:52.5},
+],
+"2026-04-08":[
+  {type:'new',name:'BAGLIETTO DOM 133 #5',builder:'BAGLIETTO',length:40.53,year:2024,location:'United States',price:'26,500,000',cur:'EUR',broker:'Allied Marine',catype:'CA'},
+  {type:'reduction',name:'BAMBOO',builder:'BENETTI',length:38.1,year:2019,location:'Turkey',price:'13,950,000',cur:'EUR',oldprice:'14,450,000',oldcur:'EUR',broker:'Fraser',catype:'CA'},
+  {type:'sold',name:'SEA BREEZE',builder:'JONGERT',length:27,year:1998,price:'1,375,000',cur:'EUR',soldseller:'Fraser',soldbuyer:'Haas International'},
+],
+"2026-04-07":[
+  {type:'new',name:'M/Y CASA F',builder:'SANLORENZO',length:47,year:2026,location:'Greece',price:'35,000,000',cur:'EUR',broker:'EKKA YACHTS',catype:'CA'},
+  {type:'reduction',name:'EMOTION 2',builder:'CRN',length:42.97,year:2007,location:'Greece',price:'9,995,000',cur:'EUR',oldprice:'10,950,000',oldcur:'EUR',broker:'Worth Avenue Yachts',catype:'CA'},
+],
+"2026-04-04":[
+  {type:'new',name:'PROJECT DIANA',builder:'HEESEN',length:55,year:2027,location:'Netherlands',price:'59,900,000',cur:'EUR',broker:'Heesen Yacht Sales',catype:'CA'},
+  {type:'sold',name:'FIFTY SHADES',builder:'SANLORENZO',length:32.2,year:2017,price:'6,499,000',cur:'USD',soldseller:'Resolute Yachting',soldbuyer:'The Italian Yacht Group'},
+  {type:'sold',name:'OMNIA',builder:'PEARL',length:23.9,year:2018,price:'2,499,000',cur:'EUR',soldseller:'Ocean Independence',soldbuyer:'Northrop & Johnson'},
+],
+"2026-04-03":[
+  {type:'sold',name:'BELLA VITA',builder:'LURSSEN',length:60,year:2010,price:'45,000,000',cur:'USD',soldseller:'Merle Wood & Associates',soldbuyer:'—'},
+  {type:'sold',name:'OURWAY',builder:'TENIX DEFENCE',length:36.8,year:2004,price:'7,200,000',cur:'EUR',soldseller:'Fraser',soldbuyer:'Fraser'},
+],
+"2026-04-01":[
+  {type:'new',name:'KING BENJI',builder:'DUNYA YACHTS',length:46.93,year:2024,location:'Saint Martin',price:'27,999,000',cur:'EUR',broker:'FGI Yacht Group',catype:'CA'},
+  {type:'reduction',name:'TOGETHER',builder:'FERRETTI',length:28.97,year:2025,location:'France',price:'8,390,000',cur:'EUR',oldprice:'8,590,000',oldcur:'EUR',broker:'Northrop & Johnson',catype:'CA'},
+  {type:'sold',name:'INSPIRATION B',builder:'CUSTOM LINE',length:30,year:2006,price:'2,500,000',cur:'EUR',soldseller:'Ventura',soldbuyer:'EKKA'},
+],
+};
+
+// =============================================
+// CONTACTS & OWNERS
+// =============================================
+const CONTACTS=[
+  {name:'Vassilis Fotilas',firm:'Fraser',email:'vassilis.fotilas@fraseryachts.com',mobile:'+33 678 63 12 48',role:'seller',vessels:['SPICA']},
+  {name:'Zachos Afroudakis',firm:'Afroudakis Yachting',email:'af@afroudakisyachting.com',role:'buyer',vessels:['SPICA']},
+  {name:'Gianni Ricciardi',firm:'Forward Yachts',email:'g.ricciardi@forwardyachts.com',mobile:'+39 329 2067766',role:'both',vessels:['BLANCO XL']},
+  {name:'Jeff Stanley',firm:'Gilman Yachts',email:'jeff@gilmanyachts.com',mobile:'954-249-0360',role:'seller',vessels:['B HAPPY']},
+  {name:'Joel Eriksson',firm:'FGI Yacht Group',email:'joel@fgiyachtgroup.com',mobile:'954 536 3783',role:'buyer',vessels:['B HAPPY']},
+  {name:'Nicola Ricci',firm:'My Yachts World',email:'nicola@myyachtsworld.com',role:'buyer',vessels:['AMMIRAGLIO']},
+  {name:'Diego Cerasi',firm:'De Valk Yacht Brokers',email:'dcerasi@devalk.nl',mobile:'+34 634 325 758',role:'seller',vessels:['AMMIRAGLIO']},
+  {name:'Will Noftsinger',firm:'Denison Yachting',email:'WN@DenisonYachting.com',mobile:'850.461.3342',role:'seller',vessels:['WHITE LOTUS']},
+  {name:'Don Grigg',firm:'Yacht Zero',role:'buyer',vessels:['WHITE LOTUS']},
+  {name:'Tomaso Polli',firm:'Y.CO',email:'top@y.co',mobile:'+33 6 40 61 53 14',role:'seller',vessels:['GALENE']},
+  {name:'Georges Bourgoignie',firm:'Fraser',email:'georgesb@fraseryachts.com',mobile:'+1 305 491 2211',role:'buyer',vessels:['GALENE']},
+  {name:'Andy McDougall',firm:'MXG Yachts',email:'info@mxgyachts.com',mobile:'+34971676930',role:'seller',vessels:['KITARO']},
+  {name:'Enrico Solinas',firm:'Ocean Independence',email:'enrico@ocyachts.com',mobile:'+33 6 43 91 19 34',role:'buyer',vessels:['KITARO','OMNIA']},
+  {name:'Jack Gradus',firm:'Ocean Independence',email:'jack@ocyachts.com',mobile:'+33 7 64 57 57 36',role:'buyer',vessels:['KITARO']},
+  {name:'Kevin Merrigan',firm:'Northrop & Johnson',email:'kevin.merrigan@northropandjohnson.com',mobile:'+1 954-647-5986',role:'both',vessels:['SHADOWL','NEENAH']},
+  {name:'Wes Sanford',firm:'Northrop & Johnson',email:'wes.sanford@northropandjohnson.com',mobile:'+1 954-806-7036',role:'buyer',vessels:['SHADOWL']},
+  {name:'James Dalzell',firm:'The Nautical Group',email:'James@thenauticalgroup.co.nz',mobile:'+64 27 243 1463',role:'buyer',vessels:['VENTISETTE']},
+  {name:'Dirk Johnson',firm:'Edmiston',email:'DAJ@edmiston.com',mobile:'001 401 965 9189',role:'seller',vessels:['EXCELLENCE V']},
+  {name:'Rupert Connor',firm:'Luxury Yacht Group',email:'rc@luxyachts.com',mobile:'954-205-0070',role:'buyer',vessels:['EXCELLENCE V']},
+  {name:'Marco Fiorani',firm:'Idea Yachting',email:'marco@ideayachting.com',mobile:'+33 6 40 62 37 95',role:'buyer',vessels:['EIGHT','KITARO']},
+  {name:'Albert Drettmann',firm:'Drettmann Yachts',role:'both',vessels:['NIXTUN']},
+  {name:'Frank Grzeszczak Sr.',firm:'FGI Yacht Group',email:'fg@fgiyachtgroup.com',mobile:'954-494-7096',role:'seller',vessels:['NEVERLAND','WHITE STAR']},
+  {name:'Karin Paggi',firm:'Karma Yachting',mobile:'+39 339 2237238',role:'buyer',vessels:['NEVERLAND']},
+  {name:'AJ Blackmon',firm:'Ikonik Yachts',email:'aj@ikonicyachts.com',mobile:'+1 816 284 2148',role:'seller',vessels:['PENELOPE']},
+  {name:'Cameron Kirkconnell',firm:'Ikonik Yachts',email:'cameron@ikonicyachts.com',mobile:'+1 407 463 8189',role:'seller',vessels:['PENELOPE']},
+  {name:'Alan Bernard',firm:'Luke Brown Yachts',email:'alan@lukebrown.com',mobile:'954-415-3565',role:'buyer',vessels:['PENELOPE']},
+  {name:'Andrew Miles',firm:'Miles Yacht Group',email:'andy@milesyachts.com',role:'seller',vessels:['NEENAH','CHECKED OUT']},
+  {name:'Raymond Young',firm:'RJC Yacht Sales & Charter',email:'raymond@rjcyachts.com',mobile:'954-658-2693',role:'buyer',vessels:['NEENAH']},
+  {name:'Pierre Badin',firm:'Denison Yachting',email:'pierre@denisonyachting.com',mobile:'+33 620 015 846',role:'seller',vessels:['EVEREAST']},
+  {name:'Andriy Petrenko',firm:'Denison Yachting',email:'andriy@denisonyachting.com',mobile:'+33 6 95 30 62 73',role:'buyer',vessels:['EVEREAST']},
+  {name:'Sean McCarter',firm:'Northrop & Johnson',email:'Sean.McCarter@NorthropandJohnson.com',mobile:'+34 679 897 108',role:'seller',vessels:["L'HIPPOCAMPE"]},
+  {name:'Michael Bach',firm:'Ocean Independence',email:'mbach@ocyachts.com',role:'buyer',vessels:["L'HIPPOCAMPE"]},
+  {name:'Thomas Benson',firm:'Seymour Yachts',email:'tom.benson@seymouryachts.com',mobile:'+44 74 70 99 8422',role:'seller',vessels:['VON B II']},
+  {name:'Sofian Bouguerra',firm:'Prime Wake Family Office',role:'buyer',vessels:['VON B II']},
+  {name:'Jamie Small',firm:'Burgess',email:'jsmall@burgessyachts.com',mobile:'+34 672 070 005',role:'both',vessels:['PATEA']},
+  {name:'Dan Goodstadt',firm:'Elliman Yachts',email:'dan.goodstadt@elliman.com',role:'buyer',vessels:['CHECKED OUT']},
+  {name:'Harry Bristow-Holmes',firm:'Bristow-Holmes',email:'harry@bristow-holmes.com',mobile:'+44 7881 29 74 75',role:'both',vessels:['MAVERICK']},
+  {name:'Michael Selter',firm:'IYC',email:'mselter@iyc.com',mobile:'+1 619 265 6906',role:'seller',vessels:['NORMA JEAN']},
+  {name:'Eric Trupheme',firm:'Ocean Independence',email:'eric@ocyachts.com',mobile:'+33 6 21 59 03 70',role:'seller',vessels:['SOFIA OF TORTOLA']},
+  {name:'Cornelius Kistler',firm:'breezeYachting',email:'ck@breezeyachting.swiss',mobile:'+41 79 702 7000',role:'seller',vessels:['LE GYPSY']},
+  {name:'Dennis Frederiksen',firm:'Fraser',email:'dennis.frederiksen@fraseryachts.com',mobile:'+33 6 07 04 26 60',role:'seller',vessels:['SEA BREEZE']},
+  {name:'Manfred Haas',firm:'Haas International',mobile:'+41 414 500 500',role:'buyer',vessels:['SEA BREEZE']},
+  {name:'Andrew Bond',firm:'Edmiston',email:'ahb@edmiston.com',mobile:'+44 7734 405944',role:'seller',vessels:['VIRTUOSITY']},
+  {name:'Will Bagshaw',firm:'Edmiston',email:'WB@edmiston.com',role:'buyer',vessels:['VIRTUOSITY']},
+  {name:'David Westwood',firm:'TWW Yachts',email:'David@twwyachts.com',mobile:'+33 6 40 61 32 05',role:'seller',vessels:['WELLESLEY']},
+  {name:'Ben Ritchie',firm:'Y.CO',email:'br@y.co',mobile:'+33 626 001 023',role:'buyer',vessels:['WELLESLEY']},
+  {name:'Kevin Frawley',firm:'Resolute Yachting',email:'kevin@resoluteyachting.com',mobile:'954-790-0372',role:'seller',vessels:['FIFTY SHADES']},
+  {name:'Boomer Jousma',firm:'The Italian Yacht Group',email:'boomer@theiyg.com',mobile:'+1 (954) 600-4966',role:'buyer',vessels:['FIFTY SHADES']},
+  {name:'Marco Fodale',firm:'Fraser',email:'marco.fodale@fraseryachts.com',mobile:'+33 622 324 681',role:'seller',vessels:['DABMAR']},
+  {name:'Emma Karanova',firm:'breezeYachting',email:'emma@breezeyachting.swiss',mobile:'+41 79 702 7262',role:'buyer',vessels:['DABMAR']},
+  {name:'Max Minarek',firm:'Judel/Vrolijk',email:'max@judel-vrolijk.com',role:'seller',vessels:['CHEETAH MOON']},
+  {name:'Nicolas Marchand',firm:'Bernard Gallay',email:'nicolas.marchand@bernard-gallay.com',mobile:'+33 (0)6 83 47 01 96',role:'buyer',vessels:['CHEETAH MOON']},
+  {name:'Mohamad Ali Jannoun',firm:'Yacht Masters Monaco',role:'seller',vessels:["P'OCEAN"]},
+  {name:'Nicolas Bochno',firm:'Aqua Marine',email:'nicolasbochno@aquamarine.fr',mobile:'+33677908898',role:'buyer',vessels:["P'OCEAN"]},
+  {name:'Merle Wood',firm:'Merle Wood & Associates',email:'mwood@merlewood.com',mobile:'+1-954-646-8888',role:'seller',vessels:['BELLA VITA']},
+  {name:'Peter Redford',firm:'Fraser',email:'peter.redford@fraseryachts.com',mobile:'+61 (0)419 794 777',role:'both',vessels:['OURWAY']},
+];
+
+const OWNERS=[
+  {owner:'Jonathan Beckett',contact:'jbeckett@burgessyachts.com',vessel:'S/Y Agapi Mas',builder:'Southern Wind',length:30,year:2007,type:'S/Y'},
+  {owner:'Mehmet Sepil',contact:'mehmet.sepil@sepilholding.com',vessel:'M/Y Jasmin',builder:'RMK Marine',length:37,year:2003,type:'M/Y'},
+  {owner:'Devon Morehead',contact:'devon.morehead@gmail.com',vessel:'S/Y La Gatta',builder:'Lagoon',length:23.3,year:2019,type:'S/Y'},
+  {owner:'Mr Cortezi',contact:'Cortezi1300@gmail.com',vessel:'M/Y Limited Risks',builder:'Cheoy Lee',length:46,year:2007,type:'M/Y'},
+  {owner:'Enrico Gennasio',contact:'enrico.gennasio@alfagomma.com',vessel:'M/Y Alila',builder:'CNL',length:32,year:2005,type:'M/Y'},
+  {owner:'Dott.ssa Maria Luisa Siccardi',contact:'mlsiccardi@gmail.com\n+41 796201160',vessel:'S/Y Dag',builder:'Nautor Swan',length:24,year:1994,type:'S/Y'},
+  {owner:'Faris AL OMRAN',contact:'faris.alomran@gmail.com\n+966505222438',vessel:'M/Y Lady Ola',builder:'Broward',length:30,year:1984,type:'M/Y'},
+  {owner:'Koray Bayraktaroglu',contact:'koraybay@superonline.com\n+966553233161',vessel:'M/Y Ladyar B',builder:'Codecasa',length:26,year:1984,type:'M/Y'},
+  {owner:'Murat Ersoy',contact:'mersoy@atlasglb.com',vessel:'M/S Minalli',builder:'Naval Yachts',length:40,year:2012,type:'M/S'},
+  {owner:'Atilla Köse',contact:'mersoy@atlasglb.com\n+905322727328',vessel:'M/Y Hülya',builder:'SES Yachts',length:39,year:2000,type:'M/Y'},
+  {owner:'Özcan Cetinsoy',contact:'+905322953330',vessel:'M/Y Dali',builder:'Custom',length:28,year:2010,type:'M/Y'},
+  {owner:'Erden Timur',contact:'erden.timur@nef.com.tr\n+905322527888',vessel:'M/Y Monte Carlo',builder:'Amels',length:40,year:1988,type:'M/Y'},
+  {owner:'Troy Holford',contact:'troy@holfords.net',vessel:'M/Y Omnia',builder:'Pearl',length:24,year:2018,type:'M/Y'},
+  {owner:'Jeff Veatch',contact:'veatchj@icloud.com',vessel:'M/Y Inizio III',builder:'Benetti',length:29,year:2020,type:'M/Y'},
+  {owner:'Emir Uyar',contact:'Eemiruyar@gmail.com\n+905324420015',vessel:'S/Y Atlantika',builder:'CNT',length:40,year:2013,type:'S/Y'},
+  {owner:'Ana Cristina Carvalho',contact:'aninhabcarvalho@gmail.com\n+33 6 17 35 45 30',vessel:'M/Y Easygoing',builder:'Sunseeker',length:24,year:null,type:'M/Y'},
+  {owner:'Christiane Vausselin',contact:'c.vausselin@laposte.net\n+346 56 76 27 75',vessel:'M/Y Kristo',builder:'Sanlorenzo',length:37,year:2016,type:'M/Y'},
+  {owner:'Daria Khorishko',contact:'korsikana@gmail.com\n+385 98 405807',vessel:'M/Y Duke Town',builder:'Heesen',length:37,year:2002,type:'M/Y'},
+  {owner:'Vladislav Reznik',contact:'+7 985 924 10 17',vessel:'M/Y Sasha',builder:'Maiora',length:28,year:2001,type:'M/Y'},
+  {owner:'Tim Roberts',contact:'+44 774703442',vessel:'M/Y Serendipity',builder:'Sunseeker',length:24,year:2010,type:'M/Y'},
+  {owner:'Vania Vela',contact:'+44 7714002050',vessel:'M/Y Alexania',builder:'Sunseeker',length:34,year:2008,type:'M/Y'},
+  {owner:'—',contact:'ibgitlin@yahoo.com',vessel:'M/Y Monaliza',builder:'Westship',length:43,year:2001,type:'M/Y'},
+  {owner:'Dominique Marie Kirchoff',contact:'+49 172 7949010',vessel:'M/Y Bel Ami II',builder:'Codecasa',length:34,year:1988,type:'M/Y'},
+  {owner:"Michael Peters (Owner's Rep)",contact:'mike.peters@aquillochartering.com\n+44 7496 793962',vessel:'M/Y Tosun',builder:'Benetti',length:41,year:2022,type:'M/Y'},
+  {owner:"Andre Halikias (Owner's Rep)",contact:'saltiprotech@gmail.com\n+1 516 840 4600',vessel:'M/Y Cerca Trova',builder:'Westport',length:34,year:2011,type:'M/Y'},
+  {owner:'Ettore Lonati',contact:'gbattista.guerrini@lonati.com\n+393346620191',vessel:'M/Y New Master',builder:'Baglietto',length:44,year:2001,type:'M/Y'},
+  {owner:'Angus Littlejohn',contact:'alittlejohn@littlejohnllc.com',vessel:'M/Y Ninkasi',builder:'Holland Jachtbouw',length:42,year:2010,type:'M/Y'},
+  {owner:'Steve Fish',contact:'sdfsh46@gmail.com\n+1 860 916 8004',vessel:'M/Y Camille',builder:'Broward',length:38,year:2007,type:'M/Y'},
+  {owner:'Ichem Bouzenad',contact:'ichem.bouzenad@gmail.com',vessel:'M/Y Pixel',builder:'Cheoy Lee',length:28,year:2001,type:'M/Y'},
+];
+
+// =============================================
+// HELPERS
+// =============================================
+function esc(s){return(s||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
+function fmtDate(d){const dt=new Date(d+'T00:00:00');return dt.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
+function priceNum(p){if(!p||p==='—'||p==='POA')return 0;return parseFloat(p.replace(/,/g,''))||0;}
+function allEntries(){return Object.entries(db).flatMap(([d,arr])=>arr.map(e=>({...e,_date:d})));}
+function soldNames(){const s=new Set();Object.values(db).flat().forEach(e=>{if(e.type==='sold')s.add(e.name);});return s;}
+function toast(msg,dur=3000){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),dur);}
+function getContactsForVessel(v){return CONTACTS.filter(c=>c.vessels&&c.vessels.includes(v));}
+function getContactsForFirm(f){return CONTACTS.filter(c=>normBR(c.firm)===normBR(f));}
+
+// =============================================
+// NAV
+// =============================================
+let activeDate='';
+let pageStack=['daily'];
+
+function init(){
+  activeDate=Object.keys(db).sort().reverse()[0]||'';
+  buildDateSelect();
+  renderDaily();
+}
+
+function gotoPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item,.mobile-nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  const ni=document.getElementById('nav-'+id);if(ni)ni.classList.add('active');
+  if(id==='analytics')renderAnalytics();
+  if(id==='owners')renderOwners();
+  if(id==='search'){document.getElementById('search-q').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to search…</div>';}
+  pageStack=[id];
+}
+function pushPage(id){pageStack.push(id);document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');}
+function goBack(){pageStack.pop();const id=pageStack[pageStack.length-1]||'daily';document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');if(id==='analytics')renderAnalytics();if(id==='owners')renderOwners();}
+function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open');}
+function buildDateSelect(){const sel=document.getElementById('date-select');const dates=Object.keys(db).sort().reverse();sel.innerHTML=dates.map(d=>`<option value="${d}"${d===activeDate?' selected':''}>${fmtDate(d)}</option>`).join('');}
+function switchDate(d){activeDate=d;document.getElementById('active-date-label').textContent=fmtDate(d);renderDaily();}
+
+// =============================================
+// IMAGE HTML
+// =============================================
+function cardImg(name,imgUrl){
+  const url=getImg(name,imgUrl);
+  return url
+    ? `<img class="card-img" src="${url}" alt="${name}" onclick="openVesselPage('${esc(name)}','${activeDate}')" onerror="this.outerHTML='<div class=\\'card-img-placeholder\\'><span class=\\'ship-icon\\'>🛥️</span><span class=\\'ship-name\\'>${name}</span></div>'">`
+    : `<div class="card-img-placeholder" onclick="openVesselPage('${esc(name)}','${activeDate}')"><span class="ship-icon">🛥️</span><span class="ship-name">${name}</span></div>`;
+}
+function detailImg(name,imgUrl){
+  const url=getImg(name,imgUrl);
+  return url
+    ? `<img class="vessel-detail-img" src="${url}" alt="${name}" onerror="this.outerHTML='<div class=\\'vessel-detail-img-placeholder\\'><span style=\\'font-size:60px\\'>🛥️</span></div>'">`
+    : `<div class="vessel-detail-img-placeholder"><span style="font-size:60px">🛥️</span><span style="font-size:14px;color:#bbb;margin-top:8px">${name}</span></div>`;
+}
+
+// =============================================
+// CARD COMPONENTS
+// =============================================
+function brokerSpan(b){if(!b||b==='—')return '<span>—</span>';return `<button class="broker-link" onclick="openBroker('${esc(b)}');event.stopPropagation()">${b}</button>`;}
+function builderSpan(b){if(!b)return '';return `<button class="yacht-builder-link" onclick="openBuilderPage('${esc(b)}');event.stopPropagation()">${b}</button>`;}
+function caTag(t){return `<span class="ca-tag ca-${t||'CA'}">${t||'CA'}</span>`;}
+function contactPanel(c,role){return `<div class="sold-broker-panel"><h4>${role||c.role}</h4><div class="sold-broker-name">${c.name||'—'}</div><div class="sold-broker-firm">${c.firm||'—'}</div><div class="sold-broker-info">${c.email?`<a href="mailto:${c.email}">✉ ${c.email}</a>`:''}${c.mobile?`<span>📞 ${c.mobile}</span>`:''}</div></div>`;}
+
+function card(e){
+  const bgs={new:'badge-new',reduction:'badge-reduction',sold:'badge-sold',launch:'badge-launch',cachange:'badge-cachange'};
+  const lbs={new:'New Listing',reduction:'Price Reduction',sold:'Sold',launch:'New Launch',cachange:'CA Change'};
+  let brokerHtml='';
+  if(e.type==='sold') brokerHtml=`<div class="card-brokers"><span>Seller:</span>${brokerSpan(e.soldseller)}<span>Buyer:</span>${brokerSpan(e.soldbuyer)}</div>`;
+  else if(e.type==='cachange') brokerHtml=`<div class="ca-change-info">Was: ${brokerSpan(e.cafrom)} → Now: ${brokerSpan(e.cato)}</div>`;
+  else if(e.broker&&e.broker!=='—'&&e.type!=='launch') brokerHtml=`<div class="card-brokers"><span>Broker:</span>${brokerSpan(e.broker)}${caTag(e.catype)}</div>`;
+  let priceHtml='',rightHtml='';
+  if(e.price&&e.price!=='—'&&e.price!=='POA'){
+    if((e.cur==='USD'||e.cur==='GBP')&&e.est) priceHtml=`<div><div class="price-est">(€${e.est} est.)</div><div class="price-main">${S[e.cur]}${e.price} ${e.cur}</div></div>`;
+    else priceHtml=`<div><div class="price-main">${S[e.cur]||'€'}${e.price}${e.cur==='EUR'?' EUR':' '+e.cur}</div></div>`;
+  }
+  if(e.type==='reduction'&&e.oldprice) rightHtml=`<div style="text-align:right"><div class="price-old">${S[e.oldcur||e.cur]||'€'}${e.oldprice}</div><div class="reduc-arrow">▼ Reduced</div></div>`;
+  const priceRow=priceHtml||rightHtml?`<div class="card-price">${priceHtml}<div>${rightHtml}</div></div>`:'';
+  return `<div class="yacht-card">
+    ${cardImg(e.name,e.img)}
+    <div class="card-top"><div>
+      <button class="yacht-name-link" onclick="openVesselPage('${esc(e.name)}','${esc(e._date||activeDate)}')">${e.name}</button>
+      ${builderSpan(e.builder)}
+    </div><span class="type-badge ${bgs[e.type]||'badge-new'}">${lbs[e.type]||e.type}</span></div>
+    <div class="card-meta">${e.length?`<span class="meta-item">📏 ${e.length}m</span>`:''}${e.year?`<span class="meta-item">🗓 ${e.year}</span>`:''}${e.location?`<span class="meta-item">📍 ${e.location}</span>`:''}</div>
+    ${priceRow}${brokerHtml}
+  </div>`;
+}
+
+// =============================================
+// DAILY
+// =============================================
+function renderDaily(){
+  if(!activeDate){document.getElementById('daily-content').innerHTML='<div style="padding:40px;text-align:center;color:var(--mu)">Loading…</div>';return;}
+  document.getElementById('active-date-label').textContent=fmtDate(activeDate);
+  const entries=db[activeDate]||[];
+  const c={new:0,reduction:0,sold:0,launch:0};
+  entries.forEach(e=>{if(c[e.type]!==undefined)c[e.type]++;});
+  document.getElementById('cnt-new').textContent=c.new;
+  document.getElementById('cnt-red').textContent=c.reduction;
+  document.getElementById('cnt-sold').textContent=c.sold;
+  document.getElementById('cnt-launch').textContent=c.launch;
+  const secs=[{key:'new',label:'New Listings',color:'var(--bl)',dot:'#1a6faf'},{key:'reduction',label:'Price Reductions',color:'var(--or)',dot:'#E87722'},{key:'sold',label:'Sold',color:'var(--gr)',dot:'#1a9648'},{key:'cachange',label:'CA Changes',color:'#888',dot:'#aaa'},{key:'launch',label:'New Launches',color:'var(--pu)',dot:'#7c3aed'}];
+  let html='';
+  secs.forEach(s=>{const items=entries.filter(e=>e.type===s.key);if(!items.length)return;html+=`<div class="section"><div class="section-header"><div class="dot" style="background:${s.dot}"></div><span class="section-title" style="color:${s.color}">${s.label}</span><span class="section-count">${items.length}</span></div><div class="yacht-grid">${items.map(e=>card({...e,_date:activeDate})).join('')}</div></div>`;});
+  document.getElementById('daily-content').innerHTML=html||'<div style="padding:40px;text-align:center;color:var(--mu)">No entries for this date.</div>';
+}
+
+// =============================================
+// VESSEL PAGE
+// =============================================
+function openVesselPage(name,date){
+  const all=allEntries();
+  const entries=all.filter(e=>e.name===name).sort((a,b)=>b._date.localeCompare(a._date));
+  if(!entries.length)return;
+  const e=entries[0];
+  document.getElementById('vessel-page-title').textContent=name;
+  const typeLabel={new:'New Listing',reduction:'Price Reduction',sold:'Sold',launch:'New Launch',cachange:'CA Change'};
+  const contacts=getContactsForVessel(name);
+  let contactsHtml='';
+  if(contacts.length){
+    const sellers=contacts.filter(c=>c.role==='seller'||c.role==='both');
+    const buyers=contacts.filter(c=>c.role==='buyer'||c.role==='both');
+    if(e.type==='sold'&&(sellers.length||buyers.length)) contactsHtml=`<div style="margin-top:16px"><div style="font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Broker Contacts</div><div class="sold-brokers-grid"><div>${sellers.map(c=>contactPanel(c,'Seller Broker')).join('')}</div><div>${buyers.map(c=>contactPanel(c,'Buyer Broker')).join('')}</div></div></div>`;
+    else contactsHtml=`<div style="margin-top:16px"><div style="font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Broker Contacts</div>${contacts.map(c=>contactPanel(c)).join('')}</div>`;
+  }
+  const histRows=entries.map(en=>`<tr><td>${fmtDate(en._date)}</td><td>${typeLabel[en.type]||en.type}</td><td>${en.price&&en.price!=='—'?(S[en.cur]||'€')+en.price:''}</td><td>${en.broker||en.soldseller||en.cafrom||'—'}</td></tr>`).join('');
+  document.getElementById('vessel-content').innerHTML=`
+    <div class="vessel-detail">
+      ${detailImg(name,e.img)}
+      <div class="vessel-detail-body">
+        <div class="vessel-detail-name">${name}</div>
+        <button class="vessel-detail-builder" onclick="openBuilderPage('${esc(e.builder)}')">${e.builder||'—'}</button>
+        <div class="vessel-detail-grid">
+          <div class="vessel-detail-item"><div class="vessel-detail-label">Length</div><div class="vessel-detail-val">${e.length?e.length+'m':'—'}</div></div>
+          <div class="vessel-detail-item"><div class="vessel-detail-label">Year</div><div class="vessel-detail-val">${e.year||'—'}</div></div>
+          <div class="vessel-detail-item"><div class="vessel-detail-label">Location</div><div class="vessel-detail-val">${e.location||'—'}</div></div>
+          <div class="vessel-detail-item"><div class="vessel-detail-label">Price</div><div class="vessel-detail-val" style="color:var(--or)">${e.price&&e.price!=='—'?(S[e.cur]||'€')+e.price:'—'}</div></div>
+          <div class="vessel-detail-item"><div class="vessel-detail-label">Status</div><div class="vessel-detail-val">${typeLabel[e.type]||e.type}</div></div>
+          <div class="vessel-detail-item"><div class="vessel-detail-label">Builder</div><div class="vessel-detail-val">${e.builder||'—'}</div></div>
+        </div>
+        ${contactsHtml}
+      </div>
+    </div>
+    <div class="table-card"><div class="table-header">Activity History</div><div class="table-scroll"><table><thead><tr><th>Date</th><th>Type</th><th>Price</th><th>Broker</th></tr></thead><tbody>${histRows}</tbody></table></div></div>`;
+  pushPage('vessel');
+}
+
+// =============================================
+// BROKER PAGE
+// =============================================
+function openBroker(broker){
+  const norm=normBR(broker);
+  document.getElementById('broker-page-title').textContent=norm;
+  const all=allEntries();const match=b=>b&&normBR(b)===norm;
+  const listings=all.filter(e=>e.type==='new'&&match(e.broker));
+  const reductions=all.filter(e=>e.type==='reduction'&&match(e.broker));
+  const soldS=all.filter(e=>e.type==='sold'&&match(e.soldseller));
+  const soldB=all.filter(e=>e.type==='sold'&&match(e.soldbuyer));
+  const contacts=getContactsForFirm(norm);
+  let html=`<div class="detail-header"><div class="detail-header-info"><h2>${norm}</h2><div class="detail-stats"><div class="detail-stat"><strong>${listings.length}</strong>Listings</div><div class="detail-stat"><strong>${reductions.length}</strong>Reductions</div><div class="detail-stat"><strong>${soldS.length+soldB.length}</strong>Sales</div></div></div></div>`;
+  if(contacts.length) html+=`<div style="margin-bottom:16px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--mu);letter-spacing:1px;margin-bottom:10px">Team</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px">${contacts.map(c=>`<div class="broker-contact-card" onclick="openContactPage('${esc(c.name)}')"><div class="broker-contact-name">${c.name}</div><div class="broker-contact-firm">${c.firm}</div><div class="broker-contact-details">${c.email?`<a href="mailto:${c.email}">✉ ${c.email}</a>`:''}${c.mobile?`<span>📞 ${c.mobile}</span>`:''}</div></div>`).join('')}</div></div>`;
+  function sec(title,items,dot){if(!items.length)return '';return `<div class="section"><div class="section-header"><div class="dot" style="background:${dot}"></div><span class="section-title" style="color:${dot}">${title}</span><span class="section-count">${items.length}</span></div><div class="yacht-grid">${items.map(e=>card(e)).join('')}</div></div>`;}
+  html+=sec('New Listings',listings,'#1a6faf')+sec('Price Reductions',reductions,'#E87722')+sec('Sales as Seller',soldS,'#1a9648')+sec('Sales as Buyer',soldB,'#7c3aed');
+  document.getElementById('broker-content').innerHTML=html;pushPage('broker');
+}
+
+function openContactPage(name){
+  const c=CONTACTS.find(x=>x.name===name);if(!c)return;
+  document.getElementById('contact-page-title').textContent=c.name;
+  const deals=allEntries().filter(e=>c.vessels&&c.vessels.includes(e.name));
+  document.getElementById('contact-content').innerHTML=`<div class="detail-header" style="flex-direction:column"><h2>${c.name}</h2><div style="font-size:14px;color:var(--or);font-weight:600;margin-top:4px;cursor:pointer" onclick="openBroker('${esc(c.firm)}')">${c.firm}</div><div class="broker-contact-details" style="margin-top:10px">${c.email?`<a href="mailto:${c.email}" style="font-size:13px">✉ ${c.email}</a>`:''}${c.mobile?`<span style="font-size:13px">📞 ${c.mobile}</span>`:''}</div></div><div class="section"><div class="section-header"><span class="section-title">Deals</span><span class="section-count">${deals.length}</span></div><div class="yacht-grid">${deals.map(e=>card(e)).join('')}</div></div>`;
+  pushPage('contact');
+}
+
+function openBuilderPage(builder){
+  const norm=normB(builder?builder.toUpperCase():builder)||builder;
+  document.getElementById('cat-page-title').textContent=norm;
+  const all=allEntries().filter(e=>e.builder&&normB(e.builder.toUpperCase())===norm).sort((a,b)=>b._date.localeCompare(a._date));
+  document.getElementById('cat-content').innerHTML=`<div class="detail-header"><div class="detail-header-info"><h2>${norm}</h2><div class="detail-stats"><div class="detail-stat"><strong>${all.length}</strong>Total Entries</div></div></div></div><div class="yacht-grid">${all.map(e=>card(e)).join('')}</div>`;
+  pushPage('category');
+}
+
+function openCategory(type,label){
+  document.getElementById('cat-page-title').textContent=label;
+  const all=allEntries().filter(e=>e.type===type).sort((a,b)=>b._date.localeCompare(a._date));
+  document.getElementById('cat-content').innerHTML=`<div class="section"><div class="section-header"><span class="section-title">${label}</span><span class="section-count">${all.length}</span></div><div class="yacht-grid">${all.map(e=>card(e)).join('')}</div></div>`;
+  pushPage('category');
+}
+
+// =============================================
+// SEARCH
+// =============================================
+function runSearch(){
+  const q=document.getElementById('search-q').value.trim().toLowerCase();
+  if(q.length<2){document.getElementById('search-results').innerHTML='<div class="search-empty">Type at least 2 characters…</div>';return;}
+  const all=allEntries();
+  const byVessel=all.filter(e=>e.name&&e.name.toLowerCase().includes(q));
+  const buildersSeen=new Set(),byBuilder=[];
+  all.forEach(e=>{if(e.builder&&e.builder.toLowerCase().includes(q)&&!buildersSeen.has(e.builder)){buildersSeen.add(e.builder);byBuilder.push(e.builder);}});
+  const brokersSeen=new Set(),byBroker=[];
+  all.forEach(e=>{[e.broker,e.soldseller,e.soldbuyer].forEach(b=>{if(b&&b!=='—'&&b.toLowerCase().includes(q)&&!brokersSeen.has(b)){brokersSeen.add(b);byBroker.push(b);}});});
+  const byContact=CONTACTS.filter(c=>c.name.toLowerCase().includes(q)||c.firm.toLowerCase().includes(q));
+  const byOwner=OWNERS.filter(o=>o.owner.toLowerCase().includes(q)||o.vessel.toLowerCase().includes(q)||o.builder.toLowerCase().includes(q));
+  const typeLabel={new:'New Listing',reduction:'Price Reduction',sold:'Sold',launch:'New Launch',cachange:'CA Change'};
+  let html='';
+  if(byVessel.length){html+=`<div class="search-result-section"><div class="search-result-title">Vessels (${byVessel.length})</div>`;byVessel.sort((a,b)=>b._date.localeCompare(a._date)).forEach(e=>{const url=getImg(e.name,e.img);html+=`<div class="search-hit" onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')"><div class="search-hit-img">${url?`<img src="${url}" alt="${e.name}">`:'🛥️'}</div><div><div class="search-hit-name">${e.name}</div><div class="search-hit-sub">${e.builder||''}${e.length?' · '+e.length+'m':''}${e.year?' · '+e.year:''} — ${typeLabel[e.type]} — ${fmtDate(e._date)}</div></div></div>`;});html+='</div>';}
+  if(byOwner.length){html+=`<div class="search-result-section"><div class="search-result-title">Owners (${byOwner.length})</div>`;byOwner.forEach(o=>{html+=`<div class="search-hit" onclick="openOwnerDetail(${OWNERS.indexOf(o)})"><div class="search-hit-img">👑</div><div><div class="search-hit-name">${o.vessel}</div><div class="search-hit-sub">${o.owner} · ${o.builder} ${o.length}m</div></div></div>`;});html+='</div>';}
+  if(byContact.length){html+=`<div class="search-result-section"><div class="search-result-title">Broker Contacts (${byContact.length})</div>`;byContact.forEach(c=>{html+=`<div class="search-hit" onclick="openContactPage('${esc(c.name)}')"><div class="search-hit-img">👤</div><div><div class="search-hit-name">${c.name}</div><div class="search-hit-sub">${c.firm}${c.email?' · '+c.email:''}</div></div></div>`;});html+='</div>';}
+  if(byBuilder.length){html+=`<div class="search-result-section"><div class="search-result-title">Builders (${byBuilder.length})</div>`;byBuilder.forEach(b=>{html+=`<div class="search-hit" onclick="openBuilderPage('${esc(b)}')"><div class="search-hit-img">🏭</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${all.filter(e=>e.builder===b).length} entries</div></div></div>`;});html+='</div>';}
+  if(byBroker.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokerages (${byBroker.length})</div>`;byBroker.forEach(b=>{html+=`<div class="search-hit" onclick="openBroker('${esc(b)}')"><div class="search-hit-img">🤝</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${all.filter(e=>[e.broker,e.soldseller,e.soldbuyer].includes(b)).length} entries</div></div></div>`;});html+='</div>';}
+  document.getElementById('search-results').innerHTML=html||'<div class="search-empty">No results found.</div>';
+}
+
+// =============================================
+// ANALYTICS
+// =============================================
+let anSoldSort='date',anSoldDir=1,anSoldLenFilter='all',anSoldYearFrom=null,anSoldYearTo=null,anSoldPriceFrom=null,anSoldPriceTo=null;
+let anNewSort='date',anNewDir=1,anNewLenFilter='all',anNewYearFrom=null,anNewYearTo=null,anNewPriceFrom=null,anNewPriceTo=null;
+
+function makeRangeSlider(id,min,max,lo,hi,color,cb){
+  const c=document.getElementById(id);if(!c)return;
+  let L=lo,H=hi;
+  function pct(v){return((v-min)/(max-min))*100;}
+  function render(){c.querySelector('.rf').style.left=pct(L)+'%';c.querySelector('.rf').style.width=(pct(H)-pct(L))+'%';c.querySelector('.tl').style.left=pct(L)+'%';c.querySelector('.th').style.left=pct(H)+'%';c.querySelector('.ll').textContent=L;c.querySelector('.lh').textContent=H;cb(L,H);}
+  function drag(thumb,isLo){thumb.addEventListener('pointerdown',ev=>{ev.preventDefault();thumb.setPointerCapture(ev.pointerId);const tr=c.querySelector('.rt');function mv(e){const r=tr.getBoundingClientRect();let p=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));let v=Math.round(min+p*(max-min));if(isLo)L=Math.min(v,H);else H=Math.max(v,L);render();}thumb.addEventListener('pointermove',mv);thumb.addEventListener('pointerup',()=>thumb.removeEventListener('pointermove',mv),{once:true});});}
+  c.innerHTML=`<div style="display:flex;justify-content:space-between;font-size:10px;font-weight:700;color:#333;margin-bottom:2px"><span class="ll"></span><span class="lh"></span></div><div class="rt" style="position:relative;height:20px;display:flex;align-items:center"><div style="position:absolute;left:0;right:0;height:4px;background:var(--sf2);border-radius:2px"></div><div class="rf" style="position:absolute;height:4px;background:${color};border-radius:2px"></div><div class="tl" style="position:absolute;width:14px;height:14px;background:${color};border-radius:50%;cursor:pointer;transform:translateX(-50%);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);z-index:2;touch-action:none"></div><div class="th" style="position:absolute;width:14px;height:14px;background:${color};border-radius:50%;cursor:pointer;transform:translateX(-50%);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);z-index:2;touch-action:none"></div></div>`;
+  drag(c.querySelector('.tl'),true);drag(c.querySelector('.th'),false);render();
+}
+
+function setSort(t,k){if(t==='sold'){if(anSoldSort===k)anSoldDir*=-1;else{anSoldSort=k;anSoldDir=1;}renderSoldTable();}else{if(anNewSort===k)anNewDir*=-1;else{anNewSort=k;anNewDir=1;}renderNewTable();}}
+function updateSortBtns(t){const s=t==='sold'?anSoldSort:anNewSort,d=t==='sold'?anSoldDir:anNewDir,p=t==='sold'?'sbt':'nbt';['date','length','year','price'].forEach(k=>{const b=document.getElementById(p+'-'+k);if(!b)return;b.textContent=k.charAt(0).toUpperCase()+k.slice(1)+' '+(s===k?(d===1?'↓':'↑'):'↕');b.classList.toggle('active',s===k);});}
+function filterLen(items,f){if(f==='all')return items;const[mn,mx]=f.split('-').map(Number);return items.filter(e=>e.length&&parseFloat(e.length)>=mn&&parseFloat(e.length)<mx);}
+function applySort(items,s,d){const r=[...items];if(s==='date')r.sort((a,b)=>d*b._date.localeCompare(a._date));else if(s==='length')r.sort((a,b)=>d*((parseFloat(b.length)||0)-(parseFloat(a.length)||0)));else if(s==='year')r.sort((a,b)=>d*((b.year||0)-(a.year||0)));else if(s==='price')r.sort((a,b)=>d*(priceNum(b.price)-priceNum(a.price)));return r;}
+
+function renderSoldTable(){
+  updateSortBtns('sold');
+  let items=allEntries().filter(e=>e.type==='sold');
+  items=filterLen(items,anSoldLenFilter);
+  if(anSoldYearFrom!==null)items=items.filter(e=>!e.year||(e.year>=anSoldYearFrom&&e.year<=anSoldYearTo));
+  if(anSoldPriceFrom!==null)items=items.filter(e=>{const p=priceNum(e.price);return p===0||(p>=anSoldPriceFrom&&p<=anSoldPriceTo);});
+  items=applySort(items,anSoldSort,anSoldDir);
+  const rows=items.map(e=>`<tr onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')" style="cursor:pointer"><td class="td-name">${e.name}</td><td>${e.builder||'—'}</td><td>${e.length?e.length+'m':'—'}</td><td>${e.year||'—'}</td><td>${e.price&&e.price!=='—'?(S[e.cur]||'€')+e.price:''}</td><td>${e.soldseller||'—'}</td><td>${e.soldbuyer||'—'}</td><td>${fmtDate(e._date)}</td></tr>`).join('');
+  const b=document.getElementById('sold-table-body');if(b)b.innerHTML=`<div class="table-scroll"><table><thead><tr><th>Vessel</th><th>Builder</th><th>Length</th><th>Year</th><th>Price</th><th>Seller</th><th>Buyer</th><th>Date</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+function renderNewTable(){
+  updateSortBtns('new');
+  const soldSet=soldNames();
+  let items=allEntries().filter(e=>e.type==='new'&&!soldSet.has(e.name));
+  items=filterLen(items,anNewLenFilter);
+  if(anNewYearFrom!==null)items=items.filter(e=>!e.year||(e.year>=anNewYearFrom&&e.year<=anNewYearTo));
+  if(anNewPriceFrom!==null)items=items.filter(e=>{const p=priceNum(e.price);return p===0||(p>=anNewPriceFrom&&p<=anNewPriceTo);});
+  items=applySort(items,anNewSort,anNewDir);
+  const rows=items.map(e=>`<tr onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')" style="cursor:pointer"><td class="td-name">${e.name}</td><td>${e.builder||'—'}</td><td>${e.length?e.length+'m':'—'}</td><td>${e.year||'—'}</td><td>${e.price&&e.price!=='—'?(e.est?`€${e.est} est. `:'')+(e.cur==='EUR'?`€${e.price}`:`${S[e.cur]}${e.price}`):e.price||'—'}</td><td>${e.location||'—'}</td><td>${e.broker||'—'}</td><td>${fmtDate(e._date)}</td></tr>`).join('');
+  const b=document.getElementById('new-table-body');if(b)b.innerHTML=`<div class="table-scroll"><table><thead><tr><th>Vessel</th><th>Builder</th><th>Length</th><th>Year</th><th>Price</th><th>Location</th><th>Broker</th><th>Date</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+
+function renderAnalytics(){
+  const all=allEntries();
+  const totNew=all.filter(e=>e.type==='new').length,totSold=all.filter(e=>e.type==='sold').length,totRed=all.filter(e=>e.type==='reduction').length,totLaunch=all.filter(e=>e.type==='launch').length;
+  const lengths=all.filter(e=>e.length).map(e=>parseFloat(e.length));
+  const avgLen=lengths.length?(lengths.reduce((a,b)=>a+b,0)/lengths.length).toFixed(1):'—';
+  const bMap={};all.forEach(e=>{[e.broker,e.soldseller,e.soldbuyer].forEach(b=>{if(b&&b!=='—')bMap[b]=(bMap[b]||0)+1;});});
+  const topB=Object.entries(bMap).sort((a,b)=>b[1]-a[1]).slice(0,8);const maxB=topB[0]?.[1]||1;
+  const blMap={};all.forEach(e=>{if(e.builder)blMap[e.builder]=(blMap[e.builder]||0)+1;});
+  const topBl=Object.entries(blMap).sort((a,b)=>b[1]-a[1]).slice(0,6);const maxBl=topBl[0]?.[1]||1;
+  const locMap={};all.forEach(e=>{if(e.location){const l=e.location.trim();locMap[l]=(locMap[l]||0)+1;}});
+  const topLoc=Object.entries(locMap).sort((a,b)=>b[1]-a[1]);
+  const total=all.length||1;
+  const typePcts=[{label:'New Listings',pct:Math.round(totNew/total*100),col:'#1a6faf',type:'new'},{label:'Sold',pct:Math.round(totSold/total*100),col:'#1a9648',type:'sold'},{label:'Price Reductions',pct:Math.round(totRed/total*100),col:'#E87722',type:'reduction'},{label:'New Launches',pct:Math.round(totLaunch/total*100),col:'#7c3aed',type:'launch'}];
+  const activeDates=Object.keys(db).filter(d=>db[d]&&db[d].length>0).sort();
+  const trendData={new:activeDates.map(d=>(db[d]||[]).filter(e=>e.type==='new').length),sold:activeDates.map(d=>(db[d]||[]).filter(e=>e.type==='sold').length),reduction:activeDates.map(d=>(db[d]||[]).filter(e=>e.type==='reduction').length)};
+  const allYears=all.map(e=>e.year).filter(Boolean).map(Number);
+  const minY=allYears.length?Math.min(...allYears):1970,maxY=allYears.length?Math.max(...allYears):2027;
+  if(anSoldYearFrom===null){anSoldYearFrom=minY;anSoldYearTo=maxY;}
+  if(anNewYearFrom===null){anNewYearFrom=minY;anNewYearTo=maxY;}
+  const soldPrices=all.filter(e=>e.type==='sold'&&priceNum(e.price)>0).map(e=>priceNum(e.price));
+  const newPrices=all.filter(e=>e.type==='new'&&priceNum(e.price)>0).map(e=>priceNum(e.price));
+  const minSP=soldPrices.length?Math.min(...soldPrices):0,maxSP=soldPrices.length?Math.max(...soldPrices):100000000;
+  const minNP=newPrices.length?Math.min(...newPrices):0,maxNP=newPrices.length?Math.max(...newPrices):100000000;
+  if(anSoldPriceFrom===null){anSoldPriceFrom=minSP;anSoldPriceTo=maxSP;}
+  if(anNewPriceFrom===null){anNewPriceFrom=minNP;anNewPriceTo=maxNP;}
+
+  document.getElementById('analytics-content').innerHTML=`
+  <div class="analytics-grid">
+    <div class="a-card"><div class="a-label">Total Entries</div><div class="a-val">${all.length}</div><div class="a-sub">across ${activeDates.length} days</div></div>
+    <div class="a-card"><div class="a-label">New Listings</div><div class="a-val">${totNew}</div></div>
+    <div class="a-card"><div class="a-label">Sales</div><div class="a-val">${totSold}</div></div>
+    <div class="a-card"><div class="a-label">Avg Length</div><div class="a-val">${avgLen}m</div></div>
+  </div>
+  <div class="trend-card">
+    <div class="chart-title">Activity Trend <span style="font-size:9px;color:var(--mu)">(click a point to jump to that date)</span></div>
+    <div><canvas id="trendChart" style="width:100%;height:200px"></canvas></div>
+    <div class="trend-legend"><div class="legend-item"><div class="legend-dot" style="background:#1a6faf"></div>New</div><div class="legend-item"><div class="legend-dot" style="background:#1a9648"></div>Sold</div><div class="legend-item"><div class="legend-dot" style="background:#E87722"></div>Reductions</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card"><div class="chart-title">Top Brokerages</div>${topB.map(([b,v])=>`<div class="bar-row"><div class="bar-label" onclick="openBroker('${esc(b)}')">${b}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/maxB*100)}%"></div></div><div class="bar-val">${v}</div></div>`).join('')}</div>
+    <div class="chart-card"><div class="chart-title">Activity Breakdown</div>${typePcts.filter(t=>t.pct>0).map(t=>`<div class="pie-row" onclick="openCategory('${t.type}','${t.label}')"><div class="pie-dot" style="background:${t.col}"></div><div class="pie-label">${t.label}</div><div class="pie-pct" style="color:${t.col}">${t.pct}%</div></div>`).join('')}<div style="margin-top:12px;height:7px;border-radius:4px;overflow:hidden;display:flex">${typePcts.filter(t=>t.pct>0).map(t=>`<div style="width:${t.pct}%;background:${t.col}"></div>`).join('')}</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card"><div class="chart-title">Top Builders</div>${topBl.map(([b,v])=>`<div class="bar-row"><div class="bar-label" onclick="openBuilderPage('${esc(b)}')">${b}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/maxBl*100)}%;background:#7c3aed"></div></div><div class="bar-val">${v}</div></div>`).join('')}</div>
+    <div class="chart-card"><div class="chart-title">Length Distribution</div>${[['<30m',0,30],['30–40m',30,40],['40–50m',40,50],['50m+',50,999]].map(([l,mn,mx])=>{const cnt=all.filter(e=>e.length&&parseFloat(e.length)>=mn&&parseFloat(e.length)<mx).length;return `<div class="bar-row"><div class="bar-label">${l}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.round(cnt/total*100)}%;background:#1a6faf"></div></div><div class="bar-val">${cnt}</div></div>`;}).join('')}</div>
+  </div>
+  <div class="chart-card" style="margin-bottom:12px"><div class="chart-title">Listings by Country</div><div class="location-grid">${topLoc.slice(0,18).map(([loc,cnt])=>`<div class="location-item"><div class="location-country">${loc}</div><div class="location-count">${cnt}</div></div>`).join('')}</div></div>
+  <div class="table-card">
+    <div class="table-header"><span>All Sold Yachts</span>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <div><div style="font-size:9px;font-weight:700;color:var(--mu);text-transform:uppercase;margin-bottom:2px">Year</div><div id="sold-year-sl" style="width:150px"></div></div>
+        <div><div style="font-size:9px;font-weight:700;color:var(--mu);text-transform:uppercase;margin-bottom:2px">Price €M</div><div id="sold-price-sl" style="width:150px"></div></div>
+        <select class="filter-select" onchange="anSoldLenFilter=this.value;renderSoldTable()"><option value="all">All lengths</option><option value="0-25">&lt;25m</option><option value="25-35">25–35m</option><option value="35-45">35–45m</option><option value="45-55">45–55m</option><option value="55-999">55m+</option></select>
+        <div style="display:flex;gap:4px"><button id="sbt-date" class="sort-btn" onclick="setSort('sold','date')">Date ↕</button><button id="sbt-length" class="sort-btn" onclick="setSort('sold','length')">Length ↕</button><button id="sbt-year" class="sort-btn" onclick="setSort('sold','year')">Year ↕</button><button id="sbt-price" class="sort-btn" onclick="setSort('sold','price')">Price ↕</button></div>
+      </div>
+    </div>
+    <div id="sold-table-body"></div>
+  </div>
+  <div class="table-card">
+    <div class="table-header"><span>All New Listings (excl. sold)</span>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <div><div style="font-size:9px;font-weight:700;color:var(--mu);text-transform:uppercase;margin-bottom:2px">Year</div><div id="new-year-sl" style="width:150px"></div></div>
+        <div><div style="font-size:9px;font-weight:700;color:var(--mu);text-transform:uppercase;margin-bottom:2px">Price €M</div><div id="new-price-sl" style="width:150px"></div></div>
+        <select class="filter-select" onchange="anNewLenFilter=this.value;renderNewTable()"><option value="all">All lengths</option><option value="0-25">&lt;25m</option><option value="25-35">25–35m</option><option value="35-45">35–45m</option><option value="45-55">45–55m</option><option value="55-999">55m+</option></select>
+        <div style="display:flex;gap:4px"><button id="nbt-date" class="sort-btn" onclick="setSort('new','date')">Date ↕</button><button id="nbt-length" class="sort-btn" onclick="setSort('new','length')">Length ↕</button><button id="nbt-year" class="sort-btn" onclick="setSort('new','year')">Year ↕</button><button id="nbt-price" class="sort-btn" onclick="setSort('new','price')">Price ↕</button></div>
+      </div>
+    </div>
+    <div id="new-table-body"></div>
+  </div>`;
+
+  makeRangeSlider('sold-year-sl',minY,maxY,anSoldYearFrom,anSoldYearTo,'var(--or)',(lo,hi)=>{anSoldYearFrom=lo;anSoldYearTo=hi;renderSoldTable();});
+  makeRangeSlider('new-year-sl',minY,maxY,anNewYearFrom,anNewYearTo,'var(--or)',(lo,hi)=>{anNewYearFrom=lo;anNewYearTo=hi;renderNewTable();});
+  makeRangeSlider('sold-price-sl',Math.floor(minSP/1e6),Math.ceil(maxSP/1e6),Math.floor(anSoldPriceFrom/1e6),Math.ceil(anSoldPriceTo/1e6),'var(--bl)',(lo,hi)=>{anSoldPriceFrom=lo*1e6;anSoldPriceTo=hi*1e6;renderSoldTable();});
+  makeRangeSlider('new-price-sl',Math.floor(minNP/1e6),Math.ceil(maxNP/1e6),Math.floor(anNewPriceFrom/1e6),Math.ceil(anNewPriceTo/1e6),'var(--bl)',(lo,hi)=>{anNewPriceFrom=lo*1e6;anNewPriceTo=hi*1e6;renderNewTable();});
+  renderSoldTable();renderNewTable();
+  setTimeout(()=>{const c=document.getElementById('trendChart');if(c)drawTrend(c,activeDates,trendData);},80);
+}
+
+function drawTrend(canvas,dates,data){
+  const dpr=window.devicePixelRatio||1,W=canvas.parentElement.clientWidth,H=200;
+  canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';
+  const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+  const pad={t:14,r:14,b:34,l:32},cw=W-pad.l-pad.r,ch=H-pad.t-pad.b,n=dates.length;
+  if(!n)return;
+  const mx=Math.max(1,...data.new,...data.sold,...data.reduction);
+  let pts=[];
+  ctx.clearRect(0,0,W,H);
+  ctx.strokeStyle='#eee';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const y=pad.t+ch*(1-i/4);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+cw,y);ctx.stroke();}
+  ctx.fillStyle='#bbb';ctx.font='9px sans-serif';ctx.textAlign='right';
+  for(let i=0;i<=4;i++){const y=pad.t+ch*(1-i/4);ctx.fillText(Math.round(mx*i/4),pad.l-3,y+3);}
+  const step=Math.max(1,Math.ceil(n/8));ctx.textAlign='center';
+  dates.forEach((d,i)=>{if(i%step!==0&&i!==n-1)return;ctx.fillText(d.slice(5),pad.l+(n<=1?cw/2:cw*i/(n-1)),H-6);});
+  const lc={new:'#1a6faf',sold:'#1a9648',reduction:'#E87722'};
+  ['new','sold','reduction'].forEach(k=>{
+    ctx.strokeStyle=lc[k];ctx.lineWidth=2;ctx.beginPath();
+    data[k].forEach((v,i)=>{const x=pad.l+(n<=1?cw/2:cw*i/(n-1)),y=pad.t+ch-ch*v/mx;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
+    ctx.stroke();ctx.fillStyle=lc[k];
+    data[k].forEach((v,i)=>{const x=pad.l+(n<=1?cw/2:cw*i/(n-1)),y=pad.t+ch-ch*v/mx;ctx.beginPath();ctx.arc(x,y,3.5,0,Math.PI*2);ctx.fill();if(k==='new')pts.push({x,y,date:dates[i],new:data.new[i],sold:data.sold[i],r:data.reduction[i]});});
+  });
+  const tt=document.getElementById('chart-tooltip');
+  canvas.onmousemove=ev=>{const r=canvas.getBoundingClientRect(),mx2=ev.clientX-r.left;let cl=null,md=30;pts.forEach(p=>{if(Math.abs(p.x-mx2)<md){md=Math.abs(p.x-mx2);cl=p;}});if(cl){tt.innerHTML=`<b>${fmtDate(cl.date)}</b><br>New:${cl.new} Sold:${cl.sold} Red:${cl.r}`;tt.style.display='block';tt.style.left=(ev.clientX+12)+'px';tt.style.top=(ev.clientY-44)+'px';}else tt.style.display='none';};
+  canvas.onmouseleave=()=>tt.style.display='none';
+  canvas.onclick=ev=>{const r=canvas.getBoundingClientRect(),mx2=ev.clientX-r.left;let cl=null,md=30;pts.forEach(p=>{if(Math.abs(p.x-mx2)<md){md=Math.abs(p.x-mx2);cl=p;}});if(cl){activeDate=cl.date;buildDateSelect();gotoPage('daily');renderDaily();}};
+}
+
+// =============================================
+// OWNERS
+// =============================================
+let ownerSort='length',ownerDir=1,ownerQuery='';
+function renderOwners(){
+  document.getElementById('owners-content').innerHTML=`<div style="position:relative;margin-bottom:16px"><span class="search-icon">🔍</span><input style="width:100%;padding:10px 16px 10px 38px;font-size:13px;border:2px solid var(--bd);border-radius:8px;font-family:inherit" id="owner-q" type="text" placeholder="Search owner, vessel, builder…" oninput="ownerQuery=this.value.toLowerCase();renderOwnerTable()" value="${ownerQuery}"></div>
+  <div class="table-card"><div class="table-header"><span>Owner Records <span id="owner-count" style="font-size:11px;font-weight:400;color:var(--mu)"></span></span><div style="display:flex;gap:4px"><button id="obt-length" class="sort-btn" onclick="setOwnerSort('length')">Length ↓</button><button id="obt-year" class="sort-btn" onclick="setOwnerSort('year')">Year ↕</button><button id="obt-owner" class="sort-btn" onclick="setOwnerSort('owner')">Owner ↕</button><button id="obt-builder" class="sort-btn" onclick="setOwnerSort('builder')">Builder ↕</button></div></div><div id="owner-table-body"></div></div>`;
+  renderOwnerTable();
+}
+function setOwnerSort(k){if(ownerSort===k)ownerDir*=-1;else{ownerSort=k;ownerDir=1;}renderOwnerTable();}
+function renderOwnerTable(){
+  let items=[...OWNERS];
+  if(ownerQuery)items=items.filter(o=>o.owner.toLowerCase().includes(ownerQuery)||o.vessel.toLowerCase().includes(ownerQuery)||o.builder.toLowerCase().includes(ownerQuery));
+  items.sort((a,b)=>{if(ownerSort==='length')return ownerDir*((b.length||0)-(a.length||0));if(ownerSort==='year')return ownerDir*((b.year||0)-(a.year||0));if(ownerSort==='owner')return ownerDir*(a.owner.localeCompare(b.owner));if(ownerSort==='builder')return ownerDir*(a.builder.localeCompare(b.builder));return 0;});
+  ['length','year','owner','builder'].forEach(k=>{const b=document.getElementById('obt-'+k);if(!b)return;b.textContent=k.charAt(0).toUpperCase()+k.slice(1)+' '+(ownerSort===k?(ownerDir===1?'↓':'↑'):'↕');b.classList.toggle('active',ownerSort===k);});
+  const cnt=document.getElementById('owner-count');if(cnt)cnt.textContent=`(${items.length})`;
+  const rows=items.map(o=>{const i=OWNERS.indexOf(o);return `<tr style="cursor:pointer" onclick="openOwnerDetail(${i})"><td><button class="owner-link">${o.vessel}</button></td><td>${o.length?o.length+'m':'—'}</td><td>${o.year||'—'}</td><td>${o.builder}</td><td><button class="owner-link">${o.owner}</button></td></tr>`;}).join('');
+  const b=document.getElementById('owner-table-body');if(b)b.innerHTML=`<div class="table-scroll"><table><thead><tr><th>Vessel</th><th>Size</th><th>Year</th><th>Builder</th><th>Owner</th></tr></thead><tbody>${rows||'<tr><td colspan="5" style="text-align:center;color:var(--mu);padding:24px">No records found</td></tr>'}</tbody></table></div>`;
+}
+function openOwnerDetail(idx){
+  const o=OWNERS[idx];if(!o)return;
+  document.getElementById('owner-detail-title').textContent=o.vessel;
+  const lines=o.contact.split('\n');
+  const email=lines.find(l=>l.includes('@'));
+  const phone=lines.find(l=>l.includes('+')||l.toLowerCase().includes('phone'));
+  document.getElementById('owner-detail-content').innerHTML=`
+    <div class="vessel-detail"><div class="vessel-detail-body">
+      <div class="vessel-detail-name">${o.vessel}</div>
+      <div style="font-size:14px;color:var(--or);font-weight:600;margin-top:4px">${o.builder}</div>
+      <div class="vessel-detail-grid" style="margin-top:14px">
+        <div class="vessel-detail-item"><div class="vessel-detail-label">Length</div><div class="vessel-detail-val">${o.length?o.length+'m':'—'}</div></div>
+        <div class="vessel-detail-item"><div class="vessel-detail-label">Year</div><div class="vessel-detail-val">${o.year||'—'}</div></div>
+        <div class="vessel-detail-item"><div class="vessel-detail-label">Type</div><div class="vessel-detail-val">${o.type}</div></div>
+      </div>
+    </div></div>
+    <div class="detail-header" style="flex-direction:column;gap:6px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mu)">Owner</div>
+      <h2 style="font-size:18px">${o.owner}</h2>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;font-size:13px;color:#555">
+        ${email?`<a href="mailto:${email}" style="color:var(--bl);text-decoration:none">✉ ${email}</a>`:''}
+        ${phone?`<span>📞 ${phone.replace(/phone[:\s]*/i,'').trim()}</span>`:''}
+        ${!email&&!phone?`<span style="color:var(--mu)">${o.contact}</span>`:''}
+      </div>
+    </div>`;
+  pushPage('owner-detail');
+}
+
+// =============================================
+// MODAL / ADD ENTRY
+// =============================================
+function openModal(){document.getElementById('modal').classList.add('open');document.getElementById('f-date').value=activeDate;toggleFields();}
+function closeModal(){document.getElementById('modal').classList.remove('open');}
+function toggleFields(){const t=document.getElementById('f-type').value;document.getElementById('f-oldprice-row').style.display=t==='reduction'?'grid':'none';document.getElementById('f-sold-row').style.display=t==='sold'?'block':'none';document.getElementById('f-cachange-row').style.display=t==='cachange'?'block':'none';document.getElementById('f-broker-row').style.display=(t==='sold'||t==='cachange')?'none':'block';}
+
+async function saveEntry(){
+  const t=document.getElementById('f-type').value,d=document.getElementById('f-date').value;
+  if(!d){toast('Please select a date');return;}
+  if(!document.getElementById('f-name').value.trim()){toast('Please enter a vessel name');return;}
+  let e={type:t,name:document.getElementById('f-name').value.toUpperCase().trim(),builder:normB(document.getElementById('f-builder').value.toUpperCase().trim()),length:parseFloat(document.getElementById('f-length').value)||null,year:parseInt(document.getElementById('f-year').value)||null,location:document.getElementById('f-location').value.trim()||null,price:document.getElementById('f-price').value.trim()||null,cur:document.getElementById('f-cur').value,est:document.getElementById('f-est').value.trim()||null};
+  const imgUrl=document.getElementById('f-img').value.trim();
+  if(imgUrl) e.img=imgUrl;
+  if(t==='reduction'){e.oldprice=document.getElementById('f-oldprice').value;e.oldcur=document.getElementById('f-oldcur').value;e.broker=normBR(document.getElementById('f-broker').value);e.catype=document.getElementById('f-catype').value;}
+  else if(t==='sold'){e.soldseller=normBR(document.getElementById('f-soldseller').value);e.soldbuyer=normBR(document.getElementById('f-soldbuyer').value);}
+  else if(t==='cachange'){e.cafrom=normBR(document.getElementById('f-cafrom').value);e.cato=normBR(document.getElementById('f-cato').value);}
+  else{e.broker=normBR(document.getElementById('f-broker').value);e.catype=document.getElementById('f-catype').value;}
+  if(!db[d])db[d]=[];
+  db[d].push(e);
+  activeDate=d;
+  buildDateSelect();
+  closeModal();
+  renderDaily();
+  await pushData(`Add ${e.name} ${d}`);
+}
+
+// =============================================
+// BOOT
+// =============================================
+loadData();
+</script>
+</body>
+</html>
