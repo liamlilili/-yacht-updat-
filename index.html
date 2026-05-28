@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yacht Update</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;background:#f5f5f5;color:#111;min-height:100vh}
+:root{--or:#E87722;--orL:#fff4ec;--orB:#ffd4a8;--bd:#e0e0e0;--sf:#f7f7f7;--sf2:#eeeeee;--mu:#777;--gr:#1a9648;--bl:#1a6faf;--pu:#7c3aed}
+
+/* SIDEBAR */
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:210px;background:#fff;border-right:1px solid var(--bd);display:flex;flex-direction:column;z-index:100;box-shadow:2px 0 8px rgba(0,0,0,.04)}
+.logo{padding:18px 16px 14px;border-bottom:2px solid var(--or)}
+.logo-title{font-size:14px;font-weight:800;color:var(--or);letter-spacing:1px;text-transform:uppercase}
+.logo-sub{font-size:10px;color:var(--mu);margin-top:2px}
+.nav{padding:10px 0;flex:1;overflow-y:auto}
+.nav-item{display:flex;align-items:center;gap:9px;padding:11px 16px;cursor:pointer;font-size:13px;color:#444;border-left:3px solid transparent;transition:all .12s}
+.nav-item:hover{color:var(--or);background:var(--orL)}
+.nav-item.active{color:var(--or);border-left-color:var(--or);background:var(--orL);font-weight:700}
+.sidebar-footer{padding:12px 16px;border-top:1px solid var(--bd);font-size:10px;color:var(--mu)}
+
+/* MOBILE */
+.topnav{display:none;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:2px solid var(--or);background:#fff;position:sticky;top:0;z-index:200}
+.topnav-logo{font-size:12px;font-weight:800;color:var(--or);letter-spacing:1px;text-transform:uppercase}
+.hamburger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:4px}
+.hamburger span{display:block;width:20px;height:2px;background:var(--or);border-radius:2px}
+.mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:300;flex-direction:column;padding:20px}
+.mobile-menu.open{display:flex}
+.mobile-menu-close{align-self:flex-end;background:none;border:none;font-size:22px;cursor:pointer;color:var(--mu);margin-bottom:20px}
+.mobile-nav-item{padding:14px 0;font-size:15px;font-weight:600;color:#333;border-bottom:1px solid var(--bd);cursor:pointer}
+.mobile-nav-item.active{color:var(--or)}
+
+/* LAYOUT */
+.main{margin-left:210px;min-height:100vh;display:flex;flex-direction:column}
+.page{display:none;flex-direction:column;flex:1}
+.page.active{display:flex}
+.topbar{background:#fff;border-bottom:1px solid var(--bd);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;gap:10px}
+.topbar h1{font-size:16px;font-weight:700}
+.topbar-left{display:flex;align-items:center;gap:12px;flex-wrap:wrap;flex:1}
+.topbar-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.date-badge{background:var(--orL);color:var(--or);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid var(--or)}
+.btn{background:#fff;border:1px solid var(--bd);color:#444;padding:6px 13px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;transition:all .12s;white-space:nowrap}
+.btn:hover{border-color:var(--or);color:var(--or)}
+.btn-or{background:var(--or);border-color:var(--or);color:#fff;font-weight:700}
+.btn-or:hover{background:#c96010}
+.btn-back{background:var(--sf);border:1px solid var(--bd);color:#444;padding:5px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:5px}
+.btn-back:hover{border-color:var(--or);color:var(--or)}
+.content{padding:20px 24px;flex:1}
+
+/* STATS */
+.summary-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.stat-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:13px 15px;border-top:3px solid transparent}
+.stat-card.new{border-top-color:var(--bl)}.stat-card.reduction{border-top-color:var(--or)}
+.stat-card.sold{border-top-color:var(--gr)}.stat-card.launch{border-top-color:var(--pu)}
+.stat-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.stat-num{font-size:26px;font-weight:800;margin-top:3px}
+.stat-card.new .stat-num{color:var(--bl)}.stat-card.reduction .stat-num{color:var(--or)}
+.stat-card.sold .stat-num{color:var(--gr)}.stat-card.launch .stat-num{color:var(--pu)}
+
+/* DATE */
+.date-scroll-wrap{display:flex;align-items:center;gap:8px;margin-bottom:18px}
+.date-scroll-wrap label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}
+.date-select{background:#fff;border:1px solid var(--bd);border-radius:6px;padding:6px 10px;font-size:13px;font-family:inherit;color:#333;cursor:pointer}
+.date-select:focus{outline:none;border-color:var(--or)}
+
+/* SECTIONS */
+.section{margin-bottom:24px}
+.section-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
+.section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px}
+.section-count{background:var(--sf2);color:var(--mu);font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* CARDS */
+.yacht-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.yacht-card{background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden;transition:box-shadow .12s}
+.yacht-card:hover{box-shadow:0 3px 14px rgba(232,119,34,.15);border-color:#ccc}
+.card-img{width:100%;height:160px;object-fit:cover;display:block;cursor:pointer;background:#f0f0f0}
+.card-img-placeholder{width:100%;height:160px;background:linear-gradient(135deg,#f0f0f0,#e8e8e8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
+.card-img-placeholder .ship-icon{font-size:34px;opacity:.35}
+.card-img-placeholder .ship-name{font-size:10px;color:#aaa;font-weight:600;text-align:center;padding:0 8px}
+.card-top{padding:12px 14px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.yacht-name-link{font-size:13px;font-weight:700;color:var(--bl);cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit;text-align:left;padding:0}
+.yacht-name-link:hover{color:var(--or)}
+.yacht-builder-link{font-size:11px;color:var(--mu);margin-top:2px;cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit;padding:0;display:block}
+.yacht-builder-link:hover{color:var(--or)}
+.type-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap;flex-shrink:0;text-transform:uppercase}
+.badge-new{background:#e8f0fb;color:var(--bl);border:1px solid #c5d9f5}
+.badge-reduction{background:var(--orL);color:var(--or);border:1px solid var(--orB)}
+.badge-sold{background:#e8f5ee;color:var(--gr);border:1px solid #b5dfc7}
+.badge-launch{background:#f3eeff;color:var(--pu);border:1px solid #d4b8f5}
+.badge-cachange{background:var(--sf2);color:#555;border:1px solid var(--bd)}
+.card-meta{padding:0 14px 9px;display:flex;gap:12px;flex-wrap:wrap}
+.meta-item{font-size:11px;color:var(--mu)}
+.card-price{padding:8px 14px;background:var(--sf);border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px}
+.price-main{font-size:13px;font-weight:700}
+.price-old{font-size:10px;color:var(--mu);text-decoration:line-through}
+.price-est{font-size:10px;color:var(--mu)}
+.reduc-arrow{font-size:10px;color:var(--or);font-weight:700}
+.card-brokers{padding:8px 14px;border-top:1px solid var(--bd);font-size:11px;color:var(--mu);display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.broker-link{color:var(--bl);font-size:11px;font-weight:600;cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit;padding:0}
+.broker-link:hover{color:var(--or)}
+.ca-tag{font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;text-transform:uppercase}
+.ca-CA{background:#e8f0fb;color:var(--bl)}.ca-Open{background:#e8f5ee;color:var(--gr)}.ca-JCA{background:var(--orL);color:var(--or)}
+.ca-change-info{padding:8px 14px;border-top:1px solid var(--bd);font-size:11px;color:var(--mu)}
+
+/* VESSEL DETAIL */
+.vessel-detail{background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden;margin-bottom:16px}
+.vessel-detail-img{width:100%;height:280px;object-fit:cover;display:block;background:#f0f0f0}
+.vessel-detail-img-placeholder{width:100%;height:280px;background:linear-gradient(135deg,#f0f0f0,#e4e4e4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.vessel-detail-body{padding:20px}
+.vessel-detail-name{font-size:22px;font-weight:800}
+.vessel-detail-builder{font-size:14px;color:var(--or);font-weight:600;margin-top:4px;cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit}
+.vessel-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.vessel-detail-item{background:var(--sf);border-radius:6px;padding:10px}
+.vessel-detail-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;font-weight:600}
+.vessel-detail-val{font-size:14px;font-weight:700;color:#111;margin-top:3px}
+
+/* BROKER / DETAIL */
+.detail-header{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:18px;margin-bottom:16px;display:flex;gap:16px;align-items:flex-start}
+.detail-header-info{flex:1}
+.detail-header h2{font-size:19px;font-weight:800}
+.detail-stats{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+.detail-stat{font-size:12px;color:#444}
+.detail-stat strong{color:var(--or);font-size:16px;font-weight:800;display:block}
+.broker-contact-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:14px;margin-bottom:10px;cursor:pointer}
+.broker-contact-card:hover{border-color:var(--or)}
+.broker-contact-name{font-size:14px;font-weight:700;color:#111}
+.broker-contact-firm{font-size:12px;color:var(--or);font-weight:600}
+.broker-contact-details{margin-top:8px;display:flex;flex-direction:column;gap:4px;font-size:12px;color:#555}
+.broker-contact-details a{color:var(--bl);text-decoration:none}
+.sold-brokers-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.sold-broker-panel{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:12px}
+.sold-broker-panel h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin-bottom:8px}
+.sold-broker-name{font-size:13px;font-weight:700;color:#111}
+.sold-broker-firm{font-size:12px;color:var(--or);margin-top:2px;font-weight:600}
+.sold-broker-info{margin-top:6px;font-size:11px;color:#555;display:flex;flex-direction:column;gap:3px}
+.sold-broker-info a{color:var(--bl);text-decoration:none}
+
+/* ANALYTICS */
+.analytics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.a-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:15px;border-top:3px solid var(--or)}
+.a-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.a-val{font-size:24px;font-weight:800;color:var(--or);margin-top:5px}
+.a-sub{font-size:11px;color:var(--mu);margin-top:3px}
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.chart-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:16px}
+.chart-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin-bottom:12px}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.bar-label{font-size:11px;color:#444;width:130px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.bar-label:hover{color:var(--or);text-decoration:underline}
+.bar-track{flex:1;height:5px;background:var(--sf2);border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px;background:var(--or)}
+.bar-val{font-size:10px;color:var(--mu);width:35px;text-align:right;flex-shrink:0}
+.pie-row{display:flex;align-items:center;gap:8px;margin-bottom:9px;cursor:pointer}
+.pie-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pie-label{font-size:12px;color:#333;flex:1}
+.pie-pct{font-size:12px;font-weight:700}
+.table-card{background:#fff;border:1px solid var(--bd);border-radius:8px;overflow:hidden;margin-bottom:12px}
+.table-header{padding:11px 14px;border-bottom:1px solid var(--bd);font-size:11px;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;justify-content:space-between}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:500px}
+th{padding:8px 12px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--mu);border-bottom:1px solid var(--bd);background:var(--sf);font-weight:700;white-space:nowrap}
+td{padding:8px 12px;border-bottom:1px solid var(--bd);color:#444;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--sf)}
+.td-name{font-weight:700;color:#111}
+.trend-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:16px;margin-bottom:10px}
+.trend-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#444}
+.legend-dot{width:14px;height:3px;border-radius:2px;flex-shrink:0}
+.chart-tooltip{position:fixed;background:#fff;border:1px solid var(--bd);border-radius:6px;padding:8px 12px;font-size:11px;color:#333;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.1);display:none;z-index:300}
+
+/* FILTERS / SORT */
+.filter-select{background:#fff;border:1px solid var(--bd);border-radius:5px;padding:5px 8px;font-size:11px;font-family:inherit;color:#333;cursor:pointer}
+.filter-select:focus{outline:none;border-color:var(--or)}
+.sort-btn{background:#fff;border:1px solid var(--bd);color:#444;padding:4px 9px;border-radius:5px;font-size:10px;cursor:pointer;font-family:inherit;transition:all .12s}
+.sort-btn:hover{background:var(--orL);border-color:var(--or);color:var(--or)}
+.sort-btn.active{background:var(--or);border-color:var(--or);color:#fff;font-weight:700}
+
+/* RANGE SLIDER */
+.range-wrap{display:flex;flex-direction:column;gap:2px;min-width:160px}
+.range-labels{display:flex;justify-content:space-between;font-size:10px;font-weight:700;color:#333}
+
+/* SEARCH */
+.search-input-wrap{position:relative;margin-bottom:20px}
+.search-input{width:100%;padding:11px 16px 11px 40px;font-size:14px;border:2px solid var(--bd);border-radius:8px;font-family:inherit;background:#fff;transition:border-color .12s}
+.search-input:focus{outline:none;border-color:var(--or)}
+.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--mu)}
+.search-result-section{margin-bottom:20px}
+.search-result-title{font-size:11px;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:1px;padding-bottom:6px;border-bottom:1px solid var(--orB);margin-bottom:10px}
+.search-hit{background:#fff;border:1px solid var(--bd);border-radius:7px;padding:11px 14px;margin-bottom:7px;cursor:pointer;transition:border-color .12s;display:flex;gap:12px;align-items:center}
+.search-hit:hover{border-color:var(--or);background:var(--orL)}
+.search-hit-img{width:52px;height:40px;border-radius:5px;flex-shrink:0;background:#eee;display:flex;align-items:center;justify-content:center;font-size:18px;overflow:hidden}
+.search-hit-img img{width:100%;height:100%;object-fit:cover}
+.search-hit-name{font-size:13px;font-weight:700;color:#111}
+.search-hit-sub{font-size:11px;color:var(--mu);margin-top:2px}
+.search-empty{text-align:center;color:var(--mu);padding:40px;font-size:14px}
+
+/* LOCATION */
+.location-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:8px}
+.location-item{background:var(--sf);border:1px solid var(--bd);border-radius:6px;padding:10px 12px}
+.location-country{font-size:12px;font-weight:700;color:#111}
+.location-count{font-size:11px;color:var(--or);font-weight:700}
+
+/* OWNER DB */
+.owner-link{color:var(--bl);cursor:pointer;text-decoration:underline dotted;font-weight:700;background:none;border:none;font-family:inherit;font-size:11px;padding:0}
+.owner-link:hover{color:var(--or)}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border:1px solid var(--bd);border-radius:10px;width:560px;max-height:88vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.1)}
+.modal-header{padding:16px 20px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:1}
+.modal-title{font-size:14px;font-weight:700;color:var(--or)}
+.modal-close{background:none;border:none;color:var(--mu);font-size:20px;cursor:pointer}
+.modal-body{padding:16px 20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mu)}
+input,select,textarea{background:#fff;border:1px solid var(--bd);border-radius:5px;color:#111;padding:7px 10px;font-size:12px;font-family:inherit;transition:border-color .12s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--or)}
+.form-section{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--or);margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--orB)}
+.modal-footer{padding:12px 20px;border-top:1px solid var(--bd);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:#fff}
+
+/* SETUP BANNER */
+.setup-banner{background:#1a6faf;color:#fff;padding:12px 24px;font-size:12px;display:flex;align-items:center;gap:10px}
+.setup-banner a{color:#ffd4a8;text-decoration:underline;cursor:pointer}
+.setup-banner input{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:5px 10px;border-radius:5px;font-size:12px;width:320px}
+.setup-banner input::placeholder{color:rgba(255,255,255,.6)}
+.setup-banner button{background:var(--or);border:none;color:#fff;padding:5px 12px;border-radius:5px;cursor:pointer;font-size:12px;font-weight:700}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;background:#111;color:#fff;padding:10px 18px;border-radius:8px;font-size:12px;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+
+footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:1px solid var(--bd);background:#fff;margin-top:auto}
+
+@media(max-width:768px){
+  .sidebar{display:none}.topnav{display:flex}.main{margin-left:0}.topbar{top:49px}
+  .summary-strip,.analytics-grid{grid-template-columns:1fr 1fr}.chart-row{grid-template-columns:1fr}
+  .yacht-grid{grid-template-columns:1fr}.content{padding:14px}.topbar{padding:10px 14px}
+  .form-row{grid-template-columns:1fr}.modal{width:96vw}
+  .sold-brokers-grid{grid-template-columns:1fr}.vessel-detail-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- SETUP BANNER (shown until token is saved) -->
+<div class="setup-banner" id="setup-banner">
+  ⚙️ First time setup: paste your GitHub token to enable saving.
+  <input type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+  <button onclick="saveToken()">Save</button>
+  <span style="opacity:.7;font-size:11px">Token is stored locally only, never sent anywhere except GitHub.</span>
+</div>
+
+<div class="topnav">
+  <div class="topnav-logo">⚓ Yacht Update</div>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</div>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+  <div class="mobile-nav-item active" onclick="gotoPage('daily');toggleMenu()">📅 Daily Update</div>
+  <div class="mobile-nav-item" onclick="gotoPage('search');toggleMenu()">🔍 Search</div>
+  <div class="mobile-nav-item" onclick="gotoPage('analytics');toggleMenu()">📊 Market Analytics</div>
+  <div class="mobile-nav-item" onclick="gotoPage('owners');toggleMenu()">👤 Owner's Database</div>
+</div>
+
+<div class="sidebar">
+  <div class="logo"><div class="logo-title">⚓ Yacht Update</div><div class="logo-sub">Market Intelligence</div></div>
+  <nav class="nav">
+    <div class="nav-item active" id="nav-daily" onclick="gotoPage('daily')">📅 Daily Update</div>
+    <div class="nav-item" id="nav-search" onclick="gotoPage('search')">🔍 Search</div>
+    <div class="nav-item" id="nav-analytics" onclick="gotoPage('analytics')">📊 Market Analytics</div>
+    <div class="nav-item" id="nav-owners" onclick="gotoPage('owners')">👤 Owner's Database</div>
+  </nav>
+  <div class="sidebar-footer">Yacht Update · v7.0</div>
+</div>
+
+<div class="main">
+<div class="page active" id="page-daily">
+  <div class="topbar">
+    <div class="topbar-left"><h1>Daily Market Update</h1><span class="date-badge" id="active-date-label"></span></div>
+    <div class="topbar-right">
+      <span id="sync-status" style="font-size:10px;color:var(--mu)"></span>
+      <button class="btn btn-or" onclick="openModal()">+ Add Entry</button>
+    </div>
+  </div>
+  <div class="content">
+    <div class="date-scroll-wrap"><label>Date</label><select class="date-select" id="date-select" onchange="switchDate(this.value)"></select></div>
+    <div class="summary-strip">
+      <div class="stat-card new"><div class="stat-label">New Listings</div><div class="stat-num" id="cnt-new">0</div></div>
+      <div class="stat-card reduction"><div class="stat-label">Reductions</div><div class="stat-num" id="cnt-red">0</div></div>
+      <div class="stat-card sold"><div class="stat-label">Sold</div><div class="stat-num" id="cnt-sold">0</div></div>
+      <div class="stat-card launch"><div class="stat-label">Launches</div><div class="stat-num" id="cnt-launch">0</div></div>
+    </div>
+    <div id="daily-content"></div>
+  </div>
+  <footer>Yacht Update · Daily Intelligence Platform</footer>
+</div>
+
+<div class="page" id="page-search">
+  <div class="topbar"><div class="topbar-left"><h1>Search</h1></div></div>
+  <div class="content">
+    <div class="search-input-wrap"><span class="search-icon">🔍</span><input class="search-input" id="search-q" type="text" placeholder="Search vessel, builder, brokerage, broker or owner…" oninput="search(this.value)"></div>
+    <div id="search-results"><div class="search-empty">Start typing to search…</div></div>
+  </div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+
+<div class="page" id="page-analytics">
+  <div class="topbar"><div class="topbar-left"><h1>Market Analytics</h1><span class="date-badge">All-time</span></div></div>
+  <div class="content" id="analytics-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+
+<div class="page" id="page-owners">
+  <div class="topbar"><div class="topbar-left"><h1>Owner's Database</h1></div></div>
+  <div class="content" id="owners-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+
+<div class="page" id="page-broker">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="broker-page-title"></h1></div></div>
+  <div class="content" id="broker-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+<div class="page" id="page-category">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="cat-page-title"></h1></div></div>
+  <div class="content" id="cat-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+<div class="page" id="page-vessel">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="vessel-page-title"></h1></div></div>
+  <div class="content" id="vessel-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+<div class="page" id="page-contact">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="contact-page-title"></h1></div></div>
+  <div class="content" id="contact-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+<div class="page" id="page-owner-detail">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="owner-detail-title"></h1></div></div>
+  <div class="content" id="owner-detail-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+</div>
+
+<div class="chart-tooltip" id="chart-tooltip"></div>
+<div class="toast" id="toast"></div>
+
+<!-- ADD ENTRY MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title">Add Yacht Entry</div><button class="modal-close" onclick="closeModal()">✕</button></div>
+    <div class="modal-body">
+      <div class="form-group"><label>Date</label><input type="date" id="f-date"></div>
+      <div class="form-section">Category</div>
+      <div class="form-group"><label>Type</label><select id="f-type" onchange="toggleFields()"><option value="new">New Listing</option><option value="reduction">Price Reduction</option><option value="sold">Sold</option><option value="launch">New Launch</option><option value="cachange">CA Change</option></select></div>
+      <div class="form-section">Vessel</div>
+      <div class="form-row"><div class="form-group"><label>Name</label><input id="f-name" placeholder="DAYBREAK"></div><div class="form-group"><label>Builder</label><input id="f-builder" placeholder="Baglietto"></div></div>
+      <div class="form-row"><div class="form-group"><label>Length (m)</label><input id="f-length" type="number" placeholder="52"></div><div class="form-group"><label>Year</label><input id="f-year" type="number" placeholder="2024"></div></div>
+      <div class="form-group"><label>Location</label><input id="f-location" placeholder="Bermuda"></div>
+      <div class="form-group"><label>Image URL (from GitHub raw link)</label><input id="f-img" placeholder="https://raw.githubusercontent.com/liamlilili/yacht-images/main/27.jpeg"></div>
+      <div class="form-section">Pricing</div>
+      <div class="form-row"><div class="form-group"><label>Price</label><input id="f-price" placeholder="34,999,000"></div><div class="form-group"><label>Currency</label><select id="f-cur"><option value="EUR">EUR</option><option value="USD">USD</option><option value="GBP">GBP</option></select></div></div>
+      <div class="form-group"><label>EUR Estimate (if non-EUR)</label><input id="f-est" placeholder="e.g. 29,700,000"></div>
+      <div class="form-row" id="f-oldprice-row" style="display:none"><div class="form-group"><label>Previous Price</label><input id="f-oldprice" placeholder="36,000,000"></div><div class="form-group"><label>Previous Currency</label><select id="f-oldcur"><option value="EUR">EUR</option><option value="USD">USD</option><option value="GBP">GBP</option></select></div></div>
+      <div class="form-section">Brokerage</div>
+      <div id="f-broker-row"><div class="form-row"><div class="form-group"><label>Broker</label><input id="f-broker" placeholder="Fraser"></div><div class="form-group"><label>Agreement</label><select id="f-catype"><option value="CA">Casual Agreement</option><option value="Open">Open</option><option value="JCA">Joint Casual</option></select></div></div></div>
+      <div id="f-sold-row" style="display:none"><div class="form-row"><div class="form-group"><label>Seller Broker</label><input id="f-soldseller" placeholder="Gilman Yachts"></div><div class="form-group"><label>Buyer Broker</label><input id="f-soldbuyer" placeholder="Afroudakis Yachting"></div></div></div>
+      <div id="f-cachange-row" style="display:none"><div class="form-row"><div class="form-group"><label>Previous CA</label><input id="f-cafrom" placeholder="Ocean Independence"></div><div class="form-group"><label>New CA</label><input id="f-cato" placeholder="Fraser"></div></div></div>
+    </div>
+    <div class="modal-footer"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn btn-or" id="save-btn" onclick="saveEntry()">Save & Sync</button></div>
+  </div>
+</div>
+
+<script>
+// Configuration
+const GH_USER = 'liamlilili';
+const GH_REPO = 'yacht-update';
+const GH_FILE = 'data.json';
+
+// Seed data and functions
+let db = {};
+function init() { 
+  document.getElementById('active-date-label').textContent = 'Loading...';
+  loadData();
+}
+function loadData() { toast('Demo mode active'); }
+function saveEntry() { toast('Saved'); }
+function openModal() { document.getElementById('modal').classList.add('open'); }
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+function openBroker(name) { alert('Broker: ' + name); }
+function openVesselPage(name) { alert('Vessel: ' + name); }
+function openBuilderPage(name) { alert('Builder: ' + name); }
+function gotoPage(id) { 
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+}
+function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('open'); }
+function goBack() { gotoPage('daily'); }
+function search(q) { console.log('Search:', q); }
+function renderDaily() {}
+function renderAnalytics() {}
+function renderOwners() {}
+function toggleFields() {}
+function toast(msg) { 
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
