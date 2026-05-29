@@ -112,6 +112,42 @@ body{font-family:'Segoe UI',sans-serif;background:#f5f5f5;color:#111;min-height:
 .contact-deal-list{margin-top:10px;border-top:1px solid var(--bd);padding-top:8px}
 .contact-deal-item{font-size:11px;color:#555;padding:3px 0;border-bottom:1px dashed var(--sf2);display:flex;justify-content:space-between}
 .contact-deal-item:last-child{border-bottom:none}
+/* ── Profile page redesign ── */
+.profile-hero{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:22px;margin-bottom:14px;display:flex;gap:18px;align-items:flex-start}
+.profile-hero-logo{width:60px;height:60px;flex-shrink:0;background:var(--sf);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:26px;overflow:hidden}
+.profile-hero-logo img{width:100%;height:100%;object-fit:contain;padding:4px}
+.profile-hero-body{flex:1;min-width:0}
+.profile-hero-name{font-size:20px;font-weight:800;color:#111;letter-spacing:-.3px}
+.profile-hero-sub{font-size:12px;color:var(--mu);margin-top:3px}
+.profile-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.profile-stat{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:12px 14px;border-top:3px solid var(--or)}
+.profile-stat-val{font-size:20px;font-weight:800;color:var(--or)}
+.profile-stat-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin-top:2px}
+.profile-stat-sub{font-size:10px;color:var(--mu);margin-top:1px}
+.profile-section{margin-bottom:18px}
+.profile-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--mu);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.team-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:13px;cursor:pointer;transition:border-color .12s,box-shadow .12s;position:relative}
+.team-card:hover{border-color:var(--or);box-shadow:0 2px 10px rgba(232,119,34,.12)}
+.team-card-name{font-size:13px;font-weight:700;color:#111}
+.team-card-contact{margin-top:5px;display:flex;flex-direction:column;gap:3px}
+.team-card-contact a,.team-card-contact span{font-size:11px;color:var(--mu);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.team-card-contact a:hover{color:var(--or)}
+.team-card-badge{position:absolute;top:10px;right:10px;background:var(--orL);color:var(--or);font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;border:1px solid var(--orB)}
+.deals-table-wrap{background:#fff;border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+.deals-table{width:100%;border-collapse:collapse;font-size:12px}
+.deals-table th{padding:8px 12px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--mu);border-bottom:1px solid var(--bd);background:var(--sf);font-weight:700}
+.deals-table td{padding:9px 12px;border-bottom:1px solid var(--bd);color:#444;vertical-align:middle}
+.deals-table tr:last-child td{border-bottom:none}
+.deals-table tr:hover td{background:var(--orL);cursor:pointer}
+.deals-table .td-vessel{font-weight:700;color:#111;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.deals-table .td-price{color:var(--or);font-weight:700}
+.deal-role-tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase;white-space:nowrap}
+.role-seller{background:#e8f4ec;color:#1a9648}
+.role-buyer{background:#e8eef8;color:#1a6faf}
+.role-listing{background:#fff3e8;color:var(--or)}
+.role-reduction{background:#fef0e8;color:#c0540a}
+.undisclosed-note{font-size:11px;color:var(--mu);font-style:italic;padding:14px;text-align:center;background:var(--sf);border-radius:6px;margin-top:6px}
 .vessel-detail{background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden;margin-bottom:16px}
 .vessel-detail-img-wrap{position:relative;width:100%;height:260px;background:#f0f0f0;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .vessel-detail-img-wrap img{width:100%;height:100%;object-fit:cover}
@@ -214,6 +250,8 @@ footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:
   .yacht-grid{grid-template-columns:1fr}.content{padding:14px}.topbar{padding:10px 14px}
   .form-row{grid-template-columns:1fr}.modal{width:96vw}
   .sold-brokers-grid{grid-template-columns:1fr}.vessel-detail-grid{grid-template-columns:1fr 1fr}
+  .profile-stats-bar{grid-template-columns:1fr 1fr}.team-grid{grid-template-columns:1fr}
+  .profile-hero{flex-direction:column;gap:12px}
 }
 </style>
 </head>
@@ -540,27 +578,130 @@ function renderCurrentVessel(){
 }
 
 function openBroker(broker){
-  const norm=normBR(broker);document.getElementById('broker-page-title').textContent=norm;
-  const all=allEntries();const match=b=>b&&normBR(b)===norm;
-  const listings=all.filter(e=>e.type==='new'&&match(e.broker));
-  const reductions=all.filter(e=>e.type==='reduction'&&match(e.broker));
-  const soldS=all.filter(e=>e.type==='sold'&&match(e.soldseller));
-  const soldB=all.filter(e=>e.type==='sold'&&match(e.soldbuyer));
+  const norm=normBR(broker);
+  document.getElementById('broker-page-title').textContent=norm;
+  const all=allEntries();
+  // Match broker name OR any firm name extracted from raw broker strings
+  const matchRaw=raw=>raw&&extractFirmNames(raw).some(f=>normBR(f)===norm);
+  const matchDirect=b=>b&&normBR(b)===norm;
+  const listings=all.filter(e=>e.type==='new'&&matchDirect(e.broker));
+  const reductions=all.filter(e=>e.type==='reduction'&&matchDirect(e.broker));
+  const soldS=all.filter(e=>e.type==='sold'&&matchRaw(e.soldseller));
+  const soldB=all.filter(e=>e.type==='sold'&&matchRaw(e.soldbuyer));
   const contacts=getContactsForFirm(norm);
-  let contactsHtml='';
-  if(contacts.length) contactsHtml=`<div style="margin-bottom:16px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--mu);letter-spacing:1px;margin-bottom:10px">Team</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px">${contacts.map(c=>`<div class="broker-contact-card" style="cursor:pointer" onclick="openContactPage('${esc(c.name)}')"><div class="broker-contact-name">${c.name}</div><div class="broker-contact-firm">${c.firm}</div><div class="broker-contact-details">${c.email?`<a href="mailto:${c.email}">✉ ${c.email}</a>`:''}${c.mobile?`<span>📞 ${c.mobile}</span>`:''}</div><div class="contact-deal-list">${(c.vessels||[]).map(v=>`<div class="contact-deal-item"><span>${v}</span></div>`).join('')}</div></div>`).join('')}</div></div>`;
-  let html=`<div class="detail-header">${entityLogoHtml(norm,56)}<div class="detail-header-info"><h2>${norm}</h2><div class="detail-stats"><div class="detail-stat"><strong>${listings.length}</strong>Listings</div><div class="detail-stat"><strong>${reductions.length}</strong>Reductions</div><div class="detail-stat"><strong>${soldS.length+soldB.length}</strong>Sales</div></div></div></div>${contactsHtml}`;
-  function sec(title,items,dot){if(!items.length)return '';return `<div class="section"><div class="section-header"><div class="dot" style="background:${dot}"></div><span class="section-title" style="color:${dot}">${title}</span><span class="section-count">${items.length}</span></div><div class="yacht-grid">${items.map(e=>card(e)).join('')}</div></div>`;}
-  html+=sec('New Listings',listings,'#1a6faf');html+=sec('Price Reductions',reductions,'#E87722');html+=sec('Sales as Seller',soldS,'#1a9648');html+=sec('Sales as Buyer',soldB,'#7c3aed');
-  if(!listings.length&&!reductions.length&&!soldS.length&&!soldB.length) html+='<div class="search-empty">No activity found.</div>';
+  // ── Stats ──
+  const lengths=[...listings,...reductions,...soldS,...soldB].map(e=>parseFloat(e.length)).filter(n=>!isNaN(n));
+  const avgLen=lengths.length?Math.round(lengths.reduce((a,b)=>a+b,0)/lengths.length):null;
+  // Gross sales: unique sold yachts (by name) with known price, pick either side
+  const soldNames=new Set([...soldS,...soldB].map(e=>e.name));
+  let grossSales=0;let salesWithPrice=0;
+  soldNames.forEach(name=>{
+    const e=soldS.find(x=>x.name===name)||soldB.find(x=>x.name===name);
+    const p=parseFloat((e.price||'').toString().replace(/[^0-9.]/g,''));
+    if(!isNaN(p)&&p>0){grossSales+=p;salesWithPrice++;}
+  });
+  const fmtMil=v=>v>=1e6?(v/1e6).toFixed(1)+'M':v>=1e3?(v/1e3).toFixed(0)+'K':v.toFixed(0);
+  const cur=soldS[0]&&soldS[0].cur?soldS[0].cur:'€';
+  const S2={'€':'€','$':'$','£':'£'};
+  const statsHtml=`<div class="profile-stats-bar">
+    <div class="profile-stat"><div class="profile-stat-val">${listings.length}</div><div class="profile-stat-label">Listings</div></div>
+    <div class="profile-stat"><div class="profile-stat-val">${soldNames.size}</div><div class="profile-stat-label">Sales</div></div>
+    <div class="profile-stat"><div class="profile-stat-val">${avgLen?avgLen+'m':'—'}</div><div class="profile-stat-label">Avg Length</div></div>
+    <div class="profile-stat"><div class="profile-stat-val">${salesWithPrice?(S2[cur]||'€')+fmtMil(grossSales):'—'}</div><div class="profile-stat-label">Gross Sales</div><div class="profile-stat-sub">${salesWithPrice} priced deals</div></div>
+  </div>`;
+  // ── Team ──
+  let teamHtml='';
+  if(contacts.length){
+    const cards=contacts.map(c=>{
+      const dealCnt=(c.vessels||[]).length;
+      return `<div class="team-card" onclick="openContactPage('${esc(c.name)}')">
+        <span class="team-card-badge">${dealCnt} deal${dealCnt!==1?'s':''}</span>
+        <div class="team-card-name">${c.name}</div>
+        <div class="team-card-contact">
+          ${c.email?`<a href="mailto:${c.email}" onclick="event.stopPropagation()">✉ ${c.email}</a>`:''}
+          ${c.mobile?`<span>📞 ${c.mobile}</span>`:''}
+        </div>
+      </div>`;
+    }).join('');
+    teamHtml=`<div class="profile-section"><div class="profile-section-title">Team (${contacts.length})</div><div class="team-grid">${cards}</div></div>`;
+  }
+  // ── Deals table ──
+  function dealsTable(title,items,roleTag){
+    if(!items.length)return'';
+    const rows=items.map(e=>{
+      const p=e.price&&e.price!=='—'?(S2[e.cur]||'€')+e.price:'—';
+      return `<tr onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')">
+        <td class="td-vessel">${e.name}</td>
+        <td>${e.builder||'—'}</td>
+        <td>${e.length?e.length+'m':'—'}</td>
+        <td class="td-price">${p}</td>
+        <td>${fmtDate(e._date)}</td>
+        <td><span class="deal-role-tag ${roleTag}">${title.split(' ')[0]}</span></td>
+      </tr>`;}).join('');
+    return `<div class="profile-section"><div class="profile-section-title">${title} (${items.length})</div>
+      <div class="deals-table-wrap"><table class="deals-table">
+        <thead><tr><th>Vessel</th><th>Builder</th><th>Length</th><th>Price</th><th>Date</th><th>Role</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div></div>`;
+  }
+  const heroLogo=entityLogoHtml(norm,52);
+  let html=`<div class="profile-hero">${heroLogo}<div class="profile-hero-body"><div class="profile-hero-name">${norm}</div><div class="profile-hero-sub">Brokerage House</div></div></div>
+  ${statsHtml}${teamHtml}`;
+  html+=dealsTable('Listings',listings,'role-listing');
+  html+=dealsTable('Reductions',reductions,'role-reduction');
+  html+=dealsTable('Sales — Sell Side',soldS,'role-seller');
+  html+=dealsTable('Sales — Buy Side',soldB,'role-buyer');
+  if(!listings.length&&!reductions.length&&!soldS.length&&!soldB.length)html+='<div class="search-empty">No activity found.</div>';
   document.getElementById('broker-content').innerHTML=html;pushPage('broker');
 }
 
 function openContactPage(name){
   const c=CONTACTS.find(x=>x.name===name);if(!c)return;
   document.getElementById('contact-page-title').textContent=c.name;
-  const all=allEntries();const deals=all.filter(e=>c.vessels&&c.vessels.includes(e.name));
-  document.getElementById('contact-content').innerHTML=`<div class="detail-header" style="flex-direction:column"><h2>${c.name}</h2><div class="broker-contact-firm" style="font-size:14px;margin-top:4px;cursor:pointer;text-decoration:underline dotted" onclick="openBroker('${esc(c.firm)}')">${c.firm}</div><div class="broker-contact-details" style="margin-top:10px;gap:6px">${c.email?`<a href="mailto:${c.email}" style="font-size:13px">✉ ${c.email}</a>`:''}${c.mobile?`<span style="font-size:13px">📞 ${c.mobile}</span>`:''}</div></div><div class="section"><div class="section-header"><span class="section-title">Deals Involved In</span><span class="section-count">${deals.length}</span></div><div class="yacht-grid">${deals.map(e=>card(e)).join('')}</div></div>`;
+  const all=allEntries();
+  const deals=all.filter(e=>c.vessels&&c.vessels.includes(e.name));
+  const lengths=deals.map(e=>parseFloat(e.length)).filter(n=>!isNaN(n));
+  const avgLen=lengths.length?Math.round(lengths.reduce((a,b)=>a+b,0)/lengths.length):null;
+  const sales=deals.filter(e=>e.type==='sold');
+  const S2={'€':'€','$':'$','£':'£'};
+  const fmtMil=v=>v>=1e6?(v/1e6).toFixed(1)+'M':v>=1e3?(v/1e3).toFixed(0)+'K':v.toFixed(0);
+  let gross=0,pc=0;
+  sales.forEach(e=>{const p=parseFloat((e.price||'').toString().replace(/[^0-9.]/g,''));if(!isNaN(p)&&p>0){gross+=p;pc++;}});
+  const cur=sales[0]&&sales[0].cur?sales[0].cur:'€';
+  const statsHtml=`<div class="profile-stats-bar">
+    <div class="profile-stat"><div class="profile-stat-val">${deals.length}</div><div class="profile-stat-label">Total Deals</div></div>
+    <div class="profile-stat"><div class="profile-stat-val">${sales.length}</div><div class="profile-stat-label">Sales</div></div>
+    <div class="profile-stat"><div class="profile-stat-val">${avgLen?avgLen+'m':'—'}</div><div class="profile-stat-label">Avg Length</div></div>
+    <div class="profile-stat"><div class="profile-stat-val">${pc?(S2[cur]||'€')+fmtMil(gross):'—'}</div><div class="profile-stat-label">Sales Volume</div></div>
+  </div>`;
+  const rows=deals.map(e=>{
+    const p=e.price&&e.price!=='—'?(S2[e.cur]||'€')+e.price:'—';
+    const role=e.type==='sold'?(c.role==='seller'?'Seller':'Buyer'):(e.type==='new'?'Listing':e.type==='reduction'?'Reduction':'—');
+    const roleClass=e.type==='sold'?(c.role==='seller'?'role-seller':'role-buyer'):e.type==='new'?'role-listing':'role-reduction';
+    return `<tr onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')">
+      <td class="td-vessel">${e.name}</td><td>${e.builder||'—'}</td><td>${e.length?e.length+'m':'—'}</td>
+      <td class="td-price">${p}</td><td>${fmtDate(e._date)}</td>
+      <td><span class="deal-role-tag ${roleClass}">${role}</span></td>
+    </tr>`;}).join('');
+  const firmBtn=c.firm&&c.firm!=='—'?`<span style="font-size:12px;color:var(--mu)">at </span><button style="font-size:13px;color:var(--or);font-weight:700;background:none;border:none;font-family:inherit;cursor:pointer;text-decoration:underline dotted" onclick="openBroker('${esc(c.firm)}')">${c.firm}</button>`:'';
+  document.getElementById('contact-content').innerHTML=`
+    <div class="profile-hero">
+      <div class="profile-hero-logo">👤</div>
+      <div class="profile-hero-body">
+        <div class="profile-hero-name">${c.name}</div>
+        <div class="profile-hero-sub">${firmBtn}</div>
+        <div style="margin-top:10px;display:flex;flex-direction:column;gap:5px">
+          ${c.email?`<a href="mailto:${c.email}" style="font-size:12px;color:var(--bl);text-decoration:none">✉ ${c.email}</a>`:''}
+          ${c.mobile?`<span style="font-size:12px;color:#555">📞 ${c.mobile}</span>`:''}
+        </div>
+      </div>
+    </div>
+    ${statsHtml}
+    ${deals.length?`<div class="profile-section"><div class="profile-section-title">Deals (${deals.length})</div>
+      <div class="deals-table-wrap"><table class="deals-table">
+        <thead><tr><th>Vessel</th><th>Builder</th><th>Length</th><th>Price</th><th>Date</th><th>Role</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div></div>`:'<div class="search-empty">No deals on record.</div>'}`;
   pushPage('contact');
 }
 
@@ -568,7 +709,27 @@ function openBuilderPage(builder){
   const norm=normB(builder?builder.toUpperCase():builder)||builder;
   document.getElementById('cat-page-title').textContent=norm;
   const all=allEntries().filter(e=>e.builder&&normB(e.builder.toUpperCase())===norm).sort((a,b)=>b._date.localeCompare(a._date));
-  document.getElementById('cat-content').innerHTML=`<div class="detail-header">${entityLogoHtml(norm,56)}<div class="detail-header-info"><h2>${norm}</h2><div class="detail-stats"><div class="detail-stat"><strong>${all.length}</strong>Total Entries</div></div></div></div><div class="yacht-grid">${all.map(e=>card(e)).join('')}</div>`;
+  const lengths=all.map(e=>parseFloat(e.length)).filter(n=>!isNaN(n));
+  const avgLen=lengths.length?Math.round(lengths.reduce((a,b)=>a+b,0)/lengths.length):null;
+  const maxLen=lengths.length?Math.max(...lengths):null;
+  const minLen=lengths.length?Math.min(...lengths):null;
+  const sales=all.filter(e=>e.type==='sold');
+  const S2={'€':'€','$':'$','£':'£'};
+  const fmtMil=v=>v>=1e6?(v/1e6).toFixed(1)+'M':v>=1e3?(v/1e3).toFixed(0)+'K':v.toFixed(0);
+  let gross=0,pc=0;
+  sales.forEach(e=>{const p=parseFloat((e.price||'').toString().replace(/[^0-9.]/g,''));if(!isNaN(p)&&p>0){gross+=p;pc++;}});
+  const cur=sales[0]&&sales[0].cur?sales[0].cur:'€';
+  const uniqueVessels=new Set(all.map(e=>e.name)).size;
+  const statsHtml=`<div class="profile-stats-bar">
+    <div class="profile-stat"><div class="profile-stat-val">${uniqueVessels}</div><div class="profile-stat-label">Yachts</div></div>
+    <div class="profile-stat"><div class="profile-stat-val">${avgLen?avgLen+'m':'—'}</div><div class="profile-stat-label">Avg Length</div><div class="profile-stat-sub">${minLen&&maxLen?minLen+'m – '+maxLen+'m':''}</div></div>
+    <div class="profile-stat"><div class="profile-stat-val">${sales.length}</div><div class="profile-stat-label">Sales Recorded</div></div>
+    <div class="profile-stat"><div class="profile-stat-val">${pc?(S2[cur]||'€')+fmtMil(gross):'—'}</div><div class="profile-stat-label">Sales Volume</div></div>
+  </div>`;
+  document.getElementById('cat-content').innerHTML=`
+    <div class="profile-hero">${entityLogoHtml(norm,52)}<div class="profile-hero-body"><div class="profile-hero-name">${norm}</div><div class="profile-hero-sub">Shipbuilder · ${all.length} entries</div></div></div>
+    ${statsHtml}
+    <div class="yacht-grid">${all.map(e=>card(e)).join('')}</div>`;
   pushPage('category');
 }
 
@@ -579,6 +740,33 @@ function openCategory(type,label){
   pushPage('category');
 }
 
+function extractFirmNames(raw){
+  if(!raw||raw==='—')return[];
+  // Split on " and " to handle "Firm1 and Firm2"
+  const parts=raw.split(/\s+and\s+/i);
+  return parts.map(part=>{
+    let s=part.trim();
+    // Strip leading junk: "(", "["
+    s=s.replace(/^[\(\[\s]+/,'').trim();
+    // "Person Name of/at/from Firm" → keep only Firm part
+    const ofMatch=s.match(/^[A-Z][a-zA-ZÀ-ÖØ-öø-ÿ\-\.']+(?:\s+[A-Z][a-zA-ZÀ-ÖØ-öø-ÿ\-\.']+){1,3}\s+(?:of|at|from|de)\s+(.+)$/i);
+    if(ofMatch)s=ofMatch[1].trim();
+    // Strip trailing phone, "M:", "T:", "E:", "Office:", URL, punctuation
+    s=s.replace(/\s+(?:M:|T:|E:|Tel:|Office:|Mobile:|Mob:).*$/i,'').trim();
+    s=s.replace(/\s+[\+\d][\d\s\.\-\(\)]{5,}$/,'').trim();
+    s=s.replace(/\s+https?:\/\/\S+/,'').trim();
+    s=s.replace(/[\(\)\s,;\.]+$/,'').trim();
+    // Strip trailing "(E:", "(T:", "(M:" junk
+    s=s.replace(/\s*\([ETM]:\s*$/i,'').trim();
+    // Strip numbers glued directly to firm name end (e.g. "Marine04 95 22 64")
+    s=s.replace(/[^a-zA-ZÀ-ÖØ-öø-ÿ\s&\-\.']+[\d\s\.\-]*$/,'').trim();
+    // Strip leading "broker " / "yacht broker "
+    s=s.replace(/^(?:yacht\s+)?broker\s+/i,'').trim();
+    // If still looks like "Person Name" only (no spaces or typical firm words), skip
+    if(!s||s.length<2)return null;
+    return s;
+  }).filter(Boolean);
+}
 let _searchType='all';
 function setSearchType(t){
   _searchType=t;
@@ -615,14 +803,25 @@ function runSearch(){
     if(byBuilder.length){html+=`<div class="search-result-section"><div class="search-result-title">Builders (${byBuilder.length})</div>`;byBuilder.forEach(b=>{const cnt=all.filter(e=>e.builder===b).length;html+=`<div class="search-hit" onclick="openBuilderPage('${esc(b)}')"><div class="search-hit-img">🏭</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} entries</div></div></div>`;});html+='</div>';}
   }
 
-  // Brokerage Houses (firms from contacts + broker names from deals)
+  // Brokerage Houses (firms from contacts + normalised broker names from deals)
   if(t==='all'||t==='brokerage'){
     const firmsSeen=new Set(),byFirm=[];
     CONTACTS.forEach(c=>{if(c.firm&&c.firm.toLowerCase().includes(q)&&!firmsSeen.has(c.firm)){firmsSeen.add(c.firm);byFirm.push(c.firm);}});
     const brokersSeen=new Set(),byBroker=[];
-    all.forEach(e=>{[e.broker,e.soldseller,e.soldbuyer].forEach(b=>{if(b&&b!=='—'&&b.toLowerCase().includes(q)&&!brokersSeen.has(b)&&!firmsSeen.has(b)){brokersSeen.add(b);byBroker.push(b);}});});
+    all.forEach(e=>{[e.broker,e.soldseller,e.soldbuyer].forEach(raw=>{
+      if(!raw||raw==='—')return;
+      // Extract firm name from strings like "Person of/at/from Firm" or "Firm M: phone"
+      const firms=extractFirmNames(raw);
+      firms.forEach(firm=>{
+        if(!firm||firm.length<2)return;
+        const key=normBR(firm);
+        if(firm.toLowerCase().includes(q)&&!brokersSeen.has(key)&&!firmsSeen.has(firm)){
+          brokersSeen.add(key);byBroker.push(firm);
+        }
+      });
+    });});
     const allBrokerages=[...byFirm.map(f=>({name:f,type:'firm'})),...byBroker.map(b=>({name:b,type:'broker'}))];
-    if(allBrokerages.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokerage Houses (${allBrokerages.length})</div>`;allBrokerages.forEach(({name:b,type})=>{const cnt=type==='firm'?CONTACTS.filter(c=>c.firm===b).length:all.filter(e=>[e.broker,e.soldseller,e.soldbuyer].includes(b)).length;html+=`<div class="search-hit" onclick="openBroker('${esc(b)}')"><div class="search-hit-img">🤝</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} ${type==='firm'?'broker(s)':'entries'}</div></div></div>`;});html+='</div>';}
+    if(allBrokerages.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokerage Houses (${allBrokerages.length})</div>`;allBrokerages.forEach(({name:b,type})=>{const cnt=type==='firm'?CONTACTS.filter(c=>c.firm===b).length:all.filter(e=>[e.broker,e.soldseller,e.soldbuyer].some(r=>r&&extractFirmNames(r).some(f=>normBR(f)===normBR(b)))).length;html+=`<div class="search-hit" onclick="openBroker('${esc(b)}')"><div class="search-hit-img">🤝</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} ${type==='firm'?'broker(s)':'entries'}</div></div></div>`;});html+='</div>';}
   }
 
   if(!html) html='<div class="search-empty">No results found.</div>';
