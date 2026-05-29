@@ -1021,132 +1021,6 @@
     "mobile": "+44 (0) 1489 885656"
   },
   {
-    "name": "Nicholsons International - Fernando Nicholson",
-    "firm": "Camper & Nicholsons",
-    "role": "seller",
-    "vessels": [
-      "C",
-      "Corto Maltese",
-      "Elaldrea+",
-      "Forever",
-      "Forever One",
-      "Mamma Mia",
-      "ONLY EIGHTY",
-      "Orso 3",
-      "Sol"
-    ],
-    "email": "fnicholson@camperandnicholsons.com",
-    "mobile": "+1 305 776 3096"
-  },
-  {
-    "name": "Camper & Nicholsons",
-    "firm": "Camper & Nicholsons",
-    "role": "seller",
-    "vessels": [
-      "A SULANA",
-      "ANTARES",
-      "APOLLO 1",
-      "ARADOS",
-      "AV",
-      "Aleden I",
-      "Amaral",
-      "Amores",
-      "Anastasia",
-      "Aria.S",
-      "Atlas",
-      "Atom",
-      "BLUSH",
-      "Bella Vita",
-      "Berco Voyager",
-      "Blue Pearl",
-      "Brunello",
-      "CHE",
-      "Callisto",
-      "Capital Two",
-      "Cetacea",
-      "Christina",
-      "Cinquanta 50",
-      "Concordia",
-      "DABMAR",
-      "December Six",
-      "Duchessa",
-      "EGO",
-      "EH2",
-      "Elaldrea",
-      "Emoji",
-      "Evolution",
-      "FANAMAX",
-      "FINISH LINE",
-      "FORTUNA",
-      "Felicità",
-      "Five",
-      "Forever",
-      "Francesca",
-      "GAJA",
-      "Gail Force Too",
-      "Giaola-Lu",
-      "Grand Bleu Vintage",
-      "HIDE N SEA",
-      "High Energy",
-      "High Roller",
-      "HoM",
-      "Horizon",
-      "ICEBERG",
-      "Il Gattopardo",
-      "Incal",
-      "Indian",
-      "King",
-      "LADY DEENA 2",
-      "LE JOIE DE MER",
-      "La Dolce Vita",
-      "La Pellegrina 1",
-      "Lost Boys",
-      "MAXIMUS STAR",
-      "MOON SAND",
-      "MUSHA",
-      "Mathilda I",
-      "Mbolo",
-      "Meamina",
-      "Moka",
-      "Monokini",
-      "Moon Goddess",
-      "Nakessa",
-      "Ninkasi",
-      "OCEAN PARADISE",
-      "ORION 1",
-      "Okto",
-      "Orso 3",
-      "Otam",
-      "POKROV",
-      "Param Jamuna III",
-      "Perle Noire",
-      "RJ",
-      "SCORPIONE",
-      "SEA HUNTRESS",
-      "SEABISCUIT",
-      "SIREN",
-      "Scout",
-      "Serenity J",
-      "Sofico",
-      "Sol",
-      "Sonic",
-      "Sonny III",
-      "Stravaganza",
-      "Sunrise",
-      "The Unifier King Abdulaziz the First",
-      "Tremenda",
-      "VIRGEN DEL MAR VI",
-      "Van Tom",
-      "Virgen del Mar V",
-      "WUATTAGAL",
-      "Whirlwind",
-      "White Queen",
-      "ZABAVA"
-    ],
-    "email": "aploch@camperandnicholsons.com",
-    "mobile": "+34 971 403 311"
-  },
-  {
     "name": "Arrival Yachts",
     "firm": "Arrival Yachts",
     "role": "buyer",
@@ -2088,6 +1962,7 @@
     "vessels": [
       "BEYOND",
       "L’Opera",
+      "Moka",
       "Serenity",
       "Taiji",
       "The Great Escape (renamed Monte-Cristo)",
@@ -2101,8 +1976,10 @@
     "firm": "Camper & Nicholsons",
     "role": "buyer",
     "vessels": [
+      "Anastasia",
       "DANCING HARE",
       "Idyllwild",
+      "Param Jamuna III",
       "Salvaje",
       "Sea Falcon II",
       "Sonic",
@@ -5293,7 +5170,7 @@
     "mobile": "941) 499-0083"
   },
   {
-    "name": "sales@lukebrown.com) with Hargrave Custom Yachts",
+    "name": "Luke Brown Yachts",
     "firm": "Luke Brown Yachts",
     "role": "seller",
     "vessels": [
@@ -5537,7 +5414,7 @@
     "mobile": "714-331-7131"
   },
   {
-    "name": "Jonathan (jonathan@lafortuneyachts.com",
+    "name": "Jonathan Lafortune",
     "firm": "Grupo Lafortune Yachting",
     "role": "buyer",
     "vessels": [
@@ -11752,9 +11629,26 @@
     "firm": "Camper & Nicholsons",
     "role": "seller",
     "vessels": [
+      "ANTARES",
+      "Atlas",
+      "Berco Voyager",
+      "Christina",
+      "Cinquanta 50",
+      "Concordia",
+      "Forever",
+      "Giaola-Lu",
+      "Il Gattopardo",
+      "MUSHA",
+      "Orso 3",
+      "Otam",
+      "POKROV",
+      "Stravaganza",
+      "VIRGEN DEL MAR VI",
+      "Van Tom",
       "Virgen del Mar V"
     ],
-    "mobile": "+34 609 756 763"
+    "mobile": "+34 971 403 311",
+    "email": "aploch@camperandnicholsons.com"
   },
   {
     "name": "Efthimis Karalis",
@@ -11771,18 +11665,19 @@
     "firm": "Camper & Nicholsons",
     "role": "seller",
     "vessels": [
-      "Moon Goddess"
+      "C",
+      "Corto Maltese",
+      "Elaldrea+",
+      "Forever",
+      "Forever One",
+      "Mamma Mia",
+      "Moon Goddess",
+      "ONLY EIGHTY",
+      "Orso 3",
+      "Sol"
     ],
-    "mobile": "+1 305 776 3096"
-  },
-  {
-    "name": "Gaston Lees-Buckley",
-    "firm": "Camper & Nicholsons",
-    "role": "seller",
-    "vessels": [
-      "Moka"
-    ],
-    "mobile": "+33 6 190 264 36"
+    "mobile": "+1 305 776 3096",
+    "email": "fnicholson@camperandnicholsons.com"
   },
   {
     "name": "James Wallace",
@@ -11792,16 +11687,6 @@
       "Gail Force Too"
     ],
     "mobile": "+1 561 308 3467"
-  },
-  {
-    "name": "Jean Marie Recamier",
-    "firm": "Camper & Nicholsons",
-    "role": "seller",
-    "vessels": [
-      "Anastasia",
-      "Param Jamuna III"
-    ],
-    "mobile": "+33 6 877 803 17"
   },
   {
     "name": "Richard Higgins",
@@ -13608,7 +13493,7 @@
   },
   {
     "name": "Tomasso Bilotta",
-    "firm": "Camper & Nicholson",
+    "firm": "Camper & Nicholsons",
     "role": "seller",
     "vessels": [
       "Evolution"
