@@ -172,7 +172,11 @@ tr:hover td{background:var(--sf)}
 .sort-btn{background:#fff;border:1px solid var(--bd);color:#444;padding:4px 9px;border-radius:5px;font-size:10px;cursor:pointer;font-family:inherit;transition:all .12s}
 .sort-btn:hover{background:var(--orL);border-color:var(--or);color:var(--or)}
 .sort-btn.active{background:var(--or);border-color:var(--or);color:#fff;font-weight:700}
-.search-input-wrap{position:relative;margin-bottom:20px}
+.search-type-filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+.search-type-btn{background:#fff;border:1px solid var(--bd);color:#555;padding:5px 13px;border-radius:20px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .12s;white-space:nowrap}
+.search-type-btn:hover{border-color:var(--or);color:var(--or);background:var(--orL)}
+.search-type-btn.active{background:var(--or);border-color:var(--or);color:#fff}
+.search-input-wrap{position:relative;margin-bottom:14px}
 .search-input{width:100%;padding:11px 16px 11px 40px;font-size:14px;border:2px solid var(--bd);border-radius:8px;font-family:inherit;background:#fff;transition:border-color .12s}
 .search-input:focus{outline:none;border-color:var(--or)}
 .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--mu)}
@@ -254,7 +258,14 @@ footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:
 <div class="page" id="page-search">
   <div class="topbar"><div class="topbar-left"><h1>Search</h1></div></div>
   <div class="content">
-    <div class="search-input-wrap"><span class="search-icon">🔍</span><input class="search-input" id="search-q" type="text" placeholder="Search vessel, builder, brokerage, or broker name…" oninput="runSearch()"></div>
+    <div class="search-input-wrap"><span class="search-icon">🔍</span><input class="search-input" id="search-q" type="text" placeholder="Search vessel, builder, brokerage, or broker…" oninput="runSearch()"></div>
+    <div class="search-type-filters">
+      <button class="search-type-btn active" id="stype-all" onclick="setSearchType('all')">All</button>
+      <button class="search-type-btn" id="stype-yacht" onclick="setSearchType('yacht')">🛥️ Yacht</button>
+      <button class="search-type-btn" id="stype-broker" onclick="setSearchType('broker')">👤 Broker</button>
+      <button class="search-type-btn" id="stype-builder" onclick="setSearchType('builder')">🏭 Builder</button>
+      <button class="search-type-btn" id="stype-brokerage" onclick="setSearchType('brokerage')">🤝 Brokerage House</button>
+    </div>
     <div id="search-results"><div class="search-empty">Start typing to search…</div></div>
   </div>
   <footer>Yacht Update · Market Intelligence Platform</footer>
@@ -410,7 +421,7 @@ function gotoPage(id){
   document.getElementById('page-'+id).classList.add('active');
   const ni=document.getElementById('nav-'+id);if(ni)ni.classList.add('active');
   if(id==='analytics')renderAnalytics();
-  if(id==='search'){document.getElementById('search-q').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to search…</div>';}
+  if(id==='search'){document.getElementById('search-q').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to search…</div>';setSearchType('all');}
   pageStack=[id];
 }
 function pushPage(id){pageStack.push(id);document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');}
@@ -568,22 +579,52 @@ function openCategory(type,label){
   pushPage('category');
 }
 
+let _searchType='all';
+function setSearchType(t){
+  _searchType=t;
+  ['all','yacht','broker','builder','brokerage'].forEach(k=>{
+    const el=document.getElementById('stype-'+k);
+    if(el) el.classList.toggle('active',k===t);
+  });
+  runSearch();
+}
 function runSearch(){
   const q=document.getElementById('search-q').value.trim().toLowerCase();
   if(q.length<2){document.getElementById('search-results').innerHTML='<div class="search-empty">Type at least 2 characters…</div>';return;}
   const all=allEntries();
-  const byVessel=all.filter(e=>e.name&&e.name.toLowerCase().includes(q));
-  const buildersSeen=new Set(),byBuilder=[];
-  all.forEach(e=>{if(e.builder&&e.builder.toLowerCase().includes(q)&&!buildersSeen.has(e.builder)){buildersSeen.add(e.builder);byBuilder.push(e.builder);}});
-  const brokersSeen=new Set(),byBroker=[];
-  all.forEach(e=>{[e.broker,e.soldseller,e.soldbuyer].forEach(b=>{if(b&&b!=='—'&&b.toLowerCase().includes(q)&&!brokersSeen.has(b)){brokersSeen.add(b);byBroker.push(b);}});});
-  const byContact=CONTACTS.filter(c=>c.name.toLowerCase().includes(q)||c.firm.toLowerCase().includes(q));
+  const t=_searchType;
   const typeLabel={new:'New Listing',reduction:'Price Reduction',sold:'Sold',launch:'New Launch',cachange:'CA Change'};
   let html='';
-  if(byVessel.length){html+=`<div class="search-result-section"><div class="search-result-title">Vessels (${byVessel.length})</div>`;byVessel.sort((a,b)=>b._date.localeCompare(a._date)).forEach(e=>{const url=getImg(e.name);html+=`<div class="search-hit" onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')"><div class="search-hit-img">${url?`<img src="${url}" alt="${e.name}">`:'🛥️'}</div><div><div class="search-hit-name">${e.name}</div><div class="search-hit-sub">${e.builder||''}${e.length?' · '+e.length+'m':''}${e.year?' · '+e.year:''} — ${typeLabel[e.type]||e.type} — ${fmtDate(e._date)}</div></div></div>`;});html+='</div>';}
-  if(byContact.length){html+=`<div class="search-result-section"><div class="search-result-title">Broker Contacts (${byContact.length})</div>`;byContact.forEach(c=>{html+=`<div class="search-hit" onclick="openContactPage('${esc(c.name)}')"><div class="search-hit-img">👤</div><div><div class="search-hit-name">${c.name}</div><div class="search-hit-sub">${c.firm}${c.email?' · '+c.email:''}</div></div></div>`;});html+='</div>';}
-  if(byBuilder.length){html+=`<div class="search-result-section"><div class="search-result-title">Builders (${byBuilder.length})</div>`;byBuilder.forEach(b=>{const cnt=all.filter(e=>e.builder===b).length;html+=`<div class="search-hit" onclick="openBuilderPage('${esc(b)}')"><div class="search-hit-img">🏭</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} entries</div></div></div>`;});html+='</div>';}
-  if(byBroker.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokerages (${byBroker.length})</div>`;byBroker.forEach(b=>{const cnt=all.filter(e=>[e.broker,e.soldseller,e.soldbuyer].includes(b)).length;html+=`<div class="search-hit" onclick="openBroker('${esc(b)}')"><div class="search-hit-img">🤝</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} entries</div></div></div>`;});html+='</div>';}
+
+  // Yachts
+  if(t==='all'||t==='yacht'){
+    const byVessel=all.filter(e=>e.name&&e.name.toLowerCase().includes(q));
+    if(byVessel.length){html+=`<div class="search-result-section"><div class="search-result-title">Yachts (${byVessel.length})</div>`;byVessel.sort((a,b)=>b._date.localeCompare(a._date)).forEach(e=>{const url=getImg(e.name);html+=`<div class="search-hit" onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')"><div class="search-hit-img">${url?`<img src="${url}" alt="${e.name}">`:'🛥️'}</div><div><div class="search-hit-name">${e.name}</div><div class="search-hit-sub">${e.builder||''}${e.length?' · '+e.length+'m':''}${e.year?' · '+e.year:''} — ${typeLabel[e.type]||e.type} — ${fmtDate(e._date)}</div></div></div>`;});html+='</div>';}
+  }
+
+  // Brokers (individual contacts)
+  if(t==='all'||t==='broker'){
+    const byContact=CONTACTS.filter(c=>c.name&&c.name.toLowerCase().includes(q));
+    if(byContact.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokers (${byContact.length})</div>`;byContact.forEach(c=>{html+=`<div class="search-hit" onclick="openContactPage('${esc(c.name)}')"><div class="search-hit-img">👤</div><div><div class="search-hit-name">${c.name}</div><div class="search-hit-sub">${c.firm||''}${c.email?' · '+c.email:''}</div></div></div>`;});html+='</div>';}
+  }
+
+  // Builders
+  if(t==='all'||t==='builder'){
+    const buildersSeen=new Set(),byBuilder=[];
+    all.forEach(e=>{if(e.builder&&e.builder.toLowerCase().includes(q)&&!buildersSeen.has(e.builder)){buildersSeen.add(e.builder);byBuilder.push(e.builder);}});
+    if(byBuilder.length){html+=`<div class="search-result-section"><div class="search-result-title">Builders (${byBuilder.length})</div>`;byBuilder.forEach(b=>{const cnt=all.filter(e=>e.builder===b).length;html+=`<div class="search-hit" onclick="openBuilderPage('${esc(b)}')"><div class="search-hit-img">🏭</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} entries</div></div></div>`;});html+='</div>';}
+  }
+
+  // Brokerage Houses (firms from contacts + broker names from deals)
+  if(t==='all'||t==='brokerage'){
+    const firmsSeen=new Set(),byFirm=[];
+    CONTACTS.forEach(c=>{if(c.firm&&c.firm.toLowerCase().includes(q)&&!firmsSeen.has(c.firm)){firmsSeen.add(c.firm);byFirm.push(c.firm);}});
+    const brokersSeen=new Set(),byBroker=[];
+    all.forEach(e=>{[e.broker,e.soldseller,e.soldbuyer].forEach(b=>{if(b&&b!=='—'&&b.toLowerCase().includes(q)&&!brokersSeen.has(b)&&!firmsSeen.has(b)){brokersSeen.add(b);byBroker.push(b);}});});
+    const allBrokerages=[...byFirm.map(f=>({name:f,type:'firm'})),...byBroker.map(b=>({name:b,type:'broker'}))];
+    if(allBrokerages.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokerage Houses (${allBrokerages.length})</div>`;allBrokerages.forEach(({name:b,type})=>{const cnt=type==='firm'?CONTACTS.filter(c=>c.firm===b).length:all.filter(e=>[e.broker,e.soldseller,e.soldbuyer].includes(b)).length;html+=`<div class="search-hit" onclick="openBroker('${esc(b)}')"><div class="search-hit-img">🤝</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} ${type==='firm'?'broker(s)':'entries'}</div></div></div>`;});html+='</div>';}
+  }
+
   if(!html) html='<div class="search-empty">No results found.</div>';
   document.getElementById('search-results').innerHTML=html;
 }
