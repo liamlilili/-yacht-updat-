@@ -1,31 +1,13 @@
 [
   {
-    "name": "+1 203 530 3870",
-    "firm": "+1 203 530 3870",
-    "role": "seller",
-    "vessels": [
-      "Grander Ambition"
-    ],
-    "email": "support@boathouseauctions.com",
-    "mobile": "+1 203 530 3870"
-  },
-  {
-    "name": "Ibrahim Konya at",
-    "firm": "+905375524003",
-    "role": "seller",
-    "vessels": [
-      "Madra II"
-    ],
-    "mobile": "+905375524003"
-  },
-  {
-    "name": "Ibrahim Konya at",
-    "firm": "+905375524003",
+    "name": "Willie Lynch of Latitude Yachts 773-870-6444",
+    "firm": ".",
     "role": "buyer",
     "vessels": [
-      "Madra II"
+      "Montrachet"
     ],
-    "mobile": "+905375524003"
+    "email": "willie@latitudeyacht.com",
+    "mobile": "773-870-6444"
   },
   {
     "name": "Jose Arana Jr",
@@ -59,6 +41,77 @@
     "mobile": "+1 305 491 7794"
   },
   {
+    "name": "26 North Yachts",
+    "firm": "26 North Yachts",
+    "role": "seller",
+    "vessels": [
+      "Njord"
+    ],
+    "mobile": "954-562-1540"
+  },
+  {
+    "name": "26 North Yachts",
+    "firm": "26 North Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Njord"
+    ],
+    "mobile": "954-562-1540"
+  },
+  {
+    "name": "26 North Yachts",
+    "firm": "26 North Yachts",
+    "role": "seller",
+    "vessels": [
+      "Crystal Parrot"
+    ],
+    "email": "jesse@26northyachts.com",
+    "mobile": "954-559-4427"
+  },
+  {
+    "name": "26 North Yachts",
+    "firm": "26 North Yachts",
+    "role": "seller",
+    "vessels": [
+      "Aura"
+    ],
+    "email": "brandon@26northyachts.com",
+    "mobile": "502-442-3818"
+  },
+  {
+    "name": "26 North Yachts",
+    "firm": "26 North Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Coraggio",
+      "Satisfaction"
+    ],
+    "email": "will@26northyachts.com",
+    "mobile": "954-235-3468"
+  },
+  {
+    "name": "26 North Yachts",
+    "firm": "26 North Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Stealth"
+    ],
+    "email": "josh@26northyachts.com",
+    "mobile": "954-658-6900"
+  },
+  {
+    "name": "26 North Yachts",
+    "firm": "26 North Yachts",
+    "role": "seller",
+    "vessels": [
+      "Adios",
+      "Summerwind",
+      "Ti Amo"
+    ],
+    "email": "nicholas@26northyachts.com",
+    "mobile": "+1.954.900.9988"
+  },
+  {
     "name": "Bill Powers",
     "firm": "26 North Yachts",
     "role": "seller",
@@ -86,21 +139,76 @@
     "mobile": "954) 372-7026"
   },
   {
+    "name": "David Ingram of",
+    "firm": "26 North Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Moanna II"
+    ],
+    "email": "david@26northyachts.com",
+    "mobile": "954-415-2239"
+  },
+  {
     "name": "Greg Halligan",
     "firm": "26 North Yachts",
     "role": "buyer",
     "vessels": [
-      "KAYLIANNA MARIE"
+      "KAYLIANNA MARIE",
+      "Kaleidoscope"
     ],
     "email": "greg@26northyachts.com",
     "mobile": "954-900-9988"
+  },
+  {
+    "name": "Greg Halligan 954-900-9988",
+    "firm": "26 North Yachts",
+    "role": "seller",
+    "vessels": [
+      "Kaleidoscope"
+    ],
+    "email": "greg@26northyachts.com",
+    "mobile": "954-900-9988"
+  },
+  {
+    "name": "Michael Manteiga of",
+    "firm": "26 North Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Two Suns"
+    ],
+    "email": "mmanteiga@26northyachts.com",
+    "mobile": "774-283-2871"
+  },
+  {
+    "name": "Mike Carlson",
+    "firm": "26 North Yachts",
+    "role": "seller",
+    "vessels": [
+      "Satisfaction"
+    ],
+    "email": "mike@26northyachts.com",
+    "mobile": "+1.954.372.7026"
+  },
+  {
+    "name": "Mike Carlson",
+    "firm": "26 North Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Satisfaction"
+    ],
+    "email": "mike@26northyachts.com",
+    "mobile": "+1.954.372.7026"
   },
   {
     "name": "Nicholas Scherb",
     "firm": "26 North Yachts",
     "role": "buyer",
     "vessels": [
-      "Titan"
+      "Titan",
+      "S-Cape",
+      "Pinguinito",
+      "Summerwind",
+      "Ti Amo"
     ],
     "email": "nicholas@26northyachts.com",
     "mobile": "+1.954.900.9988"
@@ -111,18 +219,27 @@
     "role": "buyer",
     "vessels": [
       "SHARKWATER",
-      "DIVA"
+      "DIVA",
+      "SWEET MELISSA III",
+      "BELLA SOPHIA"
     ],
-    "email": "info@26northyachts.com"
+    "email": "info@26northyachts.com",
+    "mobile": "954.900.9988"
   },
   {
     "name": "info@26NorthYachts.com",
     "firm": "26 North Yachts",
     "role": "seller",
     "vessels": [
-      "DIVA"
+      "DIVA",
+      "Ocean Life",
+      "Attitude",
+      "Quisisana",
+      "ANGELE",
+      "TI PUNCH"
     ],
-    "email": "info@26northyachts.com"
+    "email": "info@26northyachts.com",
+    "mobile": "954.900.9988"
   },
   {
     "name": "Ryan Craft",
@@ -231,7 +348,7 @@
   },
   {
     "name": "Craig Timm",
-    "firm": "4Yacht https://www.linkedin.com/in/4yacht/ 1-954-914-9326",
+    "firm": "4Yacht  1-954-914-9326",
     "role": "buyer",
     "vessels": [
       "LIBERTY"
@@ -240,8 +357,27 @@
     "mobile": "1-954-914-9326"
   },
   {
+    "name": "Craig Timm 4Yacht https://www.linkedin.com//4yacht/ 1-954-914-9326",
+    "firm": "4Yacht 1-954-914-9326",
+    "role": "buyer",
+    "vessels": [
+      "LIBERTY"
+    ],
+    "email": "sales@4yacht.com",
+    "mobile": "1-954-914-9326"
+  },
+  {
+    "name": "A1 Yachting in Greece",
+    "firm": "A1 Yachting in Greece",
+    "role": "seller",
+    "vessels": [
+      "Shooting Star Delta"
+    ],
+    "mobile": "31430427"
+  },
+  {
     "name": "George Hapipis at",
-    "firm": "A1 Yachting in Greecehttps://www.linkedin.com/in/george-m-hapipis-31430427/?originalSubdomain=gr",
+    "firm": "A1 Yachting in Greece",
     "role": "seller",
     "vessels": [
       "Shooting Star Delta"
@@ -250,7 +386,7 @@
   },
   {
     "name": "ABYS Yachting",
-    "firm": "ABYS Yachting https://www.abys-yachting.com/en/contact-yacht-broker-antibes",
+    "firm": "ABYS Yachting",
     "role": "seller",
     "vessels": [
       "Lady First",
@@ -259,24 +395,24 @@
     "email": "contact@abys-yachting.com"
   },
   {
-    "name": "Sam Buhery",
-    "firm": "ABYS Yachting+33 (0)603 567",
-    "role": "buyer",
-    "vessels": [
-      "Gemini"
-    ],
-    "email": "760sam@abys-yachting.com",
-    "mobile": "+33 (0)603 567 760"
-  },
-  {
     "name": "Alexis Colin",
-    "firm": "ABYS Yachting+33 (0)617 508",
+    "firm": "ABYS Yachting",
     "role": "seller",
     "vessels": [
       "Blue Dodo V"
     ],
     "email": "368alexis@abys-yachting.com",
     "mobile": "+33 (0)617 508 368"
+  },
+  {
+    "name": "Sam Buhery",
+    "firm": "ABYS Yachting",
+    "role": "buyer",
+    "vessels": [
+      "Gemini"
+    ],
+    "email": "760sam@abys-yachting.com",
+    "mobile": "+33 (0)603 567 760"
   },
   {
     "name": "Alexis Colin",
@@ -290,7 +426,7 @@
   },
   {
     "name": "Abberley Luxury Yachts",
-    "firm": "Abberley Luxury Yachts +44 20 3290 3800",
+    "firm": "Abberley Luxury Yachts",
     "role": "buyer",
     "vessels": [
       "WHITE"
@@ -318,8 +454,26 @@
     "email": "denis@abberley.com"
   },
   {
+    "name": "Aberton Yachts",
+    "firm": "Aberton Yachts",
+    "role": "seller",
+    "vessels": [
+      "Orel"
+    ],
+    "mobile": "+39 333 576 4444"
+  },
+  {
+    "name": "Aberton Yachts",
+    "firm": "Aberton Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Orel"
+    ],
+    "mobile": "+39 333 576 4444"
+  },
+  {
     "name": "Aberton Yachts +39 333 576 4444",
-    "firm": "Aberton Yachts +39 333 576 4444",
+    "firm": "Aberton Yachts",
     "role": "seller",
     "vessels": [
       "Orel"
@@ -328,7 +482,7 @@
   },
   {
     "name": "Aberton Yachts +39 333 576 4444",
-    "firm": "Aberton Yachts +39 333 576 4444",
+    "firm": "Aberton Yachts",
     "role": "buyer",
     "vessels": [
       "Orel"
@@ -455,8 +609,17 @@
     "mobile": "+33616821602"
   },
   {
+    "name": "Alain Tanguy of Five Seas Yachts",
+    "firm": "Alain Tanguy of Five Seas Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Choco"
+    ],
+    "mobile": "+44 (0) 7986 985 247"
+  },
+  {
     "name": "Alain Tanguy of Five Seas Yachts+44 (0) 7986 985 247",
-    "firm": "Alain Tanguy of Five Seas Yachts+44 (0) 7986 985 247",
+    "firm": "Alain Tanguy of Five Seas Yachts",
     "role": "buyer",
     "vessels": [
       "Choco"
@@ -640,7 +803,7 @@
   },
   {
     "name": "Steve Reoch All Ocean Yachts (",
-    "firm": "All Ocean Yachts (stever@alloceanyachts.com Office: +1.954.671.0107",
+    "firm": "All Ocean Yachts (",
     "role": "seller",
     "vessels": [
       "ICEBERG"
@@ -650,22 +813,13 @@
   },
   {
     "name": "Sue Grant (",
-    "firm": "All Ocean Yachts (stever@alloceanyachts.com Office: +1.954.671.0107",
+    "firm": "All Ocean Yachts (",
     "role": "seller",
     "vessels": [
       "ICEBERG"
     ],
     "email": "sue.grant@berthon.co.uk",
     "mobile": "+305.216.8682"
-  },
-  {
-    "name": "Thrasyvoulos Kanaris",
-    "firm": "All4YachtCharterinfo@all4yachtcharter.com",
-    "role": "buyer",
-    "vessels": [
-      "Dia’s"
-    ],
-    "email": "all4yachtcharterinfo@all4yachtcharter.com"
   },
   {
     "name": ": Chris Coughlin",
@@ -696,6 +850,15 @@
     ],
     "email": "ariel@sanlorenzoamericas.com",
     "mobile": "9543764794"
+  },
+  {
+    "name": "Associates (",
+    "firm": "Allied Marine",
+    "role": "seller",
+    "vessels": [
+      "Checkmate"
+    ],
+    "email": "web@merlewood.com"
   },
   {
     "name": "Bill Shewbridge +1",
@@ -804,6 +967,16 @@
     "mobile": "+1 954.328.2700"
   },
   {
+    "name": "Don Strong Denison Yachting",
+    "firm": "Allied Marine",
+    "role": "buyer",
+    "vessels": [
+      "Spirit"
+    ],
+    "email": "don.strong@alliedmarine.com",
+    "mobile": "239-262-6500"
+  },
+  {
     "name": "Eric Frank",
     "firm": "Allied Marine",
     "role": "seller",
@@ -856,7 +1029,8 @@
       "SEA GLASS",
       "MONTRACHET",
       "THE PROGRAM",
-      "MISS ALLIED"
+      "MISS ALLIED",
+      "Checkmate"
     ],
     "email": "sales@alliedmarine.com",
     "mobile": "954.462.5557"
@@ -1226,6 +1400,15 @@
     "mobile": "90 532 214 50 98"
   },
   {
+    "name": "Andre Barbier",
+    "firm": "Andre Barbier",
+    "role": "seller",
+    "vessels": [
+      "Blue Papillon"
+    ],
+    "mobile": "+34 609622313"
+  },
+  {
     "name": "Mobile: +34 609622313 https://dolphin-yachts.com/contact-dolphin.asp",
     "firm": "Andre Barbier",
     "role": "seller",
@@ -1299,7 +1482,16 @@
   },
   {
     "name": "8a/?originalSubdomain=ru",
-    "firm": "Andrey Lomakin+ 44 7909 252 440https://www.linkedin.com/in/andrey-lomakin-6705b9",
+    "firm": "Andrey Lomakin+ 44 7909 252 440",
+    "role": "buyer",
+    "vessels": [
+      "La Rubia"
+    ],
+    "mobile": "44 7909 252 440"
+  },
+  {
+    "name": "Andrey Lomakin+ 44 7909 252 440",
+    "firm": "Andrey Lomakin+ 44 7909 252 440",
     "role": "buyer",
     "vessels": [
       "La Rubia"
@@ -1308,7 +1500,7 @@
   },
   {
     "name": "andy@aquazeal.com",
-    "firm": "Andy Haffenden of Aquazeal +1 954 470 1046",
+    "firm": "Andy Haffenden of Aquazeal",
     "role": "buyer",
     "vessels": [
       "Beachouse"
@@ -1394,23 +1586,32 @@
     "mobile": "+1 800 554 8837"
   },
   {
+    "name": "Apollo Yachts",
+    "firm": "Apollo Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Lorak"
+    ],
+    "mobile": "+1 508.982.0094"
+  },
+  {
+    "name": "Steve Doyle at",
+    "firm": "Apollo Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Lorak"
+    ],
+    "mobile": "+1 508.982.0094"
+  },
+  {
     "name": "steve@apolloyachts.com",
-    "firm": "Apollo Yachts Steve Doyle O: +1 800 554 8837 M: +1 508 982 0094",
+    "firm": "Apollo Yachts Steve Doyle O:",
     "role": "seller",
     "vessels": [
       "ENDLESS SUMMER"
     ],
     "email": "steve@apolloyachts.com",
     "mobile": "+1 800 554 8837"
-  },
-  {
-    "name": "Steve Doyle at",
-    "firm": "Apollo Yachts+1 508.982.0094https://www.linkedin.com/in/steven-doyle-02330314/#",
-    "role": "buyer",
-    "vessels": [
-      "Lorak"
-    ],
-    "mobile": "+1 508.982.0094"
   },
   {
     "name": "Lawrence Nathan",
@@ -1431,6 +1632,15 @@
     ],
     "email": "info@aquamarina.co.il",
     "mobile": "+972-9-9513248"
+  },
+  {
+    "name": "Aqua Marine",
+    "firm": "Aqua Marine",
+    "role": "seller",
+    "vessels": [
+      "ALEXANDRA"
+    ],
+    "mobile": "+33 (0) 4 93 01 33 11"
   },
   {
     "name": "Arnaud Lafleur at +33 (0) 4 93 01 33 11 https://www.linkedin.com/in/arnaud-lafle",
@@ -1503,6 +1713,34 @@
     ],
     "email": "konstantin.kolpakov@arconyachts.com",
     "mobile": "+37797983210"
+  },
+  {
+    "name": "Arcon Yachts",
+    "firm": "Arcon Yachts",
+    "role": "seller",
+    "vessels": [
+      "Ragnar",
+      "Julia",
+      "Hvalross",
+      "Iman",
+      "D’Angleterre II",
+      "GALAKTIKA SKY",
+      "NACHTWIND"
+    ],
+    "mobile": "88117360"
+  },
+  {
+    "name": "Arcon Yachts",
+    "firm": "Arcon Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Julia",
+      "Anastasia",
+      "x",
+      "STEFANIA",
+      "WABASH"
+    ],
+    "mobile": "88117360"
   },
   {
     "name": "Konstatin Kolpakov of https://www.linkedin.com/in/konstantin-kolpakov-88117360/",
@@ -1596,7 +1834,7 @@
   },
   {
     "name": "Arrival Yachts +34 638 90 40 40",
-    "firm": "Arrival Yachts +34 638 90 40 40 https://www.arrivalyachts.com/",
+    "firm": "Arrival Yachts",
     "role": "buyer",
     "vessels": [
       "Think BIG"
@@ -1642,6 +1880,15 @@
     "email": "gertsos@atalantamarine.com"
   },
   {
+    "name": "Atlantic Yacht & Ship",
+    "firm": "Atlantic Yacht & Ship",
+    "role": "buyer",
+    "vessels": [
+      "FOCUS"
+    ],
+    "mobile": "954.648.8989"
+  },
+  {
     "name": "Mack Carroll at Atlantic Yacht",
     "firm": "Atlantic Yacht & Ship",
     "role": "buyer",
@@ -1682,8 +1929,19 @@
     "mobile": "954-921-1500"
   },
   {
-    "name": "Chris Carroll at Atlantic Yacht",
-    "firm": "Atlantic Yacht & Ship 954.303.5604 https://www.linkedin.com/in/christopher-carroll-030b6631/",
+    "name": "Atlantic Yacht & Ship 954.303.5604",
+    "firm": "Atlantic Yacht & Ship 954.303.5604",
+    "role": "buyer",
+    "vessels": [
+      "She’s a Peach",
+      "Long Aweighted",
+      "The Rock"
+    ],
+    "mobile": "954.303.5604"
+  },
+  {
+    "name": "Atlantic Yacht & Ship 954.303.5604",
+    "firm": "Atlantic Yacht & Ship 954.303.5604",
     "role": "seller",
     "vessels": [
       "Long Aweighted"
@@ -1692,26 +1950,45 @@
   },
   {
     "name": "Chris Carroll at Atlantic Yacht",
-    "firm": "Atlantic Yacht & Ship 954.303.5604 https://www.linkedin.com/in/christopher-carroll-030b6631/",
-    "role": "buyer",
+    "firm": "Atlantic Yacht & Ship 954.303.5604",
+    "role": "seller",
     "vessels": [
-      "Long Aweighted",
-      "The Rock"
+      "Long Aweighted"
     ],
     "mobile": "954.303.5604"
   },
   {
     "name": "Chris Carroll at Atlantic Yacht",
-    "firm": "Atlantic Yacht & Ship 954.303.5604https://www.linkedin.com/in/christopher-carroll-030b6631/",
+    "firm": "Atlantic Yacht & Ship 954.303.5604",
     "role": "buyer",
     "vessels": [
+      "Long Aweighted",
+      "The Rock",
       "She’s a Peach"
     ],
     "mobile": "954.303.5604"
   },
   {
+    "name": "Atlantic Yacht & Ship954.303.5604",
+    "firm": "Atlantic Yacht & Ship954.303.5604",
+    "role": "seller",
+    "vessels": [
+      "Berada"
+    ],
+    "mobile": "954.303.5604"
+  },
+  {
+    "name": "Atlantic Yacht & Ship954.303.5604",
+    "firm": "Atlantic Yacht & Ship954.303.5604",
+    "role": "buyer",
+    "vessels": [
+      "Endeavour"
+    ],
+    "mobile": "954.303.5604"
+  },
+  {
     "name": "Chris Carroll at Atlantic Yacht",
-    "firm": "Atlantic Yacht & Ship954.303.5604https://www.linkedin.com/in/christopher-carroll-030b6631/",
+    "firm": "Atlantic Yacht & Ship954.303.5604",
     "role": "seller",
     "vessels": [
       "Berada"
@@ -1720,7 +1997,7 @@
   },
   {
     "name": "Chris Carroll at Atlantic Yacht",
-    "firm": "Atlantic Yacht & Ship954.303.5604https://www.linkedin.com/in/christopher-carroll-030b6631/",
+    "firm": "Atlantic Yacht & Ship954.303.5604",
     "role": "buyer",
     "vessels": [
       "Endeavour"
@@ -1728,8 +2005,26 @@
     "mobile": "954.303.5604"
   },
   {
+    "name": "Atlantic Yacht & Ship954.328.2059",
+    "firm": "Atlantic Yacht & Ship954.328.2059",
+    "role": "seller",
+    "vessels": [
+      "Las Brisas"
+    ],
+    "mobile": "954.328.2059"
+  },
+  {
+    "name": "Atlantic Yacht & Ship954.328.2059",
+    "firm": "Atlantic Yacht & Ship954.328.2059",
+    "role": "buyer",
+    "vessels": [
+      "Temptation"
+    ],
+    "mobile": "954.328.2059"
+  },
+  {
     "name": "Joe Marino at Atlantic Yacht",
-    "firm": "Atlantic Yacht & Ship954.328.2059https://www.linkedin.com/in/joe-marino-b3148528/",
+    "firm": "Atlantic Yacht & Ship954.328.2059",
     "role": "seller",
     "vessels": [
       "Las Brisas"
@@ -1738,7 +2033,7 @@
   },
   {
     "name": "Joe Marino at Atlantic Yacht",
-    "firm": "Atlantic Yacht & Ship954.328.2059https://www.linkedin.com/in/joe-marino-b3148528/",
+    "firm": "Atlantic Yacht & Ship954.328.2059",
     "role": "buyer",
     "vessels": [
       "Temptation"
@@ -1797,15 +2092,6 @@
     "mobile": "954-526-1010"
   },
   {
-    "name": "Kathy Kennedy",
-    "firm": "AvYachtskkennedy@avyachts.com",
-    "role": "seller",
-    "vessels": [
-      "Endeavour"
-    ],
-    "email": "avyachtskkennedy@avyachts.com"
-  },
-  {
     "name": "Luis Garcia",
     "firm": "Azimut Portugal",
     "role": "buyer",
@@ -1817,7 +2103,7 @@
   },
   {
     "name": "Luis Garcia Azimut Portugal",
-    "firm": "Azimut PortugalTel: +351 214 830 360Tel: +351 919 187",
+    "firm": "Azimut PortugalTel:",
     "role": "buyer",
     "vessels": [
       "My Flower"
@@ -1857,7 +2143,7 @@
   },
   {
     "name": "C Marine International",
-    "firm": "B&C Marine International +90 216 349 29 92",
+    "firm": "B&C Marine International",
     "role": "buyer",
     "vessels": [
       "Invictus"
@@ -1939,7 +2225,7 @@
   },
   {
     "name": "Barin Cardenas of YachtCreators",
-    "firm": "Barin Cardenas of YachtCreators +19545307533",
+    "firm": "Barin Cardenas of YachtCreators",
     "role": "seller",
     "vessels": [
       "Leven"
@@ -1949,7 +2235,7 @@
   },
   {
     "name": "Barin Cardenas of YachtCreators",
-    "firm": "Barin Cardenas of YachtCreators +19545307533",
+    "firm": "Barin Cardenas of YachtCreators",
     "role": "buyer",
     "vessels": [
       "Leven"
@@ -1959,7 +2245,16 @@
   },
   {
     "name": "Baris Erer of B",
-    "firm": "Baris Erer of B&C Marine + 90 532 330 11 11 https://www.linkedin.com/in/bar%C4%B",
+    "firm": "Baris Erer of B&C Marine + 90 532 330 11 11",
+    "role": "buyer",
+    "vessels": [
+      "Aqua Chameleon"
+    ],
+    "mobile": "90 532 330 11 11"
+  },
+  {
+    "name": "Baris Erer of B&C Marine + 90 532 330 11 11",
+    "firm": "Baris Erer of B&C Marine + 90 532 330 11 11",
     "role": "buyer",
     "vessels": [
       "Aqua Chameleon"
@@ -1968,7 +2263,7 @@
   },
   {
     "name": "Baris Erer of B",
-    "firm": "Baris Erer of B&C Marine International https://www.linkedin.com/in/bar%C4%B1%C5%",
+    "firm": "Baris Erer of B&C Marine International",
     "role": "seller",
     "vessels": [
       "Ozone"
@@ -1977,7 +2272,25 @@
   },
   {
     "name": "Baris Erer of B",
-    "firm": "Baris Erer of B&C Marine International https://www.linkedin.com/in/bar%C4%B1%C5%",
+    "firm": "Baris Erer of B&C Marine International",
+    "role": "buyer",
+    "vessels": [
+      "Ozone"
+    ],
+    "mobile": "90 532 330 11 11"
+  },
+  {
+    "name": "Baris Erer of B&C Marine International",
+    "firm": "Baris Erer of B&C Marine International",
+    "role": "seller",
+    "vessels": [
+      "Ozone"
+    ],
+    "mobile": "90 532 330 11 11"
+  },
+  {
+    "name": "Baris Erer of B&C Marine International",
+    "firm": "Baris Erer of B&C Marine International",
     "role": "buyer",
     "vessels": [
       "Ozone"
@@ -2003,8 +2316,17 @@
     "email": "contact@bb7seas.com"
   },
   {
+    "name": "Barnes Yachting",
+    "firm": "Barnes Yachting",
+    "role": "seller",
+    "vessels": [
+      "Amo"
+    ],
+    "mobile": "+34 919 38 53 25"
+  },
+  {
     "name": "Barnes Yachting +34 919 38 53 25",
-    "firm": "Barnes Yachting +34 919 38 53 25",
+    "firm": "Barnes Yachting",
     "role": "seller",
     "vessels": [
       "Amo"
@@ -2013,7 +2335,7 @@
   },
   {
     "name": "Simon J Turner (",
-    "firm": "Bart Kimman (https://www.linkedin.com/in/bart-jan-kimman-44558651/?originalSubdo",
+    "firm": "Bart Kimman (",
     "role": "seller",
     "vessels": [
       "SPIRIT"
@@ -2044,7 +2366,7 @@
   },
   {
     "name": "C Marine",
-    "firm": "Barış Erer of B&C Marine +905323301111",
+    "firm": "Barış Erer of B&C Marine",
     "role": "buyer",
     "vessels": [
       "Twin Fish",
@@ -2085,8 +2407,17 @@
     "mobile": "+90 549 774 87 78"
   },
   {
+    "name": "Ben Rifkin of Rifkin Yachts (415) 279 9886",
+    "firm": "Ben Rifkin of Rifkin Yachts (415) 279 9886",
+    "role": "buyer",
+    "vessels": [
+      "Pres du Soleil"
+    ],
+    "mobile": "415) 279 9886"
+  },
+  {
     "name": "Ben Rifkin of Rifkin Yachts (415) 279 9886 https://www.linkedin.com/in/captben",
-    "firm": "Ben Rifkin of Rifkin Yachts (415) 279 9886 https://www.linkedin.com/in/captben",
+    "firm": "Ben Rifkin of Rifkin Yachts (415) 279 9886",
     "role": "buyer",
     "vessels": [
       "Pres du Soleil"
@@ -2232,7 +2563,7 @@
   },
   {
     "name": "Harry Peralta (Spain +34 617 440 946 | UK +44.7452.929.784",
-    "firm": "Bill Thiem (Spain +34 617 440 943",
+    "firm": "Bill Thiem (Spain",
     "role": "buyer",
     "vessels": [
       "Drifter W"
@@ -2242,7 +2573,7 @@
   },
   {
     "name": "UK +44.7452.929.783",
-    "firm": "Bill Thiem (Spain +34 617 440 943",
+    "firm": "Bill Thiem (Spain",
     "role": "buyer",
     "vessels": [
       "Lady Marisa",
@@ -2254,7 +2585,7 @@
   },
   {
     "name": "UK +44.7452.929.783",
-    "firm": "Bill Thiem (Spain +34 617 440 943",
+    "firm": "Bill Thiem (Spain",
     "role": "seller",
     "vessels": [
       "Lady Hayat"
@@ -2272,8 +2603,33 @@
     "mobile": "410-353-4712"
   },
   {
+    "name": "Gregory Gheraia of",
+    "firm": "Black Orange Yachts",
+    "role": "seller",
+    "vessels": [
+      "Ambrosia",
+      "Ocean 6",
+      "Bliss Easy",
+      "Ahida 2",
+      "Gelato",
+      "Lady Candy"
+    ],
+    "email": "greg@blackorange-yachts.com",
+    "mobile": "+33699939099"
+  },
+  {
+    "name": "Gregory Gheraia of",
+    "firm": "Black Orange Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Serendipity"
+    ],
+    "email": "greg@blackorange-yachts.com",
+    "mobile": "+33699939099"
+  },
+  {
     "name": "Greg Gheraia",
-    "firm": "BlackOrange Yachts+33 6 99 93 90",
+    "firm": "BlackOrange Yachts",
     "role": "buyer",
     "vessels": [
       "Tanusha"
@@ -2303,7 +2659,7 @@
   },
   {
     "name": "tom@bluewateryachting.com",
-    "firm": "Blue Water YachtingTom Barnes O: +377 99 90 12 22M: +33 (0) 6 20 18 17 34",
+    "firm": "Blue Water YachtingTom Barnes O:",
     "role": "seller",
     "vessels": [
       "M"
@@ -2336,27 +2692,20 @@
   },
   {
     "name": "Tom Barnes",
-    "firm": "Bluewater +33 620 18 17 34",
+    "firm": "Bluewater",
     "role": "seller",
     "vessels": [
       "Rhino A",
-      "PORTHOS SANS ABRI"
+      "PORTHOS SANS ABRI",
+      "HOOLIGAN 2",
+      "ANTARES STAR"
     ],
     "email": "tom@bluewateryachting.com",
     "mobile": "+33 620 18 17 34"
   },
   {
-    "name": "Chuck Meyers at",
-    "firm": "Bluewater Yacht Sales 703.999.7696 https://www.linkedin.com/in/chuck-meyers-2356331b/",
-    "role": "buyer",
-    "vessels": [
-      "Hideout"
-    ],
-    "mobile": "703.999.7696"
-  },
-  {
     "name": "Tom Barnes",
-    "firm": "Bluewater+33 620 18 17",
+    "firm": "Bluewater",
     "role": "seller",
     "vessels": [
       "Giorgia",
@@ -2367,7 +2716,7 @@
   },
   {
     "name": "Tom Barnes",
-    "firm": "Bluewater+33 620 18 17",
+    "firm": "Bluewater",
     "role": "buyer",
     "vessels": [
       "GIORGIA"
@@ -2376,14 +2725,22 @@
     "mobile": "+33 620 18 17 34"
   },
   {
-    "name": "Tom Barnes",
-    "firm": "Bluewater+33 620 18 17 34",
-    "role": "seller",
+    "name": "Bluewater Yacht Sales 703.999.7696",
+    "firm": "Bluewater Yacht Sales 703.999.7696",
+    "role": "buyer",
     "vessels": [
-      "HOOLIGAN 2"
+      "Hideout"
     ],
-    "email": "tom@bluewateryachting.com",
-    "mobile": "+33 620 18 17 34"
+    "mobile": "703.999.7696"
+  },
+  {
+    "name": "Chuck Meyers at",
+    "firm": "Bluewater Yacht Sales 703.999.7696",
+    "role": "buyer",
+    "vessels": [
+      "Hideout"
+    ],
+    "mobile": "703.999.7696"
   },
   {
     "name": "info@boatwish.nl",
@@ -2403,6 +2760,15 @@
     ],
     "email": "bobf@yachtconnexion.com",
     "mobile": "5612682467"
+  },
+  {
+    "name": "Bobby McDougall. Mediterranean Yachts",
+    "firm": "Bobby McDougall. Mediterranean Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Hooligan of Cowes"
+    ],
+    "mobile": "0034 639 971 565"
   },
   {
     "name": "Tel:0034 639 971 565.",
@@ -2445,8 +2811,17 @@
     "mobile": "954.868.5879"
   },
   {
+    "name": "Bradford Marine Yacht Sales",
+    "firm": "Bradford Marine Yacht Sales",
+    "role": "seller",
+    "vessels": [
+      "WINDRUSH"
+    ],
+    "mobile": "52286116"
+  },
+  {
     "name": "Chris Saumsiegle",
-    "firm": "Bradford Marine Yacht Sales https://www.linkedin.com/in/christopher-saumsiegle-77425042/",
+    "firm": "Bradford Marine Yacht Sales",
     "role": "seller",
     "vessels": [
       "ANDIAMO"
@@ -2456,7 +2831,7 @@
   },
   {
     "name": "Tucker Fallon at",
-    "firm": "Bradford Marine Yacht Sales https://www.linkedin.com/in/tucker-fallon-52286116/",
+    "firm": "Bradford Marine Yacht Sales",
     "role": "seller",
     "vessels": [
       "WINDRUSH"
@@ -2514,8 +2889,17 @@
     "mobile": "502-442-3818"
   },
   {
+    "name": "Brazil Yacht Services",
+    "firm": "Brazil Yacht Services",
+    "role": "seller",
+    "vessels": [
+      "Gattina"
+    ],
+    "mobile": "+33 (608) 82 58 29"
+  },
+  {
     "name": "Brazil Yacht Services +33 (608) 82 58 29 http://bysinternational.com/#contato",
-    "firm": "Brazil Yacht Services +33 (608) 82 58 29 http://bysinternational.com/#contato",
+    "firm": "Brazil Yacht Services",
     "role": "seller",
     "vessels": [
       "Gattina"
@@ -2620,7 +3004,7 @@
   },
   {
     "name": "Brock Rodwell of Ray White Marine +61408 303 203 /",
-    "firm": "Brock Rodwell of Ray White Marine +61408 303 203 /",
+    "firm": "Brock Rodwell of Ray White Marine",
     "role": "seller",
     "vessels": [
       "Beyond",
@@ -2632,7 +3016,7 @@
   },
   {
     "name": "Brock Rodwell of Ray White Marine +61408 303 203 /",
-    "firm": "Brock Rodwell of Ray White Marine +61408 303 203 /",
+    "firm": "Brock Rodwell of Ray White Marine",
     "role": "buyer",
     "vessels": [
       "Beyond",
@@ -2646,20 +3030,11 @@
   },
   {
     "name": "brock@raywhitemarine.com",
-    "firm": "Brock Rodwell of Ray White Marine in Sydney, Australia +61408 303 203",
+    "firm": "Brock Rodwell of Ray White Marine in Sydney, Australia",
     "role": "seller",
     "vessels": [
       "KL",
-      "Murcielago"
-    ],
-    "email": "brock@raywhitemarine.com",
-    "mobile": "+61408 303 203"
-  },
-  {
-    "name": "brock@raywhitemarine.com",
-    "firm": "Brock Rodwell of Ray White Marine in Sydney, Australia+61408 303 203",
-    "role": "seller",
-    "vessels": [
+      "Murcielago",
       "Limitless",
       "Vanquish"
     ],
@@ -2668,7 +3043,7 @@
   },
   {
     "name": "brock@raywhitemarine.com",
-    "firm": "Brock Rodwell of Ray White Marine in Sydney, Australia+61408 303 203",
+    "firm": "Brock Rodwell of Ray White Marine in Sydney, Australia",
     "role": "buyer",
     "vessels": [
       "Limitless",
@@ -2803,6 +3178,28 @@
     ],
     "email": "andrew.bond@fraseryachts.com",
     "mobile": "+44 0207 0164480"
+  },
+  {
+    "name": "Burgess",
+    "firm": "Burgess",
+    "role": "buyer",
+    "vessels": [
+      "Focus",
+      "Loretta Anne",
+      "Lind"
+    ],
+    "mobile": "+1 305 672 0150"
+  },
+  {
+    "name": "Burgess",
+    "firm": "Burgess",
+    "role": "seller",
+    "vessels": [
+      "Stealth",
+      "Lind",
+      "Agora III"
+    ],
+    "mobile": "+1 310-980-0308"
   },
   {
     "name": "Charles B. Jones of Telephone",
@@ -3167,7 +3564,7 @@
   },
   {
     "name": "Cambridge Yacht Group",
-    "firm": "Cambridge Yacht Group https://cambridgeyachtclub.com/contact",
+    "firm": "Cambridge Yacht Group",
     "role": "buyer",
     "vessels": [
       "Grey Matters",
@@ -3265,7 +3662,8 @@
       "Dawo",
       "Taiji",
       "Corto Maltese",
-      "Ocean Pure 2"
+      "Ocean Pure 2",
+      "Berco Voyager"
     ],
     "email": "mfiolet@camperandnicholsons.com",
     "mobile": "+377 97 97 77 00"
@@ -3280,6 +3678,26 @@
     ],
     "email": "rnicholson@camperandnicholsons.com",
     "mobile": "+1.305.604.9191"
+  },
+  {
+    "name": "Adam Blackmore",
+    "firm": "Camper & Nicholsons",
+    "role": "seller",
+    "vessels": [
+      "Ferretti 780"
+    ],
+    "email": "ablackmore@camperandnicholsons.com",
+    "mobile": "+852 3976 7900"
+  },
+  {
+    "name": "Adam Blackmore",
+    "firm": "Camper & Nicholsons",
+    "role": "buyer",
+    "vessels": [
+      "Ferretti 780"
+    ],
+    "email": "ablackmore@camperandnicholsons.com",
+    "mobile": "+852 3976 7900"
   },
   {
     "name": "Adam Papadakis at Camper",
@@ -3318,6 +3736,16 @@
     "mobile": "+34 609 756 763"
   },
   {
+    "name": "Benjamin Bensahel",
+    "firm": "Camper & Nicholsons",
+    "role": "seller",
+    "vessels": [
+      "White Queen"
+    ],
+    "email": "bbensahel@camperandnicholsons.com",
+    "mobile": "+377 979 777 00"
+  },
+  {
     "name": "Bruce Brakenhoff",
     "firm": "Camper & Nicholsons",
     "role": "seller",
@@ -3326,6 +3754,40 @@
     ],
     "email": "brb@edmiston.com",
     "mobile": "+33 6 115 007 16"
+  },
+  {
+    "name": "Camper & Nicholsons",
+    "firm": "Camper & Nicholsons",
+    "role": "seller",
+    "vessels": [
+      "Meamina",
+      "Anastasia",
+      "AV",
+      "The Unifier King Abdulaziz the First",
+      "Param Jamuna III",
+      "Virgen del Mar V",
+      "RJ",
+      "Moon Goddess",
+      "Indian",
+      "High Roller",
+      "Sonic",
+      "Okto",
+      "Moka"
+    ],
+    "mobile": "+306970300053"
+  },
+  {
+    "name": "Camper & Nicholsons",
+    "firm": "Camper & Nicholsons",
+    "role": "buyer",
+    "vessels": [
+      "La Pellegrina 1",
+      "Emoji",
+      "Virgen del Mar V",
+      "Gail Force Too",
+      "Tremenda"
+    ],
+    "mobile": "+306970300053"
   },
   {
     "name": "Ciro Petrucci of Camper",
@@ -3347,6 +3809,17 @@
     ],
     "email": "cpetrucci@camperandnicholsons.com",
     "mobile": "+377 97 97 77 00"
+  },
+  {
+    "name": "Della Pearce",
+    "firm": "Camper & Nicholsons",
+    "role": "seller",
+    "vessels": [
+      "Joyous Journey",
+      "Taku"
+    ],
+    "email": "dpearce@camperandnicholsons.com",
+    "mobile": "+65 6028 3568"
   },
   {
     "name": "Efthimis Karalis of Camper",
@@ -3422,6 +3895,19 @@
     "mobile": "+33 6 877 803 17"
   },
   {
+    "name": "Marc Haendle",
+    "firm": "Camper & Nicholsons",
+    "role": "buyer",
+    "vessels": [
+      "Mathilda I",
+      "Duchessa",
+      "FORTUNA",
+      "SCORPIONE"
+    ],
+    "email": "mhaendle@camperandnicholsons.com",
+    "mobile": "+34 971 40 33 11"
+  },
+  {
     "name": "Nicholsons",
     "firm": "Camper & Nicholsons",
     "role": "seller",
@@ -3436,7 +3922,8 @@
       "Atlas",
       "MUSHA",
       "POKROV",
-      "ANTARES"
+      "ANTARES",
+      "Orso 3"
     ],
     "email": "aploch@camperandnicholsons.com",
     "mobile": "+34 971 403 311"
@@ -3447,7 +3934,8 @@
     "role": "buyer",
     "vessels": [
       "Incal",
-      "Sofico"
+      "Sofico",
+      "APOLLO 1"
     ],
     "email": "bbensahel@camperandnicholsons.com",
     "mobile": "+377 979 777 00"
@@ -3524,7 +4012,8 @@
       "Il Gattopardo",
       "POKROV",
       "VIRGEN DEL MAR VI",
-      "ANTARES"
+      "ANTARES",
+      "Berco Voyager"
     ],
     "email": "aploch@camperandnicholsons.com",
     "mobile": "+34 971 403 311"
@@ -3546,7 +4035,13 @@
     "role": "seller",
     "vessels": [
       "Mbolo",
-      "Nakessa"
+      "Nakessa",
+      "Mathilda I",
+      "Duchessa",
+      "EH2",
+      "LE JOIE DE MER",
+      "SEABISCUIT",
+      "HIDE N SEA"
     ],
     "email": "mhaendle@camperandnicholsons.com",
     "mobile": "+34 971 40 33 11"
@@ -3599,7 +4094,11 @@
     "firm": "Camper & Nicholsons",
     "role": "buyer",
     "vessels": [
-      "Elaldrea+"
+      "Elaldrea+",
+      "Forever",
+      "C",
+      "Corto Maltese",
+      "ONLY EIGHTY"
     ],
     "email": "fnicholson@camperandnicholsons.com",
     "mobile": "+1.305.604.9191"
@@ -3691,7 +4190,10 @@
     "vessels": [
       "Mamma Mia",
       "Elaldrea+",
-      "Sol"
+      "Sol",
+      "C",
+      "Forever One",
+      "Orso 3"
     ],
     "email": "fnicholson@camperandnicholsons.com",
     "mobile": "+1 305 776 3096"
@@ -3770,21 +4272,12 @@
     "role": "seller",
     "vessels": [
       "Enso",
-      "TEMPUS FUGIT"
-    ],
-    "email": "brokerage@carrswoodyachts.com",
-    "mobile": "+447476888639"
-  },
-  {
-    "name": "Alastair Shove",
-    "firm": "Carrswood Yachts+44 (0)7476 888639",
-    "role": "seller",
-    "vessels": [
+      "TEMPUS FUGIT",
       "Karibu",
       "Aquarius Alfa"
     ],
     "email": "brokerage@carrswoodyachts.com",
-    "mobile": "+44 (0)7476 888639"
+    "mobile": "+447476888639"
   },
   {
     "name": "CdM",
@@ -3836,6 +4329,27 @@
     "email": "ross@cecilwright.com"
   },
   {
+    "name": "Cecil Wright",
+    "firm": "Cecil Wright",
+    "role": "seller",
+    "vessels": [
+      "Kokomo",
+      "Kismet"
+    ],
+    "mobile": "+44 20 7408 1001"
+  },
+  {
+    "name": "Cecil Wright",
+    "firm": "Cecil Wright",
+    "role": "buyer",
+    "vessels": [
+      "Kokomo",
+      "Artemis",
+      "GRACE"
+    ],
+    "mobile": "+44 20 7408 1001"
+  },
+  {
     "name": "Chris Cecil-Wright at",
     "firm": "Cecil Wright",
     "role": "seller",
@@ -3847,6 +4361,26 @@
   },
   {
     "name": "Chris Cecil-Wright at",
+    "firm": "Cecil Wright",
+    "role": "buyer",
+    "vessels": [
+      "Kokomo",
+      "GRACE"
+    ],
+    "mobile": "+44 20 7408 1001"
+  },
+  {
+    "name": "Chris Cecil-Wright at Cecil Wright",
+    "firm": "Cecil Wright",
+    "role": "seller",
+    "vessels": [
+      "Kokomo",
+      "Kismet"
+    ],
+    "mobile": "+44 20 7408 1001"
+  },
+  {
+    "name": "Chris Cecil-Wright at Cecil Wright",
     "firm": "Cecil Wright",
     "role": "buyer",
     "vessels": [
@@ -3907,24 +4441,14 @@
     "mobile": "+33 6 24 77 51 07"
   },
   {
-    "name": "Chris Cecil-Wright at Cecil Wright",
-    "firm": "Cecil Wright & Partners Office: +44 20 7408 1001 /",
-    "role": "seller",
-    "vessels": [
-      "Kokomo",
-      "Kismet"
-    ],
-    "mobile": "+44 20 7408 1001"
-  },
-  {
-    "name": "Chris Cecil-Wright at Cecil Wright",
-    "firm": "Cecil Wright & Partners Office: +44 20 7408 1001 /",
+    "name": "Partners https://cecilwright.com/ Moana Yachting PHONE +33 6 24 77 51 07 EMAIL",
+    "firm": "Cecil Wright & Partners  Moana Yachting",
     "role": "buyer",
     "vessels": [
-      "Kokomo",
-      "GRACE"
+      "MAMMA MIA"
     ],
-    "mobile": "+44 20 7408 1001"
+    "email": "contact@moanayachting.com",
+    "mobile": "+33 6 24 77 51 07"
   },
   {
     "name": ": Henry Goulding",
@@ -3946,16 +4470,6 @@
     "email": "ross@cecilwright.com"
   },
   {
-    "name": "Partners https://cecilwright.com/ Moana Yachting PHONE +33 6 24 77 51 07 EMAIL",
-    "firm": "Cecil Wright & Partners https://cecilwright.com/contact Moana Yachting PHONE +33",
-    "role": "buyer",
-    "vessels": [
-      "MAMMA MIA"
-    ],
-    "email": "contact@moanayachting.com",
-    "mobile": "+33 6 24 77 51 07"
-  },
-  {
     "name": "Cetin Sever of International Yacht Charter",
     "firm": "Cetin Sever of International Yacht Charter",
     "role": "seller",
@@ -3972,6 +4486,17 @@
       "Yazz I"
     ],
     "mobile": "+33 (0) 492 993 993"
+  },
+  {
+    "name": "Chamberlain Yachts",
+    "firm": "Chamberlain Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Queen B",
+      "SARAH BETH",
+      "MARBELLA III"
+    ],
+    "mobile": "954-478-7000"
   },
   {
     "name": "Kent Chamberlain at Mobile: 954-478-7000 https://www.chamberlainyachts.com/conta",
@@ -4039,7 +4564,7 @@
   },
   {
     "name": "Dreams (+34) 971 931 057",
-    "firm": "Charter&Dreams (+34) 971 931 057",
+    "firm": "Charter&Dreams (",
     "role": "seller",
     "vessels": [
       "B3"
@@ -4049,7 +4574,7 @@
   },
   {
     "name": "Dreams (+34) 971 931 057",
-    "firm": "Charter&Dreams (+34) 971 931 057",
+    "firm": "Charter&Dreams (",
     "role": "buyer",
     "vessels": [
       "B3"
@@ -4118,6 +4643,26 @@
     "mobile": "954.303.5604"
   },
   {
+    "name": "Chris Carroll of Atlantic Yacht & Ship 954.303.5604",
+    "firm": "Chris Carroll of Atlantic Yacht & Ship 954.303.5604",
+    "role": "seller",
+    "vessels": [
+      "Long Aweighted",
+      "Heaven Sent"
+    ],
+    "mobile": "954.303.5604"
+  },
+  {
+    "name": "Chris Carroll of Atlantic Yacht & Ship 954.303.5604",
+    "firm": "Chris Carroll of Atlantic Yacht & Ship 954.303.5604",
+    "role": "buyer",
+    "vessels": [
+      "Heaven Sent",
+      "Xanadu"
+    ],
+    "mobile": "954.303.5604"
+  },
+  {
     "name": "Ship 954.303.5604",
     "firm": "Chris Carroll of Atlantic Yacht and Ship 954.303.5604",
     "role": "seller",
@@ -4149,7 +4694,7 @@
   },
   {
     "name": "Chris Mortimer of Yacht ZeroEmail:",
-    "firm": "Chris Mortimer of Yacht ZeroEmail: : +1(305) 709-2644",
+    "firm": "Chris Mortimer of Yacht ZeroEmail: :",
     "role": "buyer",
     "vessels": [
       "JOPAJU"
@@ -4212,7 +4757,7 @@
   },
   {
     "name": "Chuck Royhl https://www.linkedin.com//chuck-royhl-46646714/",
-    "firm": "Chuck Royhl https://www.linkedin.com/in/chuck-royhl-46646714/ 941-350-3437",
+    "firm": "Chuck Royhl  941-350-3437",
     "role": "seller",
     "vessels": [
       "Seber"
@@ -4290,8 +4835,17 @@
     "mobile": "+1 (954) 361- 3061"
   },
   {
+    "name": "Continental Maritime",
+    "firm": "Continental Maritime",
+    "role": "buyer",
+    "vessels": [
+      "Xnoi"
+    ],
+    "mobile": "27749022"
+  },
+  {
     "name": "Robert Yanovkian at",
-    "firm": "Continental Maritimehttps://www.linkedin.com/in/robert-yenovkian-27749022/?originalSubdomain=cy",
+    "firm": "Continental Maritime",
     "role": "buyer",
     "vessels": [
       "Xnoi"
@@ -4309,7 +4863,7 @@
   },
   {
     "name": "corrado.dimajo@equinoxeinternational.com",
-    "firm": "Corrado di Maio from Equinoxe International M +39 335 596 7552",
+    "firm": "Corrado di Maio from Equinoxe International M",
     "role": "buyer",
     "vessels": [
       "Ammonite"
@@ -4329,7 +4883,7 @@
   },
   {
     "name": "Dennis Riehl Crows Nest Yachts (",
-    "firm": "Crows Nest Yachts (driehl@crowsnestyachts.com Office: 949-574-7600 )",
+    "firm": "Crows Nest Yachts (",
     "role": "buyer",
     "vessels": [
       "INSPIRED"
@@ -4382,7 +4936,7 @@
   },
   {
     "name": "Peter Pavkovich",
-    "firm": "Custom Marine https://www.linkedin.com/in/peter-pavkovich-a0628b14/",
+    "firm": "Custom Marine",
     "role": "buyer",
     "vessels": [
       "DRILLER"
@@ -4412,7 +4966,7 @@
   },
   {
     "name": "Georges Damonte",
-    "firm": "Damonte Yachts +33 612 298 192",
+    "firm": "Damonte Yachts",
     "role": "seller",
     "vessels": [
       "MAH JONG"
@@ -4422,7 +4976,7 @@
   },
   {
     "name": "Georges Damonte",
-    "firm": "Damonte Yachts +33 612 298 192",
+    "firm": "Damonte Yachts",
     "role": "buyer",
     "vessels": [
       "MAH JONG"
@@ -4474,7 +5028,16 @@
   },
   {
     "name": "/?originalSubdomain=me",
-    "firm": "Darko Kascelan+382 32 540 280https://www.linkedin.com/in/darko-kascelan-6818b8a2",
+    "firm": "Darko Kascelan",
+    "role": "buyer",
+    "vessels": [
+      "Slo-Mo-Shun"
+    ],
+    "mobile": "+382 32 540 280"
+  },
+  {
+    "name": "Darko Kascelan",
+    "firm": "Darko Kascelan",
     "role": "buyer",
     "vessels": [
       "Slo-Mo-Shun"
@@ -4561,7 +5124,7 @@
   },
   {
     "name": "phone: 920-860-7655 Email: Dr@reeldealyachts.com",
-    "firm": "David Ross from Reel Deal Yachts Mobile",
+    "firm": "David Ross from Reel Deal Yachts",
     "role": "buyer",
     "vessels": [
       "Invision"
@@ -4571,7 +5134,7 @@
   },
   {
     "name": "phone: 920-860-7655 Email: Dr@reeldealyachts.com)",
-    "firm": "David Ross of Reel Deal Yachts (Mobile",
+    "firm": "David Ross of Reel Deal Yachts (",
     "role": "buyer",
     "vessels": [
       "INVISION"
@@ -4599,6 +5162,24 @@
     ],
     "email": "ahoeksma@devalk.nl",
     "mobile": "+31 (0) 6 53 299 244"
+  },
+  {
+    "name": "De Valk",
+    "firm": "De Valk Yacht Brokers",
+    "role": "seller",
+    "vessels": [
+      "Heidenskip"
+    ],
+    "email": "welcome@devalk.nl"
+  },
+  {
+    "name": "De Valk",
+    "firm": "De Valk Yacht Brokers",
+    "role": "buyer",
+    "vessels": [
+      "Heidenskip"
+    ],
+    "email": "welcome@devalk.nl"
   },
   {
     "name": "Diego Cerasi",
@@ -4650,23 +5231,23 @@
     "mobile": "9672 9600"
   },
   {
-    "name": "Invest+9‭0 (212) 229 77",
-    "firm": "Delphine Yachts & Invest+9‭0 (212) 229 77",
-    "role": "seller",
-    "vessels": [
-      "Dia’s"
-    ],
-    "email": "07info@delphineyachts.com",
-    "mobile": "0 (212) 229 77 07"
-  },
-  {
     "name": "Delphine Yachts",
-    "firm": "Delphine Yachts +9‭0 (212) 229 77 07",
+    "firm": "Delphine Yachts",
     "role": "buyer",
     "vessels": [
       "Campo Verde"
     ],
     "email": "info@delphineyachts.com",
+    "mobile": "0 (212) 229 77 07"
+  },
+  {
+    "name": "Invest+9‭0 (212) 229 77",
+    "firm": "Delphine Yachts & Invest",
+    "role": "seller",
+    "vessels": [
+      "Dia’s"
+    ],
+    "email": "07info@delphineyachts.com",
     "mobile": "0 (212) 229 77 07"
   },
   {
@@ -5029,7 +5610,11 @@
       "Abbracci",
       "Man of Steel",
       "FINE PRINT",
-      "ODYSSEA"
+      "ODYSSEA",
+      "Huntress",
+      "Elizabeth R",
+      "BANDIDO",
+      "ALTA"
     ],
     "email": "ccollins@denisonyachting.com",
     "mobile": "561.441.6131"
@@ -5047,7 +5632,9 @@
       "Abbracci",
       "Seven Seas",
       "Man of Steel",
-      "SWEET SALT"
+      "SWEET SALT",
+      "HUNTRESS",
+      "DEE DEE LEE"
     ],
     "email": "ccollins@denisonyachting.com",
     "mobile": "561.441.6131"
@@ -5181,9 +5768,32 @@
     "firm": "Denison Yachting",
     "role": "seller",
     "vessels": [
-      "ARIADNE"
+      "ARIADNE",
+      "OCEAN'S SEVEN"
     ],
     "email": "sales@denisonyachting.com"
+  },
+  {
+    "name": "Denison Yachting",
+    "firm": "Denison Yachting",
+    "role": "seller",
+    "vessels": [
+      "No Curfew",
+      "Bundalong"
+    ],
+    "mobile": "386.295.4668"
+  },
+  {
+    "name": "Denison Yachting",
+    "firm": "Denison Yachting",
+    "role": "buyer",
+    "vessels": [
+      "Bella Rona",
+      "Casi Cielo",
+      "AVANTI",
+      "GECKO"
+    ],
+    "mobile": "386.295.4668"
   },
   {
     "name": "Denison yacht broker Spencer Markatos Cell: 561.628.6694",
@@ -6061,7 +6671,10 @@
       "Man of Steel",
       "Book Ends",
       "ODYSSEA",
-      "LUMIR"
+      "LUMIR",
+      "Huntress",
+      "Elizabeth R",
+      "ALTA"
     ],
     "email": "tconboy@denisonyachting.com",
     "mobile": "561.441.6131"
@@ -6116,6 +6729,15 @@
     ],
     "email": "yachting3106580700tom@denisonyachting.com",
     "mobile": "3106580700"
+  },
+  {
+    "name": "Wiley Sharp at",
+    "firm": "Denison Yachting",
+    "role": "seller",
+    "vessels": [
+      "Bundalong"
+    ],
+    "mobile": "038218149"
   },
   {
     "name": "Will Noftsinger",
@@ -6210,15 +6832,6 @@
     "mobile": "386.295.4668"
   },
   {
-    "name": "Wiley Sharp at",
-    "firm": "Denison Yachtinghttps://www.linkedin.com/in/wiley-sharp-038218149/",
-    "role": "seller",
-    "vessels": [
-      "Bundalong"
-    ],
-    "mobile": "038218149"
-  },
-  {
     "name": "Deniz Diduk of Euro Marine Group",
     "firm": "Deniz Diduk of Euro Marine Group",
     "role": "buyer",
@@ -6229,7 +6842,7 @@
   },
   {
     "name": "info@derani-yachts.com",
-    "firm": "Derani Yachts in Thailand Brokerage: +66 (0)83 388 9090 Email:",
+    "firm": "Derani Yachts in Thailand Brokerage:",
     "role": "buyer",
     "vessels": [
       "Nerissa"
@@ -6239,7 +6852,7 @@
   },
   {
     "name": "Derk Jan Rolff",
-    "firm": "Derk Jan Rolff https://www.linkedin.com/in/derk-jan-rolff-440b63b/?originalSubd",
+    "firm": "Derk Jan Rolff",
     "role": "buyer",
     "vessels": [
       "Moka",
@@ -6298,12 +6911,41 @@
   },
   {
     "name": "1112210/?originalSubdomain=nl",
-    "firm": "Dion De Hamer from Sunseeker Benelux https://www.linkedin.com/in/dion-de-hamer-2",
+    "firm": "Dion De Hamer from Sunseeker Benelux",
     "role": "buyer",
     "vessels": [
       "Pelagia"
     ],
     "mobile": "21112210"
+  },
+  {
+    "name": "Dion De Hamer from Sunseeker Benelux",
+    "firm": "Dion De Hamer from Sunseeker Benelux",
+    "role": "buyer",
+    "vessels": [
+      "Pelagia"
+    ],
+    "mobile": "21112210"
+  },
+  {
+    "name": "Andre Barbier (+34 609622313 )",
+    "firm": "Dolphin Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Onyx",
+      "White Queen"
+    ],
+    "mobile": "+34 609622313"
+  },
+  {
+    "name": "Dolphin Yachts",
+    "firm": "Dolphin Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Onyx",
+      "White Queen"
+    ],
+    "mobile": "+34 609622313"
   },
   {
     "name": "info@dolphin-yachts.com Tel: +34 971 700 844 Mob: +34 609 622 313",
@@ -6324,16 +6966,6 @@
     ],
     "email": "info@dolphin-yachts.com",
     "mobile": "+34 971 700 844"
-  },
-  {
-    "name": "Andre Barbier (+34 609622313 )",
-    "firm": "Dolphin Yachts https://dolphin-yachts.com/contact-dolphin.asp",
-    "role": "buyer",
-    "vessels": [
-      "Onyx",
-      "White Queen"
-    ],
-    "mobile": "+34 609622313"
   },
   {
     "name": "info@dolphin-yachts.com",
@@ -6346,6 +6978,15 @@
   },
   {
     "name": "Doug Hoogs of Atlantic Yacht",
+    "firm": "Doug Hoogs of Atlantic Yacht & Ship",
+    "role": "buyer",
+    "vessels": [
+      "Serenity"
+    ],
+    "mobile": "954.921.1518"
+  },
+  {
+    "name": "Doug Hoogs of Atlantic Yacht & Ship",
     "firm": "Doug Hoogs of Atlantic Yacht & Ship",
     "role": "buyer",
     "vessels": [
@@ -6385,7 +7026,7 @@
   },
   {
     "name": "Drettmann International",
-    "firm": "Drettmann International +49 421 56607 0",
+    "firm": "Drettmann International",
     "role": "buyer",
     "vessels": [
       "SAVE YOUR TEARS"
@@ -6439,6 +7080,27 @@
     ],
     "email": "cac@drettmann.com",
     "mobile": "+49 42 156 6070"
+  },
+  {
+    "name": "Drettmann Yachts",
+    "firm": "Drettmann Yachts",
+    "role": "seller",
+    "vessels": [
+      "Mocean II",
+      "X5",
+      "Saint Daria"
+    ],
+    "mobile": "662692175"
+  },
+  {
+    "name": "Drettmann Yachts",
+    "firm": "Drettmann Yachts",
+    "role": "buyer",
+    "vessels": [
+      "X5",
+      "Grayzone"
+    ],
+    "mobile": "662692175"
   },
   {
     "name": "Yannick Altevolmer",
@@ -6971,6 +7633,43 @@
     "mobile": "001 401 965 9189"
   },
   {
+    "name": "Edmiston",
+    "firm": "Edmiston",
+    "role": "seller",
+    "vessels": [
+      "Chorusline",
+      "Arbema",
+      "Twizzle",
+      "Takara",
+      "Mrs B",
+      "Koo",
+      "Gemini",
+      "Infinity",
+      "Resilience",
+      "Willpower",
+      "Regina D’Italia II",
+      "UNEXPECTED",
+      "AZUL V"
+    ],
+    "mobile": "+44 20 7495 5151"
+  },
+  {
+    "name": "Edmiston",
+    "firm": "Edmiston",
+    "role": "buyer",
+    "vessels": [
+      "Janus Navem",
+      "Spectre",
+      "TYR",
+      "Willpower",
+      "Vaao",
+      "BADIS",
+      "Cassinella",
+      "ASTERIA"
+    ],
+    "mobile": "+1 212 792 5370"
+  },
+  {
     "name": "Hannah Wolstenholme of",
     "firm": "Edmiston",
     "role": "buyer",
@@ -7227,7 +7926,16 @@
   },
   {
     "name": "90096148/?originalSubdomain=mc",
-    "firm": "EdmistonAlex Busher+33 680 86 33 74https://www.linkedin.com/in/alexander-busher",
+    "firm": "EdmistonAlex Busher",
+    "role": "buyer",
+    "vessels": [
+      "Mrs B"
+    ],
+    "mobile": "+33 680 86 33 74"
+  },
+  {
+    "name": "EdmistonAlex Busher",
+    "firm": "EdmistonAlex Busher",
     "role": "buyer",
     "vessels": [
       "Mrs B"
@@ -7264,8 +7972,17 @@
     "email": "dan.goodstadt@elliman.com"
   },
   {
+    "name": "Elysee Yachts",
+    "firm": "Elysee Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Lucky Anter"
+    ],
+    "mobile": "+30 210 411 60 71"
+  },
+  {
     "name": "Elysee Yachts Tel.: +30 210 411 60 71",
-    "firm": "Elysee Yachts Tel.: +30 210 411 60 71",
+    "firm": "Elysee Yachts",
     "role": "buyer",
     "vessels": [
       "Lucky Anter"
@@ -7332,6 +8049,24 @@
     "mobile": "10217194"
   },
   {
+    "name": "Charles Crane at Engel",
+    "firm": "Engel & Volkers Yachting",
+    "role": "seller",
+    "vessels": [
+      "GREAT HOPE"
+    ],
+    "mobile": "+44 20 7495 5151"
+  },
+  {
+    "name": "Engel & Volkers Yachting",
+    "firm": "Engel & Volkers Yachting",
+    "role": "seller",
+    "vessels": [
+      "GREAT HOPE"
+    ],
+    "mobile": "+44 20 7495 5151"
+  },
+  {
     "name": "Volkers Yachting",
     "firm": "Engel & Volkers Yachting",
     "role": "seller",
@@ -7342,17 +8077,8 @@
     "mobile": "+377 97 77 60 02"
   },
   {
-    "name": "Charles Crane at Engel",
-    "firm": "Engel & Volkers Yachting +44 20 7495 5151",
-    "role": "seller",
-    "vessels": [
-      "GREAT HOPE"
-    ],
-    "mobile": "+44 20 7495 5151"
-  },
-  {
     "name": "Völkers Yachting Monaco Sebastiano PitasiO: +377 97 77 60 02M: +33 7 88 63 00 40",
-    "firm": "Engel & Völkers Yachting Monaco Sebastiano PitasiO: +377 97 77 60 02M: +33 7 88",
+    "firm": "Engel & Völkers Yachting Monaco Sebastiano PitasiO:",
     "role": "buyer",
     "vessels": [
       "Hvalross"
@@ -7422,7 +8148,7 @@
   },
   {
     "name": "info@exocetmarine.com",
-    "firm": "Exocet Marine +33 (0)493 631 777",
+    "firm": "Exocet Marine",
     "role": "buyer",
     "vessels": [
       "Vianne"
@@ -7500,7 +8226,9 @@
       "Pinch Me",
       "Ragnar",
       "SAMURAI",
-      "Solaia"
+      "Solaia",
+      "TURQUOISE",
+      "SKYFALL"
     ],
     "email": "fg@fgiyachtgroup.com",
     "mobile": "954-530-5208"
@@ -7544,7 +8272,8 @@
       "Canelo",
       "Quantum of Solace",
       "Try It",
-      "Legasea"
+      "Legasea",
+      "AL DI LA"
     ],
     "email": "fng@fgiyachtgroup.com",
     "mobile": "+1 954 530 5208"
@@ -7583,7 +8312,8 @@
       "Blacksheep",
       "THEMIS",
       "SCORPIONE",
-      "TEMPTATION"
+      "TEMPTATION",
+      "Silver Lining"
     ],
     "email": "fg@fgiyachtgroup.com",
     "mobile": "954-494-7096"
@@ -7595,7 +8325,12 @@
     "vessels": [
       "Mammi Mammi",
       "Arreee!",
-      "Bel Sogno"
+      "Bel Sogno",
+      "Perla",
+      "Life of Reilley",
+      "VISION",
+      "OCEAN VIEW",
+      "TOP SHELF"
     ],
     "email": "fng@fgiyachtgroup.com",
     "mobile": "+1 954 530 5208"
@@ -7611,12 +8346,23 @@
     "mobile": "954 536 3783"
   },
   {
+    "name": "Katya Grzeszczak of IYC (",
+    "firm": "FGI Yacht Group",
+    "role": "buyer",
+    "vessels": [
+      "TURQUOISE"
+    ],
+    "email": "kg@iyc.com",
+    "mobile": "954-494-7096"
+  },
+  {
     "name": "Katya Jaimes IYC",
     "firm": "FGI Yacht Group",
     "role": "seller",
     "vessels": [
       "SCORPIONE",
-      "TEMPTATION"
+      "TEMPTATION",
+      "Silver Lining"
     ],
     "email": "kg@iyc.com",
     "mobile": "954-522-2323"
@@ -7651,16 +8397,6 @@
       "Excellence"
     ],
     "email": "arney@fyiyachts.com",
-    "mobile": "786-357-6819"
-  },
-  {
-    "name": "Arney Mendez",
-    "firm": "FYI786-357-6819arney@fyiyachts.com",
-    "role": "seller",
-    "vessels": [
-      "Jerico"
-    ],
-    "email": "fyi786-357-6819arney@fyiyachts.com",
     "mobile": "786-357-6819"
   },
   {
@@ -7735,7 +8471,7 @@
   },
   {
     "name": "Andy Eastman",
-    "firm": "First Yachts in Mallorca(+34) 637 280",
+    "firm": "First Yachts in Mallorca(",
     "role": "buyer",
     "vessels": [
       "XS",
@@ -7872,7 +8608,7 @@
   },
   {
     "name": "foulques@moanayachting.com",
-    "firm": "Foulques de Raigniac of Moana Yachting +33 6 24 77 51 07",
+    "firm": "Foulques de Raigniac of Moana Yachting",
     "role": "seller",
     "vessels": [
       "Black & White"
@@ -7882,7 +8618,7 @@
   },
   {
     "name": "foulques@moanayachting.com",
-    "firm": "Foulques de Raigniac of Moana Yachting+33 6 24 77 51 07",
+    "firm": "Foulques de Raigniac of Moana Yachting",
     "role": "buyer",
     "vessels": [
       "Nakessa"
@@ -7892,7 +8628,7 @@
   },
   {
     "name": "francesco.orlandi@ebyachts.it",
-    "firm": "Francesco Orlandi of EB Yachts +39 340 4534169",
+    "firm": "Francesco Orlandi of EB Yachts",
     "role": "buyer",
     "vessels": [
       "Diana II"
@@ -7902,7 +8638,7 @@
   },
   {
     "name": "francesco.orlandi@ebyachts.it",
-    "firm": "Francesco Orlandi of EB Yachts +39 340 4534169",
+    "firm": "Francesco Orlandi of EB Yachts",
     "role": "seller",
     "vessels": [
       "Sprezzatura"
@@ -8058,7 +8794,8 @@
     "role": "seller",
     "vessels": [
       "Arrow",
-      "Hercules"
+      "Hercules",
+      "WHEELS"
     ],
     "email": "andrew.bond@fraseryachts.com",
     "mobile": "+44 0207 0164480"
@@ -8326,6 +9063,24 @@
     "mobile": "+61 2 9222 7705"
   },
   {
+    "name": "Fraser",
+    "firm": "Fraser",
+    "role": "seller",
+    "vessels": [
+      "Bear Market"
+    ],
+    "mobile": "49387366"
+  },
+  {
+    "name": "Fraser",
+    "firm": "Fraser",
+    "role": "buyer",
+    "vessels": [
+      "Bear Market"
+    ],
+    "mobile": "49387366"
+  },
+  {
     "name": "Georges Bourgoignie",
     "firm": "Fraser",
     "role": "buyer",
@@ -8382,7 +9137,8 @@
     "firm": "Fraser",
     "role": "seller",
     "vessels": [
-      "Adamas V"
+      "Adamas V",
+      "FORTUNA"
     ],
     "email": "giulio.riggio@fraseryachts.com",
     "mobile": "34-971-700-445"
@@ -8478,6 +9234,16 @@
     ],
     "email": "2111joaquin.genrich@fraseryachts.com",
     "mobile": "+1 760 912 2111"
+  },
+  {
+    "name": "Jochen Brill (",
+    "firm": "Fraser",
+    "role": "seller",
+    "vessels": [
+      "FORTUNA"
+    ],
+    "email": "jochen.brill@northropandjohnson.com",
+    "mobile": "34-609-600-910"
   },
   {
     "name": "Jody O’Brien +1 954 646",
@@ -8758,7 +9524,9 @@
       "Monokini",
       "King",
       "Sunrise",
-      "Aria.S"
+      "Aria.S",
+      "Elaldrea",
+      "WUATTAGAL"
     ],
     "email": "marco.fodale@fraseryachts.com",
     "mobile": "+33 622 324 681"
@@ -9130,13 +9898,33 @@
   },
   {
     "name": "Stefano Falaschi",
-    "firm": "Futura YachtT: +39 335 645 4736T. +39 335 640",
+    "firm": "Futura YachtT:",
     "role": "seller",
     "vessels": [
       "Saudades"
     ],
     "email": "6227commerciale@futurayacht.comsales",
     "mobile": "+39 335 645 4736"
+  },
+  {
+    "name": "43info@g-yachts.com",
+    "firm": "G-Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Hemabejo"
+    ],
+    "email": "43info@g-yachts.com",
+    "mobile": "+377 977 705 43"
+  },
+  {
+    "name": "43info@g-yachts.com",
+    "firm": "G-Yachts",
+    "role": "seller",
+    "vessels": [
+      "Nyota"
+    ],
+    "email": "43info@g-yachts.com",
+    "mobile": "+377 977 705 43"
   },
   {
     "name": "Benjamin Bensahel",
@@ -9147,26 +9935,6 @@
     ],
     "email": "bbensahel@camperandnicholsons.com",
     "mobile": "+377 979 777 00"
-  },
-  {
-    "name": "43info@g-yachts.com",
-    "firm": "G-Yachts +377 977 705",
-    "role": "buyer",
-    "vessels": [
-      "Hemabejo"
-    ],
-    "email": "43info@g-yachts.com",
-    "mobile": "+377 977 705 43"
-  },
-  {
-    "name": "43info@g-yachts.com",
-    "firm": "G-Yachts +377 977 705",
-    "role": "seller",
-    "vessels": [
-      "Nyota"
-    ],
-    "email": "43info@g-yachts.com",
-    "mobile": "+377 977 705 43"
   },
   {
     "name": "Jonathan Lafortune",
@@ -9189,6 +9957,29 @@
     "mobile": "+90 532 592 8744"
   },
   {
+    "name": "Andrew Maryott of",
+    "firm": "Galati Yacht Sales",
+    "role": "buyer",
+    "vessels": [
+      "Sunzset",
+      "Arenita",
+      "Determination II"
+    ],
+    "email": "amaryott@galatiyachts.com",
+    "mobile": "941) 499-0083"
+  },
+  {
+    "name": "Andrew Maryott of",
+    "firm": "Galati Yacht Sales",
+    "role": "seller",
+    "vessels": [
+      "Missing Card III",
+      "Center Ring"
+    ],
+    "email": "amaryott@galatiyachts.com",
+    "mobile": "941) 499-0083"
+  },
+  {
     "name": "Carmine Galati",
     "firm": "Galati Yacht Sales",
     "role": "seller",
@@ -9209,14 +10000,72 @@
     "mobile": "1-863-412-5833"
   },
   {
+    "name": "Dave Hirshberg",
+    "firm": "Galati Yacht Sales",
+    "role": "buyer",
+    "vessels": [
+      "Tomahawk"
+    ],
+    "email": "dhirshberg@galatiyachts.com",
+    "mobile": "239) 329-9067"
+  },
+  {
+    "name": "Galati Yacht Sales",
+    "firm": "Galati Yacht Sales",
+    "role": "buyer",
+    "vessels": [
+      "Never Blue",
+      "Bella Contessa",
+      "HIGH COTTON"
+    ],
+    "mobile": "1-954-614-5777"
+  },
+  {
+    "name": "Galati Yacht Sales",
+    "firm": "Galati Yacht Sales",
+    "role": "seller",
+    "vessels": [
+      "A Work of Art",
+      "Sunzset",
+      "AMARULA SUN",
+      "EXIT STRATEGY",
+      "Chillin",
+      "OUR TRADE",
+      "NO COMPROMISE"
+    ],
+    "mobile": "1-850-259-3246"
+  },
+  {
+    "name": "Hargrave Custom Yachts (",
+    "firm": "Galati Yacht Sales",
+    "role": "seller",
+    "vessels": [
+      "Cutting Edge"
+    ],
+    "email": "info@hargrave.org"
+  },
+  {
     "name": "Jason Lozeau",
     "firm": "Galati Yacht Sales",
     "role": "seller",
     "vessels": [
-      "Algorythm"
+      "Algorythm",
+      "Missing Card III",
+      "Center Ring"
     ],
     "email": "jlozeau@galatiyachts.com",
     "mobile": "941) 732-1367"
+  },
+  {
+    "name": "Jason Lozeau of",
+    "firm": "Galati Yacht Sales",
+    "role": "buyer",
+    "vessels": [
+      "Sunzset",
+      "Triton"
+    ],
+    "email": "jlozeau@galatiyachts.com",
+    "mobile": "508) 364-2010"
   },
   {
     "name": "Michael Galati",
@@ -9232,19 +10081,42 @@
     "mobile": "941) 499-0083"
   },
   {
-    "name": "Randy Bright at",
-    "firm": "Galati Yacht Sales 1-713-816-2165 https://www.linkedin.com/in/randy-bright-65203420/",
+    "name": "Rickard Charleson 1-727-667-7745",
+    "firm": "Galati Yacht Sales",
     "role": "seller",
     "vessels": [
-      "NO COMPROMISE"
+      "VVV"
     ],
-    "mobile": "1-713-816-2165"
+    "email": "rcharleson@galatiyachts.com",
+    "mobile": "1-727-667-7745"
+  },
+  {
+    "name": "broker Anthony Gathercole",
+    "firm": "Galati Yacht Sales",
+    "role": "seller",
+    "vessels": [
+      "Alexandra Jane",
+      "Limitless"
+    ],
+    "email": "agathercole@galatiyachts.com",
+    "mobile": "727) 515-9973"
+  },
+  {
+    "name": "broker Anthony Gathercole",
+    "firm": "Galati Yacht Sales",
+    "role": "buyer",
+    "vessels": [
+      "Beachfront II"
+    ],
+    "email": "agathercole@galatiyachts.com",
+    "mobile": "727) 515-9973"
   },
   {
     "name": "Randy Bright at",
-    "firm": "Galati Yacht Sales 1-713-816-2165https://www.linkedin.com/in/randy-bright-65203420/",
+    "firm": "Galati Yacht Sales 1-713-816-2165",
     "role": "seller",
     "vessels": [
+      "NO COMPROMISE",
       "Chillin"
     ],
     "mobile": "1-713-816-2165"
@@ -9270,7 +10142,7 @@
   },
   {
     "name": "Jim Azzolini at",
-    "firm": "Galati Yacht Sales 1-850-259-3246 https://www.linkedin.com/in/jim-azzolini-9987613b/",
+    "firm": "Galati Yacht Sales 1-850-259-3246",
     "role": "seller",
     "vessels": [
       "A Work of Art",
@@ -9320,7 +10192,7 @@
   },
   {
     "name": "David Hirshberg at",
-    "firm": "Galati Yacht Sales1-239-289-6098https://www.linkedin.com/in/dave-hirshberg-3b780496/",
+    "firm": "Galati Yacht Sales1-239-289-6098",
     "role": "buyer",
     "vessels": [
       "Seaquinn"
@@ -9328,8 +10200,17 @@
     "mobile": "1-239-289-6098"
   },
   {
-    "name": "Michael Galati at",
-    "firm": "Galati Yacht Sales1-941-725-2782https://www.linkedin.com/in/mike-galati-8a372853/",
+    "name": "Galati Yacht Sales1-239-289-6098",
+    "firm": "Galati Yacht Sales1-239-289-6098",
+    "role": "buyer",
+    "vessels": [
+      "Seaquinn"
+    ],
+    "mobile": "1-239-289-6098"
+  },
+  {
+    "name": "Galati Yacht Sales1-941-725-2782",
+    "firm": "Galati Yacht Sales1-941-725-2782",
     "role": "seller",
     "vessels": [
       "Team Galati"
@@ -9337,8 +10218,26 @@
     "mobile": "1-941-725-2782"
   },
   {
+    "name": "Michael Galati at",
+    "firm": "Galati Yacht Sales1-941-725-2782",
+    "role": "seller",
+    "vessels": [
+      "Team Galati"
+    ],
+    "mobile": "1-941-725-2782"
+  },
+  {
+    "name": "Galati Yachts(850) 496-2298",
+    "firm": "Galati Yachts(850) 496-2298",
+    "role": "seller",
+    "vessels": [
+      "Sea You Later"
+    ],
+    "mobile": "850) 496-2298"
+  },
+  {
     "name": "Joseph Galati III at",
-    "firm": "Galati Yachts(850) 496-2298https://www.linkedin.com/in/joseph-galati-iii-560b00b6/",
+    "firm": "Galati Yachts(850) 496-2298",
     "role": "seller",
     "vessels": [
       "Sea You Later"
@@ -9387,7 +10286,7 @@
   },
   {
     "name": "08gm@g-yachts.com",
-    "firm": "Gaspard Milazzo of G-Yachts+41 75 408 08",
+    "firm": "Gaspard Milazzo of G-Yachts",
     "role": "buyer",
     "vessels": [
       "Tiara"
@@ -9396,8 +10295,17 @@
     "mobile": "+41 75 408 08 08"
   },
   {
+    "name": "Geoff Lovett International",
+    "firm": "Geoff Lovett International",
+    "role": "buyer",
+    "vessels": [
+      "Jeremy"
+    ],
+    "mobile": "46314062"
+  },
+  {
     "name": "Perry James at",
-    "firm": "Geoff Lovett International https://www.linkedin.com/in/perry-james-46314062/#",
+    "firm": "Geoff Lovett International",
     "role": "buyer",
     "vessels": [
       "Jeremy"
@@ -9406,7 +10314,7 @@
   },
   {
     "name": "Georges Damonte of Damonte Yachts+33 612 298",
-    "firm": "Georges Damonte of Damonte Yachts+33 612 298 ://www.linkedin.com/in/georges-damo",
+    "firm": "Georges Damonte of Damonte Yachts",
     "role": "buyer",
     "vessels": [
       "Panthours"
@@ -9426,8 +10334,8 @@
     "mobile": "+41 91 2105872"
   },
   {
-    "name": "John Wood at",
-    "firm": "Gibraltar Solutions https://www.linkedin.com/in/john-wood-35694937/?originalSubdomain=uk",
+    "name": "Gibraltar Solutions",
+    "firm": "Gibraltar Solutions",
     "role": "buyer",
     "vessels": [
       "AUSTRALIA"
@@ -9435,8 +10343,26 @@
     "mobile": "35694937"
   },
   {
+    "name": "John Wood at",
+    "firm": "Gibraltar Solutions",
+    "role": "buyer",
+    "vessels": [
+      "AUSTRALIA"
+    ],
+    "mobile": "35694937"
+  },
+  {
+    "name": "Gilberte Cane from Gilberte Cane Yacht Brokerage 0033 611 83 15 84",
+    "firm": "Gilberte Cane from Gilberte Cane Yacht Brokerage 0033 611 83 15 84",
+    "role": "buyer",
+    "vessels": [
+      "Elinor"
+    ],
+    "mobile": "0033 611 83 15 84"
+  },
+  {
     "name": "lberte-cane-yacht.com/",
-    "firm": "Gilberte Cane from Gilberte Cane Yacht Brokerage 0033 611 83 15 84 http://www.gi",
+    "firm": "Gilberte Cane from Gilberte Cane Yacht Brokerage 0033 611 83 15 84",
     "role": "buyer",
     "vessels": [
       "Elinor"
@@ -9620,7 +10546,7 @@
   },
   {
     "name": "glynn@ethereal-yachts.com",
-    "firm": "Glynn Smith of Ethereal Yachts +1 954 614 0166",
+    "firm": "Glynn Smith of Ethereal Yachts",
     "role": "seller",
     "vessels": [
       "Solaris"
@@ -9630,7 +10556,7 @@
   },
   {
     "name": "glynn@ethereal-yachts.com",
-    "firm": "Glynn Smith of Ethereal Yachts +1 954 614 0166",
+    "firm": "Glynn Smith of Ethereal Yachts",
     "role": "buyer",
     "vessels": [
       "Catching Moments"
@@ -9731,6 +10657,15 @@
     "mobile": "+33699939099"
   },
   {
+    "name": "Grupo Lafortune Yachting",
+    "firm": "Grupo Lafortune Yachting",
+    "role": "seller",
+    "vessels": [
+      "MELINDA V"
+    ],
+    "mobile": "61041566"
+  },
+  {
     "name": "Jonathan (",
     "firm": "Grupo Lafortune Yachting",
     "role": "buyer",
@@ -9762,7 +10697,7 @@
   },
   {
     "name": "Ozlem Lafortune at",
-    "firm": "Grupo Lafortune Yachting https://www.linkedin.com/in/%C3%B6zlem-lafortune-61041566/?originalSubdomain=tr",
+    "firm": "Grupo Lafortune Yachting",
     "role": "seller",
     "vessels": [
       "MELINDA V"
@@ -10047,6 +10982,16 @@
     ],
     "email": "eweber@hmy.com",
     "mobile": "203-312-3845"
+  },
+  {
+    "name": "HMY Yacht Sales",
+    "firm": "HMY Yacht Sales",
+    "role": "seller",
+    "vessels": [
+      "Tai Pan",
+      "Gray Ghost"
+    ],
+    "mobile": "561) 328-1100"
   },
   {
     "name": "Jack Robertson",
@@ -10566,6 +11511,34 @@
     "mobile": "813) 362-4488"
   },
   {
+    "name": "Haas International",
+    "firm": "Haas International",
+    "role": "seller",
+    "vessels": [
+      "Free Wings",
+      "Colombaio",
+      "Sea Rose Star",
+      "La Maia",
+      "Charisma Nova",
+      "Alme Sol",
+      "FOFTEIN"
+    ],
+    "mobile": "+41 (0) 792 275 942"
+  },
+  {
+    "name": "Haas International",
+    "firm": "Haas International",
+    "role": "buyer",
+    "vessels": [
+      "Free Wings",
+      "Sea Rose Star",
+      "Mbolo",
+      "Alme Sol",
+      "HIDE N SEA"
+    ],
+    "mobile": "+41 (0) 792 275 942"
+  },
+  {
     "name": "Manfred Haas",
     "firm": "Haas International",
     "role": "buyer",
@@ -10629,7 +11602,7 @@
   },
   {
     "name": "80 32 M: WhatsApp: +90 532 214 50 98",
-    "firm": "Hakan Altinel of Altinel Shipyards Yacht Brokerage Hakan Altinel O: +90 543 485",
+    "firm": "Hakan Altinel of Altinel Shipyards Yacht Brokerage Hakan Altinel O:",
     "role": "buyer",
     "vessels": [
       "Rebessa"
@@ -10719,7 +11692,7 @@
   },
   {
     "name": "Hargrave Custom Yachts (",
-    "firm": "Hargrave Custom Yachts () and Galati Yacht Sales https://www.galatiyachts.com/",
+    "firm": "Hargrave Custom Yachts () and Galati Yacht Sales",
     "role": "seller",
     "vessels": [
       "Cutting Edge"
@@ -10728,7 +11701,7 @@
   },
   {
     "name": "Charte",
-    "firm": "Hargrave Yachts Brokerage & Charte +1 954 463-0555",
+    "firm": "Hargrave Yachts Brokerage & Charte",
     "role": "buyer",
     "vessels": [
       "BW"
@@ -10738,7 +11711,7 @@
   },
   {
     "name": "UK +44.7452.929.784",
-    "firm": "Harry Peralta (Spain +34 617 440 946",
+    "firm": "Harry Peralta (Spain",
     "role": "buyer",
     "vessels": [
       "Paradigm"
@@ -10791,7 +11764,8 @@
     "role": "seller",
     "vessels": [
       "Jade",
-      "About Time"
+      "About Time",
+      "Julia Dorothy"
     ],
     "email": "henry@reeldealyachts.com",
     "mobile": "+1-954-376-2670"
@@ -10809,7 +11783,7 @@
   },
   {
     "name": "phone: 954-376-2670 Email: henry@reeldealyachts.com)",
-    "firm": "Henry Schonthal of Reel Deal Yachts (Mobile",
+    "firm": "Henry Schonthal of Reel Deal Yachts (",
     "role": "seller",
     "vessels": [
       "KIWI DREAMS"
@@ -10818,18 +11792,8 @@
     "mobile": "954-376-2670"
   },
   {
-    "name": "phone: 954-376-2670Email: henry@reeldealyachts.com",
-    "firm": "Henry Schonthal of Reel Deal Yachts Mobile",
-    "role": "seller",
-    "vessels": [
-      "Julia Dorothy"
-    ],
-    "email": "henry@reeldealyachts.com",
-    "mobile": "954-376-2670"
-  },
-  {
     "name": "phone: 954-376-2670 Email: henry@reeldealyachts.com",
-    "firm": "Henry Schonthall of Reel Deal Yachts Mobile",
+    "firm": "Henry Schonthall of Reel Deal Yachts",
     "role": "buyer",
     "vessels": [
       "About Time"
@@ -10859,6 +11823,15 @@
     "mobile": "+377 97 98 76 60"
   },
   {
+    "name": "Henry Smith of Cecil Wright",
+    "firm": "Henry Smith of Cecil Wright & Partners",
+    "role": "buyer",
+    "vessels": [
+      "Artemis"
+    ],
+    "mobile": "+33 6 40 62 01 51"
+  },
+  {
     "name": "Partners",
     "firm": "Henry Smith of Cecil Wright & Partners",
     "role": "buyer",
@@ -10867,15 +11840,6 @@
     ],
     "email": "henry@cecilwright.com",
     "mobile": "+377 97 98 76 60"
-  },
-  {
-    "name": "Henry Smith of Cecil Wright",
-    "firm": "Henry Smith of Cecil Wright & Partners+33 6 40 62 01 51https://www.linkedin.com/",
-    "role": "buyer",
-    "vessels": [
-      "Artemis"
-    ],
-    "mobile": "+33 6 40 62 01 51"
   },
   {
     "name": "Hisham Abu Shakra",
@@ -10920,7 +11884,7 @@
   },
   {
     "name": "info@hoekbrokerage.com.",
-    "firm": "Hoek Brokerage T +31 (0)299 315506",
+    "firm": "Hoek Brokerage T",
     "role": "seller",
     "vessels": [
       "Nyima",
@@ -10931,7 +11895,7 @@
   },
   {
     "name": "info@hoekbrokerage.com.",
-    "firm": "Hoek Brokerage T +31 (0)299 315506",
+    "firm": "Hoek Brokerage T",
     "role": "buyer",
     "vessels": [
       "Simba"
@@ -10990,7 +11954,8 @@
       "SOLAL",
       "STEFANIA ANAIS",
       "ACIONNA",
-      "FLY ME TO THE MOON"
+      "FLY ME TO THE MOON",
+      "TATIANA"
     ],
     "email": "ljordil@iyc.com",
     "mobile": "+37797982424"
@@ -11218,6 +12183,53 @@
     "mobile": "954-522-2323"
   },
   {
+    "name": "IYC",
+    "firm": "IYC",
+    "role": "buyer",
+    "vessels": [
+      "Amymone",
+      "For Ever",
+      "Nautilass",
+      "Skyfall",
+      "Balance",
+      "Rhino A",
+      "Gigreca",
+      "Entourage",
+      "Casa",
+      "Okko",
+      "Libertas",
+      "QUANTUM"
+    ],
+    "mobile": "+30 6944 43 30 80"
+  },
+  {
+    "name": "IYC",
+    "firm": "IYC",
+    "role": "seller",
+    "vessels": [
+      "Dream",
+      "Nautilass",
+      "Modus",
+      "Balance",
+      "Heaven’s Gate",
+      "Alda 2",
+      "Kemosabe",
+      "Ocean Club",
+      "Mac Too",
+      "Revelry",
+      "Africa I",
+      "Hemabejo",
+      "Sanjana",
+      "True",
+      "Gigreca",
+      "Casa",
+      "Avec",
+      "JULIE X",
+      "MIRKA"
+    ],
+    "mobile": "+33 755 80 8490"
+  },
+  {
     "name": "Joshua Marshall",
     "firm": "IYC",
     "role": "seller",
@@ -11292,6 +12304,16 @@
       "Revelry"
     ],
     "mobile": "+377 97 98 24 24"
+  },
+  {
+    "name": "Leo Jordil ( ljordil@.com",
+    "firm": "IYC",
+    "role": "buyer",
+    "vessels": [
+      "TATIANA"
+    ],
+    "email": "alex.krik@fraseryachts.com",
+    "mobile": "+33 6 62 44 54 88"
   },
   {
     "name": "Leo Jordil from",
@@ -11843,8 +12865,17 @@
     "mobile": "1.917.460.6219"
   },
   {
+    "name": "Iconovista",
+    "firm": "Iconovista",
+    "role": "seller",
+    "vessels": [
+      "Fortuna"
+    ],
+    "mobile": "65239913"
+  },
+  {
     "name": "Simon Turner at",
-    "firm": "Iconovistahttps://www.linkedin.com/in/simon-turner-65239913/?originalSubdomain=uk",
+    "firm": "Iconovista",
     "role": "seller",
     "vessels": [
       "Fortuna"
@@ -11943,7 +12974,7 @@
   },
   {
     "name": "Imperial",
-    "firm": "Imperial +377 97 98 38 80",
+    "firm": "Imperial",
     "role": "seller",
     "vessels": [
       "OKKO",
@@ -11953,8 +12984,17 @@
     "mobile": "+377 97 98 38 80"
   },
   {
+    "name": "Infinite Yachts Cell:",
+    "firm": "Infinite Yachts Cell:",
+    "role": "buyer",
+    "vessels": [
+      "Spirit III"
+    ],
+    "mobile": "+39 334 68 77 621"
+  },
+  {
     "name": "Nicola Ricci at",
-    "firm": "Infinite Yachts Cell: +39 334 68 77 621 https://www.linkedin.com/in/nicola-ricci-7154031b7/?originalSubdomain=it",
+    "firm": "Infinite Yachts Cell:",
     "role": "buyer",
     "vessels": [
       "Spirit III"
@@ -12094,7 +13134,7 @@
   },
   {
     "name": "James Auld SuperYachtsMonaco (+33 6 13 36 07 90",
-    "firm": "James Auld at SuperYachtsMonaco (+33 6 13 36 07 90, )",
+    "firm": "James Auld at SuperYachtsMonaco (",
     "role": "buyer",
     "vessels": [
       "Ileria"
@@ -12104,7 +13144,7 @@
   },
   {
     "name": "James Auld SuperYachtsMonaco (+33 6 13 36 07 90",
-    "firm": "James Auld at SuperYachtsMonaco (+33 6 13 36 07 90, )",
+    "firm": "James Auld at SuperYachtsMonaco (",
     "role": "seller",
     "vessels": [
       "Chimera"
@@ -12182,8 +13222,17 @@
     "mobile": "+34 971 40 47 49"
   },
   {
+    "name": "James Rayner of Sanlorenzo UK T:",
+    "firm": "James Rayner of Sanlorenzo UK T:",
+    "role": "seller",
+    "vessels": [
+      "Black Gold"
+    ],
+    "mobile": "+44 (0)207 1014296"
+  },
+  {
     "name": "James Rayner of Sanlorenzo UK T: +44 (0)207 1014296 M: +44 (0)7985 614449",
-    "firm": "James Rayner of Sanlorenzo UK T: +44 (0)207 1014296 M: +44 (0)7985 614449",
+    "firm": "James Rayner of Sanlorenzo UK T:",
     "role": "seller",
     "vessels": [
       "Black Gold"
@@ -12211,8 +13260,17 @@
     "mobile": "561-799-6511"
   },
   {
+    "name": "Jan Schwarze of Yacht Deal",
+    "firm": "Jan Schwarze of Yacht Deal",
+    "role": "seller",
+    "vessels": [
+      "Voyager"
+    ],
+    "mobile": "300549111"
+  },
+  {
     "name": "iginalSubdomain=de",
-    "firm": "Jan Schwarze of Yacht Dealhttps://www.linkedin.com/in/jan-schwarze-300549111/?or",
+    "firm": "Jan Schwarze of Yacht Deal",
     "role": "seller",
     "vessels": [
       "Voyager"
@@ -12270,8 +13328,18 @@
     "mobile": "941) 732-1367"
   },
   {
+    "name": "Jason Ruegg of Off the Hook Yacht Sales910-239-9344",
+    "firm": "Jason Ruegg of Off the Hook Yacht Sales910-239-9344",
+    "role": "buyer",
+    "vessels": [
+      "Current Asset",
+      "Milagros"
+    ],
+    "mobile": "910-239-9344"
+  },
+  {
     "name": "ason-ruegg-757177b0/",
-    "firm": "Jason Ruegg of Off the Hook Yacht Sales910-239-9344https://www.linkedin.com/in/j",
+    "firm": "Jason Ruegg of Off the Hook Yacht Sales910-239-9344",
     "role": "buyer",
     "vessels": [
       "Current Asset",
@@ -12281,7 +13349,7 @@
   },
   {
     "name": "jaboumrad@performance.com.mx",
-    "firm": "Javier Aboumrad of Performance Marine+525554020025",
+    "firm": "Javier Aboumrad of Performance Marine",
     "role": "buyer",
     "vessels": [
       "Botti"
@@ -12295,44 +13363,19 @@
     "role": "seller",
     "vessels": [
       "Belle Brise",
-      "S-Cape"
+      "S-Cape",
+      "Le Must",
+      "Mashallah"
     ],
-    "email": "jlacombe@yachtsinvest.com"
+    "email": "jlacombe@yachtsinvest.com",
+    "mobile": "+33 (0)493 94 00 12"
   },
   {
     "name": "jlacombe@yachtsinvest.com",
     "firm": "Jean Lacombe of Yachts Invest",
     "role": "buyer",
     "vessels": [
-      "Belle Brise"
-    ],
-    "email": "jlacombe@yachtsinvest.com"
-  },
-  {
-    "name": "Jean Lacombe of Yachts Invest (+33 (0)493 94 00 12",
-    "firm": "Jean Lacombe of Yachts Invest (+33 (0)493 94 00 12, )",
-    "role": "buyer",
-    "vessels": [
-      "Sun Shine 1"
-    ],
-    "email": "jlacombe@yachtsinvest.com",
-    "mobile": "+33 (0)493 94 00 12"
-  },
-  {
-    "name": "Jean Lacombe of Yachts Invest (+33 (0)493 94 00 12",
-    "firm": "Jean Lacombe of Yachts Invest (+33 (0)493 94 00 12, )",
-    "role": "seller",
-    "vessels": [
-      "Onyx"
-    ],
-    "email": "jlacombe@yachtsinvest.com",
-    "mobile": "+33 (0)493 94 00 12"
-  },
-  {
-    "name": "jlacombe@yachtsinvest.com",
-    "firm": "Jean Lacombe of Yachts Invest +33 (0)493 94 00 12",
-    "role": "buyer",
-    "vessels": [
+      "Belle Brise",
       "Quantum",
       "Le Must",
       "Waves",
@@ -12342,12 +13385,21 @@
     "mobile": "+33 (0)493 94 00 12"
   },
   {
-    "name": "jlacombe@yachtsinvest.com",
-    "firm": "Jean Lacombe of Yachts Invest +33 (0)493 94 00 12",
+    "name": "Jean Lacombe of Yachts Invest (+33 (0)493 94 00 12",
+    "firm": "Jean Lacombe of Yachts Invest (",
+    "role": "buyer",
+    "vessels": [
+      "Sun Shine 1"
+    ],
+    "email": "jlacombe@yachtsinvest.com",
+    "mobile": "+33 (0)493 94 00 12"
+  },
+  {
+    "name": "Jean Lacombe of Yachts Invest (+33 (0)493 94 00 12",
+    "firm": "Jean Lacombe of Yachts Invest (",
     "role": "seller",
     "vessels": [
-      "Le Must",
-      "Mashallah"
+      "Onyx"
     ],
     "email": "jlacombe@yachtsinvest.com",
     "mobile": "+33 (0)493 94 00 12"
@@ -12454,7 +13506,7 @@
   },
   {
     "name": "Joe Hill of Princess Motor Yacht Sales",
-    "firm": "Joe Hill of Princess Motor Yacht Sales +447711988657",
+    "firm": "Joe Hill of Princess Motor Yacht Sales",
     "role": "buyer",
     "vessels": [
       "Samba"
@@ -12525,7 +13577,16 @@
   },
   {
     "name": "John Slate of Northrop",
-    "firm": "John Slate of Northrop and Johnson CELL : +1 954 815 2287 https://www.linkedin.c",
+    "firm": "John Slate of Northrop and Johnson CELL :",
+    "role": "buyer",
+    "vessels": [
+      "Sunset"
+    ],
+    "mobile": "+1 954 815 2287"
+  },
+  {
+    "name": "John Slate of Northrop and Johnson CELL :",
+    "firm": "John Slate of Northrop and Johnson CELL :",
     "role": "buyer",
     "vessels": [
       "Sunset"
@@ -12554,7 +13615,7 @@
   },
   {
     "name": "Bertrand Vogele",
-    "firm": "John Taylor Yachting+33 6 0791 0827",
+    "firm": "John Taylor Yachting",
     "role": "seller",
     "vessels": [
       "Wanda"
@@ -12587,13 +13648,15 @@
     "firm": "John Wood of Seawood Yachts",
     "role": "buyer",
     "vessels": [
-      "Double Down"
+      "Double Down",
+      "Bash",
+      "Samhan"
     ],
     "mobile": "35694937"
   },
   {
-    "name": "inal_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F",
-    "firm": "John Wood of Seawood Yachts https://www.linkedin.com/in/john-wood-35694937/?orig",
+    "name": "John Wood of Seawood Yachts",
+    "firm": "John Wood of Seawood Yachts",
     "role": "seller",
     "vessels": [
       "Bash"
@@ -12602,7 +13665,16 @@
   },
   {
     "name": "inal_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F",
-    "firm": "John Wood of Seawood Yachts https://www.linkedin.com/in/john-wood-35694937/?orig",
+    "firm": "John Wood of Seawood Yachts",
+    "role": "seller",
+    "vessels": [
+      "Bash"
+    ],
+    "mobile": "35694937"
+  },
+  {
+    "name": "inal_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F",
+    "firm": "John Wood of Seawood Yachts",
     "role": "buyer",
     "vessels": [
       "Bash",
@@ -12611,8 +13683,17 @@
     "mobile": "35694937"
   },
   {
+    "name": "Johnny Timmons of MarineMax (832) 261-4835",
+    "firm": "Johnny Timmons of MarineMax (832) 261-4835",
+    "role": "buyer",
+    "vessels": [
+      "Wendy I"
+    ],
+    "mobile": "832) 261-4835"
+  },
+  {
     "name": "mmons-93821a15/",
-    "firm": "Johnny Timmons of MarineMax (832) 261-4835 https://www.linkedin.com/in/johnny-ti",
+    "firm": "Johnny Timmons of MarineMax (832) 261-4835",
     "role": "buyer",
     "vessels": [
       "Wendy I"
@@ -12692,7 +13773,7 @@
   },
   {
     "name": "Jonathan Lafortune of Lafortune Yachts",
-    "firm": "Jonathan Lafortune of Lafortune Yachts +90 532 592 8744",
+    "firm": "Jonathan Lafortune of Lafortune Yachts",
     "role": "buyer",
     "vessels": [
       "Bombadil III",
@@ -12706,7 +13787,7 @@
   },
   {
     "name": "Jonathan Lafortune of Lafortune Yachts",
-    "firm": "Jonathan Lafortune of Lafortune Yachts +90 532 592 8744",
+    "firm": "Jonathan Lafortune of Lafortune Yachts",
     "role": "seller",
     "vessels": [
       "Reflect",
@@ -12727,7 +13808,7 @@
   },
   {
     "name": "Jonathon Lafortune of Lafortune Yachts",
-    "firm": "Jonathon Lafortune of Lafortune Yachts ​ ​​ Turkey: +90 532 592 8744 Canada: 4",
+    "firm": "Jonathon Lafortune of Lafortune Yachts ​ ​​ Turkey:",
     "role": "seller",
     "vessels": [
       "Bliss"
@@ -12737,7 +13818,7 @@
   },
   {
     "name": "Jonathon Lafortune of Lafortune Yachts",
-    "firm": "Jonathon Lafortune of Lafortune Yachts ​ ​​ Turkey: +90 532 592 8744 Canada: 4",
+    "firm": "Jonathon Lafortune of Lafortune Yachts ​ ​​ Turkey:",
     "role": "buyer",
     "vessels": [
       "Bliss"
@@ -12747,7 +13828,7 @@
   },
   {
     "name": "Jonathon Lafortune of Lafortune Yachts jonathan@lafortuneyachts.com ​",
-    "firm": "Jonathon Lafortune of Lafortune Yachts ​ ​​ Turkey: +90 532 592 8744 Canada: 4",
+    "firm": "Jonathon Lafortune of Lafortune Yachts ​ ​​ Turkey:",
     "role": "seller",
     "vessels": [
       "Bliss"
@@ -12757,7 +13838,7 @@
   },
   {
     "name": "Jonathon Lafortune of Lafortune Yachts jonathan@lafortuneyachts.com ​",
-    "firm": "Jonathon Lafortune of Lafortune Yachts ​ ​​ Turkey: +90 532 592 8744 Canada: 4",
+    "firm": "Jonathon Lafortune of Lafortune Yachts ​ ​​ Turkey:",
     "role": "buyer",
     "vessels": [
       "Bliss"
@@ -12830,7 +13911,7 @@
   },
   {
     "name": "juan@superyachtsmonaco.com",
-    "firm": "Juan Andrade of SuperYachtsMonaco+33 6 42 68 10 45",
+    "firm": "Juan Andrade of SuperYachtsMonaco",
     "role": "seller",
     "vessels": [
       "Conquistador"
@@ -12840,7 +13921,7 @@
   },
   {
     "name": "juan@superyachtsmonaco.com",
-    "firm": "Juan Andrade of SuperYachtsMonaco+33 6 42 68 10 45",
+    "firm": "Juan Andrade of SuperYachtsMonaco",
     "role": "buyer",
     "vessels": [
       "Conquistador"
@@ -12849,8 +13930,17 @@
     "mobile": "+33 6 42 68 10 45"
   },
   {
+    "name": "Juan Andrale",
+    "firm": "Juan Andrale",
+    "role": "buyer",
+    "vessels": [
+      "CENTURION"
+    ],
+    "mobile": "81794513"
+  },
+  {
     "name": "n=fr",
-    "firm": "Juan Andrale https://www.linkedin.com/in/juan-andrade-81794513/?originalSubdomai",
+    "firm": "Juan Andrale",
     "role": "buyer",
     "vessels": [
       "CENTURION"
@@ -12859,7 +13949,7 @@
   },
   {
     "name": "jcs@marinamarbella.net",
-    "firm": "Juan Carlos Serra from Marina Marbella +34 639 843 765",
+    "firm": "Juan Carlos Serra from Marina Marbella",
     "role": "buyer",
     "vessels": [
       "Jax of Ibiza"
@@ -12949,8 +14039,17 @@
     "mobile": "+377 97.70.41.22"
   },
   {
+    "name": "KK superyachts",
+    "firm": "KK superyachts",
+    "role": "seller",
+    "vessels": [
+      "Aqua Chameleon"
+    ],
+    "mobile": "+33 622857626"
+  },
+  {
     "name": "Maria Alekseenco at",
-    "firm": "KK superyachts +33 622857626https://www.linkedin.com/in/maria-alekseenko-75532310b/?originalSubdomain=mc",
+    "firm": "KK superyachts",
     "role": "seller",
     "vessels": [
       "Aqua Chameleon"
@@ -13007,8 +14106,17 @@
     "mobile": "510-220-5564"
   },
   {
+    "name": "Kent Harrington of Ballast Point Yachts (858) 703-7075",
+    "firm": "Kent Harrington of Ballast Point Yachts (858) 703-7075",
+    "role": "buyer",
+    "vessels": [
+      "Nina Lu"
+    ],
+    "mobile": "858) 703-7075"
+  },
+  {
     "name": "in/kent-harrington-11a49234/",
-    "firm": "Kent Harrington of Ballast Point Yachts (858) 703-7075 https://www.linkedin.com/",
+    "firm": "Kent Harrington of Ballast Point Yachts (858) 703-7075",
     "role": "buyer",
     "vessels": [
       "Nina Lu"
@@ -13164,7 +14272,16 @@
   },
   {
     "name": "Kristen Klein at Northrop",
-    "firm": "Kristen Klein at Northrop & JohnsonCELL : +1 727 644 9754, https://www.linkedin.",
+    "firm": "Kristen Klein at Northrop & JohnsonCELL :",
+    "role": "seller",
+    "vessels": [
+      "Stephanie"
+    ],
+    "mobile": "+1 727 644 9754"
+  },
+  {
+    "name": "Kristen Klein at Northrop & JohnsonCELL :",
+    "firm": "Kristen Klein at Northrop & JohnsonCELL :",
     "role": "seller",
     "vessels": [
       "Stephanie"
@@ -13202,7 +14319,7 @@
   },
   {
     "name": "info@lmarinegroup.com",
-    "firm": "L Marine Group Srl +39 0766 20602",
+    "firm": "L Marine Group Srl",
     "role": "buyer",
     "vessels": [
       "Dark Shadow"
@@ -13222,7 +14339,7 @@
   },
   {
     "name": "Lafortune Yachts broker Özlem Lafortune",
-    "firm": "Lafortune Yachts broker Özlem Lafortune ​ +90 506 163 7434",
+    "firm": "Lafortune Yachts broker Özlem Lafortune ​",
     "role": "buyer",
     "vessels": [
       "Wanderlust",
@@ -13295,8 +14412,17 @@
     "mobile": "0031 65 516 7270"
   },
   {
+    "name": "Lenton Yachts 954-868-2733",
+    "firm": "Lenton Yachts 954-868-2733",
+    "role": "seller",
+    "vessels": [
+      "BELLA GIORNATA"
+    ],
+    "mobile": "954-868-2733"
+  },
+  {
     "name": "Peter Lenton at",
-    "firm": "Lenton Yachts 954-868-2733 https://www.lentonyachts.com/our-crew/",
+    "firm": "Lenton Yachts 954-868-2733",
     "role": "seller",
     "vessels": [
       "BELLA GIORNATA"
@@ -13315,7 +14441,7 @@
   },
   {
     "name": ")nautorswan.com",
-    "firm": "Lorenzo Bortolotti of Nautor’s Swan Brokerage T. +377 97 97 95 07 E brokerage(at",
+    "firm": "Lorenzo Bortolotti of Nautor’s Swan Brokerage T.",
     "role": "seller",
     "vessels": [
       "Honey Ryder",
@@ -13328,7 +14454,31 @@
   },
   {
     "name": ")nautorswan.com",
-    "firm": "Lorenzo Bortolotti of Nautor’s Swan Brokerage T. +377 97 97 95 07 E brokerage(at",
+    "firm": "Lorenzo Bortolotti of Nautor’s Swan Brokerage T.",
+    "role": "buyer",
+    "vessels": [
+      "Grey Goose",
+      "Kinina",
+      "Highland Fling 15"
+    ],
+    "mobile": "+377 97 97 95 07"
+  },
+  {
+    "name": "Lorenzo Bortolotti of Nautor’s Swan Brokerage T.",
+    "firm": "Lorenzo Bortolotti of Nautor’s Swan Brokerage T.",
+    "role": "seller",
+    "vessels": [
+      "Honey Ryder",
+      "Grey Goose",
+      "Solleone",
+      "Ipixuna",
+      "Highland Fling 15"
+    ],
+    "mobile": "+377 97 97 95 07"
+  },
+  {
+    "name": "Lorenzo Bortolotti of Nautor’s Swan Brokerage T.",
+    "firm": "Lorenzo Bortolotti of Nautor’s Swan Brokerage T.",
     "role": "buyer",
     "vessels": [
       "Grey Goose",
@@ -13361,7 +14511,7 @@
   },
   {
     "name": "Luca Gianardi of Master Brokerage (+39 0584 391463",
-    "firm": "Luca Gianardi of Master Brokerage (+39 0584 391463, )",
+    "firm": "Luca Gianardi of Master Brokerage (",
     "role": "buyer",
     "vessels": [
       "Giorgia",
@@ -13646,7 +14796,7 @@
   },
   {
     "name": "Ben Vaes",
-    "firm": "Luxury Marine in Spain +44 (0) 7740 10 25 58",
+    "firm": "Luxury Marine in Spain",
     "role": "buyer",
     "vessels": [
       "Heureka"
@@ -13686,7 +14836,7 @@
   },
   {
     "name": "Gerry Salmon",
-    "firm": "MGM Boats in Ireland+353 (0) 87",
+    "firm": "MGM Boats in Ireland",
     "role": "buyer",
     "vessels": [
       "The Devocean"
@@ -13696,7 +14846,7 @@
   },
   {
     "name": "mm@marcellomaggi.com",
-    "firm": "MMYB tel. +377 643 918 312",
+    "firm": "MMYB",
     "role": "seller",
     "vessels": [
       "RARITY"
@@ -13839,7 +14989,7 @@
   },
   {
     "name": "malcolm@fjordyachts.de",
-    "firm": "Malcolm Moss of Sea Yacht Group +34 607 380 101",
+    "firm": "Malcolm Moss of Sea Yacht Group",
     "role": "buyer",
     "vessels": [
       "Boomshakalaka"
@@ -13849,7 +14999,7 @@
   },
   {
     "name": "3486355640brokerage@mangustayachts.com",
-    "firm": "Mangusta Yachts Brokerage DivisionM: +39",
+    "firm": "Mangusta Yachts Brokerage DivisionM:",
     "role": "seller",
     "vessels": [
       "Becool"
@@ -13966,7 +15116,7 @@
   },
   {
     "name": "Henry Schonthal of Reel Deal Yachts (Mobile",
-    "firm": "Marcos Morjain Mobile",
+    "firm": "Marcos Morjain",
     "role": "seller",
     "vessels": [
       "Unforgettable",
@@ -13977,7 +15127,7 @@
   },
   {
     "name": "Henry Schonthal of Reel Deal Yachts (Mobile",
-    "firm": "Marcos Morjain Mobile",
+    "firm": "Marcos Morjain",
     "role": "buyer",
     "vessels": [
       "La Perla"
@@ -13987,7 +15137,7 @@
   },
   {
     "name": "phone: 305-796-0040 Email: reelboats@gmail.com",
-    "firm": "Marcos Morjain Mobile",
+    "firm": "Marcos Morjain",
     "role": "seller",
     "vessels": [
       "Unforgettable",
@@ -14000,7 +15150,7 @@
   },
   {
     "name": "phone: 305-796-0040 Email: reelboats@gmail.com",
-    "firm": "Marcos Morjain Mobile",
+    "firm": "Marcos Morjain",
     "role": "buyer",
     "vessels": [
       "La Perla",
@@ -14011,7 +15161,7 @@
   },
   {
     "name": "phone: 305-796-0040 Email: reelboats@gmail.com",
-    "firm": "Marcos Morjain of Reel Deal Yachts Mobile",
+    "firm": "Marcos Morjain of Reel Deal Yachts",
     "role": "buyer",
     "vessels": [
       "Arreee!",
@@ -14067,6 +15217,48 @@
       "Monokini"
     ],
     "email": "victor@marinemarketing.gr"
+  },
+  {
+    "name": "MarineMax https://www.marinemax.com/connect/contact-us (781) 395-0050",
+    "firm": "MarineMax  (781) 395-0050",
+    "role": "seller",
+    "vessels": [
+      "Wine Down",
+      "NOW WE KNOW",
+      "C-JEWEL",
+      "DRINKABILITY"
+    ],
+    "mobile": "781) 395-0050"
+  },
+  {
+    "name": "MarineMax https://www.marinemax.com/connect/contact-us (781) 395-0050",
+    "firm": "MarineMax  (781) 395-0050",
+    "role": "buyer",
+    "vessels": [
+      "C-JEWEL"
+    ],
+    "mobile": "781) 395-0050"
+  },
+  {
+    "name": "MarineMax (781) 395-0050",
+    "firm": "MarineMax (781) 395-0050",
+    "role": "seller",
+    "vessels": [
+      "Wine Down",
+      "NOW WE KNOW",
+      "C-JEWEL",
+      "DRINKABILITY"
+    ],
+    "mobile": "781) 395-0050"
+  },
+  {
+    "name": "MarineMax (781) 395-0050",
+    "firm": "MarineMax (781) 395-0050",
+    "role": "buyer",
+    "vessels": [
+      "C-JEWEL"
+    ],
+    "mobile": "781) 395-0050"
   },
   {
     "name": "Brandon Flaherty of MarineMax",
@@ -14150,27 +15342,6 @@
     "mobile": "727-638-7890"
   },
   {
-    "name": "MarineMax https://www.marinemax.com/connect/contact-us (781) 395-0050",
-    "firm": "MarineMax https://www.marinemax.com/connect/contact-us (781) 395-0050",
-    "role": "seller",
-    "vessels": [
-      "Wine Down",
-      "NOW WE KNOW",
-      "C-JEWEL",
-      "DRINKABILITY"
-    ],
-    "mobile": "781) 395-0050"
-  },
-  {
-    "name": "MarineMax https://www.marinemax.com/connect/contact-us (781) 395-0050",
-    "firm": "MarineMax https://www.marinemax.com/connect/contact-us (781) 395-0050",
-    "role": "buyer",
-    "vessels": [
-      "C-JEWEL"
-    ],
-    "mobile": "781) 395-0050"
-  },
-  {
     "name": "scott.roberton@marinemax.com Office: 727-638-7890 Mobile: 727-638-7890",
     "firm": "MarineMax's yacht broker Scott Roberton",
     "role": "buyer",
@@ -14191,8 +15362,17 @@
     "mobile": "727-638-7890"
   },
   {
+    "name": "Mark Elliott",
+    "firm": "Mark Elliott",
+    "role": "buyer",
+    "vessels": [
+      "Revelry"
+    ],
+    "mobile": "+1 305 794 1167"
+  },
+  {
     "name": "Mark Elliott+1 305 794 1167https://www.linkedin.com/in/mark-elliott-236163b5/",
-    "firm": "Mark Elliott+1 305 794 1167https://www.linkedin.com/in/mark-elliott-236163b5/",
+    "firm": "Mark Elliott",
     "role": "buyer",
     "vessels": [
       "Revelry"
@@ -14282,7 +15462,7 @@
   },
   {
     "name": "Matt.palmer@sunseeker.mc",
-    "firm": "Matt Palmer of Sunseeker France +33 607 934 119",
+    "firm": "Matt Palmer of Sunseeker France",
     "role": "buyer",
     "vessels": [
       "LADY M"
@@ -14291,8 +15471,17 @@
     "mobile": "+33 607 934 119"
   },
   {
+    "name": "Matthew Hinton of Hinton Yachting(562) 599-9452",
+    "firm": "Matthew Hinton of Hinton Yachting(562) 599-9452",
+    "role": "buyer",
+    "vessels": [
+      "Hiatus"
+    ],
+    "mobile": "562) 599-9452"
+  },
+  {
     "name": "Matthew Hinton of Hinton Yachting(562) 599-9452https://hintonyachting.com/",
-    "firm": "Matthew Hinton of Hinton Yachting(562) 599-9452https://hintonyachting.com/",
+    "firm": "Matthew Hinton of Hinton Yachting(562) 599-9452",
     "role": "buyer",
     "vessels": [
       "Hiatus"
@@ -14301,7 +15490,7 @@
   },
   {
     "name": "Matthew Palmer (+33 607 934 119",
-    "firm": "Matthew Palmer (+33 607 934 119, ) of Sunseeker Monaco",
+    "firm": "Matthew Palmer (",
     "role": "buyer",
     "vessels": [
       "Lady Ella S"
@@ -14311,7 +15500,7 @@
   },
   {
     "name": "matt.palmer@sunseeker.mc",
-    "firm": "Matthew Palmer of Sunseeker Monaco +33 607 934 119",
+    "firm": "Matthew Palmer of Sunseeker Monaco",
     "role": "seller",
     "vessels": [
       "No 9"
@@ -14359,7 +15548,16 @@
   },
   {
     "name": "Matthew Hinton at",
-    "firm": "McClintock Yacht Sales (562) 599-9452 https://hintonyachting.com/",
+    "firm": "McClintock Yacht Sales (562) 599-9452",
+    "role": "buyer",
+    "vessels": [
+      "KIWI DREAMS"
+    ],
+    "mobile": "562) 599-9452"
+  },
+  {
+    "name": "McClintock Yacht Sales (562) 599-9452",
+    "firm": "McClintock Yacht Sales (562) 599-9452",
     "role": "buyer",
     "vessels": [
       "KIWI DREAMS"
@@ -14368,7 +15566,7 @@
   },
   {
     "name": "James McMaster",
-    "firm": "McMaster Yachts +44 7796 278 695",
+    "firm": "McMaster Yachts",
     "role": "buyer",
     "vessels": [
       "Bella Ragazza"
@@ -14399,7 +15597,7 @@
   },
   {
     "name": "miha@mennyacht.com",
-    "firm": "Menn Yacht Group broker Miha Dolinar +386 31 375 904",
+    "firm": "Menn Yacht Group broker Miha Dolinar",
     "role": "seller",
     "vessels": [
       "Chelonia"
@@ -14409,7 +15607,7 @@
   },
   {
     "name": "miha@mennyacht.com",
-    "firm": "Menn Yacht Group with Miha Dolinar +386 31 375 904",
+    "firm": "Menn Yacht Group with Miha Dolinar",
     "role": "buyer",
     "vessels": [
       "No Stress",
@@ -14420,7 +15618,7 @@
   },
   {
     "name": "miha@mennyacht.com",
-    "firm": "Menn Yacht Group with Miha Dolinar +386 31 375 904",
+    "firm": "Menn Yacht Group with Miha Dolinar",
     "role": "seller",
     "vessels": [
       "Isotta"
@@ -14725,6 +15923,15 @@
     "mobile": "+1-954-646-8888"
   },
   {
+    "name": "Merle Wood & Associates",
+    "firm": "Merle Wood & Associates",
+    "role": "seller",
+    "vessels": [
+      "Tail Lights"
+    ],
+    "mobile": "+13038778925"
+  },
+  {
     "name": "Merle Wood at Merle Wood",
     "firm": "Merle Wood & Associates",
     "role": "seller",
@@ -14840,7 +16047,7 @@
   },
   {
     "name": "439-5049Michael@WorthavenueYachts.com",
-    "firm": "Michael MahanO: +1 (561) 833-4462M: +1 (954)",
+    "firm": "Michael MahanO:",
     "role": "seller",
     "vessels": [
       "Dream Weaver"
@@ -14883,8 +16090,17 @@
     "mobile": "1-619-222-1122"
   },
   {
+    "name": "Michael Smith of YachtBiz",
+    "firm": "Michael Smith of YachtBiz",
+    "role": "buyer",
+    "vessels": [
+      "Paradigm"
+    ],
+    "mobile": "25406219"
+  },
+  {
     "name": "Michael Smith of YachtBizhttps://www.linkedin.com/in/michael-smith-25406219a/",
-    "firm": "Michael Smith of YachtBizhttps://www.linkedin.com/in/michael-smith-25406219a/",
+    "firm": "Michael Smith of YachtBiz",
     "role": "buyer",
     "vessels": [
       "Paradigm"
@@ -15031,7 +16247,7 @@
   },
   {
     "name": "info@miles1852.mc",
-    "firm": "Miles 1852 +33 6 0793 8159",
+    "firm": "Miles 1852",
     "role": "seller",
     "vessels": [
       "Cheyenne III"
@@ -15108,7 +16324,7 @@
   },
   {
     "name": "contact@moanayachting.com",
-    "firm": "Moana Yachting PHONE +33 6 24 77 51 07 EMAIL",
+    "firm": "Moana Yachting",
     "role": "seller",
     "vessels": [
       "Jacozami"
@@ -15118,7 +16334,7 @@
   },
   {
     "name": "contact@moanayachting.com",
-    "firm": "Moana Yachting PHONE +33 6 24 77 51 07 EMAIL",
+    "firm": "Moana Yachting",
     "role": "buyer",
     "vessels": [
       "Jacozami",
@@ -15242,6 +16458,15 @@
     "mobile": "+1 (954) 768-0707"
   },
   {
+    "name": "Moran Yacht & Ship",
+    "firm": "Moran Yacht & Ship",
+    "role": "buyer",
+    "vessels": [
+      "Milk Money"
+    ],
+    "mobile": "+1 (954) 768-0707"
+  },
+  {
     "name": "Rory Moran",
     "firm": "Moran Yacht & Ship",
     "role": "seller",
@@ -15305,39 +16530,8 @@
     "mobile": "954.768.0707"
   },
   {
-    "name": "Ship +33 616 31 30 87",
-    "firm": "Moran Yacht & Ship +33 616 31 30 87",
-    "role": "seller",
-    "vessels": [
-      "Parenthesis"
-    ],
-    "email": "monaco@moranyachts.com",
-    "mobile": "+33 616 31 30 87"
-  },
-  {
-    "name": "Ship https://www.moranyachts.com// +1 (954) 768-0707 or",
-    "firm": "Moran Yacht & Ship https://www.moranyachts.com/contact/ +1 (954) 768-0707 or",
-    "role": "buyer",
-    "vessels": [
-      "VIRTUE",
-      "MONTRACHET",
-      "NORTHERN STAR"
-    ],
-    "email": "requests@moranyachts.com",
-    "mobile": "+1 (954) 768-0707"
-  },
-  {
-    "name": "Moran Yacht",
-    "firm": "Moran Yacht & Ship+1 (954) 768-0707https://www.moranyachts.com/contact/",
-    "role": "buyer",
-    "vessels": [
-      "Milk Money"
-    ],
-    "mobile": "+1 (954) 768-0707"
-  },
-  {
     "name": "Ship. +1 954 768",
-    "firm": "Moran Yacht & Ship. +1 954 768",
+    "firm": "Moran Yacht & Ship.",
     "role": "seller",
     "vessels": [
       "Phantom"
@@ -15490,7 +16684,7 @@
   },
   {
     "name": "Onur Erardag",
-    "firm": "Nautique Yachting +90 530 885 74 46",
+    "firm": "Nautique Yachting",
     "role": "buyer",
     "vessels": [
       "ARES N",
@@ -15502,12 +16696,40 @@
   },
   {
     "name": "Onur Erardag",
-    "firm": "Nautique Yachting +90 530 885 74 46",
+    "firm": "Nautique Yachting",
     "role": "seller",
     "vessels": [
       "Just Another Toy",
       "HAPPY 2",
       "PARSLEY"
+    ],
+    "email": "onur.erardag@nautiqueyachting.com",
+    "mobile": "+90 530 885 74 46"
+  },
+  {
+    "name": "Onur Erardag of +90 530 885 74 46",
+    "firm": "Nautique Yachting Turkey",
+    "role": "seller",
+    "vessels": [
+      "Boy zZ Toy",
+      "White Rose B",
+      "Danush"
+    ],
+    "email": "onur.erardag@nautiqueyachting.com",
+    "mobile": "+90 530 885 74 46"
+  },
+  {
+    "name": "Onur Erardag of +90 530 885 74 46",
+    "firm": "Nautique Yachting Turkey",
+    "role": "buyer",
+    "vessels": [
+      "Lulwa",
+      "Vittoria I",
+      "Aquila Q",
+      "Memories Too",
+      "Majola",
+      "Danush",
+      "Eagle One"
     ],
     "email": "onur.erardag@nautiqueyachting.com",
     "mobile": "+90 530 885 74 46"
@@ -15553,6 +16775,24 @@
       "DOMANI"
     ],
     "email": "info@nautiqueyachting.com"
+  },
+  {
+    "name": "Christian Bader at",
+    "firm": "Nautor’s Swan",
+    "role": "buyer",
+    "vessels": [
+      "NAZCA"
+    ],
+    "mobile": "63336131"
+  },
+  {
+    "name": "Nautor’s Swan",
+    "firm": "Nautor’s Swan",
+    "role": "buyer",
+    "vessels": [
+      "NAZCA"
+    ],
+    "mobile": "63336131"
   },
   {
     "name": "Giorgio Passarella",
@@ -15585,15 +16825,6 @@
     "mobile": "+33 679 535506"
   },
   {
-    "name": "Christian Bader at",
-    "firm": "Nautor’s Swan https://www.linkedin.com/in/christian-bader-b63336131/?originalSubdomain=de",
-    "role": "buyer",
-    "vessels": [
-      "NAZCA"
-    ],
-    "mobile": "63336131"
-  },
-  {
     "name": "Nav3 Marine LLC",
     "firm": "Nav3 Marine LLC",
     "role": "buyer",
@@ -15623,7 +16854,7 @@
   },
   {
     "name": "Navis Marine",
-    "firm": "Navis Marine +385 1 4635 261",
+    "firm": "Navis Marine",
     "role": "seller",
     "vessels": [
       "ARES N"
@@ -15651,8 +16882,26 @@
     "email": "servicesnys@akcor.nethttp"
   },
   {
+    "name": "Michael Wan at",
+    "firm": "Neo Yachting",
+    "role": "seller",
+    "vessels": [
+      "CAMY"
+    ],
+    "mobile": "6591686888"
+  },
+  {
+    "name": "Neo Yachting",
+    "firm": "Neo Yachting",
+    "role": "seller",
+    "vessels": [
+      "CAMY"
+    ],
+    "mobile": "6591686888"
+  },
+  {
     "name": "Nicolas Valin",
-    "firm": "Neo Yachting +33 6 16 11 05 77",
+    "firm": "Neo Yachting",
     "role": "seller",
     "vessels": [
       "ONE BLUE"
@@ -15662,7 +16911,7 @@
   },
   {
     "name": "Nicolas Valin",
-    "firm": "Neo Yachting +33 6 16 11 05 77",
+    "firm": "Neo Yachting",
     "role": "buyer",
     "vessels": [
       "ONE BLUE",
@@ -15670,15 +16919,6 @@
     ],
     "email": "nicolas.valin@neoyachting.com",
     "mobile": "+33 6 16 11 05 77"
-  },
-  {
-    "name": "Michael Wan at",
-    "firm": "Neo Yachting https://www.linkedin.com/in/michaelwan6591686888/?originalSubdomain=sg",
-    "role": "seller",
-    "vessels": [
-      "CAMY"
-    ],
-    "mobile": "6591686888"
   },
   {
     "name": "info@newportyachtrentals.com",
@@ -15722,7 +16962,7 @@
   },
   {
     "name": "info@nicholsonyachts.com",
-    "firm": "Nicholson Yachts Call: +1 401.849.0344 Email:",
+    "firm": "Nicholson Yachts Call:",
     "role": "buyer",
     "vessels": [
       "EPIPHANY"
@@ -15731,8 +16971,26 @@
     "mobile": "+1 401.849.0344"
   },
   {
+    "name": "Nick Hatfield of Sanlorenzo UK M:",
+    "firm": "Nick Hatfield of Sanlorenzo UK M:",
+    "role": "buyer",
+    "vessels": [
+      "Yes"
+    ],
+    "mobile": "+44(0)7879 841594"
+  },
+  {
+    "name": "Nick Hatfield of Sanlorenzo UK M:",
+    "firm": "Nick Hatfield of Sanlorenzo UK M:",
+    "role": "seller",
+    "vessels": [
+      "HARD 8"
+    ],
+    "mobile": "+44(0)7879 841594"
+  },
+  {
     "name": "ick-hatfield-54139042/?originalSubdomain=uk",
-    "firm": "Nick Hatfield of Sanlorenzo UK M:+44(0)7879 841594 https://www.linkedin.com/in/n",
+    "firm": "Nick Hatfield of Sanlorenzo UK M:",
     "role": "buyer",
     "vessels": [
       "Yes"
@@ -15741,7 +16999,7 @@
   },
   {
     "name": "ick-hatfield-54139042/?originalSubdomain=uk",
-    "firm": "Nick Hatfield of Sanlorenzo UK M:+44(0)7879 841594 https://www.linkedin.com/in/n",
+    "firm": "Nick Hatfield of Sanlorenzo UK M:",
     "role": "seller",
     "vessels": [
       "HARD 8"
@@ -15758,8 +17016,26 @@
     "mobile": "+39 334 68 77 621"
   },
   {
+    "name": "Nicola Ricci of Infinite Yachts Cell:",
+    "firm": "Nicola Ricci of Infinite Yachts Cell:",
+    "role": "seller",
+    "vessels": [
+      "Alpa IV"
+    ],
+    "mobile": "+39 334 68 77 621"
+  },
+  {
+    "name": "Nicola Ricci of Infinite Yachts Cell:",
+    "firm": "Nicola Ricci of Infinite Yachts Cell:",
+    "role": "buyer",
+    "vessels": [
+      "Alpa IV"
+    ],
+    "mobile": "+39 334 68 77 621"
+  },
+  {
     "name": "in/nicola-ricci-7154031b7",
-    "firm": "Nicola Ricci of Infinite Yachts Cell: +39 334 68 77 621 https://it.linkedin.com/",
+    "firm": "Nicola Ricci of Infinite Yachts Cell:",
     "role": "seller",
     "vessels": [
       "Alpa IV"
@@ -15768,7 +17044,7 @@
   },
   {
     "name": "in/nicola-ricci-7154031b7",
-    "firm": "Nicola Ricci of Infinite Yachts Cell: +39 334 68 77 621 https://it.linkedin.com/",
+    "firm": "Nicola Ricci of Infinite Yachts Cell:",
     "role": "buyer",
     "vessels": [
       "Alpa IV"
@@ -15796,8 +17072,17 @@
     "mobile": "+33 616 110 577"
   },
   {
+    "name": "Nicolle Associates",
+    "firm": "Nicolle Associates",
+    "role": "seller",
+    "vessels": [
+      "B-Nice"
+    ],
+    "mobile": "81885363"
+  },
+  {
     "name": "Rosie Davies at",
-    "firm": "Nicolle Associates https://www.linkedin.com/in/rosie-davies-81885363/",
+    "firm": "Nicolle Associates",
     "role": "seller",
     "vessels": [
       "B-Nice"
@@ -15855,7 +17140,7 @@
   },
   {
     "name": "Nikolas Daoutis. +30 6983 915847.",
-    "firm": "Nikolas Daoutis. +30 6983 915847. .",
+    "firm": "Nikolas Daoutis.",
     "role": "buyer",
     "vessels": [
       "Tiamat"
@@ -15865,7 +17150,7 @@
   },
   {
     "name": "nm@ekkayachts.com",
-    "firm": "Nikolas Makridis +306955062354",
+    "firm": "Nikolas Makridis",
     "role": "buyer",
     "vessels": [
       "AQUA LIBRA"
@@ -15885,7 +17170,7 @@
   },
   {
     "name": "Nizar Tagi of MYR Family Office",
-    "firm": "Nizar Tagi of MYR Family Office",
+    "firm": "Nizar Tagi of MYR Family",
     "role": "seller",
     "vessels": [
       "Burrasca"
@@ -15895,7 +17180,7 @@
   },
   {
     "name": "Nizar Tagi of MYR Family Office",
-    "firm": "Nizar Tagi of MYR Family Office",
+    "firm": "Nizar Tagi of MYR Family",
     "role": "buyer",
     "vessels": [
       "Burrasca"
@@ -16045,7 +17330,9 @@
     "vessels": [
       "Scout",
       "Lost Boys",
-      "Francesca"
+      "Francesca",
+      "FANAMAX",
+      "ZABAVA"
     ],
     "email": "richard.higgins@northropandjohnson.com",
     "mobile": "+33493348401"
@@ -16876,6 +18163,64 @@
     "mobile": "949-642-5735"
   },
   {
+    "name": "Northrop & Johnson",
+    "firm": "Northrop & Johnson",
+    "role": "buyer",
+    "vessels": [
+      "Sojana",
+      "Never Say Never Again",
+      "Iron Blonde",
+      "O’Rea",
+      "Dorothea III",
+      "Rhine",
+      "Bun",
+      "Top Five",
+      "Mirabilis",
+      "Le Caprice IV",
+      "I-Sea",
+      "BEYOND",
+      "LOVEBUG",
+      "Keewaydin",
+      "Carpe Diem",
+      "SEABISCUIT",
+      "SONG OF THE SEA"
+    ],
+    "mobile": "+1 401 848 5500"
+  },
+  {
+    "name": "Northrop & Johnson",
+    "firm": "Northrop & Johnson",
+    "role": "seller",
+    "vessels": [
+      "Horizon",
+      "Xanadu",
+      "The Day",
+      "Varsovie",
+      "Seabiscuit",
+      "Wonder",
+      "Veyron",
+      "Mindy",
+      "Ana’s Inspiration",
+      "Neoprene",
+      "La Pace",
+      "Inevitable",
+      "Islander",
+      "Crowbridge",
+      "Ace 1",
+      "Next Chapter",
+      "My Soo Too",
+      "Fruition II",
+      "LOVEBUG",
+      "Keewaydin",
+      "SONGBIRD OF LONDON",
+      "CONQUISTADOR",
+      "EPICURUS",
+      "ASSAI",
+      "ADJUTOR"
+    ],
+    "mobile": "+393496385120"
+  },
+  {
     "name": "Paul Dauber",
     "firm": "Northrop & Johnson",
     "role": "seller",
@@ -16925,7 +18270,9 @@
     "role": "buyer",
     "vessels": [
       "Horizon",
-      "Amores"
+      "Amores",
+      "High Energy",
+      "EGO"
     ],
     "email": "richard.higgins@northropandjohnson.com",
     "mobile": "+33493348401"
@@ -17144,7 +18491,16 @@
   },
   {
     "name": "Joost Goverts at Northrop",
-    "firm": "Northrop & JohnsonCELL : +34 627 94 71 60OFFICE : +34 971 707 900https://www.linkedin.com/in/joost-goverts-74397442/?locale=ru_RU",
+    "firm": "Northrop & JohnsonCELL :",
+    "role": "seller",
+    "vessels": [
+      "Shamanna"
+    ],
+    "mobile": "+34 627 94 71 60"
+  },
+  {
+    "name": "Northrop & JohnsonCELL :",
+    "firm": "Northrop & JohnsonCELL :",
     "role": "seller",
     "vessels": [
       "Shamanna"
@@ -17153,7 +18509,16 @@
   },
   {
     "name": "Hank Halsted at Northrop",
-    "firm": "Northrop and Johnson CELL : +1 401 965 3256 https://www.linkedin.com/in/hank-halsted-0464a089/",
+    "firm": "Northrop and Johnson CELL :",
+    "role": "seller",
+    "vessels": [
+      "AZZURA"
+    ],
+    "mobile": "+1 401 965 3256"
+  },
+  {
+    "name": "Northrop and Johnson CELL :",
+    "firm": "Northrop and Johnson CELL :",
     "role": "seller",
     "vessels": [
       "AZZURA"
@@ -17162,7 +18527,7 @@
   },
   {
     "name": "Northrop",
-    "firm": "Northrop and Johnson yacht broker Sébastien Clavé CELL : +33 60 79 35 321 https:",
+    "firm": "Northrop and Johnson yacht broker Sébastien Clavé CELL :",
     "role": "seller",
     "vessels": [
       "Reveil"
@@ -17171,7 +18536,25 @@
   },
   {
     "name": "Northrop",
-    "firm": "Northrop and Johnson yacht broker Sébastien Clavé CELL : +33 60 79 35 321 https:",
+    "firm": "Northrop and Johnson yacht broker Sébastien Clavé CELL :",
+    "role": "buyer",
+    "vessels": [
+      "Reveil"
+    ],
+    "mobile": "+33 60 79 35 321"
+  },
+  {
+    "name": "Northrop and Johnson yacht broker Sébastien Clavé CELL :",
+    "firm": "Northrop and Johnson yacht broker Sébastien Clavé CELL :",
+    "role": "seller",
+    "vessels": [
+      "Reveil"
+    ],
+    "mobile": "+33 60 79 35 321"
+  },
+  {
+    "name": "Northrop and Johnson yacht broker Sébastien Clavé CELL :",
+    "firm": "Northrop and Johnson yacht broker Sébastien Clavé CELL :",
     "role": "buyer",
     "vessels": [
       "Reveil"
@@ -17190,7 +18573,7 @@
   },
   {
     "name": "Joachim Howard",
-    "firm": "Ocean Alliance+61 (0) 405 767 869",
+    "firm": "Ocean Alliance",
     "role": "seller",
     "vessels": [
       "Masteka 2"
@@ -17460,6 +18843,15 @@
     "mobile": "+33 4 92 91 26 26"
   },
   {
+    "name": "Jelena Vezia at",
+    "firm": "Ocean Independence",
+    "role": "seller",
+    "vessels": [
+      "Novastar"
+    ],
+    "mobile": "21432617"
+  },
+  {
     "name": "Jelena Vezia from",
     "firm": "Ocean Independence",
     "role": "buyer",
@@ -17608,6 +19000,35 @@
     "mobile": "+852.2366.2183"
   },
   {
+    "name": "Ocean Independence",
+    "firm": "Ocean Independence",
+    "role": "seller",
+    "vessels": [
+      "Soaring",
+      "Sunny Hill",
+      "Spiip",
+      "Azzurra II",
+      "Sofia of Tortola",
+      "Chrisco",
+      "Novastar",
+      "LADY LUCY"
+    ],
+    "mobile": "+41 79 401 69 93"
+  },
+  {
+    "name": "Ocean Independence",
+    "firm": "Ocean Independence",
+    "role": "buyer",
+    "vessels": [
+      "African Cat",
+      "Silver Cloud",
+      "Veyron",
+      "Nyota",
+      "PERSUADER"
+    ],
+    "mobile": "+41 79 401 69 93"
+  },
+  {
     "name": "Parsifal Yachting (",
     "firm": "Ocean Independence",
     "role": "buyer",
@@ -17674,7 +19095,8 @@
       "Amaral",
       "MOON SAND",
       "SIREN",
-      "GAJA"
+      "GAJA",
+      "MAXIMUS STAR"
     ],
     "email": "rytis@ocyachts.com",
     "mobile": "+33607936324"
@@ -17747,6 +19169,15 @@
     "mobile": "+44 (0)20 7381 7600"
   },
   {
+    "name": "Yannis Mitsopulous at",
+    "firm": "Ocean Independence",
+    "role": "buyer",
+    "vessels": [
+      "Nyota"
+    ],
+    "mobile": "74273296"
+  },
+  {
     "name": "with Marco Vandoni",
     "firm": "Ocean Independence",
     "role": "buyer",
@@ -17755,24 +19186,6 @@
     ],
     "email": "marco@ocyachts.com",
     "mobile": "377 97 70 38 80"
-  },
-  {
-    "name": "Jelena Vezia at",
-    "firm": "Ocean Independencehttps://www.linkedin.com/in/jelena-vezia-21432617/",
-    "role": "seller",
-    "vessels": [
-      "Novastar"
-    ],
-    "mobile": "21432617"
-  },
-  {
-    "name": "Yannis Mitsopulous at",
-    "firm": "Ocean Independencehttps://www.linkedin.com/in/yannis-mitsopoulos-74273296/?originalSubdomain=gr",
-    "role": "buyer",
-    "vessels": [
-      "Nyota"
-    ],
-    "mobile": "74273296"
   },
   {
     "name": "Sales910-239-9344info@offthehookys.com",
@@ -17806,7 +19219,7 @@
   },
   {
     "name": "Alain Auvare",
-    "firm": "Onboard Yachting +33 6 16 82 16 02",
+    "firm": "Onboard Yachting",
     "role": "buyer",
     "vessels": [
       "Cyclone"
@@ -17815,23 +19228,23 @@
     "mobile": "+33 6 16 82 16 02"
   },
   {
-    "name": "Alain Auvare aauvare@onboardyachting.com",
-    "firm": "Onboard Yachting +33 6 16 82 16 02",
-    "role": "buyer",
-    "vessels": [
-      "Cyclone"
-    ],
-    "email": "alain.auvare@fraseryachts.com",
-    "mobile": "+33 6 16 82 16 02"
-  },
-  {
     "name": "Alain Auvare",
-    "firm": "Onboard Yachting+33 6 16 82 16 02",
+    "firm": "Onboard Yachting",
     "role": "seller",
     "vessels": [
       "Obo"
     ],
     "email": "aauvare@onboardyachting.comalain.auvare",
+    "mobile": "+33 6 16 82 16 02"
+  },
+  {
+    "name": "Alain Auvare aauvare@onboardyachting.com",
+    "firm": "Onboard Yachting",
+    "role": "buyer",
+    "vessels": [
+      "Cyclone"
+    ],
+    "email": "alain.auvare@fraseryachts.com",
     "mobile": "+33 6 16 82 16 02"
   },
   {
@@ -17890,7 +19303,7 @@
   },
   {
     "name": "onur.erardag@nautiqueyachting.com",
-    "firm": "Onur Erardag from Nautique Yachting Turkey +90 530 885 74 46",
+    "firm": "Onur Erardag from Nautique Yachting Turkey",
     "role": "buyer",
     "vessels": [
       "Eagle One"
@@ -17899,20 +19312,8 @@
     "mobile": "+90 530 885 74 46"
   },
   {
-    "name": "Onur Erardag of Nautique Yachting (+90 530 885 74 46",
-    "firm": "Onur Erardag of Nautique Yachting (+90 530 885 74 46, )",
-    "role": "buyer",
-    "vessels": [
-      "Black Pearl",
-      "The Unifier King Abdulaziz the First",
-      "Piacere"
-    ],
-    "email": "onur.erardag@nautiqueyachting.com",
-    "mobile": "+90 530 885 74 46"
-  },
-  {
     "name": "onur.erardag@nautiqueyachting.com",
-    "firm": "Onur Erardag of Nautique Yachting +90 530 885 74 46",
+    "firm": "Onur Erardag of Nautique Yachting",
     "role": "buyer",
     "vessels": [
       "Avant Garde 2",
@@ -17925,7 +19326,7 @@
   },
   {
     "name": "onur.erardag@nautiqueyachting.com",
-    "firm": "Onur Erardag of Nautique Yachting +90 530 885 74 46",
+    "firm": "Onur Erardag of Nautique Yachting",
     "role": "seller",
     "vessels": [
       "Sea Lion II",
@@ -17935,8 +19336,20 @@
     "mobile": "+90 530 885 74 46"
   },
   {
+    "name": "Onur Erardag of Nautique Yachting (+90 530 885 74 46",
+    "firm": "Onur Erardag of Nautique Yachting (",
+    "role": "buyer",
+    "vessels": [
+      "Black Pearl",
+      "The Unifier King Abdulaziz the First",
+      "Piacere"
+    ],
+    "email": "onur.erardag@nautiqueyachting.com",
+    "mobile": "+90 530 885 74 46"
+  },
+  {
     "name": "onur.erardag@nautiqueyachting.com",
-    "firm": "Onur Erardag of Nautique Yachting Turkey +90 530 885 74 46",
+    "firm": "Onur Erardag of Nautique Yachting Turkey",
     "role": "seller",
     "vessels": [
       "Boy zZ Toy",
@@ -17948,7 +19361,7 @@
   },
   {
     "name": "onur.erardag@nautiqueyachting.com",
-    "firm": "Onur Erardag of Nautique Yachting Turkey +90 530 885 74 46",
+    "firm": "Onur Erardag of Nautique Yachting Turkey",
     "role": "buyer",
     "vessels": [
       "Lulwa",
@@ -17973,7 +19386,7 @@
   },
   {
     "name": "info@otaduyyachtsloscabos.com",
-    "firm": "Otaduy Yachts +521 (624) 156 8427 /",
+    "firm": "Otaduy Yachts",
     "role": "buyer",
     "vessels": [
       "NANOU"
@@ -18103,7 +19516,7 @@
   },
   {
     "name": "pascal@atiyachts.com",
-    "firm": "Pascal Garcia of ATI YachtsTel : +336 69 98 20 76Mail :",
+    "firm": "Pascal Garcia of ATI YachtsTel :",
     "role": "buyer",
     "vessels": [
       "Survivor 2",
@@ -18223,8 +19636,26 @@
     "mobile": "+33 6 74 75 76 82"
   },
   {
+    "name": "Perry James of Geoff Lovett International",
+    "firm": "Perry James of Geoff Lovett International",
+    "role": "seller",
+    "vessels": [
+      "Intrigue"
+    ],
+    "mobile": "46314062"
+  },
+  {
+    "name": "Perry James of Geoff Lovett International",
+    "firm": "Perry James of Geoff Lovett International",
+    "role": "buyer",
+    "vessels": [
+      "More"
+    ],
+    "mobile": "46314062"
+  },
+  {
     "name": "s-46314062/?originalSubdomain=au",
-    "firm": "Perry James of Geoff Lovett International https://www.linkedin.com/in/perry-jame",
+    "firm": "Perry James of Geoff Lovett International",
     "role": "seller",
     "vessels": [
       "Intrigue"
@@ -18233,7 +19664,7 @@
   },
   {
     "name": "s-46314062/?originalSubdomain=au",
-    "firm": "Perry James of Geoff Lovett International https://www.linkedin.com/in/perry-jame",
+    "firm": "Perry James of Geoff Lovett International",
     "role": "buyer",
     "vessels": [
       "More"
@@ -18323,8 +19754,17 @@
     "mobile": "612) 819-8134"
   },
   {
+    "name": "2/?originalSubdomain=gr",
+    "firm": "Peter Riginos of Riginos Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Africa I"
+    ],
+    "mobile": "21421432"
+  },
+  {
     "name": "32/?originalSubdomain=gr",
-    "firm": "Peter Riginos of Riginos Yachts https://www.linkedin.com/in/peter-riginos-214214",
+    "firm": "Peter Riginos of Riginos Yachts",
     "role": "buyer",
     "vessels": [
       "OCEAN PARADISE"
@@ -18332,10 +19772,11 @@
     "mobile": "21421432"
   },
   {
-    "name": "2/?originalSubdomain=gr",
-    "firm": "Peter Riginos of Riginos Yachtshttps://www.linkedin.com/in/peter-riginos-2142143",
+    "name": "Peter Riginos of Riginos Yachts",
+    "firm": "Peter Riginos of Riginos Yachts",
     "role": "buyer",
     "vessels": [
+      "OCEAN PARADISE",
       "Africa I"
     ],
     "mobile": "21421432"
@@ -18442,7 +19883,7 @@
   },
   {
     "name": "Pieter van der Weide of Hoek Brokerage",
-    "firm": "Pieter van der Weide of Hoek Brokerage +31 653612691",
+    "firm": "Pieter van der Weide of Hoek Brokerage",
     "role": "seller",
     "vessels": [
       "Kealoha"
@@ -18452,7 +19893,7 @@
   },
   {
     "name": "Pieter van der Weide of Hoek Brokerage",
-    "firm": "Pieter van der Weide of Hoek Brokerage +31 653612691",
+    "firm": "Pieter van der Weide of Hoek Brokerage",
     "role": "buyer",
     "vessels": [
       "Kealoha"
@@ -18472,7 +19913,7 @@
   },
   {
     "name": "info@pivatus.com",
-    "firm": "Pivatus Yachting t +385 52 215 155",
+    "firm": "Pivatus Yachting t",
     "role": "buyer",
     "vessels": [
       "Barracuda Red Sea"
@@ -18492,7 +19933,7 @@
   },
   {
     "name": "Sofian Bouguerra",
-    "firm": "Prime Wake Family Office",
+    "firm": "Prime Wake Family",
     "role": "buyer",
     "vessels": [
       "VON B II"
@@ -18788,6 +20229,16 @@
     "mobile": "954-525-7484"
   },
   {
+    "name": "Mike Strassel RJC Yachts",
+    "firm": "RJC Yachts",
+    "role": "seller",
+    "vessels": [
+      "PROBABILITY"
+    ],
+    "email": "mike@rjcyachts.com",
+    "mobile": "954-525-7484"
+  },
+  {
     "name": "Bob Cury",
     "firm": "RJC Yachts 954-980-3451",
     "role": "buyer",
@@ -18831,16 +20282,6 @@
     ],
     "email": "raymond@rjcyachts.com",
     "mobile": "954-658-2693"
-  },
-  {
-    "name": "Mike Strassel RJC Yachts",
-    "firm": "RJC Yachts Office: 954-525-7484 Cell: 954-214-1967 Email:",
-    "role": "seller",
-    "vessels": [
-      "PROBABILITY"
-    ],
-    "email": "mike@rjcyachts.com",
-    "mobile": "954-525-7484"
   },
   {
     "name": "RR yachts",
@@ -18915,7 +20356,7 @@
   },
   {
     "name": "Niel Steenkamp",
-    "firm": "Ray Prokorym (https://www.linkedin.com/in/ray-prokorym/",
+    "firm": "Ray Prokorym (",
     "role": "buyer",
     "vessels": [
       "LANIKAI"
@@ -18925,7 +20366,7 @@
   },
   {
     "name": "Ray@WorthAvenueYachts.com Office: +1 (206) 209-1920 Mobile: +1 (425) 327-0994 )",
-    "firm": "Ray Prokorym (https://www.linkedin.com/in/ray-prokorym/",
+    "firm": "Ray Prokorym (",
     "role": "buyer",
     "vessels": [
       "LANIKAI"
@@ -18935,7 +20376,7 @@
   },
   {
     "name": "Brock Rodwell",
-    "firm": "Ray White Marine +61408 303 203 /",
+    "firm": "Ray White Marine",
     "role": "buyer",
     "vessels": [
       "MELINDA V"
@@ -18945,7 +20386,7 @@
   },
   {
     "name": "Jules Legge",
-    "firm": "Ray White Marine in Australia +61 452 554 191",
+    "firm": "Ray White Marine in Australia",
     "role": "seller",
     "vessels": [
       "Hells Bells"
@@ -18955,7 +20396,7 @@
   },
   {
     "name": "Jules Legge",
-    "firm": "Ray White Marine in Australia +61 452 554 191",
+    "firm": "Ray White Marine in Australia",
     "role": "buyer",
     "vessels": [
       "Hells Bells"
@@ -19015,11 +20456,38 @@
     "mobile": "910-239-9344"
   },
   {
+    "name": "David Ross of (Mobile",
+    "firm": "Reel Deal Yachts",
+    "role": "buyer",
+    "vessels": [
+      "INVISION",
+      "Invision"
+    ],
+    "email": "dr@reeldealyachts.com",
+    "mobile": "920-860-7655"
+  },
+  {
+    "name": "Email:",
+    "firm": "Reel Deal Yachts",
+    "role": "seller",
+    "vessels": [
+      "Island Seeker"
+    ],
+    "email": "eric@reeldealyachts.com",
+    "mobile": "305-525-8244"
+  },
+  {
     "name": "Henry Schonthal Mobile",
     "firm": "Reel Deal Yachts",
     "role": "seller",
     "vessels": [
-      "Eva"
+      "Eva",
+      "Jade",
+      "About Time",
+      "Unforgettable",
+      "Julia Dorothy",
+      "La Perla",
+      "KIWI DREAMS"
     ],
     "email": "henry@reeldealyachts.com",
     "mobile": "954-376-2670"
@@ -19031,9 +20499,25 @@
     "vessels": [
       "SCARLET II",
       "ANDIAMO",
-      "BEL SOGNO"
+      "BEL SOGNO",
+      "Southern Stars",
+      "She's a 10",
+      "About Time",
+      "Balaju",
+      "Scarlet",
+      "La Perla"
     ],
     "email": "henry@reeldealyachts.com",
+    "mobile": "954-376-2670"
+  },
+  {
+    "name": "Henry Schonthal of",
+    "firm": "Reel Deal Yachts",
+    "role": "seller",
+    "vessels": [
+      "The Capital"
+    ],
+    "email": "954-376-2670henry@reeldealyachts.com",
     "mobile": "954-376-2670"
   },
   {
@@ -19042,7 +20526,10 @@
     "role": "buyer",
     "vessels": [
       "Rebeca",
-      "TAU"
+      "TAU",
+      "Arreee!",
+      "GG",
+      "La Perla"
     ],
     "email": "reelboats@gmail.com",
     "mobile": "305-796-0040"
@@ -19052,7 +20539,9 @@
     "firm": "Reel Deal Yachts",
     "role": "seller",
     "vessels": [
-      "Elymar"
+      "Elymar",
+      "Unforgettable",
+      "La Perla"
     ],
     "email": "reelboats@gmail.com",
     "mobile": "305-796-0040"
@@ -19067,8 +20556,18 @@
     "mobile": "305) 498-4627"
   },
   {
+    "name": "64renaud@oceandrive.fr",
+    "firm": "Renaud Canivet from Ocean Drive",
+    "role": "seller",
+    "vessels": [
+      "Low Blow"
+    ],
+    "email": "64renaud@oceandrive.fr",
+    "mobile": "+33 6 11 98 53 64"
+  },
+  {
     "name": "renaud@oceandrive.fr",
-    "firm": "Renaud Canivet from Ocean Drive +33 6 11 98 53 64",
+    "firm": "Renaud Canivet from Ocean Drive",
     "role": "seller",
     "vessels": [
       "Anvilugi",
@@ -19079,23 +20578,13 @@
   },
   {
     "name": "renaud@oceandrive.fr",
-    "firm": "Renaud Canivet from Ocean Drive +33 6 11 98 53 64",
+    "firm": "Renaud Canivet from Ocean Drive",
     "role": "buyer",
     "vessels": [
       "Anvilugi",
       "Joy Star"
     ],
     "email": "renaud@oceandrive.fr",
-    "mobile": "+33 6 11 98 53 64"
-  },
-  {
-    "name": "64renaud@oceandrive.fr",
-    "firm": "Renaud Canivet from Ocean Drive+33 6 11 98 53",
-    "role": "seller",
-    "vessels": [
-      "Low Blow"
-    ],
-    "email": "64renaud@oceandrive.fr",
     "mobile": "+33 6 11 98 53 64"
   },
   {
@@ -19119,7 +20608,7 @@
   },
   {
     "name": "116richard@sunseekerlondon.com",
-    "firm": "Richard Tilley of Sunseeker London+44 (0) 7785 347",
+    "firm": "Richard Tilley of Sunseeker London",
     "role": "seller",
     "vessels": [
       "Gigi"
@@ -19145,7 +20634,8 @@
     "vessels": [
       "ACACIA",
       "Happy Hour",
-      "TROTTER"
+      "TROTTER",
+      "Seahorse"
     ],
     "email": "inquiries@rickobeyyachtsales.com",
     "mobile": "954.980.8121"
@@ -19161,6 +20651,58 @@
     "mobile": "954) 907-5622"
   },
   {
+    "name": "Associates ((305) 479-5180",
+    "firm": "Rick Obey & Associates",
+    "role": "seller",
+    "vessels": [
+      "Accessory"
+    ],
+    "email": "mark@rickobeyyachtsales.com",
+    "mobile": "305) 479-5180"
+  },
+  {
+    "name": "Associates ((305) 479-5180",
+    "firm": "Rick Obey & Associates",
+    "role": "buyer",
+    "vessels": [
+      "Kampai"
+    ],
+    "email": "mark@rickobeyyachtsales.com",
+    "mobile": "305) 479-5180"
+  },
+  {
+    "name": "John Grosz of Rick Obey Yacht Sales (786) 390-1700",
+    "firm": "Rick Obey & Associates",
+    "role": "buyer",
+    "vessels": [
+      "Aurora"
+    ],
+    "email": "jgrosz@rickobeyyachtsales.com",
+    "mobile": "786) 390-1700"
+  },
+  {
+    "name": "Rick Obey & Associates",
+    "firm": "Rick Obey & Associates",
+    "role": "buyer",
+    "vessels": [
+      "Novatec",
+      "Sweet T",
+      "Chapter 3"
+    ],
+    "email": "johnny@rickobeyyachtsales.com",
+    "mobile": "772) 260-2531"
+  },
+  {
+    "name": "Rick Obey & Associates",
+    "firm": "Rick Obey & Associates",
+    "role": "buyer",
+    "vessels": [
+      "Parabolic"
+    ],
+    "email": "barbara@rickobeyyachtsales.com",
+    "mobile": "310) 968-8885"
+  },
+  {
     "name": ":",
     "firm": "Rick Obey Yacht Sales",
     "role": "seller",
@@ -19172,7 +20714,16 @@
   },
   {
     "name": "John Riggs at",
-    "firm": "Riggs Yacht Sales 910-262-5566 https://www.linkedin.com/in/john-d-riggs-4b26a210/",
+    "firm": "Riggs Yacht Sales 910-262-5566",
+    "role": "buyer",
+    "vessels": [
+      "Just Got Bored IV"
+    ],
+    "mobile": "910-262-5566"
+  },
+  {
+    "name": "Riggs Yacht Sales 910-262-5566",
+    "firm": "Riggs Yacht Sales 910-262-5566",
     "role": "buyer",
     "vessels": [
       "Just Got Bored IV"
@@ -19191,7 +20742,7 @@
   },
   {
     "name": "7761012rino@selfconcept.it",
-    "firm": "Rino di Maggio of Self Concept+39 339",
+    "firm": "Rino di Maggio of Self Concept",
     "role": "buyer",
     "vessels": [
       "Five"
@@ -19211,7 +20762,7 @@
   },
   {
     "name": "Rob Lott from Keenan Marina (",
-    "firm": "Rob Lott from Keenan Marina ( https://www.linkedin.com/in/rob-lott-198950168/)",
+    "firm": "Rob Lott from Keenan Marina (",
     "role": "buyer",
     "vessels": [
       "Lucky Lady"
@@ -19241,7 +20792,7 @@
   },
   {
     "name": "yachtcaptain1@mac.com",
-    "firm": "Robert Lowden Office Number: 12066251580 Mobile Number: 2064593337 Email:",
+    "firm": "Robert Lowden",
     "role": "buyer",
     "vessels": [
       "Chosen One"
@@ -19279,8 +20830,17 @@
     "email": "ventas@pbt.mx"
   },
   {
+    "name": "Roger Daou of Yacht Vision",
+    "firm": "Roger Daou of Yacht Vision",
+    "role": "buyer",
+    "vessels": [
+      "GB2"
+    ],
+    "mobile": "77600148"
+  },
+  {
     "name": "nalSubdomain=lb",
-    "firm": "Roger Daou of Yacht Visionhttps://www.linkedin.com/in/roger-daou-77600148/?origi",
+    "firm": "Roger Daou of Yacht Vision",
     "role": "buyer",
     "vessels": [
       "GB2"
@@ -19341,7 +20901,7 @@
   },
   {
     "name": "+447887676888 Email:",
-    "firm": "Roy Klajman of Sea-Alliance Group +350 200 61 666 and +447887676888 Email:",
+    "firm": "Roy Klajman of Sea-Alliance Group",
     "role": "buyer",
     "vessels": [
       "Scorpion A",
@@ -19498,7 +21058,7 @@
   },
   {
     "name": "info@sshmaritime.com",
-    "firm": "SSH Maritime TEL.: +30 210 89 64 130",
+    "firm": "SSH Maritime",
     "role": "seller",
     "vessels": [
       "Rahil",
@@ -19541,7 +21101,7 @@
   },
   {
     "name": "Sam Henley of Henley Marine",
-    "firm": "Sam Henley of Henley Marine · +44 7562 696 112",
+    "firm": "Sam Henley of Henley Marine ·",
     "role": "buyer",
     "vessels": [
       "Narvalo"
@@ -19560,7 +21120,7 @@
   },
   {
     "name": "Gianfranco Crosta",
-    "firm": "Sanlorenzo +39 0185 55866",
+    "firm": "Sanlorenzo",
     "role": "buyer",
     "vessels": [
       "Pioppi"
@@ -19570,7 +21130,7 @@
   },
   {
     "name": "Andrea Baldacci",
-    "firm": "Sanlorenzo Adriatic+39",
+    "firm": "Sanlorenzo Adriatic",
     "role": "seller",
     "vessels": [
       "Eighteen"
@@ -19602,7 +21162,7 @@
   },
   {
     "name": "Alan Gulliver at",
-    "firm": "Sanlorenzo Spain https://www.linkedin.com/in/alan-gulliver-93409721/?originalSubdomain=es",
+    "firm": "Sanlorenzo Spain",
     "role": "seller",
     "vessels": [
       "I",
@@ -19612,7 +21172,26 @@
   },
   {
     "name": "Alan Gulliver at",
-    "firm": "Sanlorenzo Spain https://www.linkedin.com/in/alan-gulliver-93409721/?originalSubdomain=es",
+    "firm": "Sanlorenzo Spain",
+    "role": "buyer",
+    "vessels": [
+      "I"
+    ],
+    "mobile": "93409721"
+  },
+  {
+    "name": "Sanlorenzo Spain",
+    "firm": "Sanlorenzo Spain",
+    "role": "seller",
+    "vessels": [
+      "I",
+      "Zulu"
+    ],
+    "mobile": "93409721"
+  },
+  {
+    "name": "Sanlorenzo Spain",
+    "firm": "Sanlorenzo Spain",
     "role": "buyer",
     "vessels": [
       "I"
@@ -19690,8 +21269,8 @@
     "email": "scott.douglas@marinemax.com"
   },
   {
-    "name": "scott-frierson-4629341b8/",
-    "firm": "Scott Frerson of South Beach Yacht Sales386.295.2520https://www.linkedin.com/in/",
+    "name": "Scott Frerson of South Beach Yacht Sales386.295.2520",
+    "firm": "Scott Frerson of South Beach Yacht Sales386.295.2520",
     "role": "buyer",
     "vessels": [
       "Castellina"
@@ -19699,8 +21278,26 @@
     "mobile": "386.295.2520"
   },
   {
+    "name": "scott-frierson-4629341b8/",
+    "firm": "Scott Frerson of South Beach Yacht Sales386.295.2520",
+    "role": "buyer",
+    "vessels": [
+      "Castellina"
+    ],
+    "mobile": "386.295.2520"
+  },
+  {
+    "name": "Scott Roberton of MarineMax(727) 638-7890",
+    "firm": "Scott Roberton of MarineMax(727) 638-7890",
+    "role": "buyer",
+    "vessels": [
+      "Illusion"
+    ],
+    "mobile": "727) 638-7890"
+  },
+  {
     "name": "on/",
-    "firm": "Scott Roberton of MarineMax(727) 638-7890https://www.linkedin.com/in/scottrobert",
+    "firm": "Scott Roberton of MarineMax(727) 638-7890",
     "role": "buyer",
     "vessels": [
       "Illusion"
@@ -19730,7 +21327,7 @@
   },
   {
     "name": "SeaNet Europe",
-    "firm": "SeaNet Europe +356 2133 8659 https://www.seanetco.eu/contact/",
+    "firm": "SeaNet Europe",
     "role": "buyer",
     "vessels": [
       "Seven Sins"
@@ -19740,7 +21337,16 @@
   },
   {
     "name": "Rick Christensen at",
-    "firm": "Seacoast Yachts 805-432-8220 https://www.linkedin.com/in/rick-christensen-b88a70177",
+    "firm": "Seacoast Yachts 805-432-8220",
+    "role": "buyer",
+    "vessels": [
+      "VICTORIA"
+    ],
+    "mobile": "805-432-8220"
+  },
+  {
+    "name": "Seacoast Yachts 805-432-8220",
+    "firm": "Seacoast Yachts 805-432-8220",
     "role": "buyer",
     "vessels": [
       "VICTORIA"
@@ -19749,7 +21355,7 @@
   },
   {
     "name": "info@seahorse.gr",
-    "firm": "Seahorse Yacht Brokers +30 (210) 895 2212 +30 (210) 895 8317",
+    "firm": "Seahorse Yacht Brokers",
     "role": "seller",
     "vessels": [
       "AE Cap D’Antibes"
@@ -19800,7 +21406,7 @@
   },
   {
     "name": "6984a330/?originalSubdomain=tr +90 533 655 88 86",
-    "firm": "Sercan Nersesoglu of Redna Yachts https://www.linkedin.com/in/sercan-nersesoglu",
+    "firm": "Sercan Nersesoglu of Redna Yachts",
     "role": "buyer",
     "vessels": [
       "Lionshare",
@@ -19812,7 +21418,28 @@
   },
   {
     "name": "6984a330/?originalSubdomain=tr +90 533 655 88 86",
-    "firm": "Sercan Nersesoglu of Redna Yachts https://www.linkedin.com/in/sercan-nersesoglu",
+    "firm": "Sercan Nersesoglu of Redna Yachts",
+    "role": "seller",
+    "vessels": [
+      "Aisha"
+    ],
+    "mobile": "+90 533 655 88 86"
+  },
+  {
+    "name": "Sercan Nersesoglu of Redna Yachts",
+    "firm": "Sercan Nersesoglu of Redna Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Lionshare",
+      "Aisha",
+      "Black Gold",
+      "Black Star 3"
+    ],
+    "mobile": "+90 533 655 88 86"
+  },
+  {
+    "name": "Sercan Nersesoglu of Redna Yachts",
+    "firm": "Sercan Nersesoglu of Redna Yachts",
     "role": "seller",
     "vessels": [
       "Aisha"
@@ -19850,8 +21477,28 @@
     "mobile": "+49 175 33 55 55 2"
   },
   {
+    "name": "Sieckmann Yachts",
+    "firm": "Sieckmann Yachts",
+    "role": "seller",
+    "vessels": [
+      "Diana II",
+      "Samba Pa Ti",
+      "Adur"
+    ],
+    "mobile": "+49 151 70 42 10 86"
+  },
+  {
+    "name": "Sieckmann Yachts",
+    "firm": "Sieckmann Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Lucia-M"
+    ],
+    "mobile": "+49 151 70 42 10 86"
+  },
+  {
     "name": "Torsten Sieckmann at",
-    "firm": "Sieckmann Yachts +49 151 70 42 10 86 https://www.linkedin.com/in/torsten-sieckmann-b4551613/?originalSubdomain=de",
+    "firm": "Sieckmann Yachts",
     "role": "seller",
     "vessels": [
       "Diana II",
@@ -19861,7 +21508,7 @@
   },
   {
     "name": "Torsten Sieckmann at",
-    "firm": "Sieckmann Yachts +49 151 70 42 10 86 https://www.linkedin.com/in/torsten-sieckmann-b4551613/?originalSubdomain=de",
+    "firm": "Sieckmann Yachts",
     "role": "buyer",
     "vessels": [
       "Lucia-M"
@@ -19870,7 +21517,7 @@
   },
   {
     "name": "William Burns Sunseeker London +44 (0) 7776 233 459",
-    "firm": "Sieckmann Yachts and William Burns at Sunseeker London +44 (0) 7776 233 459",
+    "firm": "Sieckmann Yachts and William Burns at Sunseeker London",
     "role": "seller",
     "vessels": [
       "PATHOS"
@@ -19880,7 +21527,7 @@
   },
   {
     "name": "Oliver Sieckmann",
-    "firm": "Sieckmann Yachts in Germany+49 175 33 55 55",
+    "firm": "Sieckmann Yachts in Germany",
     "role": "seller",
     "vessels": [
       "4Leon"
@@ -19890,7 +21537,7 @@
   },
   {
     "name": "Simon Graham (Phone (561) 329-5009",
-    "firm": "Simon Graham (Phone (561) 329-5009",
+    "firm": "Simon Graham (",
     "role": "seller",
     "vessels": [
       "QII"
@@ -19959,7 +21606,7 @@
   },
   {
     "name": "Simpson Marine (E:",
-    "firm": "Simpson Marine (E: ) and Sanlorenzo Asia (https://asia.sanlorenzoyacht.com/uk/sa",
+    "firm": "Simpson Marine (E: ) and Sanlorenzo Asia (",
     "role": "buyer",
     "vessels": [
       "DUCHESS"
@@ -19997,6 +21644,15 @@
     "mobile": "+852 2555 8377"
   },
   {
+    "name": "Nick Stratton",
+    "firm": "Simpson Marine in Hong Kong",
+    "role": "seller",
+    "vessels": [
+      "Karibu"
+    ],
+    "email": "hongkong@simpsonmarine.com"
+  },
+  {
     "name": "Phil Gregory",
     "firm": "Simpson Marine in Hong Kong",
     "role": "buyer",
@@ -20005,15 +21661,6 @@
     ],
     "email": "brokerage@simpsonmarine.com",
     "mobile": "+852 2555 8377"
-  },
-  {
-    "name": "Nick Stratton",
-    "firm": "Simpson Marine in Hong Kong https://www.linkedin.com/in/nick-stratton-5595374a/?originalSubdomain=sg",
-    "role": "seller",
-    "vessels": [
-      "Karibu"
-    ],
-    "email": "hongkong@simpsonmarine.com"
   },
   {
     "name": "E:",
@@ -20027,7 +21674,16 @@
   },
   {
     "name": "Alev Semiz at Sofi Yacht Charter",
-    "firm": "Sofi Yacht Charter & Sales https://www.linkedin.com/in/alev-semiz-590029104/?originalSubdomain=tr",
+    "firm": "Sofi Yacht Charter & Sales",
+    "role": "seller",
+    "vessels": [
+      "Glorious"
+    ],
+    "mobile": "590029104"
+  },
+  {
+    "name": "Sofi Yacht Charter & Sales",
+    "firm": "Sofi Yacht Charter & Sales",
     "role": "seller",
     "vessels": [
       "Glorious"
@@ -20104,7 +21760,7 @@
   },
   {
     "name": "Spiros Andrikpoulos of Attica Yachts (+302109937899",
-    "firm": "Spiros Andrikpoulos of Attica Yachts (+302109937899, )",
+    "firm": "Spiros Andrikpoulos of Attica Yachts (",
     "role": "seller",
     "vessels": [
       "Astarte"
@@ -20114,7 +21770,7 @@
   },
   {
     "name": "Spiros Andrikpoulos of Attica Yachts (+302109937899",
-    "firm": "Spiros Andrikpoulos of Attica Yachts (+302109937899, )",
+    "firm": "Spiros Andrikpoulos of Attica Yachts (",
     "role": "buyer",
     "vessels": [
       "Astarte"
@@ -20123,8 +21779,17 @@
     "mobile": "+302109937899"
   },
   {
+    "name": "Splinter Fangman of Edminston",
+    "firm": "Splinter Fangman of Edminston",
+    "role": "buyer",
+    "vessels": [
+      "Blondie"
+    ],
+    "mobile": "+377 93 30 54 44"
+  },
+  {
     "name": "ter-fangman-835257b?originalSubdomain=mc",
-    "firm": "Splinter Fangman of Edminston +377 93 30 54 44 https://www.linkedin.com/in/splin",
+    "firm": "Splinter Fangman of Edminston",
     "role": "buyer",
     "vessels": [
       "Blondie"
@@ -20183,7 +21848,7 @@
   },
   {
     "name": "339steve@sunseeker.pt",
-    "firm": "Steve Handy of Sunseeker London +351 914 479 686+44 7789 541",
+    "firm": "Steve Handy of Sunseeker London",
     "role": "buyer",
     "vessels": [
       "Iceman"
@@ -20193,7 +21858,7 @@
   },
   {
     "name": "339steve@sunseeker.pt",
-    "firm": "Steve Handy of Sunseeker Portugal +351 914 479 686+44 7789 541",
+    "firm": "Steve Handy of Sunseeker Portugal",
     "role": "seller",
     "vessels": [
       "Gee Whizz",
@@ -20203,8 +21868,17 @@
     "mobile": "+351 914 479 686"
   },
   {
+    "name": "Steve Sprigg of Sprigg Yacht Consulting 2398256174 1-800-266-4432",
+    "firm": "Steve Sprigg of Sprigg Yacht Consulting 2398256174 1-800-266-4432",
+    "role": "buyer",
+    "vessels": [
+      "Q"
+    ],
+    "mobile": "2398256174 1-800-266-4432"
+  },
+  {
     "name": "nkedin.com/in/steve-sprigg-9b03962b/",
-    "firm": "Steve Sprigg of Sprigg Yacht Consulting 2398256174 1-800-266-4432 https://www.li",
+    "firm": "Steve Sprigg of Sprigg Yacht Consulting 2398256174 1-800-266-4432",
     "role": "buyer",
     "vessels": [
       "Q"
@@ -20243,7 +21917,7 @@
   },
   {
     "name": "Frederic Hestin",
-    "firm": "Sunseeker +33 608 690 664",
+    "firm": "Sunseeker",
     "role": "seller",
     "vessels": [
       "FAMILY SPIRIT"
@@ -20253,7 +21927,7 @@
   },
   {
     "name": "Frederic Hestin",
-    "firm": "Sunseeker +33 608 690 664",
+    "firm": "Sunseeker",
     "role": "buyer",
     "vessels": [
       "FAMILY SPIRIT"
@@ -20263,7 +21937,7 @@
   },
   {
     "name": "Alex Montane",
-    "firm": "Sunseeker Adriatic +33 609 53 50",
+    "firm": "Sunseeker Adriatic",
     "role": "seller",
     "vessels": [
       "Black Pearl"
@@ -20273,7 +21947,7 @@
   },
   {
     "name": "James Wood",
-    "firm": "Sunseeker France +33 (0) 620 02 50 95",
+    "firm": "Sunseeker France",
     "role": "buyer",
     "vessels": [
       "Survivor",
@@ -20285,7 +21959,7 @@
   },
   {
     "name": "James Wood",
-    "firm": "Sunseeker France+33 (0) 620 02 50",
+    "firm": "Sunseeker France",
     "role": "seller",
     "vessels": [
       "Firecracker"
@@ -20294,8 +21968,52 @@
     "mobile": "+33 (0) 620 02 50 95"
   },
   {
+    "name": "Alex Head",
+    "firm": "Sunseeker London",
+    "role": "seller",
+    "vessels": [
+      "Scorpion A",
+      "Living the Dream",
+      "Black Legend"
+    ],
+    "email": "alex@sunseekerlondon.com",
+    "mobile": "+44 7900 362 417"
+  },
+  {
+    "name": "Christopher Head",
+    "firm": "Sunseeker London",
+    "role": "seller",
+    "vessels": [
+      "TC",
+      "FREEDOM"
+    ],
+    "email": "christopherhead@sunseekerlondon.com",
+    "mobile": "+44 7774 729 652"
+  },
+  {
+    "name": "Gary Cleaverly",
+    "firm": "Sunseeker London",
+    "role": "seller",
+    "vessels": [
+      "Mr K",
+      "TWISTED"
+    ],
+    "email": "gary@sunseekerlondon.com",
+    "mobile": "+44 7778 878 886"
+  },
+  {
+    "name": "Richard Tilley",
+    "firm": "Sunseeker London",
+    "role": "seller",
+    "vessels": [
+      "SPECTRE"
+    ],
+    "email": "richard@sunseekerlondon.com",
+    "mobile": "+44 7785 347 116"
+  },
+  {
     "name": "William Burns",
-    "firm": "Sunseeker London +44 (0) 7776 233 459",
+    "firm": "Sunseeker London",
     "role": "seller",
     "vessels": [
       "Skyfall",
@@ -20307,7 +22025,7 @@
   },
   {
     "name": "William Burns",
-    "firm": "Sunseeker London +44 (0) 7776 233 459",
+    "firm": "Sunseeker London",
     "role": "buyer",
     "vessels": [
       "FREEDOM"
@@ -20316,62 +22034,8 @@
     "mobile": "+44 (0) 7776 233 459"
   },
   {
-    "name": "Christopher Head",
-    "firm": "Sunseeker London +44 7774 729 652",
-    "role": "seller",
-    "vessels": [
-      "TC",
-      "FREEDOM"
-    ],
-    "email": "christopherhead@sunseekerlondon.com",
-    "mobile": "+44 7774 729 652"
-  },
-  {
-    "name": "Gary Cleaverly",
-    "firm": "Sunseeker London +44 7778 878 886",
-    "role": "seller",
-    "vessels": [
-      "Mr K",
-      "TWISTED"
-    ],
-    "email": "gary@sunseekerlondon.com",
-    "mobile": "+44 7778 878 886"
-  },
-  {
-    "name": "Richard Tilley",
-    "firm": "Sunseeker London +44 7785 347 116",
-    "role": "seller",
-    "vessels": [
-      "SPECTRE"
-    ],
-    "email": "richard@sunseekerlondon.com",
-    "mobile": "+44 7785 347 116"
-  },
-  {
-    "name": "Alex Head",
-    "firm": "Sunseeker London +44 7900 362 417",
-    "role": "seller",
-    "vessels": [
-      "Scorpion A",
-      "Living the Dream",
-      "Black Legend"
-    ],
-    "email": "alex@sunseekerlondon.com",
-    "mobile": "+44 7900 362 417"
-  },
-  {
-    "name": "gary@sunseekerlondon.com",
-    "firm": "Sunseeker London - Gary Cleaverly +44 7778 878 886",
-    "role": "buyer",
-    "vessels": [
-      "HARMONY"
-    ],
-    "email": "gary@sunseekerlondon.com",
-    "mobile": "+44 7778 878 886"
-  },
-  {
     "name": "William Burns",
-    "firm": "Sunseeker London+44 (0) 7776 233",
+    "firm": "Sunseeker London",
     "role": "seller",
     "vessels": [
       "Mr K Iriston",
@@ -20381,8 +22045,18 @@
     "mobile": "+44 (0) 7776 233 459"
   },
   {
+    "name": "gary@sunseekerlondon.com",
+    "firm": "Sunseeker London - Gary Cleaverly",
+    "role": "buyer",
+    "vessels": [
+      "HARMONY"
+    ],
+    "email": "gary@sunseekerlondon.com",
+    "mobile": "+44 7778 878 886"
+  },
+  {
     "name": "886gary@sunseekerlondon.com",
-    "firm": "Sunseeker LondonGary Cleaverly +44 7778 878",
+    "firm": "Sunseeker LondonGary Cleaverly",
     "role": "buyer",
     "vessels": [
       "Mr K Iriston"
@@ -20392,7 +22066,7 @@
   },
   {
     "name": "886gary@sunseekerlondon.com",
-    "firm": "Sunseeker LondonGary Cleaverly +44 7778 878",
+    "firm": "Sunseeker LondonGary Cleaverly",
     "role": "seller",
     "vessels": [
       "Zozo"
@@ -20402,7 +22076,7 @@
   },
   {
     "name": "gary@sunseekerlondon.com",
-    "firm": "Sunseeker LondonGary Cleaverly +44 7778 878 886",
+    "firm": "Sunseeker LondonGary Cleaverly",
     "role": "buyer",
     "vessels": [
       "No 9"
@@ -20412,7 +22086,7 @@
   },
   {
     "name": "Andrew Thomas",
-    "firm": "Sunseeker Mallorca+34 639 777",
+    "firm": "Sunseeker Mallorca",
     "role": "buyer",
     "vessels": [
       "Gigi"
@@ -20422,7 +22096,7 @@
   },
   {
     "name": "Matthew Palmer",
-    "firm": "Sunseeker Monaco +33 607 934 119",
+    "firm": "Sunseeker Monaco",
     "role": "seller",
     "vessels": [
       "High Energy"
@@ -20432,17 +22106,18 @@
   },
   {
     "name": "Matthew Stanton",
-    "firm": "Sunseeker Monaco +33 643 910 062",
+    "firm": "Sunseeker Monaco",
     "role": "buyer",
     "vessels": [
-      "SH MAGIC"
+      "SH MAGIC",
+      "Samba Pa Ti"
     ],
     "email": "matthew@sunseeker.mc",
     "mobile": "+33 643 910 062"
   },
   {
     "name": "Matthew Stanton",
-    "firm": "Sunseeker Monaco+33 6 43 91 00",
+    "firm": "Sunseeker Monaco",
     "role": "seller",
     "vessels": [
       "Lady Ella S"
@@ -20451,18 +22126,8 @@
     "mobile": "+33 6 43 91 00 62"
   },
   {
-    "name": "Matthew Stanton at",
-    "firm": "Sunseeker Monaco+33 6 43 91 00 62",
-    "role": "buyer",
-    "vessels": [
-      "Samba Pa Ti"
-    ],
-    "email": "matthew@sunseeker.mc",
-    "mobile": "+33 6 43 91 00 62"
-  },
-  {
     "name": "sven@sunseekerneustadt.de",
-    "firm": "Sunseeker NeustadtT +49 175 57 31 895",
+    "firm": "Sunseeker NeustadtT",
     "role": "buyer",
     "vessels": [
       "Mijax"
@@ -20472,7 +22137,7 @@
   },
   {
     "name": "Spencer Brown",
-    "firm": "Sunseeker Poole +44 7769 322 707",
+    "firm": "Sunseeker Poole",
     "role": "seller",
     "vessels": [
       "Mr B"
@@ -20482,7 +22147,7 @@
   },
   {
     "name": "Spencer Brown",
-    "firm": "Sunseeker Poole +44 7769 322 707",
+    "firm": "Sunseeker Poole",
     "role": "buyer",
     "vessels": [
       "TWISTED"
@@ -20492,7 +22157,7 @@
   },
   {
     "name": "James Lumley",
-    "firm": "Sunseeker Southampton +44 7747 686 587",
+    "firm": "Sunseeker Southampton",
     "role": "buyer",
     "vessels": [
       "SPECTRE"
@@ -20502,7 +22167,7 @@
   },
   {
     "name": "Veysel Karagoz",
-    "firm": "Sunseeker Turkey+90 532 154",
+    "firm": "Sunseeker Turkey",
     "role": "seller",
     "vessels": [
       "Instant Crush"
@@ -20582,6 +22247,16 @@
     "mobile": "+377 99 906 122"
   },
   {
+    "name": "48contact@superyachtsmonaco.com",
+    "firm": "SuperYachtsMonaco",
+    "role": "buyer",
+    "vessels": [
+      "Blue Eyes London"
+    ],
+    "email": "48contact@superyachtsmonaco.com",
+    "mobile": "+377 93 25 03 48"
+  },
+  {
     "name": "Christopher Mosley (",
     "firm": "SuperYachtsMonaco",
     "role": "seller",
@@ -20653,27 +22328,17 @@
     "mobile": "+377 93 25 03 48"
   },
   {
-    "name": "48contact@superyachtsmonaco.com",
-    "firm": "SuperYachtsMonaco+377 93 25 03",
-    "role": "buyer",
-    "vessels": [
-      "Blue Eyes London"
-    ],
-    "email": "48contact@superyachtsmonaco.com",
-    "mobile": "+377 93 25 03 48"
-  },
-  {
-    "name": "Vassilis Pateras",
-    "firm": "SuperYachtsMonacovp@superyachtsmonaco.com",
-    "role": "buyer",
-    "vessels": [
-      "Koo"
-    ],
-    "email": "superyachtsmonacovp@superyachtsmonaco.com"
-  },
-  {
     "name": "Ben Young at",
-    "firm": "Superyacht Management https://www.linkedin.com/in/ben-young-mbe-381632128/?originalSubdomain=fr",
+    "firm": "Superyacht Management",
+    "role": "buyer",
+    "vessels": [
+      "VOLPINI 2"
+    ],
+    "mobile": "381632128"
+  },
+  {
+    "name": "Superyacht Management",
+    "firm": "Superyacht Management",
     "role": "buyer",
     "vessels": [
       "VOLPINI 2"
@@ -20701,18 +22366,28 @@
     "mobile": "+1 954 368 7200"
   },
   {
-    "name": "Charter (+1 (954) 368 7200",
-    "firm": "Superyacht Sales & Charter (+1 (954) 368 7200, )",
-    "role": "buyer",
+    "name": "Charter",
+    "firm": "Superyacht Sales & Charter",
+    "role": "seller",
     "vessels": [
-      "Lady Sheridan"
+      "Rochade"
     ],
     "email": "info@superyachtsac.com",
-    "mobile": "+1 (954) 368 7200"
+    "mobile": "+1 954 368 7200"
+  },
+  {
+    "name": "Charter",
+    "firm": "Superyacht Sales & Charter",
+    "role": "seller",
+    "vessels": [
+      "Insatiable"
+    ],
+    "email": "glenn@superyachtsac.com",
+    "mobile": "+1 954 368 7200"
   },
   {
     "name": "Charter (",
-    "firm": "Superyacht Sales & Charter (neil@superyachtsac.com Office: +1 954 368 7200",
+    "firm": "Superyacht Sales & Charter (",
     "role": "seller",
     "vessels": [
       "Sapphire",
@@ -20724,7 +22399,7 @@
   },
   {
     "name": "Charter (",
-    "firm": "Superyacht Sales & Charter (neil@superyachtsac.com Office: +1 954 368 7200",
+    "firm": "Superyacht Sales & Charter (",
     "role": "buyer",
     "vessels": [
       "PINK SHADOW"
@@ -20733,24 +22408,14 @@
     "mobile": "+1 954 368 7200"
   },
   {
-    "name": "Charter",
-    "firm": "Superyacht Sales & Charter +1 954 368 7200 https://superyachtsalesandcharter.co",
-    "role": "seller",
+    "name": "Charter (+1 (954) 368 7200",
+    "firm": "Superyacht Sales & Charter (",
+    "role": "buyer",
     "vessels": [
-      "Rochade"
+      "Lady Sheridan"
     ],
     "email": "info@superyachtsac.com",
-    "mobile": "+1 954 368 7200"
-  },
-  {
-    "name": "Charter",
-    "firm": "Superyacht Sales & Charter OFFICE: +1 954 368 7200",
-    "role": "seller",
-    "vessels": [
-      "Insatiable"
-    ],
-    "email": "glenn@superyachtsac.com",
-    "mobile": "+1 954 368 7200"
+    "mobile": "+1 (954) 368 7200"
   },
   {
     "name": "Charter954-205-0066Email:",
@@ -20932,8 +22597,17 @@
     "email": "josh@twwyachts.com"
   },
   {
+    "name": "Talbot Freeman",
+    "firm": "Talbot Freeman",
+    "role": "seller",
+    "vessels": [
+      "LADY KATANA II"
+    ],
+    "mobile": "83908712"
+  },
+  {
     "name": "Talbot Freeman https://www.linkedin.com/in/talbot-freeman-83908712/",
-    "firm": "Talbot Freeman https://www.linkedin.com/in/talbot-freeman-83908712/",
+    "firm": "Talbot Freeman",
     "role": "seller",
     "vessels": [
       "LADY KATANA II"
@@ -20952,7 +22626,7 @@
   },
   {
     "name": "Seref Dursun",
-    "firm": "Thames Yachting+90 532 495 95",
+    "firm": "Thames Yachting",
     "role": "buyer",
     "vessels": [
       "Instant Crush"
@@ -21030,7 +22704,7 @@
   },
   {
     "name": "Tom Wills",
-    "firm": "The Sunseeker London Group +44 777 611 44 22",
+    "firm": "The Sunseeker London Group",
     "role": "buyer",
     "vessels": [
       "HEY ONE"
@@ -21080,7 +22754,16 @@
   },
   {
     "name": "286200/",
-    "firm": "Tim McNulty of Big Thunder Marinehttps://www.linkedin.com/in/timothy-mcnulty-021",
+    "firm": "Tim McNulty of Big Thunder Marine",
+    "role": "buyer",
+    "vessels": [
+      "MB3"
+    ],
+    "mobile": "021286200"
+  },
+  {
+    "name": "Tim McNulty of Big Thunder Marine",
+    "firm": "Tim McNulty of Big Thunder Marine",
     "role": "buyer",
     "vessels": [
       "MB3"
@@ -21164,8 +22847,18 @@
     "mobile": "+377 99 90 12 22"
   },
   {
+    "name": "Tom Cardosa",
+    "firm": "Tom Cardosa",
+    "role": "buyer",
+    "vessels": [
+      "Destiny IV",
+      "ANDIAMO"
+    ],
+    "mobile": "29445141"
+  },
+  {
     "name": "Tom Cardosa https://www.linkedin.com/in/tom-cardosa-29445141/",
-    "firm": "Tom Cardosa https://www.linkedin.com/in/tom-cardosa-29445141/",
+    "firm": "Tom Cardosa",
     "role": "buyer",
     "vessels": [
       "Destiny IV",
@@ -21196,7 +22889,7 @@
   },
   {
     "name": "Tom George Yacht Group",
-    "firm": "Tom George Yacht Group 727-732-6128 https://www.tgyg.com/contact-us",
+    "firm": "Tom George Yacht Group 727-732-6128",
     "role": "buyer",
     "vessels": [
       "Papi Papa",
@@ -21209,7 +22902,7 @@
   },
   {
     "name": "Tom George Yacht Group",
-    "firm": "Tom George Yacht Group 727-732-6128 https://www.tgyg.com/contact-us",
+    "firm": "Tom George Yacht Group 727-732-6128",
     "role": "seller",
     "vessels": [
       "Moon River"
@@ -21247,6 +22940,15 @@
     "mobile": "+1 305 206 7780"
   },
   {
+    "name": "Tomasso Bilotta of Camper & Nicholson",
+    "firm": "Tomasso Bilotta of Camper & Nicholson",
+    "role": "seller",
+    "vessels": [
+      "Evolution"
+    ],
+    "mobile": "+1 305 206 7780"
+  },
+  {
     "name": "chiabra@royalyacht.it Mobile: +33 6 40 62 28 82",
     "firm": "Tommaso Chiabra of Royal Yachts International",
     "role": "buyer",
@@ -21269,7 +22971,7 @@
   },
   {
     "name": "tmaggio@hmy.com",
-    "firm": "Tony Maggio of HMY Yacht Phone (561) 818-1442 Email",
+    "firm": "Tony Maggio of HMY Yacht",
     "role": "seller",
     "vessels": [
       "Neverland"
@@ -21288,7 +22990,7 @@
   },
   {
     "name": "Torrance",
-    "firm": "Torrance +44 136 1882 100",
+    "firm": "Torrance",
     "role": "buyer",
     "vessels": [
       "Ability",
@@ -21370,6 +23072,31 @@
   },
   {
     "name": "Erman Aytas of https://www.linkedin.com/in/erman-aytas-72172243/?originalSubdoma",
+    "firm": "Ultimo Yachts",
+    "role": "seller",
+    "vessels": [
+      "Black Jack",
+      "Merve"
+    ],
+    "mobile": "72172243"
+  },
+  {
+    "name": "Ultimo Yachts",
+    "firm": "Ultimo Yachts",
+    "role": "buyer",
+    "vessels": [
+      "Perla",
+      "In The Grand Scheme of Things",
+      "Black Jack",
+      "Largo",
+      "Merve",
+      "SERENITY MIA",
+      "Chelonia"
+    ],
+    "mobile": "72172243"
+  },
+  {
+    "name": "Ultimo Yachts",
     "firm": "Ultimo Yachts",
     "role": "seller",
     "vessels": [
@@ -21563,7 +23290,7 @@
   },
   {
     "name": "info@yachtsforsale.nl",
-    "firm": "Van der Vliet T: +31 (0) 294261264 E:",
+    "firm": "Van der Vliet T:",
     "role": "buyer",
     "vessels": [
       "XANADU OF LONDON",
@@ -21574,7 +23301,7 @@
   },
   {
     "name": "info@yachtsforsale.nl",
-    "firm": "Van der Vliet T: +31 (0) 294261264 E:",
+    "firm": "Van der Vliet T:",
     "role": "seller",
     "vessels": [
       "SUNCOCO"
@@ -21684,6 +23411,15 @@
     "email": "mail@venturaeurope.com"
   },
   {
+    "name": "Ventura",
+    "firm": "Ventura",
+    "role": "seller",
+    "vessels": [
+      "Rocket"
+    ],
+    "mobile": "+34669494488"
+  },
+  {
     "name": "Veronica@WorthAvenueYachts.com Office: +1 (954) 703-5737 Mobile: +1 (954) 612-70",
     "firm": "Veronica Pizza",
     "role": "buyer",
@@ -21727,7 +23463,7 @@
   },
   {
     "name": "veyselkaragoz@sunseekerturkey.com",
-    "firm": "Veysel Karagoz of Sunseeker Turkey +90 532 154 1010 +90 212 257 0344",
+    "firm": "Veysel Karagoz of Sunseeker Turkey",
     "role": "buyer",
     "vessels": [
       "Mr K"
@@ -21737,7 +23473,16 @@
   },
   {
     "name": "James Lloyd Jones at",
-    "firm": "Viare https://www.linkedin.com/in/lloyd-jones-marion-820853108/?originalSubdomain=uk",
+    "firm": "Viare",
+    "role": "buyer",
+    "vessels": [
+      "FREEDOM"
+    ],
+    "mobile": "820853108"
+  },
+  {
+    "name": "Viare",
+    "firm": "Viare",
     "role": "buyer",
     "vessels": [
       "FREEDOM"
@@ -21855,8 +23600,26 @@
     "mobile": "+1-954-541-0105"
   },
   {
+    "name": "Wave Marine Group",
+    "firm": "Wave Marine Group",
+    "role": "buyer",
+    "vessels": [
+      "Abu Too"
+    ],
+    "mobile": "1-305-735-9631"
+  },
+  {
+    "name": "Wayne C Jones Yacht Brokerage 619-890-4203",
+    "firm": "Wayne C Jones Yacht Brokerage 619-890-4203",
+    "role": "buyer",
+    "vessels": [
+      "Sixty-Six"
+    ],
+    "mobile": "619-890-4203"
+  },
+  {
     "name": "Wayne C Jones Yacht Brokerage 619-890-4203 http://www.jonesyacht.com/",
-    "firm": "Wayne C Jones Yacht Brokerage 619-890-4203 http://www.jonesyacht.com/",
+    "firm": "Wayne C Jones Yacht Brokerage 619-890-4203",
     "role": "buyer",
     "vessels": [
       "Sixty-Six"
@@ -21865,7 +23628,7 @@
   },
   {
     "name": "Jim Webster",
-    "firm": "Webster Associates USA (+1) 954.525.5101 Email:",
+    "firm": "Webster Associates USA (",
     "role": "buyer",
     "vessels": [
       "ARRIVA"
@@ -21916,7 +23679,7 @@
   },
   {
     "name": "office@westcoastint.com",
-    "firm": "West Coast International +44 788 59 12 512",
+    "firm": "West Coast International",
     "role": "buyer",
     "vessels": [
       "Concordia"
@@ -21945,29 +23708,8 @@
     "mobile": "+33 (0) 686 229 046"
   },
   {
-    "name": "info@westnautical.com",
-    "firm": "West Nautical +441914789920",
-    "role": "buyer",
-    "vessels": [
-      "Spectre",
-      "OCEANBIRD"
-    ],
-    "email": "info@westnautical.com",
-    "mobile": "+441914789920"
-  },
-  {
-    "name": "info@westnautical.com",
-    "firm": "West Nautical +7 495 799 09 96",
-    "role": "seller",
-    "vessels": [
-      "GB2"
-    ],
-    "email": "info@westnautical.com",
-    "mobile": "+7 495 799 09 96"
-  },
-  {
     "name": "Geoff Moore",
-    "firm": "West Nautical+44 7903 832 966 +44 191 478 9920",
+    "firm": "West Nautical",
     "role": "seller",
     "vessels": [
       "KD",
@@ -21979,7 +23721,7 @@
   },
   {
     "name": "Geoff Moore",
-    "firm": "West Nautical+44 7903 832 966 +44 191 478 9920",
+    "firm": "West Nautical",
     "role": "buyer",
     "vessels": [
       "Anna Liza G"
@@ -21988,8 +23730,29 @@
     "mobile": "+44 7903 832 966"
   },
   {
+    "name": "info@westnautical.com",
+    "firm": "West Nautical",
+    "role": "buyer",
+    "vessels": [
+      "Spectre",
+      "OCEANBIRD"
+    ],
+    "email": "info@westnautical.com",
+    "mobile": "+441914789920"
+  },
+  {
+    "name": "info@westnautical.com",
+    "firm": "West Nautical",
+    "role": "seller",
+    "vessels": [
+      "GB2"
+    ],
+    "email": "info@westnautical.com",
+    "mobile": "+7 495 799 09 96"
+  },
+  {
     "name": "5005dmitry.lukin@westnautical.com",
-    "firm": "West NauticalDmitry LukinM: +7 968 360",
+    "firm": "West NauticalDmitry LukinM:",
     "role": "seller",
     "vessels": [
       "Kapusha"
@@ -22061,8 +23824,17 @@
     "mobile": "954-316-6364"
   },
   {
+    "name": "Westport Yacht Sales",
+    "firm": "Westport Yacht Sales",
+    "role": "seller",
+    "vessels": [
+      "Milk Money"
+    ],
+    "mobile": "+1 954-316-6364"
+  },
+  {
     "name": "Westport Yacht Sales+1 954-316-6364https://westportyachts.com/contact",
-    "firm": "Westport Yacht Sales+1 954-316-6364https://westportyachts.com/contact",
+    "firm": "Westport Yacht Sales",
     "role": "seller",
     "vessels": [
       "Milk Money"
@@ -22144,6 +23916,25 @@
     "mobile": "954.850.8773"
   },
   {
+    "name": "Joan Plana at",
+    "firm": "World Yacht Group",
+    "role": "seller",
+    "vessels": [
+      "KARAYEL"
+    ],
+    "mobile": "+1.310.345.2939"
+  },
+  {
+    "name": "Joan Plana at",
+    "firm": "World Yacht Group",
+    "role": "buyer",
+    "vessels": [
+      "KARAYEL",
+      "Asim"
+    ],
+    "mobile": "+1.310.345.2939"
+  },
+  {
     "name": "Ruben Llaudet",
     "firm": "World Yacht Group",
     "role": "seller",
@@ -22154,29 +23945,21 @@
     "mobile": "+34.666.524.259"
   },
   {
-    "name": "Joan Plana at",
-    "firm": "World Yacht Group +1.310.345.2939 +34.671.586.069",
+    "name": "World Yacht Group",
+    "firm": "World Yacht Group",
+    "role": "buyer",
+    "vessels": [
+      "Asim",
+      "KARAYEL"
+    ],
+    "mobile": "+1.310.345.2939"
+  },
+  {
+    "name": "World Yacht Group",
+    "firm": "World Yacht Group",
     "role": "seller",
     "vessels": [
       "KARAYEL"
-    ],
-    "mobile": "+1.310.345.2939"
-  },
-  {
-    "name": "Joan Plana at",
-    "firm": "World Yacht Group +1.310.345.2939 +34.671.586.069",
-    "role": "buyer",
-    "vessels": [
-      "KARAYEL"
-    ],
-    "mobile": "+1.310.345.2939"
-  },
-  {
-    "name": "Joan Plana at",
-    "firm": "World Yacht Group+1.310.345.2939+34.671.586.069https://www.linkedin.com/in/joanplana/",
-    "role": "buyer",
-    "vessels": [
-      "Asim"
     ],
     "mobile": "+1.310.345.2939"
   },
@@ -22985,7 +24768,7 @@
   },
   {
     "name": "Yves Di Lena",
-    "firm": "YDL Yachting https://www.linkedin.com/in/yves-di-lena-152717b1/ +1 (305) 302 13 42",
+    "firm": "YDL Yachting",
     "role": "buyer",
     "vessels": [
       "IZUMI",
@@ -23016,7 +24799,7 @@
   },
   {
     "name": "Villa +33 (0) 616 472",
-    "firm": "Yacht & Villa +33 (0) 616 472",
+    "firm": "Yacht & Villa",
     "role": "buyer",
     "vessels": [
       "Rosey"
@@ -23036,7 +24819,16 @@
   },
   {
     "name": "Benjamin Parrette at",
-    "firm": "Yacht Addict +33 504 071 960",
+    "firm": "Yacht Addict",
+    "role": "buyer",
+    "vessels": [
+      "Soja"
+    ],
+    "mobile": "+33 504 071 960"
+  },
+  {
+    "name": "Yacht Addict",
+    "firm": "Yacht Addict",
     "role": "buyer",
     "vessels": [
       "Soja"
@@ -23219,7 +25011,7 @@
   },
   {
     "name": "office@yachtmoments.com",
-    "firm": "Yacht Moments +34 971 67 94 06",
+    "firm": "Yacht Moments",
     "role": "seller",
     "vessels": [
       "LEL"
@@ -23229,7 +25021,7 @@
   },
   {
     "name": "Yacht Nation Greece",
-    "firm": "Yacht Nation in Greece T: +30 213 0069 201 M:+30 697 6798 915",
+    "firm": "Yacht Nation in Greece T:",
     "role": "buyer",
     "vessels": [
       "Minu"
@@ -23287,13 +25079,32 @@
   },
   {
     "name": "Yachting Lodge (+33(0)4.67.37.57.74",
-    "firm": "Yachting Lodge (+33(0)4.67.37.57.74, )",
+    "firm": "Yachting Lodge (",
     "role": "seller",
     "vessels": [
       "Sun Shine 1"
     ],
     "email": "contact@yachtinglodge.com",
     "mobile": "+33(0)4.67.37.57.74"
+  },
+  {
+    "name": "Matt Albert at",
+    "firm": "Yachting Partners International",
+    "role": "buyer",
+    "vessels": [
+      "Ghost"
+    ],
+    "mobile": "+33 (0) 624 047 686"
+  },
+  {
+    "name": "Matt Albert at",
+    "firm": "Yachting Partners International",
+    "role": "seller",
+    "vessels": [
+      "Heureka",
+      "GRIT"
+    ],
+    "mobile": "+33 (0) 624 047 686"
   },
   {
     "name": "Matthew Albert Telephone ‭+33 (0)6 24 04 76 86 Email",
@@ -23327,17 +25138,18 @@
     "mobile": "+377 99 906 122"
   },
   {
-    "name": "Matt Albert at",
-    "firm": "Yachting Partners International +33 (0) 624 047 686",
+    "name": "Yachting Partners International",
+    "firm": "Yachting Partners International",
     "role": "buyer",
     "vessels": [
+      "Ursus V",
       "Ghost"
     ],
-    "mobile": "+33 (0) 624 047 686"
+    "mobile": "+377 99 99 97 97"
   },
   {
-    "name": "Matt Albert at",
-    "firm": "Yachting Partners International +33 (0) 624 047 686",
+    "name": "Yachting Partners International",
+    "firm": "Yachting Partners International",
     "role": "seller",
     "vessels": [
       "Heureka",
@@ -23347,7 +25159,7 @@
   },
   {
     "name": "Yachting Partners International +377 99 99 97 97",
-    "firm": "Yachting Partners International +377 99 99 97 97",
+    "firm": "Yachting Partners International",
     "role": "buyer",
     "vessels": [
       "Ursus V"
@@ -23372,6 +25184,16 @@
       "CHANCER"
     ],
     "email": "jlacombe@yachtsinvest.com"
+  },
+  {
+    "name": "Tanya Lacombe",
+    "firm": "Yachts Invest",
+    "role": "buyer",
+    "vessels": [
+      "Tatiana"
+    ],
+    "email": "12tanya@yachtsinvest.com",
+    "mobile": "+33 (0)493 94 00 12"
   },
   {
     "name": "Tel : +33 (0) 4 93 94 00 12 Fax : +33 (0) 4 92 59 11 05",
@@ -23416,18 +25238,8 @@
     "mobile": "+33 (0) 4 92 59 11 05"
   },
   {
-    "name": "Tanya Lacombe",
-    "firm": "Yachts Invest+33 (0)493 94 00",
-    "role": "buyer",
-    "vessels": [
-      "Tatiana"
-    ],
-    "email": "12tanya@yachtsinvest.com",
-    "mobile": "+33 (0)493 94 00 12"
-  },
-  {
     "name": "info@yachtsinvest.com",
-    "firm": "Yachts InvestТел.: +33 (0) 4 93 94 00 12E-mail:",
+    "firm": "Yachts InvestТел.:",
     "role": "seller",
     "vessels": [
       "Ariane",
@@ -23438,7 +25250,7 @@
   },
   {
     "name": "info@yachtsinvest.com",
-    "firm": "Yachts InvestТел.: +33 (0) 4 93 94 00 12E-mail:",
+    "firm": "Yachts InvestТел.:",
     "role": "buyer",
     "vessels": [
       "Ariane"
@@ -23572,7 +25384,7 @@
   },
   {
     "name": "Yeoman Yachts E:",
-    "firm": "Yeoman Yachts E: T: +1 401 846 1090 https://www.yeomanyachts.com/contact",
+    "firm": "Yeoman Yachts E: T:",
     "role": "buyer",
     "vessels": [
       "Skip’n Bou"
@@ -23591,7 +25403,7 @@
   },
   {
     "name": "Yves di Lena of YDL Yachting +1 (305) 302 13 42",
-    "firm": "Yves di Lena of YDL Yachting +1 (305) 302 13 42 https://www.linkedin.com/in/yve",
+    "firm": "Yves di Lena of YDL Yachting",
     "role": "buyer",
     "vessels": [
       "DB9",
@@ -23640,6 +25452,16 @@
     "mobile": "+852 3703 5638"
   },
   {
+    "name": "Jim Acher",
+    "firm": "bluewater",
+    "role": "seller",
+    "vessels": [
+      "MOON"
+    ],
+    "email": "jim@bluewateryachting.com",
+    "mobile": "+34 667 678 357"
+  },
+  {
     "name": "Peter Bennett Phone +33 609 96 01 02 E-Mail",
     "firm": "bluewater",
     "role": "buyer",
@@ -23671,28 +25493,8 @@
     "mobile": "+33 (0)68 086 5970"
   },
   {
-    "name": "Tom Barnes Phone +33 620 18 17 34 E-Mail",
-    "firm": "bluewater",
-    "role": "seller",
-    "vessels": [
-      "ANTARES STAR"
-    ],
-    "email": "tom@bluewateryachting.com",
-    "mobile": "+33 620 18 17 34"
-  },
-  {
     "name": "Jim Acher",
-    "firm": "bluewater +34 667 678 357 E-Mail",
-    "role": "seller",
-    "vessels": [
-      "MOON"
-    ],
-    "email": "jim@bluewateryachting.com",
-    "mobile": "+34 667 678 357"
-  },
-  {
-    "name": "Jim Acher",
-    "firm": "bluewater Телефон +34 667 678 357 E-Mail",
+    "firm": "bluewater Телефон",
     "role": "seller",
     "vessels": [
       "IKIGAI"
@@ -23819,16 +25621,6 @@
     "mobile": "+38269237700"
   },
   {
-    "name": "Willie Lynch of Latitude Yachts 773-870-6444",
-    "firm": "willie@latitudeyacht.com.",
-    "role": "buyer",
-    "vessels": [
-      "Montrachet"
-    ],
-    "email": "willie@latitudeyacht.com",
-    "mobile": "773-870-6444"
-  },
-  {
     "name": "www.masterbrokerage.it",
     "firm": "www.masterbrokerage.it",
     "role": "buyer",
@@ -23857,5 +25649,52 @@
     ],
     "email": "brokerage@simpsonmarine.com",
     "mobile": "+852 2555 8377"
+  },
+  {
+    "name": "+1 203 530 3870",
+    "firm": "—",
+    "role": "seller",
+    "vessels": [
+      "Grander Ambition"
+    ],
+    "email": "support@boathouseauctions.com",
+    "mobile": "+1 203 530 3870"
+  },
+  {
+    "name": "Arney Mendez",
+    "firm": "—",
+    "role": "seller",
+    "vessels": [
+      "Jerico"
+    ],
+    "email": "fyi786-357-6819arney@fyiyachts.com",
+    "mobile": "786-357-6819"
+  },
+  {
+    "name": "Kathy Kennedy",
+    "firm": "—",
+    "role": "seller",
+    "vessels": [
+      "Endeavour"
+    ],
+    "email": "avyachtskkennedy@avyachts.com"
+  },
+  {
+    "name": "Thrasyvoulos Kanaris",
+    "firm": "—",
+    "role": "buyer",
+    "vessels": [
+      "Dia’s"
+    ],
+    "email": "all4yachtcharterinfo@all4yachtcharter.com"
+  },
+  {
+    "name": "Vassilis Pateras",
+    "firm": "—",
+    "role": "buyer",
+    "vessels": [
+      "Koo"
+    ],
+    "email": "superyachtsmonacovp@superyachtsmonaco.com"
   }
 ]

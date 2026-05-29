@@ -344,6 +344,32 @@ const VESSEL_IMGS={
   'WHITE LOTUS':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958473/24_hiemlh.jpg',
   'GALENE':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958473/25_sx4ekw.jpg',
   'ANTIOXIDANT':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958472/26_lw2iki.jpg',
+  'PURA VIDA':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/27_kl1j4c.jpg',
+  'GALLOPIN':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/28_ufncja.jpg',
+  'TRIPLE EIGHT':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/29_jc9k2i.jpg',
+  'NORDIC STAR':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/30_dn3ryx.jpg',
+  'IMPETUS':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/31_jhcbvz.jpg',
+  'PRINCESS X95':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/32_y6ude0.jpg',
+  'LOON':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/33_pveuzg.png',
+  'HYBRID 75':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/34_f7fbhu.jpg',
+  'BOA KINGDOM':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/35_qfqyns.jpg',
+  'SEA FALCON II':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/36_k2kxdo.png',
+  'EQUITY':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/37_weutll.png',
+  'HEYSEA ASTERIA 108':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/38_ia7rby.webp',
+  'FOOTLOOSE':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/39_lxbs0n.jpg',
+  'SPECULATOR':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/40_joz1o1.jpg',
+  'THYKE':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/41_jfsuic.webp',
+  'AKIKO':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/43_azt2ly.jpg',
+  'TRANQUILITY IV':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/43_jwmtgd.jpg',
+  'INTO THE SUNSET':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/44_gf6pv4.jpg',
+  'REBECCA V':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/45_aqoz2f.png',
+  'NGV':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/46_yiu6p8.jpg',
+  'MIRRACLE':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/47_et65f6.jpg',
+  'EBYSHINE':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/48_csr4hr.jpg',
+  'EXCELLENCE V':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/49_u1ehlm.jpg',
+  'VENTISETTE':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/50_hsywge.jpg',
+  'KITARO':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/51_kmrvj6.jpg',
+  'SHADOWL':'https://raw.githubusercontent.com/liamlilili/yacht-images/main/52_pi3nvd.jpg',
 };
 
 // Single source of truth for getting a vessel image
@@ -393,6 +419,9 @@ function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('o
 function fmtDate(d){const dt=new Date(d+'T00:00:00');return dt.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
 function priceNum(p){if(!p||p==='—'||p==='POA')return 0;return parseFloat(p.replace(/,/g,''))||0;}
 function allEntries(){return Object.entries(db).flatMap(([d,arr])=>arr.map(e=>({...e,_date:d}))).concat(SOLD_HISTORY);}
+function currentEntries(){return Object.entries(db).flatMap(([d,arr])=>arr.map(e=>({...e,_date:d})));}
+function dateLabel(e){if(!e._date)return '';if(e.type==='sold')return 'Sale date';if(e.type==='new')return 'Listing date';if(e.type==='reduction')return 'Reduction date';if(e.type==='launch')return 'Launch date';if(e.type==='cachange')return 'CA change date';return 'Date';}
+function dateText(e){return e._date?`${dateLabel(e)}: ${fmtDate(e._date)}`:'';}
 function esc(s){return(s||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
 function buildDateSelect(){const sel=document.getElementById('date-select');const dates=Object.keys(db).sort().reverse();sel.innerHTML=dates.map(d=>`<option value="${d}"${d===activeDate?' selected':''}>${fmtDate(d)}</option>`).join('');}
 function switchDate(d){activeDate=d;document.getElementById('active-date-label').textContent=fmtDate(d);renderDaily();}
@@ -464,7 +493,7 @@ function card(e){
       <button class="yacht-name-link" onclick="openVesselPage('${esc(e.name)}','${esc(e._date||activeDate)}');event.stopPropagation()">${e.name}</button>
       ${builderSpan(e.builder)}
     </div><span class="type-badge ${bgs[e.type]||'badge-new'}">${lbs[e.type]||e.type}</span></div>
-    <div class="card-meta">${e.length?`<span class="meta-item">📏 ${e.length}m</span>`:''}${e.year?`<span class="meta-item">🗓 ${e.year}</span>`:''}${e.location?`<span class="meta-item">📍 ${e.location}</span>`:''}</div>
+    <div class="card-meta">${e.length?`<span class="meta-item">📏 ${e.length}m</span>`:''}${e.year?`<span class="meta-item">🗓 ${e.year}</span>`:''}${e.location?`<span class="meta-item">📍 ${e.location}</span>`:''}${e._date?`<span class="meta-item">🕒 ${dateText(e)}</span>`:''}</div>
     ${priceRow}${brokerHtml}
   </div>`;
 }
