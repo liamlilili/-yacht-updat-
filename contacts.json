@@ -1,0 +1,571 @@
+[
+  {
+    "name": "Vassilis Fotilas",
+    "firm": "Fraser",
+    "email": "vassilis.fotilas@fraseryachts.com",
+    "mobile": "+33 678 63 12 48",
+    "role": "seller",
+    "vessels": [
+      "SPICA"
+    ]
+  },
+  {
+    "name": "Zachos Afroudakis",
+    "firm": "Afroudakis Yachting",
+    "email": "af@afroudakisyachting.com",
+    "role": "buyer",
+    "vessels": [
+      "SPICA"
+    ]
+  },
+  {
+    "name": "Gianni Ricciardi",
+    "firm": "Forward Yachts",
+    "email": "g.ricciardi@forwardyachts.com",
+    "mobile": "+39 329 2067766",
+    "role": "both",
+    "vessels": [
+      "BLANCO XL"
+    ]
+  },
+  {
+    "name": "Jeff Stanley",
+    "firm": "Gilman Yachts",
+    "email": "jeff@gilmanyachts.com",
+    "mobile": "954-249-0360",
+    "role": "seller",
+    "vessels": [
+      "B HAPPY"
+    ]
+  },
+  {
+    "name": "Joel Eriksson",
+    "firm": "FGI Yacht Group",
+    "email": "joel@fgiyachtgroup.com",
+    "mobile": "954 536 3783",
+    "role": "buyer",
+    "vessels": [
+      "B HAPPY"
+    ]
+  },
+  {
+    "name": "Nicola Ricci",
+    "firm": "My Yachts World",
+    "email": "nicola@myyachtsworld.com",
+    "role": "buyer",
+    "vessels": [
+      "AMMIRAGLIO"
+    ]
+  },
+  {
+    "name": "Diego Cerasi",
+    "firm": "De Valk Yacht Brokers",
+    "email": "dcerasi@devalk.nl",
+    "mobile": "+34 634 325 758",
+    "role": "seller",
+    "vessels": [
+      "AMMIRAGLIO"
+    ]
+  },
+  {
+    "name": "Will Noftsinger",
+    "firm": "Denison Yachting",
+    "email": "WN@DenisonYachting.com",
+    "mobile": "850.461.3342",
+    "role": "seller",
+    "vessels": [
+      "WHITE LOTUS"
+    ]
+  },
+  {
+    "name": "Don Grigg",
+    "firm": "Yacht Zero",
+    "role": "buyer",
+    "vessels": [
+      "WHITE LOTUS"
+    ]
+  },
+  {
+    "name": "Tomaso Polli",
+    "firm": "Y.CO",
+    "email": "top@y.co",
+    "mobile": "+33 6 40 61 53 14",
+    "role": "seller",
+    "vessels": [
+      "GALENE"
+    ]
+  },
+  {
+    "name": "Georges Bourgoignie",
+    "firm": "Fraser",
+    "email": "georgesb@fraseryachts.com",
+    "mobile": "+1 305 491 2211",
+    "role": "buyer",
+    "vessels": [
+      "GALENE"
+    ]
+  },
+  {
+    "name": "Andy McDougall",
+    "firm": "MXG Yachts",
+    "email": "info@mxgyachts.com",
+    "mobile": "+34971676930",
+    "role": "seller",
+    "vessels": [
+      "KITARO"
+    ]
+  },
+  {
+    "name": "Enrico Solinas",
+    "firm": "Ocean Independence",
+    "email": "enrico@ocyachts.com",
+    "mobile": "+33 6 43 91 19 34",
+    "role": "buyer",
+    "vessels": [
+      "KITARO",
+      "OMNIA"
+    ]
+  },
+  {
+    "name": "Jack Gradus",
+    "firm": "Ocean Independence",
+    "email": "jack@ocyachts.com",
+    "mobile": "+33 7 64 57 57 36",
+    "role": "buyer",
+    "vessels": [
+      "KITARO"
+    ]
+  },
+  {
+    "name": "Kevin Merrigan",
+    "firm": "Northrop & Johnson",
+    "email": "kevin.merrigan@northropandjohnson.com",
+    "mobile": "+1 954-647-5986",
+    "role": "both",
+    "vessels": [
+      "SHADOWL",
+      "SERENGETI",
+      "NEENAH"
+    ]
+  },
+  {
+    "name": "Wes Sanford",
+    "firm": "Northrop & Johnson",
+    "email": "wes.sanford@northropandjohnson.com",
+    "mobile": "+1 954-806-7036",
+    "role": "buyer",
+    "vessels": [
+      "SHADOWL"
+    ]
+  },
+  {
+    "name": "James Dalzell",
+    "firm": "The Nautical Group",
+    "email": "James@thenauticalgroup.co.nz",
+    "mobile": "+64 27 243 1463",
+    "role": "buyer",
+    "vessels": [
+      "VENTISETTE"
+    ]
+  },
+  {
+    "name": "Dirk Johnson",
+    "firm": "Edmiston",
+    "email": "DAJ@edmiston.com",
+    "mobile": "001 401 965 9189",
+    "role": "seller",
+    "vessels": [
+      "EXCELLENCE V"
+    ]
+  },
+  {
+    "name": "Rupert Connor",
+    "firm": "Luxury Yacht Group",
+    "email": "rc@luxyachts.com",
+    "mobile": "954-205-0070",
+    "role": "buyer",
+    "vessels": [
+      "EXCELLENCE V"
+    ]
+  },
+  {
+    "name": "Marco Fiorani",
+    "firm": "Idea Yachting",
+    "email": "marco@ideayachting.com",
+    "mobile": "+33 6 40 62 37 95",
+    "role": "buyer",
+    "vessels": [
+      "EIGHT",
+      "KITARO"
+    ]
+  },
+  {
+    "name": "Albert Drettmann",
+    "firm": "Drettmann Yachts",
+    "role": "both",
+    "vessels": [
+      "NIXTUN"
+    ]
+  },
+  {
+    "name": "Frank Grzeszczak Sr.",
+    "firm": "FGI Yacht Group",
+    "email": "fg@fgiyachtgroup.com",
+    "mobile": "954-494-7096",
+    "role": "seller",
+    "vessels": [
+      "NEVERLAND",
+      "WHITE STAR"
+    ]
+  },
+  {
+    "name": "Karin Paggi",
+    "firm": "Karma Yachting",
+    "mobile": "+39 339 2237238",
+    "role": "buyer",
+    "vessels": [
+      "NEVERLAND"
+    ]
+  },
+  {
+    "name": "AJ Blackmon",
+    "firm": "Ikonik Yachts",
+    "email": "aj@ikonicyachts.com",
+    "mobile": "+1 816 284 2148",
+    "role": "seller",
+    "vessels": [
+      "PENELOPE"
+    ]
+  },
+  {
+    "name": "Cameron Kirkconnell",
+    "firm": "Ikonik Yachts",
+    "email": "cameron@ikonicyachts.com",
+    "mobile": "+1 407 463 8189",
+    "role": "seller",
+    "vessels": [
+      "PENELOPE"
+    ]
+  },
+  {
+    "name": "Alan Bernard",
+    "firm": "Luke Brown Yachts",
+    "email": "alan@lukebrown.com",
+    "mobile": "954-415-3565",
+    "role": "buyer",
+    "vessels": [
+      "PENELOPE"
+    ]
+  },
+  {
+    "name": "Andrew Miles",
+    "firm": "Miles Yacht Group",
+    "email": "andy@milesyachts.com",
+    "role": "seller",
+    "vessels": [
+      "NEENAH",
+      "CHECKED OUT"
+    ]
+  },
+  {
+    "name": "Raymond Young",
+    "firm": "RJC Yacht Sales & Charter",
+    "email": "raymond@rjcyachts.com",
+    "mobile": "954-658-2693",
+    "role": "buyer",
+    "vessels": [
+      "NEENAH"
+    ]
+  },
+  {
+    "name": "Pierre Badin",
+    "firm": "Denison Yachting",
+    "email": "pierre@denisonyachting.com",
+    "mobile": "+33 620 015 846",
+    "role": "seller",
+    "vessels": [
+      "EVEREAST"
+    ]
+  },
+  {
+    "name": "Andriy Petrenko",
+    "firm": "Denison Yachting",
+    "email": "andriy@denisonyachting.com",
+    "mobile": "+33 6 95 30 62 73",
+    "role": "buyer",
+    "vessels": [
+      "EVEREAST"
+    ]
+  },
+  {
+    "name": "Sean McCarter",
+    "firm": "Northrop & Johnson",
+    "email": "Sean.McCarter@NorthropandJohnson.com",
+    "mobile": "+34 679 897 108",
+    "role": "seller",
+    "vessels": [
+      "L'HIPPOCAMPE"
+    ]
+  },
+  {
+    "name": "Michael Bach",
+    "firm": "Ocean Independence",
+    "email": "mbach@ocyachts.com",
+    "role": "buyer",
+    "vessels": [
+      "L'HIPPOCAMPE"
+    ]
+  },
+  {
+    "name": "Thomas Benson",
+    "firm": "Seymour Yachts",
+    "email": "tom.benson@seymouryachts.com",
+    "mobile": "+44 74 70 99 8422",
+    "role": "seller",
+    "vessels": [
+      "VON B II"
+    ]
+  },
+  {
+    "name": "Sofian Bouguerra",
+    "firm": "Prime Wake Family Office",
+    "role": "buyer",
+    "vessels": [
+      "VON B II"
+    ]
+  },
+  {
+    "name": "Jamie Small",
+    "firm": "Burgess",
+    "email": "jsmall@burgessyachts.com",
+    "mobile": "+34 672 070 005",
+    "role": "both",
+    "vessels": [
+      "PATEA"
+    ]
+  },
+  {
+    "name": "Angelo Flessas",
+    "firm": "The Ionians",
+    "role": "seller",
+    "vessels": [
+      "COSMOS"
+    ]
+  },
+  {
+    "name": "Dan Goodstadt",
+    "firm": "Elliman Yachts",
+    "email": "dan.goodstadt@elliman.com",
+    "role": "buyer",
+    "vessels": [
+      "CHECKED OUT"
+    ]
+  },
+  {
+    "name": "Harry Bristow-Holmes",
+    "firm": "Bristow-Holmes",
+    "email": "harry@bristow-holmes.com",
+    "mobile": "+44 7881 29 74 75",
+    "role": "both",
+    "vessels": [
+      "MAVERICK"
+    ]
+  },
+  {
+    "name": "Michael Selter",
+    "firm": "IYC",
+    "email": "mselter@iyc.com",
+    "mobile": "+1 619 265 6906",
+    "role": "seller",
+    "vessels": [
+      "NORMA JEAN"
+    ]
+  },
+  {
+    "name": "Martin Herbert-Burns",
+    "firm": "365 Yachts",
+    "email": "Martin@365yachts.org",
+    "mobile": "954-932-9093",
+    "role": "buyer",
+    "vessels": [
+      "NORMA JEAN"
+    ]
+  },
+  {
+    "name": "Eric Trupheme",
+    "firm": "Ocean Independence",
+    "email": "eric@ocyachts.com",
+    "mobile": "+33 6 21 59 03 70",
+    "role": "seller",
+    "vessels": [
+      "SOFIA OF TORTOLA"
+    ]
+  },
+  {
+    "name": "Cornelius Kistler",
+    "firm": "breezeYachting",
+    "email": "ck@breezeyachting.swiss",
+    "mobile": "+41 79 702 7000",
+    "role": "seller",
+    "vessels": [
+      "LE GYPSY"
+    ]
+  },
+  {
+    "name": "Dennis Frederiksen",
+    "firm": "Fraser",
+    "email": "dennis.frederiksen@fraseryachts.com",
+    "mobile": "+33 6 07 04 26 60",
+    "role": "seller",
+    "vessels": [
+      "SEA BREEZE"
+    ]
+  },
+  {
+    "name": "Manfred Haas",
+    "firm": "Haas International",
+    "mobile": "+41 414 500 500",
+    "role": "buyer",
+    "vessels": [
+      "SEA BREEZE",
+      "ALME SOL"
+    ]
+  },
+  {
+    "name": "Andrew Bond",
+    "firm": "Edmiston",
+    "email": "ahb@edmiston.com",
+    "mobile": "+44 7734 405944",
+    "role": "seller",
+    "vessels": [
+      "VIRTUOSITY"
+    ]
+  },
+  {
+    "name": "Will Bagshaw",
+    "firm": "Edmiston",
+    "email": "WB@edmiston.com",
+    "mobile": "+33 648 51",
+    "role": "buyer",
+    "vessels": [
+      "VIRTUOSITY"
+    ]
+  },
+  {
+    "name": "David Westwood",
+    "firm": "TWW Yachts",
+    "email": "David@twwyachts.com",
+    "mobile": "+33 6 40 61 32 05",
+    "role": "seller",
+    "vessels": [
+      "WELLESLEY"
+    ]
+  },
+  {
+    "name": "Ben Ritchie",
+    "firm": "Y.CO",
+    "email": "br@y.co",
+    "mobile": "+33 626 001 023",
+    "role": "buyer",
+    "vessels": [
+      "WELLESLEY"
+    ]
+  },
+  {
+    "name": "Kevin Frawley",
+    "firm": "Resolute Yachting",
+    "email": "kevin@resoluteyachting.com",
+    "mobile": "954-790-0372",
+    "role": "seller",
+    "vessels": [
+      "FIFTY SHADES"
+    ]
+  },
+  {
+    "name": "Boomer Jousma",
+    "firm": "The Italian Yacht Group",
+    "email": "boomer@theiyg.com",
+    "mobile": "+1 (954) 600-4966",
+    "role": "buyer",
+    "vessels": [
+      "FIFTY SHADES"
+    ]
+  },
+  {
+    "name": "Marco Fodale",
+    "firm": "Fraser",
+    "email": "marco.fodale@fraseryachts.com",
+    "mobile": "+33 622 324 681",
+    "role": "seller",
+    "vessels": [
+      "DABMAR"
+    ]
+  },
+  {
+    "name": "Emma Karanova",
+    "firm": "breezeYachting",
+    "email": "emma@breezeyachting.swiss",
+    "mobile": "+41 79 702 7262",
+    "role": "buyer",
+    "vessels": [
+      "DABMAR"
+    ]
+  },
+  {
+    "name": "Max Minarek",
+    "firm": "Judel/Vrolijk",
+    "email": "max@judel-vrolijk.com",
+    "role": "seller",
+    "vessels": [
+      "CHEETAH MOON"
+    ]
+  },
+  {
+    "name": "Nicolas Marchand",
+    "firm": "Bernard Gallay",
+    "email": "nicolas.marchand@bernard-gallay.com",
+    "mobile": "+33 (0)6 83 47 01 96",
+    "role": "buyer",
+    "vessels": [
+      "CHEETAH MOON"
+    ]
+  },
+  {
+    "name": "Mohamad Ali Jannoun",
+    "firm": "Yacht Masters Monaco",
+    "role": "seller",
+    "vessels": [
+      "P'OCEAN"
+    ]
+  },
+  {
+    "name": "Nicolas Bochno",
+    "firm": "Aqua Marine",
+    "email": "nicolasbochno@aquamarine.fr",
+    "mobile": "+33677908898",
+    "role": "buyer",
+    "vessels": [
+      "P'OCEAN"
+    ]
+  },
+  {
+    "name": "Merle Wood",
+    "firm": "Merle Wood & Associates",
+    "email": "mwood@merlewood.com",
+    "mobile": "+1-954-646-8888",
+    "role": "seller",
+    "vessels": [
+      "BELLA VITA"
+    ]
+  },
+  {
+    "name": "Peter Redford",
+    "firm": "Fraser",
+    "email": "peter.redford@fraseryachts.com",
+    "mobile": "+61 (0)419 794 777",
+    "role": "both",
+    "vessels": [
+      "OURWAY"
+    ]
+  }
+]

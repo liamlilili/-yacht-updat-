@@ -51,7 +51,7 @@ body{font-family:'Segoe UI',sans-serif;background:#f5f5f5;color:#111;min-height:
 .stat-card.sold .stat-num{color:var(--gr)}.stat-card.launch .stat-num{color:var(--pu)}
 .date-scroll-wrap{display:flex;align-items:center;gap:8px;margin-bottom:18px}
 .date-scroll-wrap label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}
-.date-select{background:#fff;border:1px solid var(--bd);border-radius:6px;padding:6px 10px;font-size:13px;font-family:inherit;color:#333;cursor:pointer}
+.date-select{background:#fff;border:1px solid var(--bd);border-radius:6px;padding:6px 10px;font-size:13px;font-family:inherit;color:#333;cursor:pointer;transition:border-color .12s}
 .date-select:focus{outline:none;border-color:var(--or)}
 .section{margin-bottom:24px}
 .section-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
@@ -61,14 +61,18 @@ body{font-family:'Segoe UI',sans-serif;background:#f5f5f5;color:#111;min-height:
 .yacht-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
 .yacht-card{background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden;transition:box-shadow .12s}
 .yacht-card:hover{box-shadow:0 3px 14px rgba(232,119,34,.15);border-color:#ccc}
-.card-img{width:100%;height:160px;object-fit:cover;display:block;cursor:pointer;background:#f0f0f0}
-.card-img-placeholder{width:100%;height:160px;background:linear-gradient(135deg,#f0f0f0,#e8e8e8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
+.card-img-wrap{position:relative;width:100%;height:160px;overflow:hidden;cursor:pointer;background:#f0f0f0}
+.card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.card-img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
 .card-img-placeholder .ship-icon{font-size:34px;opacity:.35}
-.card-img-placeholder .ship-name{font-size:10px;color:#aaa;font-weight:600;text-align:center;padding:0 8px}
+.card-img-placeholder .ship-name{font-size:10px;color:#aaa;font-weight:600;letter-spacing:.5px;text-align:center;padding:0 8px}
+.img-upload-btn{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,.55);color:#fff;border:none;border-radius:5px;font-size:11px;padding:4px 8px;cursor:pointer;display:flex;align-items:center;gap:4px}
+.img-upload-btn:hover{background:rgba(232,119,34,.85)}
+.card-img-wrap input[type=file]{display:none}
 .card-top{padding:12px 14px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
 .yacht-name-link{font-size:13px;font-weight:700;color:var(--bl);cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit;text-align:left;padding:0}
 .yacht-name-link:hover{color:var(--or)}
-.yacht-builder-link{font-size:11px;color:var(--mu);margin-top:2px;cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit;padding:0;display:block}
+.yacht-builder-link{font-size:11px;color:var(--mu);margin-top:2px;cursor:pointer;text-decoration:underline dotted;display:inline;background:none;border:none;font-family:inherit;padding:0}
 .yacht-builder-link:hover{color:var(--or)}
 .type-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap;flex-shrink:0;text-transform:uppercase}
 .badge-new{background:#e8f0fb;color:var(--bl);border:1px solid #c5d9f5}
@@ -82,14 +86,39 @@ body{font-family:'Segoe UI',sans-serif;background:#f5f5f5;color:#111;min-height:
 .price-main{font-size:13px;font-weight:700}
 .price-old{font-size:10px;color:var(--mu);text-decoration:line-through}
 .price-est{font-size:10px;color:var(--mu)}
+.reduc-arrow{font-size:10px;color:var(--or);font-weight:700}
 .card-brokers{padding:8px 14px;border-top:1px solid var(--bd);font-size:11px;color:var(--mu);display:flex;gap:5px;flex-wrap:wrap;align-items:center}
 .broker-link{color:var(--bl);font-size:11px;font-weight:600;cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit;padding:0}
 .broker-link:hover{color:var(--or)}
 .ca-tag{font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;text-transform:uppercase}
 .ca-CA{background:#e8f0fb;color:var(--bl)}.ca-Open{background:#e8f5ee;color:var(--gr)}.ca-JCA{background:var(--orL);color:var(--or)}
+.ca-change-info{padding:8px 14px;border-top:1px solid var(--bd);font-size:11px;color:var(--mu)}
+.logo-img{width:100%;height:100%;object-fit:contain;padding:4px}
+.entity-logo{width:44px;height:44px;border-radius:7px;background:var(--sf);border:1px solid var(--bd);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;cursor:pointer}
+.entity-logo-placeholder{font-size:18px;color:#ccc}
+.entity-logo input[type=file]{display:none}
+.detail-header{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:18px;margin-bottom:16px;display:flex;gap:16px;align-items:flex-start}
+.detail-header-info{flex:1}
+.detail-header h2{font-size:19px;font-weight:800}
+.detail-stats{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+.detail-stat{font-size:12px;color:#444}
+.detail-stat strong{color:var(--or);font-size:16px;font-weight:800;display:block}
+.broker-contact-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:14px;margin-bottom:10px}
+.broker-contact-name{font-size:14px;font-weight:700;color:#111}
+.broker-contact-firm{font-size:12px;color:var(--or);font-weight:600}
+.broker-contact-details{margin-top:8px;display:flex;flex-direction:column;gap:4px;font-size:12px;color:#555}
+.broker-contact-details a{color:var(--bl);text-decoration:none}
+.broker-contact-details a:hover{color:var(--or);text-decoration:underline}
+.contact-deal-list{margin-top:10px;border-top:1px solid var(--bd);padding-top:8px}
+.contact-deal-item{font-size:11px;color:#555;padding:3px 0;border-bottom:1px dashed var(--sf2);display:flex;justify-content:space-between}
+.contact-deal-item:last-child{border-bottom:none}
 .vessel-detail{background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden;margin-bottom:16px}
-.vessel-detail-img{width:100%;height:280px;object-fit:cover;display:block;background:#f0f0f0}
-.vessel-detail-img-placeholder{width:100%;height:280px;background:linear-gradient(135deg,#f0f0f0,#e4e4e4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.vessel-detail-img-wrap{position:relative;width:100%;height:260px;background:#f0f0f0;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vessel-detail-img-wrap img{width:100%;height:100%;object-fit:cover}
+.vessel-detail-img-placeholder{font-size:60px;color:#ddd;display:flex;flex-direction:column;align-items:center;gap:8px}
+.vessel-detail-img-upload-btn{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.55);color:#fff;border:none;border-radius:6px;font-size:12px;padding:6px 12px;cursor:pointer}
+.vessel-detail-img-upload-btn:hover{background:rgba(232,119,34,.85)}
+.vessel-detail-img-wrap input[type=file]{display:none}
 .vessel-detail-body{padding:20px}
 .vessel-detail-name{font-size:22px;font-weight:800}
 .vessel-detail-builder{font-size:14px;color:var(--or);font-weight:600;margin-top:4px;cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit}
@@ -97,6 +126,52 @@ body{font-family:'Segoe UI',sans-serif;background:#f5f5f5;color:#111;min-height:
 .vessel-detail-item{background:var(--sf);border-radius:6px;padding:10px}
 .vessel-detail-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;font-weight:600}
 .vessel-detail-val{font-size:14px;font-weight:700;color:#111;margin-top:3px}
+.sold-brokers-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.sold-broker-panel{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:12px}
+.sold-broker-panel h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin-bottom:8px}
+.sold-broker-name{font-size:13px;font-weight:700;color:#111}
+.sold-broker-firm{font-size:12px;color:var(--or);margin-top:2px;font-weight:600}
+.sold-broker-info{margin-top:6px;font-size:11px;color:#555;display:flex;flex-direction:column;gap:3px}
+.sold-broker-info a{color:var(--bl);text-decoration:none}
+.analytics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.a-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:15px;border-top:3px solid var(--or)}
+.a-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.a-val{font-size:24px;font-weight:800;color:var(--or);margin-top:5px}
+.a-sub{font-size:11px;color:var(--mu);margin-top:3px}
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.chart-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:16px}
+.chart-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin-bottom:12px}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.bar-label{font-size:11px;color:#444;width:130px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.bar-label:hover{color:var(--or);text-decoration:underline}
+.bar-track{flex:1;height:5px;background:var(--sf2);border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px;background:var(--or)}
+.bar-val{font-size:10px;color:var(--mu);width:35px;text-align:right;flex-shrink:0}
+.pie-row{display:flex;align-items:center;gap:8px;margin-bottom:9px;cursor:pointer}
+.pie-row:hover .pie-label{color:var(--or);text-decoration:underline}
+.pie-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pie-label{font-size:12px;color:#333;flex:1}
+.pie-pct{font-size:12px;font-weight:700}
+.table-card{background:#fff;border:1px solid var(--bd);border-radius:8px;overflow:hidden;margin-bottom:12px}
+.table-header{padding:11px 14px;border-bottom:1px solid var(--bd);font-size:11px;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:500px}
+th{padding:8px 12px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--mu);border-bottom:1px solid var(--bd);background:var(--sf);font-weight:700;white-space:nowrap}
+td{padding:8px 12px;border-bottom:1px solid var(--bd);color:#444;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--sf)}
+.td-name{font-weight:700;color:#111}
+.trend-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:16px;margin-bottom:10px}
+.trend-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#444}
+.legend-dot{width:14px;height:3px;border-radius:2px;flex-shrink:0}
+.chart-tooltip{position:fixed;background:#fff;border:1px solid var(--bd);border-radius:6px;padding:8px 12px;font-size:11px;color:#333;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.1);display:none;z-index:9999}
+.chart-wrap{position:relative}
+.filter-select{background:#fff;border:1px solid var(--bd);border-radius:5px;padding:5px 8px;font-size:11px;font-family:inherit;color:#333;cursor:pointer}
+.filter-select:focus{outline:none;border-color:var(--or)}
+.sort-btn{background:#fff;border:1px solid var(--bd);color:#444;padding:4px 9px;border-radius:5px;font-size:10px;cursor:pointer;font-family:inherit;transition:all .12s}
+.sort-btn:hover{background:var(--orL);border-color:var(--or);color:var(--or)}
+.sort-btn.active{background:var(--or);border-color:var(--or);color:#fff;font-weight:700}
 .search-input-wrap{position:relative;margin-bottom:20px}
 .search-input{width:100%;padding:11px 16px 11px 40px;font-size:14px;border:2px solid var(--bd);border-radius:8px;font-family:inherit;background:#fff;transition:border-color .12s}
 .search-input:focus{outline:none;border-color:var(--or)}
@@ -105,22 +180,40 @@ body{font-family:'Segoe UI',sans-serif;background:#f5f5f5;color:#111;min-height:
 .search-result-title{font-size:11px;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:1px;padding-bottom:6px;border-bottom:1px solid var(--orB);margin-bottom:10px}
 .search-hit{background:#fff;border:1px solid var(--bd);border-radius:7px;padding:11px 14px;margin-bottom:7px;cursor:pointer;transition:border-color .12s;display:flex;gap:12px;align-items:center}
 .search-hit:hover{border-color:var(--or);background:var(--orL)}
-.search-hit-img{width:52px;height:40px;border-radius:5px;flex-shrink:0;background:#eee;display:flex;align-items:center;justify-content:center;font-size:18px;overflow:hidden}
+.search-hit-img{width:52px;height:40px;border-radius:5px;flex-shrink:0;background:#eee;display:flex;align-items:center;justify-content:center;font-size:18px;color:#ccc;overflow:hidden}
+.search-hit-img img{width:100%;height:100%;object-fit:cover}
 .search-hit-name{font-size:13px;font-weight:700;color:#111}
 .search-hit-sub{font-size:11px;color:var(--mu);margin-top:2px}
 .search-empty{text-align:center;color:var(--mu);padding:40px;font-size:14px}
-.toast{position:fixed;bottom:24px;right:24px;background:#111;color:#fff;padding:10px 18px;border-radius:8px;font-size:12px;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none}
-.toast.show{opacity:1}
+.location-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:8px}
+.location-item{background:var(--sf);border:1px solid var(--bd);border-radius:6px;padding:10px 12px}
+.location-country{font-size:12px;font-weight:700;color:#111}
+.location-count{font-size:11px;color:var(--or);font-weight:700}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border:1px solid var(--bd);border-radius:10px;width:560px;max-height:88vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.1)}
+.modal-header{padding:16px 20px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:1}
+.modal-title{font-size:14px;font-weight:700;color:var(--or)}
+.modal-close{background:none;border:none;color:var(--mu);font-size:20px;cursor:pointer}
+.modal-body{padding:16px 20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mu)}
+input,select{background:#fff;border:1px solid var(--bd);border-radius:5px;color:#111;padding:7px 10px;font-size:12px;font-family:inherit;transition:border-color .12s}
+input:focus,select:focus{outline:none;border-color:var(--or)}
+.form-section{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--or);margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--orB)}
+.modal-footer{padding:12px 20px;border-top:1px solid var(--bd);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:#fff}
 footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:1px solid var(--bd);background:#fff;margin-top:auto}
 @media(max-width:768px){
   .sidebar{display:none}.topnav{display:flex}.main{margin-left:0}.topbar{top:49px}
-  .summary-strip{grid-template-columns:1fr 1fr}.yacht-grid{grid-template-columns:1fr}.content{padding:14px}.topbar{padding:10px 14px}
-  .vessel-detail-grid{grid-template-columns:1fr 1fr}
+  .summary-strip,.analytics-grid{grid-template-columns:1fr 1fr}.chart-row{grid-template-columns:1fr}
+  .yacht-grid{grid-template-columns:1fr}.content{padding:14px}.topbar{padding:10px 14px}
+  .form-row{grid-template-columns:1fr}.modal{width:96vw}
+  .sold-brokers-grid{grid-template-columns:1fr}.vessel-detail-grid{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
-
 <div class="topnav">
   <div class="topnav-logo">⚓ Yacht Update</div>
   <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
@@ -129,21 +222,22 @@ footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:
   <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
   <div class="mobile-nav-item active" onclick="gotoPage('daily');toggleMenu()">📅 Daily Update</div>
   <div class="mobile-nav-item" onclick="gotoPage('search');toggleMenu()">🔍 Search</div>
+  <div class="mobile-nav-item" onclick="gotoPage('analytics');toggleMenu()">📊 Market Analytics</div>
 </div>
-
 <div class="sidebar">
   <div class="logo"><div class="logo-title">⚓ Yacht Update</div><div class="logo-sub">Market Intelligence</div></div>
   <nav class="nav">
     <div class="nav-item active" id="nav-daily" onclick="gotoPage('daily')">📅 Daily Update</div>
     <div class="nav-item" id="nav-search" onclick="gotoPage('search')">🔍 Search</div>
+    <div class="nav-item" id="nav-analytics" onclick="gotoPage('analytics')">📊 Market Analytics</div>
   </nav>
-  <div class="sidebar-footer">Yacht Update · v7.0</div>
+  <div class="sidebar-footer">Yacht Update · v6.1</div>
 </div>
-
 <div class="main">
 <div class="page active" id="page-daily">
   <div class="topbar">
     <div class="topbar-left"><h1>Daily Market Update</h1><span class="date-badge" id="active-date-label"></span></div>
+    <div class="topbar-right"><button class="btn" onclick="openModal()">+ Add</button></div>
   </div>
   <div class="content">
     <div class="date-scroll-wrap"><label>Date</label><select class="date-select" id="date-select" onchange="switchDate(this.value)"></select></div>
@@ -157,62 +251,221 @@ footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:
   </div>
   <footer>Yacht Update · Daily Intelligence Platform</footer>
 </div>
-
 <div class="page" id="page-search">
   <div class="topbar"><div class="topbar-left"><h1>Search</h1></div></div>
   <div class="content">
-    <div class="search-input-wrap"><span class="search-icon">🔍</span><input class="search-input" id="search-q" type="text" placeholder="Search vessel, builder, broker…" oninput="search(this.value)"></div>
+    <div class="search-input-wrap"><span class="search-icon">🔍</span><input class="search-input" id="search-q" type="text" placeholder="Search vessel, builder, brokerage, or broker name…" oninput="runSearch()"></div>
     <div id="search-results"><div class="search-empty">Start typing to search…</div></div>
   </div>
   <footer>Yacht Update · Market Intelligence Platform</footer>
 </div>
-
+<div class="page" id="page-analytics">
+  <div class="topbar"><div class="topbar-left"><h1>Market Analytics</h1><span class="date-badge">All-time</span></div></div>
+  <div class="content" id="analytics-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+<div class="page" id="page-broker">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="broker-page-title"></h1></div></div>
+  <div class="content" id="broker-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
+<div class="page" id="page-category">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="cat-page-title"></h1></div></div>
+  <div class="content" id="cat-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
+</div>
 <div class="page" id="page-vessel">
   <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="vessel-page-title"></h1></div></div>
   <div class="content" id="vessel-content"></div>
   <footer>Yacht Update · Market Intelligence Platform</footer>
 </div>
+<div class="page" id="page-contact">
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="contact-page-title"></h1></div></div>
+  <div class="content" id="contact-content"></div>
+  <footer>Yacht Update · Market Intelligence Platform</footer>
 </div>
-
-<div class="toast" id="toast"></div>
-
+</div>
+<div class="chart-tooltip" id="chart-tooltip"></div>
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title">Add Yacht Entry</div><button class="modal-close" onclick="closeModal()">✕</button></div>
+    <div class="modal-body">
+      <div class="form-group"><label>Date</label><input type="date" id="f-date"></div>
+      <div class="form-section">Category</div>
+      <div class="form-group"><label>Type</label><select id="f-type" onchange="toggleFields()"><option value="new">New Listing</option><option value="reduction">Price Reduction</option><option value="sold">Sold</option><option value="launch">New Launch</option><option value="cachange">CA Change</option></select></div>
+      <div class="form-section">Vessel</div>
+      <div class="form-row"><div class="form-group"><label>Name</label><input id="f-name" placeholder="DAYBREAK"></div><div class="form-group"><label>Builder</label><input id="f-builder" placeholder="BAGLIETTO"></div></div>
+      <div class="form-row"><div class="form-group"><label>Length (m)</label><input id="f-length" type="number" placeholder="52"></div><div class="form-group"><label>Year</label><input id="f-year" type="number" placeholder="2024"></div></div>
+      <div class="form-group"><label>Location</label><input id="f-location" placeholder="Bermuda"></div>
+      <div class="form-section">Pricing</div>
+      <div class="form-row"><div class="form-group"><label>Price</label><input id="f-price" placeholder="34,999,000"></div><div class="form-group"><label>Currency</label><select id="f-cur"><option value="EUR">EUR €</option><option value="USD">USD $</option><option value="GBP">GBP £</option></select></div></div>
+      <div class="form-group"><label>EUR Estimate (if non-EUR)</label><input id="f-est" placeholder="e.g. 29,700,000"></div>
+      <div class="form-row" id="f-oldprice-row" style="display:none"><div class="form-group"><label>Previous Price</label><input id="f-oldprice" placeholder="36,000,000"></div><div class="form-group"><label>Previous Currency</label><select id="f-oldcur"><option value="EUR">EUR €</option><option value="USD">USD $</option><option value="GBP">GBP £</option></select></div></div>
+      <div class="form-section">Brokerage</div>
+      <div id="f-broker-row"><div class="form-row"><div class="form-group"><label>Broker</label><input id="f-broker" placeholder="Fraser"></div><div class="form-group"><label>Agreement</label><select id="f-catype"><option value="CA">CA</option><option value="Open">Open</option><option value="JCA">JCA</option></select></div></div></div>
+      <div id="f-sold-row" style="display:none"><div class="form-row"><div class="form-group"><label>Seller Broker</label><input id="f-soldseller" placeholder="Gilman Yachts"></div><div class="form-group"><label>Buyer Broker</label><input id="f-soldbuyer" placeholder="FGI Yacht Group"></div></div></div>
+      <div id="f-cachange-row" style="display:none"><div class="form-row"><div class="form-group"><label>Previous CA</label><input id="f-cafrom" placeholder="Ocean Independence"></div><div class="form-group"><label>New CA</label><input id="f-cato" placeholder="Fraser"></div></div></div>
+    </div>
+    <div class="modal-footer"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn btn-or" onclick="saveEntry()">Save</button></div>
+  </div>
+</div>
 <script>
-const IMG_BASE='https://raw.githubusercontent.com/liamlilili/yacht-images/main/';
-const VESSEL_IMGS={'ALBUS':IMG_BASE+'1_jrxosg.jpeg','T-O52':IMG_BASE+'2_zlq8lz.jpeg','ALHAMBRA':IMG_BASE+'3_kswntl.jpeg','L88':IMG_BASE+'4_dm0dte.webp','KALANI':IMG_BASE+'5_khxzji.webp','SALIVITI':IMG_BASE+'6_givs2y.png','HOLIDAY':IMG_BASE+'7_uhetal.jpeg','SEASEID':IMG_BASE+'8_teao3j.jpeg','ABIDE':IMG_BASE+'9_etycep.jpeg','SPICA':IMG_BASE+'10_pgjio3.jpeg','SEDICI':IMG_BASE+'11_hfhvvu.webp','BURKUT':IMG_BASE+'12_lmlbrh.webp','DAYBREAK':IMG_BASE+'13_g56pez.jpeg','ATLANTIKA':IMG_BASE+'14_ibrpb7.jpeg','LE PIETRE':IMG_BASE+'15_eeb0vw.jpeg','ROCKET ONE':IMG_BASE+'16_njwvmw.jpeg','NO SURRENDER':IMG_BASE+'17_p0hrml.webp','MY WAY':IMG_BASE+'18_zn1fd6.jpeg','AURELIA':IMG_BASE+'19_o7nlra.webp','STARBURST III':IMG_BASE+'20_hcxdjt.jpeg','BLANCO XL':IMG_BASE+'21_jpfen0.jpeg','B HAPPY':IMG_BASE+'22_ob6dkb.jpeg','AMMIRAGLIO':IMG_BASE+'23_nop9eh.jpeg','WHITE LOTUS':IMG_BASE+'24_hiemlh.jpeg','GALENE':IMG_BASE+'25_sx4ekw.jpeg','ANTIOXIDANT':IMG_BASE+'26_lw2iki.jpeg'};
-function getImg(name,url){return url||VESSEL_IMGS[name]||null;}
-
-let db={},activeDate='';
-
-async function loadYachtData(){
-  try{
-    const response=await fetch('data.json',{cache:'no-cache'});
-    if(!response.ok)throw new Error('HTTP '+response.status);
-    db=await response.json();
-    init();
-  }catch(err){
-    console.error('Unable to load yacht data:',err);
-    toast('Unable to load yacht data.');
-    document.getElementById('daily-content').innerHTML='<div style="padding:40px;text-align:center">Unable to load yacht data.</div>';
-  }
-}
+const BN={'SANLORENZO YACHTS':'SANLORENZO','SAN LORENZO':'SANLORENZO','BENETTI YACHTS':'BENETTI','FERRETTI YACHTS':'FERRETTI','FERRETTI CUSTOM LINE':'FERRETTI','BILGIN YACHTS':'BILGIN','PRINCESS YACHTS':'PRINCESS','AZIMUT YACHTS':'AZIMUT','ADMIRAL YACHTS':'ADMIRAL','RIVA YACHT':'RIVA','HEESEN YACHTS':'HEESEN','DELTA MARINE':'DELTA MARINE','OVERMARINE GROUP':'OVERMARINE'};
+const BRN={'Fraser Yachts':'Fraser','FRASER YACHTS':'Fraser','fraser':'Fraser','Edmiston & Company':'Edmiston','Edmiston and Company':'Edmiston','Edmiston & Co':'Edmiston','Camper & Nicholsons':'Camper & Nicholsons','Camper and Nicholsons':'Camper & Nicholsons','IYC - Ft.Lauderdale':'IYC','IYC - Monaco':'IYC','IYC-London':'IYC','IYC-London (CA)':'IYC','Drettmann Yachts GmbH':'Drettmann Yachts','Drettmann Yachts':'Drettmann Yachts','Drettman Yachts':'Drettmann Yachts','IKONIC YACHTS':'Ikonik Yachts','Ikonik Yachts':'Ikonik Yachts','Ikonic Yachts':'Ikonik Yachts','Worth Avenue Yachts LLC':'Worth Avenue Yachts','Merle Wood & Associates, Inc.':'Merle Wood & Associates','Merle Wood & Associates, Inc':'Merle Wood & Associates','HMY Yacht Sales':'HMY Yacht Sales','Aqua Marina Yachts':'Aqua Marine','AQUA MARINE':'Aqua Marine','AQUA MARINA YACHTS':'Aqua Marine','Aqua Marine':'Aqua Marine','Fraser':'Fraser','Y.CO':'Y.CO','Smart Yachts':'Smart Yachts','Burgess':'Burgess','Denison Yachting':'Denison Yachting','Northrop & Johnson':'Northrop & Johnson','Ocean Independence':'Ocean Independence','FGI Yacht Group':'FGI Yacht Group','Autograph Yacht Group':'Autograph Yacht Group'};
+function normB(b){if(!b)return b;return BN[b.toUpperCase().trim()]||b.trim();}
+function normBR(b){if(!b||b==='—')return b;return BRN[b.trim()]||b.trim();}
 const S={EUR:'€',USD:'$',GBP:'£'};
 
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
-function esc(s){return(s||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
-function fmtDate(d){const dt=new Date(d+'T00:00:00');return dt.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
-function allEntries(){return Object.entries(db).flatMap(([d,arr])=>arr.map(e=>({...e,_date:d})));}
-function gotoPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav-item,.mobile-nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');const ni=document.getElementById('nav-'+id);if(ni)ni.classList.add('active');if(id==='search'){document.getElementById('search-q').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing…</div>';}}
-function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open');}
-function goBack(){gotoPage('daily');}
+// ===== HARDCODED VESSEL IMAGES =====
+const VESSEL_IMGS={
+  'ALBUS':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958470/1_jrxosg.jpg',
+  'T-O52':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958470/1_jrxosg.jpg',
+  'ALHAMBRA':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958473/3_kswntl.jpg',
+  'L88':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958470/4_dm0dte.webp',
+  'KALANI':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958470/5_khxzji.webp',
+  'SALIVITI':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958473/6_givs2y.png',
+  'HOLIDAY':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958473/7_uhetal.jpg',
+  'SEASEID':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958471/8_teao3j.jpg',
+  'ABIDE':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958470/9_etycep.jpg',
+  'SPICA':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958470/10_pgjio3.jpg',
+  'SEDICI':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958472/23_nop9eh.jpg',
+  'BURKUT':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958471/12_lmlbrh.webp',
+  'DAYBREAK':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958473/13_g56pez.jpg',
+  'ATLANTIKA':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958470/14_ibrpb7.jpg',
+  'LE PIETRE':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958471/15_eeb0vw.jpg',
+  'ROCKET ONE':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958471/16_njwvmw.jpg',
+  'NO SURRENDER':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958473/17_p0hrml.webp',
+  'MY WAY':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958472/18_zn1fd6.jpg',
+  'AURELIA':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958470/19_o7nlra.webp',
+  'STARBURST III':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958472/20_hcxdjt.jpg',
+  'BLANCO XL':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958471/21_jpfen0.jpg',
+  'B HAPPY':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958472/22_ob6dkb.jpg',
+  'AMMIRAGLIO':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958472/23_nop9eh.jpg',
+  'WHITE LOTUS':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958473/24_hiemlh.jpg',
+  'GALENE':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958473/25_sx4ekw.jpg',
+  'ANTIOXIDANT':'https://res.cloudinary.com/dqvsmnmtj/image/upload/v1779958472/26_lw2iki.jpg',
+};
 
-function init(){
-  activeDate=Object.keys(db).sort().reverse()[0]||'';
-  const sel=document.getElementById('date-select');const dates=Object.keys(db).sort().reverse();
-  sel.innerHTML=dates.map(d=>`<option value="${d}"${d===activeDate?' selected':''}>${fmtDate(d)}</option>`).join('');
-  renderDaily();
+// Single source of truth for getting a vessel image
+function getImg(name){return VESSEL_IMGS[name]||null;}
+
+
+
+let CONTACTS=[];
+
+function normEntry(e){const n={...e};if(n.builder)n.builder=normB(n.builder);if(n.broker)n.broker=normBR(n.broker);if(n.soldseller)n.soldseller=normBR(n.soldseller);if(n.soldbuyer)n.soldbuyer=normBR(n.soldbuyer);if(n.cafrom)n.cafrom=normBR(n.cafrom);if(n.cato)n.cato=normBR(n.cato);return n;}
+let db={};
+let activeDate='';
+let pageStack=['daily'];
+
+async function loadSiteData(){
+  try{
+    const [dataRes,contactsRes]=await Promise.all([fetch('data.json',{cache:'no-cache'}),fetch('contacts.json',{cache:'no-cache'})]);
+    if(!dataRes.ok)throw new Error('data.json HTTP '+dataRes.status);
+    db=await dataRes.json();
+    Object.keys(db).forEach(d=>{db[d]=(db[d]||[]).map(normEntry);});
+    if(contactsRes.ok)CONTACTS=await contactsRes.json();
+    activeDate=Object.keys(db).sort().reverse()[0]||'';
+    buildDateSelect();
+    renderDaily();
+  }catch(e){
+    console.error('Unable to load yacht data',e);
+    document.getElementById('daily-content').innerHTML='<div class="search-empty">Unable to load yacht data.</div>';
+  }
+}
+function save(){try{localStorage.setItem('yu61',JSON.stringify(db));}catch(e){}}
+function soldNames(){const s=new Set();Object.values(db).flat().forEach(e=>{if(e.type==='sold')s.add(e.name);});return s;}
+
+function gotoPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item,.mobile-nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  const ni=document.getElementById('nav-'+id);if(ni)ni.classList.add('active');
+  if(id==='analytics')renderAnalytics();
+  if(id==='search'){document.getElementById('search-q').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to search…</div>';}
+  pageStack=[id];
+}
+function pushPage(id){pageStack.push(id);document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');}
+function goBack(){pageStack.pop();const id=pageStack[pageStack.length-1]||'daily';document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');if(id==='analytics')renderAnalytics();}
+function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open');}
+function fmtDate(d){const dt=new Date(d+'T00:00:00');return dt.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
+function priceNum(p){if(!p||p==='—'||p==='POA')return 0;return parseFloat(p.replace(/,/g,''))||0;}
+function allEntries(){return Object.entries(db).flatMap(([d,arr])=>arr.map(e=>({...e,_date:d})));}
+function esc(s){return(s||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
+function buildDateSelect(){const sel=document.getElementById('date-select');const dates=Object.keys(db).sort().reverse();sel.innerHTML=dates.map(d=>`<option value="${d}"${d===activeDate?' selected':''}>${fmtDate(d)}</option>`).join('');}
+function switchDate(d){activeDate=d;document.getElementById('active-date-label').textContent=fmtDate(d);renderDaily();}
+
+// THE ONE AND ONLY image getter
+function getImg(name){return VESSEL_IMGS[name]||null;}
+
+function imgHtml(name,height='160px',isDetail=false){
+  const url=getImg(name);
+  const uid='uid_'+name.replace(/[^a-z0-9]/gi,'_');
+  if(isDetail){
+    return `<div class="vessel-detail-img-wrap">
+      ${url?`<img src="${url}" alt="${name}" onerror="this.style.display='none'">`:`<div class="vessel-detail-img-placeholder"><span style="font-size:60px">🛥️</span><span style="font-size:13px;color:#bbb;margin-top:8px">${name}</span></div>`}
+      <button class="vessel-detail-img-upload-btn" onclick="document.getElementById('${uid}').click()">📷 ${url?'Change':'Add'} Photo</button>
+      <input type="file" id="${uid}" accept="image/*" style="display:none" onchange="handleUpload('${esc(name)}',this)">
+    </div>`;
+  }
+  return `<div class="card-img-wrap" style="height:${height}" onclick="openVesselPage('${esc(name)}','${activeDate}');event.stopPropagation()">
+    ${url?`<img src="${url}" alt="${name}" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.parentElement.innerHTML='<div class=\\'card-img-placeholder\\'><span class=\\'ship-icon\\'>🛥️</span><span class=\\'ship-name\\'>${name}</span></div>'">`:`<div class="card-img-placeholder"><span class="ship-icon">🛥️</span><span class="ship-name">${name}</span></div>`}
+    <button class="img-upload-btn" onclick="event.stopPropagation();document.getElementById('${uid}').click()">📷</button>
+    <input type="file" id="${uid}" accept="image/*" style="display:none" onchange="event.stopPropagation();handleUpload('${esc(name)}',this)">
+  </div>`;
 }
 
-function switchDate(d){activeDate=d;document.getElementById('active-date-label').textContent=fmtDate(d);renderDaily();}
+function handleUpload(name,input){
+  const file=input.files[0];if(!file)return;
+  const r=new FileReader();
+  r.onload=e=>{
+    VESSEL_IMGS[name]=e.target.result;
+    // refresh any visible card images
+    document.querySelectorAll(`[data-name="${CSS.escape(name)}"]`).forEach(img=>{img.src=e.target.result;});
+    renderDaily();
+  };
+  r.readAsDataURL(file);
+}
+
+function entityLogoHtml(key,size=44){
+  const uid='logo_'+key.replace(/[^a-z0-9]/gi,'_');
+  return `<div class="entity-logo" style="width:${size}px;height:${size}px" onclick="document.getElementById('${uid}').click()">
+    <span class="entity-logo-placeholder">🏢</span>
+    <input type="file" id="${uid}" accept="image/*" style="display:none">
+  </div>`;
+}
+
+function getContactsForVessel(v){return CONTACTS.filter(c=>c.vessels&&c.vessels.includes(v));}
+function getContactsForFirm(f){return CONTACTS.filter(c=>normBR(c.firm)===normBR(f));}
+function contactPanel(c,role=''){return `<div class="sold-broker-panel"><h4>${role||c.role}</h4><div class="sold-broker-name">${c.name||'—'}</div><div class="sold-broker-firm">${c.firm||'—'}</div><div class="sold-broker-info">${c.email?`<a href="mailto:${c.email}">✉ ${c.email}</a>`:''}${c.mobile?`<span>📞 ${c.mobile}</span>`:''}</div></div>`;}
+function brokerSpan(b){if(!b||b==='—')return '<span>—</span>';return `<button class="broker-link" onclick="openBroker('${esc(b)}');event.stopPropagation()">${b}</button>`;}
+function builderSpan(b){if(!b||b==='—')return `<span class="yacht-builder-link">${b||'—'}</span>`;return `<button class="yacht-builder-link" onclick="openBuilderPage('${esc(b)}');event.stopPropagation()">${b}</button>`;}
+function caTag(t){return `<span class="ca-tag ca-${t||'CA'}">${t||'CA'}</span>`;}
+
+function card(e){
+  const bgs={new:'badge-new',reduction:'badge-reduction',sold:'badge-sold',launch:'badge-launch',cachange:'badge-cachange'};
+  const lbs={new:'New Listing',reduction:'Price Reduction',sold:'Sold',launch:'New Launch',cachange:'CA Change'};
+  let brokerHtml='';
+  if(e.type==='sold') brokerHtml=`<div class="card-brokers"><span>Seller:</span>${brokerSpan(e.soldseller)}<span>Buyer:</span>${brokerSpan(e.soldbuyer)}</div>`;
+  else if(e.type==='cachange') brokerHtml=`<div class="ca-change-info">Was: ${brokerSpan(e.cafrom)} → Now: ${brokerSpan(e.cato)}</div>`;
+  else if(e.broker&&e.broker!=='—'&&e.type!=='launch') brokerHtml=`<div class="card-brokers"><span>Broker:</span>${brokerSpan(e.broker)}${caTag(e.catype)}</div>`;
+  let priceHtml='',rightHtml='';
+  if(e.price&&e.price!=='—'&&e.price!=='POA'){
+    if((e.cur==='USD'||e.cur==='GBP')&&e.est) priceHtml=`<div><div class="price-est">(€${e.est} est.)</div><div class="price-main">${S[e.cur]}${e.price} ${e.cur}</div></div>`;
+    else priceHtml=`<div><div class="price-main">${S[e.cur]||'€'}${e.price}${e.cur==='EUR'?' EUR':' '+e.cur}</div></div>`;
+  } else if(e.price==='POA') priceHtml=`<div><div class="price-main" style="color:var(--mu);font-size:11px">POA</div></div>`;
+  if(e.type==='reduction'&&e.oldprice){const os=S[e.oldcur||e.cur]||'€';rightHtml=`<div style="text-align:right"><div class="price-old">${os}${e.oldprice}</div><div class="reduc-arrow">▼ Reduced</div></div>`;}
+  const priceRow=priceHtml||rightHtml?`<div class="card-price">${priceHtml}<div>${rightHtml}</div></div>`:'';
+  return `<div class="yacht-card">
+    ${imgHtml(e.name,'160px',false)}
+    <div class="card-top"><div>
+      <button class="yacht-name-link" onclick="openVesselPage('${esc(e.name)}','${esc(e._date||activeDate)}');event.stopPropagation()">${e.name}</button>
+      ${builderSpan(e.builder)}
+    </div><span class="type-badge ${bgs[e.type]||'badge-new'}">${lbs[e.type]||e.type}</span></div>
+    <div class="card-meta">${e.length?`<span class="meta-item">📏 ${e.length}m</span>`:''}${e.year?`<span class="meta-item">🗓 ${e.year}</span>`:''}${e.location?`<span class="meta-item">📍 ${e.location}</span>`:''}</div>
+    ${priceRow}${brokerHtml}
+  </div>`;
+}
 
 function renderDaily(){
   if(!activeDate)return;
@@ -220,86 +473,283 @@ function renderDaily(){
   const entries=db[activeDate]||[];
   const c={new:0,reduction:0,sold:0,launch:0};
   entries.forEach(e=>{if(c[e.type]!==undefined)c[e.type]++;});
-  document.getElementById('cnt-new').textContent=c.new;
-  document.getElementById('cnt-red').textContent=c.reduction;
-  document.getElementById('cnt-sold').textContent=c.sold;
-  document.getElementById('cnt-launch').textContent=c.launch;
-  
-  const secs=[{key:'new',label:'New Listings',dot:'#1a6faf'},{key:'reduction',label:'Price Reductions',dot:'#E87722'},{key:'sold',label:'Sold',dot:'#1a9648'},{key:'launch',label:'New Launches',dot:'#7c3aed'}];
+  ['new','red','sold','launch'].forEach((k,i)=>document.getElementById('cnt-'+k).textContent=c[['new','reduction','sold','launch'][i]]);
+  const secs=[{key:'new',label:'New Listings',color:'var(--bl)',dot:'#1a6faf'},{key:'reduction',label:'Price Reductions',color:'var(--or)',dot:'#E87722'},{key:'sold',label:'Sold',color:'var(--gr)',dot:'#1a9648'},{key:'cachange',label:'CA Changes',color:'#888',dot:'#aaa'},{key:'launch',label:'New Launches',color:'var(--pu)',dot:'#7c3aed'}];
   let html='';
-  secs.forEach(s=>{
-    const items=entries.filter(e=>e.type===s.key);
-    if(!items.length)return;
-    html+=`<div class="section"><div class="section-header"><div class="dot" style="background:${s.dot}"></div><span class="section-title">${s.label}</span><span class="section-count">${items.length}</span></div><div class="yacht-grid">${items.map(card).join('')}</div></div>`;
-  });
-  document.getElementById('daily-content').innerHTML=html||'<div style="padding:40px;text-align:center">No entries for this date.</div>';
+  secs.forEach(s=>{const items=entries.filter(e=>e.type===s.key);if(!items.length)return;html+=`<div class="section"><div class="section-header"><div class="dot" style="background:${s.dot}"></div><span class="section-title" style="color:${s.color}">${s.label}</span><span class="section-count">${items.length}</span></div><div class="yacht-grid">${items.map(e=>card({...e,_date:activeDate})).join('')}</div></div>`;});
+  document.getElementById('daily-content').innerHTML=html;
 }
 
-function card(e){
-  const bgs={new:'badge-new',reduction:'badge-reduction',sold:'badge-sold',launch:'badge-launch',cachange:'badge-cachange'};
-  const lbs={new:'New Listing',reduction:'Price Reduction',sold:'Sold',launch:'New Launch',cachange:'CA Change'};
-  let brokerHtml='';
-  if(e.type==='sold') brokerHtml=`<div class="card-brokers"><span>Seller:</span><button class="broker-link" onclick="event.stopPropagation()">${e.soldseller||'—'}</button><span>Buyer:</span><button class="broker-link" onclick="event.stopPropagation()">${e.soldbuyer||'—'}</button></div>`;
-  else if(e.type!=='launch'&&e.broker) brokerHtml=`<div class="card-brokers"><span>Broker:</span><button class="broker-link" onclick="event.stopPropagation()">${e.broker}</button><span class="ca-tag ca-${e.catype||'CA'}">${e.catype||'CA'}</span></div>`;
-  let priceHtml='';
-  if(e.price&&e.price!=='—'){
-    if((e.cur==='USD'||e.cur==='GBP')&&e.est) priceHtml=`<div class="price-main">${S[e.cur]}${e.price}</div><div class="price-est">(€${e.est} est.)</div>`;
-    else priceHtml=`<div class="price-main">${S[e.cur]||'€'}${e.price}</div>`;
-  }
-  const img=getImg(e.name,e.img);
-  const cardImg=img?`<img class="card-img" src="${img}" alt="${e.name}" onclick="openVessel('${esc(e.name)}')">` : `<div class="card-img-placeholder" onclick="openVessel('${esc(e.name)}')"><span class="ship-icon">🛥️</span><span class="ship-name">${e.name}</span></div>`;
-  return `<div class="yacht-card">
-    ${cardImg}
-    <div class="card-top"><div>
-      <button class="yacht-name-link" onclick="openVessel('${esc(e.name)}')">${e.name}</button>
-      <button class="yacht-builder-link" onclick="event.stopPropagation()">${e.builder||'—'}</button>
-    </div><span class="type-badge ${bgs[e.type]||'badge-new'}">${lbs[e.type]||e.type}</span></div>
-    <div class="card-meta">${e.length?`<span class="meta-item">📏 ${e.length}m</span>`:''}${e.year?`<span class="meta-item">🗓 ${e.year}</span>`:''}${e.location?`<span class="meta-item">📍 ${e.location}</span>`:''}</div>
-    ${priceHtml?`<div class="card-price">${priceHtml}</div>`:''}
-    ${brokerHtml}
-  </div>`;
-}
-
-function openVessel(name){
-  const all=allEntries();
-  const entries=all.filter(e=>e.name===name).sort((a,b)=>b._date.localeCompare(a._date));
-  if(!entries.length)return;
-  const e=entries[0];
+let currentVesselName='',currentVesselDate='';
+function openVesselPage(name,date){currentVesselName=name;currentVesselDate=date;renderCurrentVessel();pushPage('vessel');}
+function renderCurrentVessel(){
+  const name=currentVesselName;
+  const all=allEntries();const entries=all.filter(e=>e.name===name).sort((a,b)=>b._date.localeCompare(a._date));
+  if(!entries.length)return;const e=entries[0];
   document.getElementById('vessel-page-title').textContent=name;
-  const img=getImg(name,e.img);
-  const vesselImg=img?`<img class="vessel-detail-img" src="${img}" alt="${name}">` : `<div class="vessel-detail-img-placeholder"><span style="font-size:60px">🛥️</span></div>`;
-  document.getElementById('vessel-content').innerHTML=`
-    <div class="vessel-detail">
-      ${vesselImg}
-      <div class="vessel-detail-body">
-        <div class="vessel-detail-name">${name}</div>
-        <button class="vessel-detail-builder" onclick="event.stopPropagation()">${e.builder||'—'}</button>
-        <div class="vessel-detail-grid">
-          <div class="vessel-detail-item"><div class="vessel-detail-label">Length</div><div class="vessel-detail-val">${e.length?e.length+'m':'—'}</div></div>
-          <div class="vessel-detail-item"><div class="vessel-detail-label">Year</div><div class="vessel-detail-val">${e.year||'—'}</div></div>
-          <div class="vessel-detail-item"><div class="vessel-detail-label">Location</div><div class="vessel-detail-val">${e.location||'—'}</div></div>
-          <div class="vessel-detail-item"><div class="vessel-detail-label">Price</div><div class="vessel-detail-val" style="color:var(--or)">${e.price?S[e.cur]+e.price:'—'}</div></div>
-          <div class="vessel-detail-item"><div class="vessel-detail-label">Builder</div><div class="vessel-detail-val">${e.builder||'—'}</div></div>
-          <div class="vessel-detail-item"><div class="vessel-detail-label">Broker</div><div class="vessel-detail-val">${e.broker||'—'}</div></div>
+  const typeLabel={new:'New Listing',reduction:'Price Reduction',sold:'Sold',launch:'New Launch',cachange:'CA Change'};
+  const contacts=getContactsForVessel(name);
+  let contactsHtml='';
+  if(contacts.length){const sellers=contacts.filter(c=>c.role==='seller'||c.role==='both');const buyers=contacts.filter(c=>c.role==='buyer'||c.role==='both');
+    if(e.type==='sold'&&(sellers.length||buyers.length)) contactsHtml=`<div style="margin-top:16px"><div style="font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Broker Contacts</div><div class="sold-brokers-grid"><div>${sellers.map(c=>contactPanel(c,'Seller Broker')).join('')}</div><div>${buyers.map(c=>contactPanel(c,'Buyer Broker')).join('')}</div></div></div>`;
+    else contactsHtml=`<div style="margin-top:16px"><div style="font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Broker Contacts</div>${contacts.map(c=>contactPanel(c)).join('')}</div>`;}
+  const histRows=entries.map(en=>`<tr><td>${fmtDate(en._date)}</td><td>${typeLabel[en.type]||en.type}</td><td>${en.price&&en.price!=='—'?(S[en.cur]||'€')+en.price:''}</td><td>${en.broker||en.soldseller||en.cafrom||'—'}</td></tr>`).join('');
+  document.getElementById('vessel-content').innerHTML=`<div class="vessel-detail">${imgHtml(name,'240px',true)}<div class="vessel-detail-body"><div class="vessel-detail-name">${name}</div><button class="vessel-detail-builder" onclick="openBuilderPage('${esc(e.builder)}')">${e.builder||'—'}</button><div class="vessel-detail-grid"><div class="vessel-detail-item"><div class="vessel-detail-label">Length</div><div class="vessel-detail-val">${e.length?e.length+'m':'—'}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Year Built</div><div class="vessel-detail-val">${e.year||'—'}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Location</div><div class="vessel-detail-val">${e.location||'—'}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Price</div><div class="vessel-detail-val" style="color:var(--or)">${e.price&&e.price!=='—'?(S[e.cur]||'€')+e.price:e.price||'—'}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Status</div><div class="vessel-detail-val">${typeLabel[e.type]||e.type}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Builder</div><div class="vessel-detail-val">${e.builder||'—'}</div></div></div>${contactsHtml}</div></div><div class="table-card"><div class="table-header">Activity History</div><div class="table-scroll"><table><thead><tr><th>Date</th><th>Type</th><th>Price</th><th>Broker</th></tr></thead><tbody>${histRows}</tbody></table></div></div>`;
+}
+
+function openBroker(broker){
+  const norm=normBR(broker);document.getElementById('broker-page-title').textContent=norm;
+  const all=allEntries();const match=b=>b&&normBR(b)===norm;
+  const listings=all.filter(e=>e.type==='new'&&match(e.broker));
+  const reductions=all.filter(e=>e.type==='reduction'&&match(e.broker));
+  const soldS=all.filter(e=>e.type==='sold'&&match(e.soldseller));
+  const soldB=all.filter(e=>e.type==='sold'&&match(e.soldbuyer));
+  const contacts=getContactsForFirm(norm);
+  let contactsHtml='';
+  if(contacts.length) contactsHtml=`<div style="margin-bottom:16px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--mu);letter-spacing:1px;margin-bottom:10px">Team</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px">${contacts.map(c=>`<div class="broker-contact-card" style="cursor:pointer" onclick="openContactPage('${esc(c.name)}')"><div class="broker-contact-name">${c.name}</div><div class="broker-contact-firm">${c.firm}</div><div class="broker-contact-details">${c.email?`<a href="mailto:${c.email}">✉ ${c.email}</a>`:''}${c.mobile?`<span>📞 ${c.mobile}</span>`:''}</div><div class="contact-deal-list">${(c.vessels||[]).map(v=>`<div class="contact-deal-item"><span>${v}</span></div>`).join('')}</div></div>`).join('')}</div></div>`;
+  let html=`<div class="detail-header">${entityLogoHtml(norm,56)}<div class="detail-header-info"><h2>${norm}</h2><div class="detail-stats"><div class="detail-stat"><strong>${listings.length}</strong>Listings</div><div class="detail-stat"><strong>${reductions.length}</strong>Reductions</div><div class="detail-stat"><strong>${soldS.length+soldB.length}</strong>Sales</div></div></div></div>${contactsHtml}`;
+  function sec(title,items,dot){if(!items.length)return '';return `<div class="section"><div class="section-header"><div class="dot" style="background:${dot}"></div><span class="section-title" style="color:${dot}">${title}</span><span class="section-count">${items.length}</span></div><div class="yacht-grid">${items.map(e=>card(e)).join('')}</div></div>`;}
+  html+=sec('New Listings',listings,'#1a6faf');html+=sec('Price Reductions',reductions,'#E87722');html+=sec('Sales as Seller',soldS,'#1a9648');html+=sec('Sales as Buyer',soldB,'#7c3aed');
+  if(!listings.length&&!reductions.length&&!soldS.length&&!soldB.length) html+='<div class="search-empty">No activity found.</div>';
+  document.getElementById('broker-content').innerHTML=html;pushPage('broker');
+}
+
+function openContactPage(name){
+  const c=CONTACTS.find(x=>x.name===name);if(!c)return;
+  document.getElementById('contact-page-title').textContent=c.name;
+  const all=allEntries();const deals=all.filter(e=>c.vessels&&c.vessels.includes(e.name));
+  document.getElementById('contact-content').innerHTML=`<div class="detail-header" style="flex-direction:column"><h2>${c.name}</h2><div class="broker-contact-firm" style="font-size:14px;margin-top:4px;cursor:pointer;text-decoration:underline dotted" onclick="openBroker('${esc(c.firm)}')">${c.firm}</div><div class="broker-contact-details" style="margin-top:10px;gap:6px">${c.email?`<a href="mailto:${c.email}" style="font-size:13px">✉ ${c.email}</a>`:''}${c.mobile?`<span style="font-size:13px">📞 ${c.mobile}</span>`:''}</div></div><div class="section"><div class="section-header"><span class="section-title">Deals Involved In</span><span class="section-count">${deals.length}</span></div><div class="yacht-grid">${deals.map(e=>card(e)).join('')}</div></div>`;
+  pushPage('contact');
+}
+
+function openBuilderPage(builder){
+  const norm=normB(builder?builder.toUpperCase():builder)||builder;
+  document.getElementById('cat-page-title').textContent=norm;
+  const all=allEntries().filter(e=>e.builder&&normB(e.builder.toUpperCase())===norm).sort((a,b)=>b._date.localeCompare(a._date));
+  document.getElementById('cat-content').innerHTML=`<div class="detail-header">${entityLogoHtml(norm,56)}<div class="detail-header-info"><h2>${norm}</h2><div class="detail-stats"><div class="detail-stat"><strong>${all.length}</strong>Total Entries</div></div></div></div><div class="yacht-grid">${all.map(e=>card(e)).join('')}</div>`;
+  pushPage('category');
+}
+
+function openCategory(type,label){
+  document.getElementById('cat-page-title').textContent=label;
+  const all=allEntries().filter(e=>e.type===type).sort((a,b)=>b._date.localeCompare(a._date));
+  document.getElementById('cat-content').innerHTML=`<div class="section"><div class="section-header"><span class="section-title">${label}</span><span class="section-count">${all.length}</span></div><div class="yacht-grid">${all.map(e=>card(e)).join('')}</div></div>`;
+  pushPage('category');
+}
+
+function runSearch(){
+  const q=document.getElementById('search-q').value.trim().toLowerCase();
+  if(q.length<2){document.getElementById('search-results').innerHTML='<div class="search-empty">Type at least 2 characters…</div>';return;}
+  const all=allEntries();
+  const byVessel=all.filter(e=>e.name&&e.name.toLowerCase().includes(q));
+  const buildersSeen=new Set(),byBuilder=[];
+  all.forEach(e=>{if(e.builder&&e.builder.toLowerCase().includes(q)&&!buildersSeen.has(e.builder)){buildersSeen.add(e.builder);byBuilder.push(e.builder);}});
+  const brokersSeen=new Set(),byBroker=[];
+  all.forEach(e=>{[e.broker,e.soldseller,e.soldbuyer].forEach(b=>{if(b&&b!=='—'&&b.toLowerCase().includes(q)&&!brokersSeen.has(b)){brokersSeen.add(b);byBroker.push(b);}});});
+  const byContact=CONTACTS.filter(c=>c.name.toLowerCase().includes(q)||c.firm.toLowerCase().includes(q));
+  const typeLabel={new:'New Listing',reduction:'Price Reduction',sold:'Sold',launch:'New Launch',cachange:'CA Change'};
+  let html='';
+  if(byVessel.length){html+=`<div class="search-result-section"><div class="search-result-title">Vessels (${byVessel.length})</div>`;byVessel.sort((a,b)=>b._date.localeCompare(a._date)).forEach(e=>{const url=getImg(e.name);html+=`<div class="search-hit" onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')"><div class="search-hit-img">${url?`<img src="${url}" alt="${e.name}">`:'🛥️'}</div><div><div class="search-hit-name">${e.name}</div><div class="search-hit-sub">${e.builder||''}${e.length?' · '+e.length+'m':''}${e.year?' · '+e.year:''} — ${typeLabel[e.type]||e.type} — ${fmtDate(e._date)}</div></div></div>`;});html+='</div>';}
+  if(byContact.length){html+=`<div class="search-result-section"><div class="search-result-title">Broker Contacts (${byContact.length})</div>`;byContact.forEach(c=>{html+=`<div class="search-hit" onclick="openContactPage('${esc(c.name)}')"><div class="search-hit-img">👤</div><div><div class="search-hit-name">${c.name}</div><div class="search-hit-sub">${c.firm}${c.email?' · '+c.email:''}</div></div></div>`;});html+='</div>';}
+  if(byBuilder.length){html+=`<div class="search-result-section"><div class="search-result-title">Builders (${byBuilder.length})</div>`;byBuilder.forEach(b=>{const cnt=all.filter(e=>e.builder===b).length;html+=`<div class="search-hit" onclick="openBuilderPage('${esc(b)}')"><div class="search-hit-img">🏭</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} entries</div></div></div>`;});html+='</div>';}
+  if(byBroker.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokerages (${byBroker.length})</div>`;byBroker.forEach(b=>{const cnt=all.filter(e=>[e.broker,e.soldseller,e.soldbuyer].includes(b)).length;html+=`<div class="search-hit" onclick="openBroker('${esc(b)}')"><div class="search-hit-img">🤝</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} entries</div></div></div>`;});html+='</div>';}
+  if(!html) html='<div class="search-empty">No results found.</div>';
+  document.getElementById('search-results').innerHTML=html;
+}
+
+function makeRangeSlider(containerId,min,max,fromVal,toVal,color,onChange){
+  const c=document.getElementById(containerId);if(!c)return;
+  let lo=fromVal,hi=toVal;
+  function pct(v){return((v-min)/(max-min))*100;}
+  function render(){
+    c.querySelector('.range-fill').style.left=pct(lo)+'%';
+    c.querySelector('.range-fill').style.width=(pct(hi)-pct(lo))+'%';
+    c.querySelector('.thumb-lo').style.left=pct(lo)+'%';
+    c.querySelector('.thumb-hi').style.left=pct(hi)+'%';
+    c.querySelector('.label-lo').textContent=lo;
+    c.querySelector('.label-hi').textContent=hi;
+    onChange(lo,hi);
+  }
+  function drag(thumb,isLo){
+    thumb.addEventListener('pointerdown',ev=>{
+      ev.preventDefault();thumb.setPointerCapture(ev.pointerId);
+      const track=c.querySelector('.range-track');
+      function move(e){const r=track.getBoundingClientRect();let p=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));let v=Math.round(min+p*(max-min));if(isLo){lo=Math.min(v,hi);}else{hi=Math.max(v,lo);}render();}
+      thumb.addEventListener('pointermove',move);
+      thumb.addEventListener('pointerup',()=>thumb.removeEventListener('pointermove',move),{once:true});
+    });
+  }
+  c.innerHTML=`<div style="display:flex;justify-content:space-between;font-size:10px;font-weight:700;color:#333;margin-bottom:2px"><span class="label-lo"></span><span class="label-hi"></span></div>
+    <div class="range-track" style="position:relative;height:20px;display:flex;align-items:center">
+      <div style="position:absolute;left:0;right:0;height:4px;background:var(--sf2);border-radius:2px"></div>
+      <div class="range-fill" style="position:absolute;height:4px;background:${color};border-radius:2px"></div>
+      <div class="thumb-lo" style="position:absolute;width:14px;height:14px;background:${color};border-radius:50%;cursor:pointer;transform:translateX(-50%);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);z-index:2;touch-action:none"></div>
+      <div class="thumb-hi" style="position:absolute;width:14px;height:14px;background:${color};border-radius:50%;cursor:pointer;transform:translateX(-50%);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);z-index:2;touch-action:none"></div>
+    </div>`;
+  drag(c.querySelector('.thumb-lo'),true);drag(c.querySelector('.thumb-hi'),false);render();
+}
+
+let anSoldSort='date',anSoldDir=1,anSoldLenFilter='all',anSoldYearFrom=null,anSoldYearTo=null,anSoldPriceFrom=null,anSoldPriceTo=null;
+let anNewSort='date',anNewDir=1,anNewLenFilter='all',anNewYearFrom=null,anNewYearTo=null,anNewPriceFrom=null,anNewPriceTo=null;
+
+function setSort(table,key){if(table==='sold'){if(anSoldSort===key)anSoldDir*=-1;else{anSoldSort=key;anSoldDir=1;}renderSoldTable();}else{if(anNewSort===key)anNewDir*=-1;else{anNewSort=key;anNewDir=1;}renderNewTable();}}
+
+function renderAnalytics(){
+  const all=allEntries();
+  const totNew=all.filter(e=>e.type==='new').length,totSold=all.filter(e=>e.type==='sold').length,totRed=all.filter(e=>e.type==='reduction').length,totLaunch=all.filter(e=>e.type==='launch').length;
+  const lengths=all.filter(e=>e.length).map(e=>parseFloat(e.length));
+  const avgLen=lengths.length?(lengths.reduce((a,b)=>a+b,0)/lengths.length).toFixed(1):'—';
+  const bMap={};all.forEach(e=>{[e.broker,e.soldseller,e.soldbuyer].forEach(b=>{if(b&&b!=='—')bMap[b]=(bMap[b]||0)+1;});});
+  const topB=Object.entries(bMap).sort((a,b)=>b[1]-a[1]).slice(0,8);const maxB=topB[0]?.[1]||1;
+  const blMap={};all.forEach(e=>{if(e.builder)blMap[e.builder]=(blMap[e.builder]||0)+1;});
+  const topBl=Object.entries(blMap).sort((a,b)=>b[1]-a[1]).slice(0,6);const maxBl=topBl[0]?.[1]||1;
+  const locMap={};all.forEach(e=>{if(e.location){const l=e.location.trim();locMap[l]=(locMap[l]||0)+1;}});
+  const topLoc=Object.entries(locMap).sort((a,b)=>b[1]-a[1]);
+  const total=all.length||1;
+  const typePcts=[{label:'New Listings',pct:Math.round(totNew/total*100),col:'#1a6faf',type:'new'},{label:'Sold',pct:Math.round(totSold/total*100),col:'#1a9648',type:'sold'},{label:'Price Reductions',pct:Math.round(totRed/total*100),col:'#E87722',type:'reduction'},{label:'New Launches',pct:Math.round(totLaunch/total*100),col:'#7c3aed',type:'launch'}];
+  const activeDates=Object.keys(db).filter(d=>db[d]&&db[d].length>0).sort();
+  const trendData={new:activeDates.map(d=>(db[d]||[]).filter(e=>e.type==='new').length),sold:activeDates.map(d=>(db[d]||[]).filter(e=>e.type==='sold').length),reduction:activeDates.map(d=>(db[d]||[]).filter(e=>e.type==='reduction').length)};
+  const allYears=all.map(e=>e.year).filter(Boolean).map(Number);
+  const minY=allYears.length?Math.min(...allYears):1980,maxY=allYears.length?Math.max(...allYears):2027;
+  if(anSoldYearFrom===null){anSoldYearFrom=minY;anSoldYearTo=maxY;}
+  if(anNewYearFrom===null){anNewYearFrom=minY;anNewYearTo=maxY;}
+  const soldPrices=all.filter(e=>e.type==='sold'&&priceNum(e.price)>0).map(e=>priceNum(e.price));
+  const newPrices=all.filter(e=>e.type==='new'&&priceNum(e.price)>0).map(e=>priceNum(e.price));
+  const minSP=soldPrices.length?Math.min(...soldPrices):0,maxSP=soldPrices.length?Math.max(...soldPrices):100000000;
+  const minNP=newPrices.length?Math.min(...newPrices):0,maxNP=newPrices.length?Math.max(...newPrices):100000000;
+  if(anSoldPriceFrom===null){anSoldPriceFrom=minSP;anSoldPriceTo=maxSP;}
+  if(anNewPriceFrom===null){anNewPriceFrom=minNP;anNewPriceTo=maxNP;}
+
+  document.getElementById('analytics-content').innerHTML=`
+  <div class="analytics-grid">
+    <div class="a-card"><div class="a-label">Total Entries</div><div class="a-val">${all.length}</div><div class="a-sub">across ${activeDates.length} days</div></div>
+    <div class="a-card"><div class="a-label">New Listings</div><div class="a-val">${totNew}</div></div>
+    <div class="a-card"><div class="a-label">Sales Recorded</div><div class="a-val">${totSold}</div></div>
+    <div class="a-card"><div class="a-label">Avg Length</div><div class="a-val">${avgLen}m</div></div>
+  </div>
+  <div class="trend-card">
+    <div class="chart-title">Activity Trend</div>
+    <div class="chart-wrap"><canvas id="trendChart" style="width:100%;height:200px"></canvas></div>
+    <div class="trend-legend"><div class="legend-item"><div class="legend-dot" style="background:#1a6faf"></div>New Listings</div><div class="legend-item"><div class="legend-dot" style="background:#1a9648"></div>Sold</div><div class="legend-item"><div class="legend-dot" style="background:#E87722"></div>Price Reductions</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card"><div class="chart-title">Top Active Brokerages</div>${topB.map(([b,v])=>`<div class="bar-row"><div class="bar-label" onclick="openBroker('${esc(b)}')">${b}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/maxB*100)}%"></div></div><div class="bar-val">${v}</div></div>`).join('')}</div>
+    <div class="chart-card"><div class="chart-title">Activity Breakdown</div>${typePcts.filter(t=>t.pct>0).map(t=>`<div class="pie-row" onclick="openCategory('${t.type}','${t.label}')"><div class="pie-dot" style="background:${t.col}"></div><div class="pie-label">${t.label}</div><div class="pie-pct" style="color:${t.col}">${t.pct}%</div></div>`).join('')}<div style="margin-top:12px;height:7px;border-radius:4px;overflow:hidden;display:flex">${typePcts.filter(t=>t.pct>0).map(t=>`<div style="width:${t.pct}%;background:${t.col}"></div>`).join('')}</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card"><div class="chart-title">Top Builders</div>${topBl.map(([b,v])=>`<div class="bar-row"><div class="bar-label" onclick="openBuilderPage('${esc(b)}')">${b}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/maxBl*100)}%;background:#7c3aed"></div></div><div class="bar-val">${v}</div></div>`).join('')}</div>
+    <div class="chart-card"><div class="chart-title">Length Distribution</div>${[['<30m',0,30],['30–40m',30,40],['40–50m',40,50],['50m+',50,999]].map(([l,mn,mx])=>{const cnt=all.filter(e=>e.length&&parseFloat(e.length)>=mn&&parseFloat(e.length)<mx).length;return `<div class="bar-row"><div class="bar-label">${l}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.round(cnt/total*100)}%;background:#1a6faf"></div></div><div class="bar-val">${cnt}</div></div>`;}).join('')}</div>
+  </div>
+  <div class="chart-card" style="margin-bottom:10px"><div class="chart-title">Listings by Country</div><div class="location-grid">${topLoc.slice(0,18).map(([loc,cnt])=>`<div class="location-item"><div class="location-country">${loc}</div><div class="location-count">${cnt} entr${cnt===1?'y':'ies'}</div></div>`).join('')}</div></div>
+  <div class="table-card">
+    <div class="table-header"><span>All Sold Yachts</span>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <div><div style="font-size:9px;font-weight:700;color:var(--mu);text-transform:uppercase;margin-bottom:2px">Year Range</div><div id="sold-year-slider" style="width:160px"></div></div>
+        <div><div style="font-size:9px;font-weight:700;color:var(--mu);text-transform:uppercase;margin-bottom:2px">Price (€M)</div><div id="sold-price-slider" style="width:160px"></div></div>
+        <select class="filter-select" onchange="anSoldLenFilter=this.value;renderSoldTable()"><option value="all">All lengths</option><option value="0-25">Under 25m</option><option value="25-35">25–35m</option><option value="35-45">35–45m</option><option value="45-55">45–55m</option><option value="55-999">55m+</option></select>
+        <div style="display:flex;gap:4px">
+          <button id="sbt-date" class="sort-btn" onclick="setSort('sold','date')">Date ↕</button>
+          <button id="sbt-length" class="sort-btn" onclick="setSort('sold','length')">Length ↕</button>
+          <button id="sbt-year" class="sort-btn" onclick="setSort('sold','year')">Year ↕</button>
+          <button id="sbt-price" class="sort-btn" onclick="setSort('sold','price')">Price ↕</button>
         </div>
       </div>
-    </div>`;
-  gotoPage('vessel');
+    </div>
+    <div id="sold-table-body"></div>
+  </div>
+  <div class="table-card">
+    <div class="table-header"><span>All New Listings (excl. sold)</span>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <div><div style="font-size:9px;font-weight:700;color:var(--mu);text-transform:uppercase;margin-bottom:2px">Year Range</div><div id="new-year-slider" style="width:160px"></div></div>
+        <div><div style="font-size:9px;font-weight:700;color:var(--mu);text-transform:uppercase;margin-bottom:2px">Price (€M)</div><div id="new-price-slider" style="width:160px"></div></div>
+        <select class="filter-select" onchange="anNewLenFilter=this.value;renderNewTable()"><option value="all">All lengths</option><option value="0-25">Under 25m</option><option value="25-35">25–35m</option><option value="35-45">35–45m</option><option value="45-55">45–55m</option><option value="55-999">55m+</option></select>
+        <div style="display:flex;gap:4px">
+          <button id="nbt-date" class="sort-btn" onclick="setSort('new','date')">Date ↕</button>
+          <button id="nbt-length" class="sort-btn" onclick="setSort('new','length')">Length ↕</button>
+          <button id="nbt-year" class="sort-btn" onclick="setSort('new','year')">Year ↕</button>
+          <button id="nbt-price" class="sort-btn" onclick="setSort('new','price')">Price ↕</button>
+        </div>
+      </div>
+    </div>
+    <div id="new-table-body"></div>
+  </div>`;
+
+  makeRangeSlider('sold-year-slider',minY,maxY,anSoldYearFrom,anSoldYearTo,'var(--or)',(lo,hi)=>{anSoldYearFrom=lo;anSoldYearTo=hi;renderSoldTable();});
+  makeRangeSlider('new-year-slider',minY,maxY,anNewYearFrom,anNewYearTo,'var(--or)',(lo,hi)=>{anNewYearFrom=lo;anNewYearTo=hi;renderNewTable();});
+  makeRangeSlider('sold-price-slider',Math.floor(minSP/1e6),Math.ceil(maxSP/1e6),Math.floor(anSoldPriceFrom/1e6),Math.ceil(anSoldPriceTo/1e6),'var(--bl)',(lo,hi)=>{anSoldPriceFrom=lo*1e6;anSoldPriceTo=hi*1e6;renderSoldTable();});
+  makeRangeSlider('new-price-slider',Math.floor(minNP/1e6),Math.ceil(maxNP/1e6),Math.floor(anNewPriceFrom/1e6),Math.ceil(anNewPriceTo/1e6),'var(--bl)',(lo,hi)=>{anNewPriceFrom=lo*1e6;anNewPriceTo=hi*1e6;renderNewTable();});
+  renderSoldTable();renderNewTable();
+  setTimeout(()=>{const c=document.getElementById('trendChart');if(c)drawTrendChart(c,activeDates,trendData);},80);
 }
 
-function search(q){
-  if(!q.trim()){document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing…</div>';return;}
-  const query=q.toLowerCase();
-  const all=allEntries();
-  const results=all.filter(e=>(e.name||'').toLowerCase().includes(query)||(e.builder||'').toLowerCase().includes(query)||(e.broker||'').toLowerCase().includes(query));
-  if(!results.length){document.getElementById('search-results').innerHTML='<div class="search-empty">No results found.</div>';return;}
-  document.getElementById('search-results').innerHTML=results.map(e=>`
-    <div class="search-hit" onclick="openVessel('${esc(e.name)}')">
-      <div class="search-hit-name">${e.name}</div>
-    </div>`).join('');
+function updateSortBtns(table){
+  const s=table==='sold'?anSoldSort:anNewSort,d=table==='sold'?anSoldDir:anNewDir,pre=table==='sold'?'sbt':'nbt';
+  ['date','length','year','price'].forEach(k=>{const btn=document.getElementById(pre+'-'+k);if(!btn)return;btn.textContent=k.charAt(0).toUpperCase()+k.slice(1)+' '+(s===k?(d===1?'↓':'↑'):'↕');btn.classList.toggle('active',s===k);});
+}
+function filterLen(items,f){if(f==='all')return items;const[mn,mx]=f.split('-').map(Number);return items.filter(e=>e.length&&parseFloat(e.length)>=mn&&parseFloat(e.length)<mx);}
+function applySort(items,s,dir){const sorted=[...items];if(s==='date')sorted.sort((a,b)=>dir*b._date.localeCompare(a._date));else if(s==='length')sorted.sort((a,b)=>dir*((parseFloat(b.length)||0)-(parseFloat(a.length)||0)));else if(s==='year')sorted.sort((a,b)=>dir*((b.year||0)-(a.year||0)));else if(s==='price')sorted.sort((a,b)=>dir*(priceNum(b.price)-priceNum(a.price)));return sorted;}
+
+function renderSoldTable(){
+  updateSortBtns('sold');
+  let items=allEntries().filter(e=>e.type==='sold');
+  items=filterLen(items,anSoldLenFilter);
+  if(anSoldYearFrom!==null)items=items.filter(e=>!e.year||(e.year>=anSoldYearFrom&&e.year<=anSoldYearTo));
+  if(anSoldPriceFrom!==null)items=items.filter(e=>{const p=priceNum(e.price);return p===0||(p>=anSoldPriceFrom&&p<=anSoldPriceTo);});
+  items=applySort(items,anSoldSort,anSoldDir);
+  const rows=items.map(e=>`<tr><td class="td-name">${e.name}</td><td>${e.builder||'—'}</td><td>${e.length?e.length+'m':'—'}</td><td>${e.year||'—'}</td><td>${e.price&&e.price!=='—'?(S[e.cur]||'€')+e.price:''}</td><td>${e.soldseller||'—'}</td><td>${e.soldbuyer||'—'}</td><td>${fmtDate(e._date)}</td></tr>`).join('');
+  const b=document.getElementById('sold-table-body');if(b)b.innerHTML=`<div class="table-scroll"><table><thead><tr><th>Vessel</th><th>Builder</th><th>Length</th><th>Year</th><th>Price</th><th>Seller</th><th>Buyer</th><th>Date</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+function renderNewTable(){
+  updateSortBtns('new');
+  const soldSet=soldNames();
+  let items=allEntries().filter(e=>e.type==='new'&&!soldSet.has(e.name));
+  items=filterLen(items,anNewLenFilter);
+  if(anNewYearFrom!==null)items=items.filter(e=>!e.year||(e.year>=anNewYearFrom&&e.year<=anNewYearTo));
+  if(anNewPriceFrom!==null)items=items.filter(e=>{const p=priceNum(e.price);return p===0||(p>=anNewPriceFrom&&p<=anNewPriceTo);});
+  items=applySort(items,anNewSort,anNewDir);
+  const rows=items.map(e=>`<tr><td class="td-name">${e.name}</td><td>${e.builder||'—'}</td><td>${e.length?e.length+'m':'—'}</td><td>${e.year||'—'}</td><td>${e.price&&e.price!=='—'&&e.price!=='POA'?(e.est?`€${e.est} est. `:'')+(e.cur==='EUR'?`€${e.price}`:`${S[e.cur]}${e.price}`):e.price||'—'}</td><td>${e.location||'—'}</td><td>${e.broker||'—'}</td><td>${fmtDate(e._date)}</td></tr>`).join('');
+  const b=document.getElementById('new-table-body');if(b)b.innerHTML=`<div class="table-scroll"><table><thead><tr><th>Vessel</th><th>Builder</th><th>Length</th><th>Year</th><th>Price</th><th>Location</th><th>Broker</th><th>Date</th></tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
-document.addEventListener('DOMContentLoaded',loadYachtData);
+let chartPts=[],chartDts=[];
+function drawTrendChart(canvas,dates,data){
+  const dpr=window.devicePixelRatio||1;const W=canvas.parentElement.clientWidth-2,H=200;
+  canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';
+  const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+  const pad={top:14,right:14,bottom:34,left:32};const cw=W-pad.left-pad.right,ch=H-pad.top-pad.bottom;
+  const n=dates.length;if(!n)return;
+  const maxVal=Math.max(1,...data.new,...data.sold,...data.reduction);
+  chartDts=[...dates];chartPts=[];ctx.clearRect(0,0,W,H);
+  ctx.strokeStyle='#eee';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const y=pad.top+ch*(1-i/4);ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cw,y);ctx.stroke();}
+  ctx.fillStyle='#bbb';ctx.font='9px Segoe UI';ctx.textAlign='right';
+  for(let i=0;i<=4;i++){const y=pad.top+ch*(1-i/4);ctx.fillText(Math.round(maxVal*i/4),pad.left-3,y+3);}
+  const step=Math.max(1,Math.ceil(n/8));ctx.textAlign='center';ctx.fillStyle='#bbb';
+  dates.forEach((d,i)=>{if(i%step!==0&&i!==n-1)return;const x=pad.left+(n<=1?cw/2:cw*i/(n-1));ctx.fillText(d.slice(5),x,H-6);});
+  const bW=Math.max(2,cw/(n*1.5));
+  dates.forEach((d,i)=>{const x=pad.left+(n<=1?cw/2:cw*i/(n-1));[{val:data.new[i],col:'rgba(26,111,175,0.13)'},{val:data.sold[i],col:'rgba(26,150,72,0.13)'},{val:data.reduction[i],col:'rgba(232,119,34,0.13)'}].forEach(({val,col})=>{if(!val)return;const h=ch*val/maxVal;ctx.fillStyle=col;ctx.fillRect(x-bW/2,pad.top+ch-h,bW,h);});});
+  const lc={new:'#1a6faf',sold:'#1a9648',reduction:'#E87722'};
+  ['new','sold','reduction'].forEach(k=>{ctx.strokeStyle=lc[k];ctx.lineWidth=2;ctx.lineJoin='round';ctx.beginPath();data[k].forEach((v,i)=>{const x=pad.left+(n<=1?cw/2:cw*i/(n-1));const y=pad.top+ch-ch*v/maxVal;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.stroke();ctx.fillStyle=lc[k];data[k].forEach((v,i)=>{const x=pad.left+(n<=1?cw/2:cw*i/(n-1));const y=pad.top+ch-ch*v/maxVal;ctx.beginPath();ctx.arc(x,y,3.5,0,Math.PI*2);ctx.fill();if(k==='new')chartPts.push({x,y,date:dates[i],new:data.new[i],sold:data.sold[i],reduction:data.reduction[i]});});});
+  canvas.onmousemove=function(ev){const rect=canvas.getBoundingClientRect();const mx=ev.clientX-rect.left;const tt=document.getElementById('chart-tooltip');let cl=null,md=30;chartPts.forEach(p=>{if(Math.abs(p.x-mx)<md){md=Math.abs(p.x-mx);cl=p;}});if(cl){tt.innerHTML=`<b>${fmtDate(cl.date)}</b><br>New: ${cl.new} · Sold: ${cl.sold} · Red: ${cl.reduction}`;tt.style.display='block';tt.style.left=(ev.clientX+12)+'px';tt.style.top=(ev.clientY-44)+'px';}else tt.style.display='none';};
+  canvas.onmouseleave=()=>{document.getElementById('chart-tooltip').style.display='none';};
+  canvas.onclick=function(ev){const rect=canvas.getBoundingClientRect();const mx=ev.clientX-rect.left;let cl=null,md=30;chartPts.forEach(p=>{if(Math.abs(p.x-mx)<md){md=Math.abs(p.x-mx);cl=p;}});if(cl){activeDate=cl.date;buildDateSelect();gotoPage('daily');renderDaily();}};
+}
+
+function openModal(){document.getElementById('modal').classList.add('open');document.getElementById('f-date').value=activeDate;toggleFields();}
+function closeModal(){document.getElementById('modal').classList.remove('open');}
+function toggleFields(){const t=document.getElementById('f-type').value;document.getElementById('f-oldprice-row').style.display=t==='reduction'?'grid':'none';document.getElementById('f-sold-row').style.display=t==='sold'?'block':'none';document.getElementById('f-cachange-row').style.display=t==='cachange'?'block':'none';document.getElementById('f-broker-row').style.display=(t==='sold'||t==='cachange')?'none':'block';}
+function saveEntry(){
+  const t=document.getElementById('f-type').value,d=document.getElementById('f-date').value;
+  if(!d){alert('Please select a date');return;}
+  let e={type:t,name:document.getElementById('f-name').value.toUpperCase(),builder:normB(document.getElementById('f-builder').value.toUpperCase()),length:parseFloat(document.getElementById('f-length').value)||null,year:parseInt(document.getElementById('f-year').value)||null,location:document.getElementById('f-location').value,price:document.getElementById('f-price').value,cur:document.getElementById('f-cur').value,est:document.getElementById('f-est').value||null};
+  if(t==='reduction'){e.oldprice=document.getElementById('f-oldprice').value;e.oldcur=document.getElementById('f-oldcur').value;e.broker=normBR(document.getElementById('f-broker').value);e.catype=document.getElementById('f-catype').value;}
+  else if(t==='sold'){e.soldseller=normBR(document.getElementById('f-soldseller').value);e.soldbuyer=normBR(document.getElementById('f-soldbuyer').value);}
+  else if(t==='cachange'){e.cafrom=normBR(document.getElementById('f-cafrom').value);e.cato=normBR(document.getElementById('f-cato').value);}
+  else{e.broker=normBR(document.getElementById('f-broker').value);e.catype=document.getElementById('f-catype').value;}
+  if(!db[d])db[d]=[];db[d].push(e);save();activeDate=d;buildDateSelect();closeModal();renderDaily();
+}
+
+document.addEventListener('DOMContentLoaded',loadSiteData);
 </script>
 </body>
 </html>
