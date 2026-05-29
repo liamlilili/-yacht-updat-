@@ -217,6 +217,11 @@ tr:hover td{background:var(--sf)}
 .search-input:focus{outline:none;border-color:var(--or)}
 .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--mu)}
 .search-result-section{margin-bottom:20px}
+.alpha-sidebar{display:flex;flex-wrap:wrap;align-items:center;gap:2px;padding:6px 0 10px;font-size:12px;font-weight:700}
+.alpha-letter{color:var(--or);text-decoration:none;padding:2px 4px;border-radius:3px;cursor:pointer;transition:background .1s}
+.alpha-letter:hover{background:var(--orL)}
+.alpha-dot{color:var(--mu);font-size:10px;padding:0 1px}
+.alpha-anchor{display:block;position:relative;top:-60px;visibility:hidden}
 .search-result-title{font-size:11px;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:1px;padding-bottom:6px;border-bottom:1px solid var(--orB);margin-bottom:10px}
 .search-hit{background:#fff;border:1px solid var(--bd);border-radius:7px;padding:11px 14px;margin-bottom:7px;cursor:pointer;transition:border-color .12s;display:flex;gap:12px;align-items:center}
 .search-hit:hover{border-color:var(--or);background:var(--orL)}
@@ -618,7 +623,7 @@ function gotoPage(id){
   document.getElementById('page-'+id).classList.add('active');
   const ni=document.getElementById('nav-'+id);if(ni)ni.classList.add('active');
   if(id==='analytics')renderAnalytics();
-  if(id==='search'){document.getElementById('search-q').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to search…</div>';setSearchType('all');}
+  if(id==='search'){document.getElementById('search-q').value='';setSearchType('all');runSearch();}
   pageStack=[id];
 }
 function pushPage(id){pageStack.push(id);document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');}
@@ -693,7 +698,12 @@ function card(e){
     if((e.cur==='USD'||e.cur==='GBP')&&e.est) priceHtml=`<div><div class="price-est">(€${e.est} est.)</div><div class="price-main">${S[e.cur]}${e.price} ${e.cur}</div></div>`;
     else priceHtml=`<div><div class="price-main">${S[e.cur]||'€'}${e.price}${e.cur==='EUR'?' EUR':' '+e.cur}</div></div>`;
   } else if(e.price==='POA') priceHtml=`<div><div class="price-main" style="color:var(--mu);font-size:11px">POA</div></div>`;
-  if(e.type==='reduction'&&e.oldprice){const os=S[e.oldcur||e.cur]||'€';rightHtml=`<div style="text-align:right"><div class="price-old">${os}${e.oldprice}</div><div class="reduc-arrow">▼ Reduced</div></div>`;}
+  if(e.type==='reduction'&&e.oldprice){const os=S[e.oldcur||e.cur]||'€';rightHtml=`<div style="text-align:right"><div class="reduc-arrow">▼ Reduced</div></div>`;
+    // Prepend strikethrough old price into priceHtml
+    const oldPriceTag=`<div class="price-old" style="text-decoration:line-through;color:var(--mu);font-size:11px">${os}${e.oldprice}</div>`;
+    if(priceHtml) priceHtml=priceHtml.replace('<div>','<div>'+oldPriceTag);
+    else priceHtml=`<div>${oldPriceTag}</div>`;
+  }
   const priceRow=priceHtml||rightHtml?`<div class="card-price">${priceHtml}<div>${rightHtml}</div></div>`:'';
   return `<div class="yacht-card">
     ${imgHtml(e.name,'160px',false)}
@@ -962,7 +972,6 @@ function setSearchType(t){
 }
 function runSearch(){
   const q=document.getElementById('search-q').value.trim().toLowerCase();
-  if(q.length<2){document.getElementById('search-results').innerHTML='<div class="search-empty">Type at least 2 characters…</div>';return;}
   const all=allEntries();
   const t=_searchType;
   const typeLabel={new:'New Listing',reduction:'Price Reduction',sold:'Sold',launch:'New Launch',cachange:'CA Change'};
@@ -970,36 +979,53 @@ function runSearch(){
 
   // Yachts
   if(t==='all'||t==='yacht'){
-    const byVessel=all.filter(e=>e.name&&e.name.toLowerCase().includes(q));
-    if(byVessel.length){html+=`<div class="search-result-section"><div class="search-result-title">Yachts (${byVessel.length})</div>`;byVessel.sort((a,b)=>b._date.localeCompare(a._date)).forEach(e=>{const url=getImg(e.name);html+=`<div class="search-hit" onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')"><div class="search-hit-img">${url?`<img src="${url}" alt="${e.name}">`:'🛥️'}</div><div><div class="search-hit-name">${e.name}</div><div class="search-hit-sub">${e.builder||''}${e.length?' · '+e.length+'m':''}${e.year?' · '+e.year:''} — ${typeLabel[e.type]||e.type} — ${fmtDate(e._date)}</div></div></div>`;});html+='</div>';}
+    // Deduplicate: latest entry per vessel name
+    const vesselMap={};
+    all.forEach(e=>{if(e.name&&(!q||e.name.toLowerCase().includes(q))){if(!vesselMap[e.name]||e._date>vesselMap[e.name]._date)vesselMap[e.name]=e;}});
+    const byVessel=Object.values(vesselMap).sort((a,b)=>b._date.localeCompare(a._date));
+    if(byVessel.length){
+      // Build alpha sidebar letters
+      const letters=[...new Set(byVessel.map(e=>e.name[0].toUpperCase()).filter(l=>/[A-Z]/.test(l)))].sort();
+      const sidebar=letters.length>1?`<div class="alpha-sidebar">${letters.map(l=>`<a class="alpha-letter" href="#vessel-alpha-${l}" onclick="event.preventDefault();document.getElementById('vessel-alpha-'+encodeURIComponent('${l}'))?.scrollIntoView({behavior:'smooth'})">${l}</a>`).join('<span class="alpha-dot">•</span>')}</div>`:'';
+      // Group by first letter
+      let vesselHtml='';
+      let lastLetter='';
+      byVessel.forEach(e=>{
+        const fl=e.name[0].toUpperCase();
+        if(/[A-Z]/.test(fl)&&fl!==lastLetter){vesselHtml+=`<div class="alpha-anchor" id="vessel-alpha-${fl}"></div>`;lastLetter=fl;}
+        const url=getImg(e.name);
+        vesselHtml+=`<div class="search-hit" onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')"><div class="search-hit-img">${url?`<img src="${url}" alt="${e.name}">`:'🛥️'}</div><div><div class="search-hit-name">${e.name}</div><div class="search-hit-sub">${e.builder||''}${e.length?' · '+e.length+'m':''}${e.year?' · '+e.year:''} — ${typeLabel[e.type]||e.type} — ${fmtDate(e._date)}</div></div></div>`;
+      });
+      html+=`<div class="search-result-section"><div class="search-result-title">Yachts (${byVessel.length})</div>${sidebar}${vesselHtml}</div>`;
+    }
   }
 
   // Brokers (individual contacts)
   if(t==='all'||t==='broker'){
-    const byContact=CONTACTS.filter(c=>c.name&&c.name.toLowerCase().includes(q));
+    const byContact=CONTACTS.filter(c=>c.name&&(!q||c.name.toLowerCase().includes(q)));
     if(byContact.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokers (${byContact.length})</div>`;byContact.forEach(c=>{html+=`<div class="search-hit" onclick="openContactPage('${esc(c.name)}')"><div class="search-hit-img">👤</div><div><div class="search-hit-name">${c.name}</div><div class="search-hit-sub">${c.firm||''}${c.email?' · '+c.email:''}</div></div></div>`;});html+='</div>';}
   }
 
   // Builders
   if(t==='all'||t==='builder'){
     const buildersSeen=new Set(),byBuilder=[];
-    all.forEach(e=>{if(e.builder&&e.builder.toLowerCase().includes(q)&&!buildersSeen.has(e.builder)){buildersSeen.add(e.builder);byBuilder.push(e.builder);}});
+    all.forEach(e=>{if(e.builder&&(!q||e.builder.toLowerCase().includes(q))&&!buildersSeen.has(e.builder)){buildersSeen.add(e.builder);byBuilder.push(e.builder);}});
+    byBuilder.sort();
     if(byBuilder.length){html+=`<div class="search-result-section"><div class="search-result-title">Builders (${byBuilder.length})</div>`;byBuilder.forEach(b=>{const cnt=all.filter(e=>e.builder===b).length;html+=`<div class="search-hit" onclick="openBuilderPage('${esc(b)}')"><div class="search-hit-img">🏭</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} entries</div></div></div>`;});html+='</div>';}
   }
 
-  // Brokerage Houses (firms from contacts + normalised broker names from deals)
+  // Brokerage Houses
   if(t==='all'||t==='brokerage'){
     const firmsSeen=new Set(),byFirm=[];
-    CONTACTS.forEach(c=>{if(c.firm&&c.firm.toLowerCase().includes(q)&&!firmsSeen.has(c.firm)){firmsSeen.add(c.firm);byFirm.push(c.firm);}});
+    CONTACTS.forEach(c=>{if(c.firm&&(!q||c.firm.toLowerCase().includes(q))&&!firmsSeen.has(c.firm)){firmsSeen.add(c.firm);byFirm.push(c.firm);}});
     const brokersSeen=new Set(),byBroker=[];
     all.forEach(e=>{[e.broker,e.soldseller,e.soldbuyer].forEach(raw=>{
       if(!raw||raw==='—')return;
-      // Extract firm name from strings like "Person of/at/from Firm" or "Firm M: phone"
       const firms=extractFirmNames(raw);
       firms.forEach(firm=>{
         if(!firm||firm.length<2)return;
         const key=normBR(firm);
-        if(firm.toLowerCase().includes(q)&&!brokersSeen.has(key)&&!firmsSeen.has(firm)){
+        if((!q||firm.toLowerCase().includes(q))&&!brokersSeen.has(key)&&!firmsSeen.has(firm)){
           brokersSeen.add(key);byBroker.push(firm);
         }
       });
@@ -1050,7 +1076,7 @@ let anNewSort='date',anNewDir=1,anNewLenFilter='all',anNewYearFrom=null,anNewYea
 function setSort(table,key){if(table==='sold'){if(anSoldSort===key)anSoldDir*=-1;else{anSoldSort=key;anSoldDir=1;}renderSoldTable();}else{if(anNewSort===key)anNewDir*=-1;else{anNewSort=key;anNewDir=1;}renderNewTable();}}
 
 function renderAnalytics(){
-  const all=allEntries();
+  const all=allEntries().filter(e=>e._date>='2026-04-01');
   const totNew=all.filter(e=>e.type==='new').length,totSold=all.filter(e=>e.type==='sold').length,totRed=all.filter(e=>e.type==='reduction').length,totLaunch=all.filter(e=>e.type==='launch').length;
   const lengths=all.filter(e=>e.length).map(e=>parseFloat(e.length));
   const avgLen=lengths.length?(lengths.reduce((a,b)=>a+b,0)/lengths.length).toFixed(1):'—';
