@@ -204,13 +204,25 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 .vessel-detail-label{font-size:9px;color:var(--tx3);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
 .vessel-detail-val{font-size:14px;font-weight:600;color:var(--tx);margin-top:4px}
 .sold-brokers-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.sold-broker-panel{background:var(--s2);border:1px solid var(--bd);border-radius:var(--radius);padding:14px}
-.sold-broker-panel h4{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--tx3);margin-bottom:8px}
-.sold-broker-name{font-size:13px;font-weight:600;color:var(--tx)}
-.sold-broker-firm{font-size:11px;color:var(--or);margin-top:3px;font-weight:600}
-.sold-broker-info{margin-top:7px;font-size:11px;color:var(--tx2);display:flex;flex-direction:column;gap:3px}
-.sold-broker-info a{color:var(--tx2);text-decoration:none;transition:color var(--t)}
+.sold-broker-panel{background:var(--s2);border:1px solid var(--bd);border-radius:var(--radius);padding:14px;position:relative}
+.sold-broker-panel h4{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--tx3);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.sold-broker-panel h4 .role-dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex-shrink:0}
+.role-dot-seller{background:#e84545}.role-dot-buyer{background:var(--gr)}
+.sold-broker-firm-btn{font-size:12px;font-weight:700;color:var(--or);background:none;border:none;padding:0;cursor:pointer;text-align:left;line-height:1.3;transition:opacity var(--t)}
+.sold-broker-firm-btn:hover{opacity:0.75}
+.sold-broker-name-btn{font-size:13px;font-weight:600;color:var(--tx);background:none;border:none;padding:0;cursor:pointer;text-align:left;margin-top:2px;transition:color var(--t);line-height:1.3}
+.sold-broker-name-btn:hover{color:var(--or)}
+.sold-broker-info{margin-top:7px;font-size:11px;color:var(--tx2);display:flex;flex-direction:column;gap:4px}
+.sold-broker-info a{color:var(--tx2);text-decoration:none;transition:color var(--t);display:flex;align-items:center;gap:5px}
 .sold-broker-info a:hover{color:var(--or)}
+.sold-broker-info .no-contact{color:var(--tx3);font-style:italic}
+.brokerage-section{margin-top:18px}
+.brokerage-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--tx3);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.brokerage-section-title::after{content:'';flex:1;height:1px;background:var(--bd)}
+.broker-company-only{background:var(--s2);border:1px solid var(--bd);border-radius:var(--radius);padding:12px 14px;display:flex;align-items:center;justify-content:space-between}
+.broker-company-only .firm-name{font-size:13px;font-weight:600;color:var(--or);cursor:pointer;transition:opacity var(--t)}
+.broker-company-only .firm-name:hover{opacity:0.75}
+.broker-company-only .no-broker-note{font-size:11px;color:var(--tx3);font-style:italic}
 /* ── ANALYTICS ── */
 .analytics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
 .a-card{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);padding:17px;border-top:2px solid var(--or)}
@@ -2954,7 +2966,7 @@ const VESSEL_IMGS={
   "LET IT BE": "https://raw.githubusercontent.com/liamlilili/yacht-images/main/1522_letitbe.jpg",
   "LIL": "https://raw.githubusercontent.com/liamlilili/yacht-images/main/1523_lil.jpg",
   "Love T": "https://raw.githubusercontent.com/liamlilili/yacht-images/main/1524_lovet.jpg",
-  "MILKY WAY": "https://raw.githubusercontent.com/liamlilili/yacht-images/main/1525_milkyway.jpg",
+  "MILKY WAY": "https://image.yachtbuyer.com/w1210/h694/qh/ca/k00824c63/vessel/resource/3569940/milky-way-yacht-feadship.jpg",
   "MY WAY": "https://raw.githubusercontent.com/liamlilili/yacht-images/main/1526_myway.jpg",
   "NO SURRENDER": "https://raw.githubusercontent.com/liamlilili/yacht-images/main/1527_nosurrender.jpg",
   "Nayla": "https://raw.githubusercontent.com/liamlilili/yacht-images/main/1528_nayla.jpg",
@@ -4268,7 +4280,69 @@ const VESSEL_IMGS={
   "CONFESSA": "https://raw.githubusercontent.com/liamlilili/yacht-images/main/1501_confessa.jpg",
   "ALBUS": "https://raw.githubusercontent.com/liamlilili/yacht-images/main/1502_albus.jpeg"
 ,
-  "SEA FALCON II": "https://raw.githubusercontent.com/liamlilili/yacht-images/main/1504_seafalconii.jpg"
+  "SEA FALCON II": "https://raw.githubusercontent.com/liamlilili/yacht-images/main/1504_seafalconii.jpg",
+  "45M GRAND EXPLORER": "vessel-images/45M_GRAND_EXPLORER.png",
+  "85' AZIMUT": "vessel-images/85_AZIMUT.png",
+  "ACTIVE OCTO": "vessel-images/ACTIVE_OCTO.png",
+  "ANMAX": "vessel-images/ANMAX.png",
+  "ARCADIA A96 #4": "vessel-images/ARCADIA_A96_4.png",
+  "ATHINA": "vessel-images/ATHINA.png",
+  "BELLA VITA": "vessel-images/BELLA_VITA.png",
+  "BESAME": "vessel-images/BESAME.png",
+  "BRAVO ZULU": "vessel-images/BRAVO_ZULU.png",
+  "BULLITT": "vessel-images/BULLITT.png",
+  "CAZADOR": "vessel-images/CAZADOR.png",
+  "CHAMPAGNE AND CAVIAR": "vessel-images/CHAMPAGNE_AND_CAVIAR.png",
+  "CHILLIN": "vessel-images/CHILLIN.png",
+  "CUSTOM LINE 94": "vessel-images/CUSTOM_LINE_94.png",
+  "CUSTOM LINE NAVETTA 35": "vessel-images/CUSTOM_LINE_NAVETTA_35.png",
+  "DADDY'S DREAM 888": "vessel-images/DADDYS_DREAM_888.png",
+  "DOZER": "vessel-images/DOZER.png",
+  "D FIVE": "vessel-images/D_FIVE.png",
+  "ELVI": "vessel-images/ELVI.png",
+  "EROSSEA": "vessel-images/EROSSEA.png",
+  "EUPHORIA": "vessel-images/EUPHORIA.png",
+  "EXIT": "vessel-images/EXIT.png",
+  "GIOIA": "vessel-images/GIOIA.png",
+  "GRAZIADIU": "vessel-images/GRAZIADIU.png",
+  "INCOGNITO": "vessel-images/INCOGNITO.png",
+  "IV TRANQUILITY": "vessel-images/IV_TRANQUILITY.png",
+  "JUST B": "vessel-images/JUST_B.png",
+  "KARIBU": "vessel-images/KARIBU.png",
+  "KIA ORA": "vessel-images/KIA_ORA.png",
+  "KINDA": "vessel-images/KINDA.png",
+  "LADY J": "vessel-images/LADY_J.png",
+  "LADY MURA": "vessel-images/LADY_MURA.png",
+  "LEGACY": "vessel-images/LEGACY.png",
+  "MAVERICK": "vessel-images/MAVERICK.png",
+  "MIRA": "vessel-images/MIRA.png",
+  "NANSEN EXPLORER": "vessel-images/NANSEN_EXPLORER.png",
+  "OCEAN I": "vessel-images/OCEAN_I.png",
+  "OKIE DOKIE": "vessel-images/OKIE_DOKIE.png",
+  "ONE AND ONLY": "vessel-images/ONE_AND_ONLY.png",
+  "OSSUM DREAM": "vessel-images/OSSUM_DREAM.png",
+  "OUR ALEPH": "vessel-images/OUR_ALEPH.png",
+  "PICOSA LADY": "vessel-images/PICOSA_LADY.png",
+  "QUEEN YAZ": "vessel-images/QUEEN_YAZ.png",
+  "REHAB": "vessel-images/REHAB.png",
+  "REVERIE": "vessel-images/REVERIE.png",
+  "RHONDAVOUS": "vessel-images/RHONDAVOUS.png",
+  "RIVA FOLGORE 88/03": "vessel-images/RIVA_FOLGORE_88.png",
+  "SALUZI": "vessel-images/SALUZI.png",
+  "SANLORENZO 44ALLOY": "vessel-images/SANLORENZO_44ALLOY.png",
+  "SCUDO": "vessel-images/SCUDO.png",
+  "SED": "vessel-images/SED.png",
+  "SHABBY": "vessel-images/SHABBY.png",
+  "SHAHA": "vessel-images/SHAHA.png",
+  "ST JUDE": "vessel-images/ST_JUDE.png",
+  "SUMMER SONG": "vessel-images/SUMMER_SONG.png",
+  "TANGO WHISKEY": "vessel-images/TANGO_WHISKEY.png",
+  "TIME-2 FLY": "vessel-images/TIME-2_FLY.png",
+  "TOMMY BELLE": "vessel-images/TOMMY_BELLE.png",
+  "V": "vessel-images/V.png",
+  "VOYAGER": "vessel-images/VOYAGER.png",
+  "WILLPOWER": "vessel-images/WILLPOWER.png",
+  "ZANZOUN": "vessel-images/ZANZOUN.png"
 };
 
 let CONTACTS=[];
@@ -4281,7 +4355,7 @@ let pageStack=['daily'];
 
 async function loadSiteData(){
   try{
-    const [dataRes,contactsRes,soldRes]=await Promise.all([fetch('data.json',{cache:'no-cache'}),fetch('contacts.json',{cache:'no-cache'}),fetch('sold-yachts.json',{cache:'no-cache'})]);
+    const [dataRes,contactsRes,soldRes]=await Promise.all([fetch('data.json',{cache:'no-cache'}),fetch('contacts_cleaned.json',{cache:'no-cache'}),fetch('sold-yachts.json',{cache:'no-cache'})]);
     if(!dataRes.ok)throw new Error('data.json HTTP '+dataRes.status);
     db=await dataRes.json();
     Object.keys(db).forEach(d=>{db[d]=(db[d]||[]).map(normEntry);});
@@ -4392,7 +4466,59 @@ function entityLogoHtml(key,size=44){
 
 function getContactsForVessel(v){return CONTACTS.filter(c=>c.vessels&&c.vessels.includes(v));}
 function getContactsForFirm(f){return CONTACTS.filter(c=>normBR(c.firm)===normBR(f));}
-function contactPanel(c,role=''){return `<div class="sold-broker-panel"><h4>${role||c.role}</h4><div class="sold-broker-name">${c.name||'—'}</div><div class="sold-broker-firm">${c.firm||'—'}</div><div class="sold-broker-info">${c.email?`<a href="mailto:${c.email}">${c.email}</a>`:''}${c.mobile?`<span>${c.mobile}</span>`:''}</div></div>`;}
+
+// Build brokerage panel for a sold vessel — shows firm + individual brokers with contacts
+function buildSoldBrokerPanel(firmRaw, roleLabel, roleDotClass, vesselName){
+  if(!firmRaw||firmRaw==='—') return '';
+  const firmNorm = normBR(firmRaw);
+  // Find individual brokers for this vessel+role from contacts_cleaned
+  const brokers = CONTACTS.filter(c=>{
+    const cRole = c.role||'';
+    const matchRole = cRole==='both'||(roleLabel.includes('Seller')&&(cRole==='seller'||cRole==='both'))||(roleLabel.includes('Buyer')&&(cRole==='buyer'||cRole==='both'));
+    const matchVessel = (c.vessels||[]).includes(vesselName);
+    return matchVessel && matchRole;
+  });
+  // If no exact vessel match, try firm match
+  const firmBrokers = brokers.length ? brokers : CONTACTS.filter(c=>{
+    const cRole = c.role||'';
+    const matchRole = roleLabel.includes('Seller')?(cRole==='seller'||cRole==='both'):(cRole==='buyer'||cRole==='both');
+    return matchRole && normBR(c.firm)===firmNorm;
+  }).slice(0,2);
+  const displayBrokers = brokers.length ? brokers : firmBrokers;
+
+  const infoIcon = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0 1.1.9 2 2 2z"/><polyline points="22,6 12,12 2,6"/></svg>`;
+  const phoneIcon = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.36 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
+
+  let brokersHtml = '';
+  if(displayBrokers.length){
+    brokersHtml = displayBrokers.map(c=>{
+      const info = [
+        c.email ? `<a href="mailto:${c.email}">${infoIcon}${c.email}</a>` : '',
+        c.mobile ? `<span>${phoneIcon}${c.mobile}</span>` : ''
+      ].filter(Boolean).join('');
+      return `<div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--bd)">
+        <button class="sold-broker-name-btn" onclick="openContactPage('${esc(c.name)}');event.stopPropagation()">${c.name}</button>
+        ${info ? `<div class="sold-broker-info">${info}</div>` : ''}
+      </div>`;
+    }).join('');
+  }
+
+  return `<div class="sold-broker-panel">
+    <h4><span class="role-dot ${roleDotClass}"></span>${roleLabel}</h4>
+    <button class="sold-broker-firm-btn" onclick="openBroker('${esc(firmRaw)}');event.stopPropagation()">${firmRaw}</button>
+    ${brokersHtml}
+    ${!displayBrokers.length?`<div style="margin-top:6px;font-size:11px;color:var(--tx3);font-style:italic">No individual broker on record</div>`:''}
+  </div>`;
+}
+
+function contactPanel(c,role=''){
+  const infoIcon=`<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0 1.1.9 2 2 2z"/><polyline points="22,6 12,12 2,6"/></svg>`;
+  const phoneIcon=`<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.36 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
+  return `<div class="sold-broker-panel"><h4><span class="role-dot ${role.includes('Sell')?'role-dot-seller':'role-dot-buyer'}"></span>${role||c.role}</h4>
+    <button class="sold-broker-name-btn" onclick="openContactPage('${esc(c.name)}');event.stopPropagation()">${c.name||'—'}</button>
+    <button class="sold-broker-firm-btn" onclick="openBroker('${esc(c.firm||'')}');event.stopPropagation()">${c.firm||'—'}</button>
+    <div class="sold-broker-info">${c.email?`<a href="mailto:${c.email}">${infoIcon}${c.email}</a>`:''}${c.mobile?`<span>${phoneIcon}${c.mobile}</span>`:''}</div>
+  </div>`;}
 function brokerSpan(b){if(!b||b==='—')return '<span>—</span>';return `<button class="broker-link" onclick="openBroker('${esc(b)}');event.stopPropagation()">${b}</button>`;}
 function builderSpan(b){if(!b||b==='—')return `<span class="yacht-builder-link">${b||'—'}</span>`;return `<button class="yacht-builder-link" onclick="openBuilderPage('${esc(b)}');event.stopPropagation()">${b}</button>`;}
 function caTag(t){return `<span class="ca-tag ca-${t||'CA'}">${t||'CA'}</span>`;}
@@ -4553,11 +4679,44 @@ function renderCurrentVessel(){
   if(!entries.length)return;const e=entries[0];
   document.getElementById('vessel-page-title').textContent=name;
   const typeLabel={new:'New Listing',reduction:'Price Reduction',sold:'Sold',launch:'New Launch',cachange:'CA Change'};
-  const contacts=getContactsForVessel(name);
+  // ── Brokerage section ──
   let contactsHtml='';
-  if(contacts.length){const sellers=contacts.filter(c=>c.role==='seller'||c.role==='both');const buyers=contacts.filter(c=>c.role==='buyer'||c.role==='both');
-    if(e.type==='sold'&&(sellers.length||buyers.length)) contactsHtml=`<div style="margin-top:16px"><div style="font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Broker Contacts</div><div class="sold-brokers-grid"><div>${sellers.map(c=>contactPanel(c,'Seller Broker')).join('')}</div><div>${buyers.map(c=>contactPanel(c,'Buyer Broker')).join('')}</div></div></div>`;
-    else contactsHtml=`<div style="margin-top:16px"><div style="font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Broker Contacts</div>${contacts.map(c=>contactPanel(c)).join('')}</div>`;}
+  if(e.type==='sold'){
+    // Use soldseller/soldbuyer from entry data + look up individual brokers from contacts
+    const sellerRaw=e.soldseller&&e.soldseller!=='—'?e.soldseller:null;
+    const buyerRaw=e.soldbuyer&&e.soldbuyer!=='—'?e.soldbuyer:null;
+    const hasSide=sellerRaw||buyerRaw;
+    // Also check contacts_cleaned for vessel-matched records
+    const vcContacts=getContactsForVessel(name);
+    const vcSellers=vcContacts.filter(c=>c.role==='seller'||c.role==='both');
+    const vcBuyers=vcContacts.filter(c=>c.role==='buyer'||c.role==='both');
+    let sellerHtml='',buyerHtml='';
+    if(sellerRaw){
+      sellerHtml=buildSoldBrokerPanel(sellerRaw,'Seller Broker','role-dot-seller',name);
+    } else if(vcSellers.length){
+      sellerHtml=vcSellers.map(c=>contactPanel(c,'Seller Broker')).join('');
+    }
+    if(buyerRaw){
+      buyerHtml=buildSoldBrokerPanel(buyerRaw,'Buyer Broker','role-dot-buyer',name);
+    } else if(vcBuyers.length){
+      buyerHtml=vcBuyers.map(c=>contactPanel(c,'Buyer Broker')).join('');
+    }
+    if(sellerHtml||buyerHtml){
+      contactsHtml=`<div class="brokerage-section">
+        <div class="brokerage-section-title">Brokerage</div>
+        <div class="sold-brokers-grid">
+          <div>${sellerHtml||'<div class="sold-broker-panel"><h4><span class="role-dot role-dot-seller"></span>Seller Broker</h4><div style="font-size:12px;color:var(--tx3);font-style:italic">Not recorded</div></div>'}</div>
+          <div>${buyerHtml||'<div class="sold-broker-panel"><h4><span class="role-dot role-dot-buyer"></span>Buyer Broker</h4><div style="font-size:12px;color:var(--tx3);font-style:italic">Not recorded</div></div>'}</div>
+        </div>
+      </div>`;
+    }
+  } else {
+    // Active listing — show listing broker contacts
+    const contacts=getContactsForVessel(name);
+    if(contacts.length){
+      contactsHtml=`<div class="brokerage-section"><div class="brokerage-section-title">Broker Contacts</div>${contacts.map(c=>contactPanel(c,c.role==='seller'?'Listing Broker':'Buyer Contact')).join('')}</div>`;
+    }
+  }
   const histRows=entries.map(en=>`<tr><td>${fmtDate(en._date)}</td><td>${typeLabel[en.type]||en.type}</td><td>${en.price&&en.price!=='—'&&en.price!=='POA'?(S[en.cur]||'€')+fmtCommas(en.price):en.price||''}</td><td>${en.broker||en.soldseller||en.cafrom||'—'}</td></tr>`).join('');
   // Price evolution chart
   const pricePoints=entries.filter(en=>en.price&&en.price!=='POA'&&en.price!=='—').map(en=>({date:en._date,val:parseFloat(en.price.replace(/,/g,''))||0,cur:en.cur})).filter(p=>p.val>0).sort((a,b)=>a.date.localeCompare(b.date));
@@ -4670,7 +4829,21 @@ function openBroker(broker){
 }
 
 function openContactPage(name){
-  const c=CONTACTS.find(x=>x.name===name);if(!c)return;
+  let c=CONTACTS.find(x=>x.name===name);
+  // If not found in contacts list, create a synthetic record from sold history
+  if(!c){
+    const all=allEntries();
+    const relatedVessels=[];
+    let inferredFirm='',inferredRole='';
+    all.forEach(e=>{
+      if(e.type==='sold'){
+        if(e.soldseller&&e.soldseller.includes(name)){relatedVessels.push(e.name);inferredRole='seller';inferredFirm=e.soldseller;}
+        if(e.soldbuyer&&e.soldbuyer.includes(name)){relatedVessels.push(e.name);inferredRole='buyer';inferredFirm=e.soldbuyer;}
+      }
+    });
+    if(!relatedVessels.length) return;
+    c={name,firm:inferredFirm,role:inferredRole,vessels:[...new Set(relatedVessels)],email:'',mobile:''};
+  }
   trackRecentView('broker',name,name);
   document.getElementById('contact-page-title').textContent=c.name;
   const all=allEntries();
@@ -4697,11 +4870,24 @@ function openContactPage(name){
     <div class="intel-stat"><div class="intel-stat-val">${avgLen?avgLen+'m':'—'}</div><div class="intel-stat-sub">Avg Length</div></div>
     <div class="intel-stat"><div class="intel-stat-val accent">${pc?(S2[cur]||'€')+fmtMil(gross):'—'}</div><div class="intel-stat-sub">Sales Volume</div></div>
   </div>`;
-  const rows=deals.map(e=>{
-    const p=e.price&&e.price!=='—'?(S2[e.cur]||'€')+e.price:'—';
-    const role=e.type==='sold'?(c.role==='seller'?'Seller':'Buyer'):(e.type==='new'?'Listing':e.type==='reduction'?'Reduction':'—');
-    const roleClass=e.type==='sold'?(c.role==='seller'?'role-seller':'role-buyer'):e.type==='new'?'role-listing':'role-reduction';
-    return`<tr onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')"><td class="td-vessel">${e.name}</td><td>${e.builder||'—'}</td><td>${e.length?e.length+'m':'—'}</td><td class="td-price">${p}</td><td>${fmtDate(e._date)}</td><td><span class="deal-role-tag ${roleClass}">${role}</span></td></tr>`;}).join('');
+  const rows=deals.sort((a,b)=>b._date.localeCompare(a._date)).map(e=>{
+    const p=e.price&&e.price!=='—'?(S2[e.cur]||'€')+fmtCommas(e.price):'—';
+    // Determine exact role per deal by checking soldseller/soldbuyer fields
+    let role,roleClass;
+    if(e.type==='sold'){
+      const isSeller=e.soldseller&&e.soldseller.toLowerCase().includes(c.name.toLowerCase());
+      const isBuyer=e.soldbuyer&&e.soldbuyer.toLowerCase().includes(c.name.toLowerCase());
+      if(isSeller&&isBuyer){role='Both';roleClass='role-seller';}
+      else if(isSeller){role='Seller';roleClass='role-seller';}
+      else if(isBuyer){role='Buyer';roleClass='role-buyer';}
+      else{role=c.role==='seller'?'Seller':'Buyer';roleClass=c.role==='seller'?'role-seller':'role-buyer';}
+    } else if(e.type==='new'){role='Listing';roleClass='role-listing';}
+    else if(e.type==='reduction'){role='Reduction';roleClass='role-reduction';}
+    else{role=e.type;roleClass='';}
+    const counterpart=e.type==='sold'?
+      (role==='Seller'&&e.soldbuyer&&e.soldbuyer!=='—'?`<span style="font-size:10px;color:var(--tx3)"> ↔ ${e.soldbuyer}</span>`:
+       role==='Buyer'&&e.soldseller&&e.soldseller!=='—'?`<span style="font-size:10px;color:var(--tx3)"> ↔ ${e.soldseller}</span>`:''):'';
+    return`<tr onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')"><td class="td-vessel">${e.name}${counterpart}</td><td>${e.builder||'—'}</td><td>${e.length?e.length+'m':'—'}</td><td class="td-price">${p}</td><td>${fmtDate(e._date)}</td><td><span class="deal-role-tag ${roleClass}">${role}</span></td></tr>`;}).join('');
   const firmBtn=c.firm&&c.firm!=='—'?`<span style="font-size:12px;color:var(--tx3)">at </span><button style="font-size:13px;color:var(--or);font-weight:700;background:none;border:none;font-family:inherit;cursor:pointer;text-decoration:underline dotted" onclick="openBroker('${esc(c.firm)}')">${c.firm}</button>`:'';
   const builderChips=topB3.length?`<div style="margin-top:10px"><div style="font-size:9px;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:5px">Top Builders</div><div style="display:flex;gap:5px;flex-wrap:wrap">${topB3.map(([b,n])=>`<button class="search-type-btn" onclick="openBuilderPage('${esc(b)}')">${b} (${n})</button>`).join('')}</div></div>`:'';
   const cobrokerChips=topCoBr.length?`<div style="margin-top:8px"><div style="font-size:9px;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:5px">Frequent Co-Brokers</div><div style="display:flex;gap:5px;flex-wrap:wrap">${topCoBr.map(([b,n])=>`<button class="search-type-btn" onclick="openBroker('${esc(b)}')">${b} (${n})</button>`).join('')}</div></div>`:'';
