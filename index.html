@@ -299,6 +299,21 @@ select option{background:var(--s2)}
 .form-section{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--tx3);margin:16px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
 .modal-footer{padding:14px 22px;border-top:1px solid var(--bd);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:var(--s1)}
 footer{text-align:center;padding:16px;font-size:9px;color:var(--tx3);border-top:1px solid var(--bd);text-transform:uppercase;letter-spacing:2px}
+/* ── ACTIVE BADGE ── */
+.active-badge{position:absolute;top:10px;left:10px;background:var(--gr);color:#fff;font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:20px;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+/* ── PRICE META ── */
+.price-label{font-size:9px;color:var(--tx3);text-transform:uppercase;letter-spacing:1.2px;font-weight:500;margin-bottom:2px}
+.price-sale-date{font-size:10px;color:var(--tx3);margin-top:2px}
+/* ── BUILDER INFO CARD ── */
+.builder-info-card{background:var(--s2);border:1px solid var(--bd);border-left:3px solid var(--or);border-radius:var(--radius);padding:14px 18px;margin-bottom:16px;display:flex;gap:16px;align-items:flex-start}
+.builder-flag{font-size:22px;flex-shrink:0;line-height:1;margin-top:2px}
+.builder-info-body{flex:1}
+.builder-info-country{font-size:10px;color:var(--tx3);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:4px}
+.builder-info-desc{font-size:12px;color:var(--tx2);line-height:1.55}
+.builder-status-badge{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:2px 8px;border-radius:10px;margin-top:6px}
+.builder-status-active{background:var(--grL);color:var(--gr);border:1px solid rgba(46,158,98,.25)}
+.builder-status-inactive{background:var(--s3);color:var(--tx3);border:1px solid var(--bd2)}
+.builder-status-dot{width:5px;height:5px;border-radius:50%}
 /* ── PAGE TRANSITIONS ── */
 @keyframes pageIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 .page.active{animation:pageIn 220ms ease forwards}
@@ -474,7 +489,130 @@ footer{text-align:center;padding:16px;font-size:9px;color:var(--tx3);border-top:
   </div>
 </div>
 <script>
-const BN={'SANLORENZO YACHTS':'SANLORENZO','SAN LORENZO':'SANLORENZO','BENETTI YACHTS':'BENETTI','FERRETTI YACHTS':'FERRETTI','FERRETTI CUSTOM LINE':'FERRETTI','BILGIN YACHTS':'BILGIN','PRINCESS YACHTS':'PRINCESS','AZIMUT YACHTS':'AZIMUT','ADMIRAL YACHTS':'ADMIRAL','RIVA YACHT':'RIVA','HEESEN YACHTS':'HEESEN','DELTA MARINE':'DELTA MARINE','OVERMARINE GROUP':'OVERMARINE'};
+const BN={
+  // Sanlorenzo
+  'SANLORENZO YACHTS':'SANLORENZO','SAN LORENZO':'SANLORENZO','SANLORENZO':'SANLORENZO',
+  // Benetti
+  'BENETTI YACHTS':'BENETTI','BENETTI':'BENETTI',
+  // Ferretti / Custom Line
+  'FERRETTI YACHTS':'FERRETTI','FERRETTI CUSTOM LINE':'CUSTOM LINE','CUSTOM LINE':'CUSTOM LINE',
+  // Azimut
+  'AZIMUT YACHTS':'AZIMUT','AZIMUT':'AZIMUT',
+  // Princess
+  'PRINCESS YACHTS':'PRINCESS','PRINCESS':'PRINCESS',
+  // Admiral
+  'ADMIRAL YACHTS':'ADMIRAL','ADMIRAL':'ADMIRAL',
+  // Riva
+  'RIVA YACHT':'RIVA','RIVA YACHTS':'RIVA','RIVA':'RIVA',
+  // Heesen
+  'HEESEN YACHTS':'HEESEN','HEESEN':'HEESEN',
+  // Bilgin
+  'BILGIN YACHTS':'BILGIN','BILGIN':'BILGIN',
+  // Overmarine / Mangusta
+  'OVERMARINE GROUP':'OVERMARINE','OVERMARINE':'OVERMARINE','MANGUSTA':'OVERMARINE',
+  // Pershing
+  'PERSHING':'PERSHING',
+  // Ocean Alexander
+  'OCEAN ALEXANDER':'OCEAN ALEXANDER',
+  // Horizon
+  'HORIZON YACHTS':'HORIZON','HORIZON':'HORIZON',
+  // Hargrave
+  'HARGRAVE':'HARGRAVE','HARGRAVE CUSTOM YACHTS':'HARGRAVE',
+  // Hatteras
+  'HATTERAS':'HATTERAS','HATTERAS YACHTS':'HATTERAS',
+  // Viking
+  'VIKING':'VIKING','VIKING YACHTS':'VIKING',
+  // Christensen
+  'CHRISTENSEN':'CHRISTENSEN','CHRISTENSEN SHIPYARDS':'CHRISTENSEN',
+  // Trinity
+  'TRINITY YACHTS':'TRINITY YACHTS','TRINITY':'TRINITY YACHTS',
+  // Maiora
+  'MAIORA':'MAIORA',
+  // Broward
+  'BROWARD MARINE':'BROWARD MARINE','BROWARD':'BROWARD MARINE',
+  // Johnson
+  'JOHNSON YACHTS':'JOHNSON','JOHNSON':'JOHNSON',
+  // Palmer Johnson
+  'PALMER JOHNSON':'PALMER JOHNSON',
+  // Delta Marine
+  'DELTA MARINE':'DELTA MARINE',
+  // CdM / Cantiere delle Marche
+  'CDM':'CDM','CANTIERE DELLE MARCHE':'CDM',
+  // ISA
+  'ISA':'ISA','ISA YACHTS':'ISA',
+  // Leopard
+  'LEOPARD':'LEOPARD','LEOPARD CATAMARANS':'LEOPARD',
+  // Sunreef
+  'SUNREEF':'SUNREEF','SUNREEF YACHTS':'SUNREEF',
+  // Lürssen
+  'LURSSEN':'LURSSEN','LÜRSSEN':'LURSSEN',
+  // Nautors Swan
+  'NAUTOR\'S SWAN':'NAUTOR\'S SWAN','NAUTOR SWAN':'NAUTOR\'S SWAN',
+  // Pacific Mariner
+  'PACIFIC MARINER':'PACIFIC MARINER',
+  // Gulf Craft / Majesty
+  'GULF CRAFT':'GULF CRAFT','MAJESTY YACHTS':'GULF CRAFT',
+};
+// ── Shipyard intelligence database ──
+const BUILDER_INFO={
+  'SANLORENZO':{country:'Italy',flag:'🇮🇹',active:true,description:'Founded 1958 in La Spezia. Builds semi-custom motor yachts from 24m to 68m+. Known for sleek Italian craftsmanship and interior flexibility.'},
+  'BENETTI':{country:'Italy',flag:'🇮🇹',active:true,description:'World\'s oldest yacht builder, est. 1873 in Viareggio. Fully custom superyachts 30–100m+, part of the Azimut|Benetti Group.'},
+  'AZIMUT':{country:'Italy',flag:'🇮🇹',active:true,description:'Italy\'s largest series builder, founded 1969. Production motor yachts 10–34m. Part of the Azimut|Benetti Group with over 4,000 yachts built.'},
+  'SUNSEEKER':{country:'United Kingdom',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',active:true,description:'Founded 1969 in Poole, Dorset. High-performance British motor yachts from 55ft to 155ft, known for sporty styling.'},
+  'CUSTOM LINE':{country:'Italy',flag:'🇮🇹',active:true,description:'Ferretti Group brand founded 1994. Semi-custom fibreglass motor yachts 30–50m, blending series efficiency with bespoke interiors.'},
+  'PRINCESS':{country:'United Kingdom',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',active:true,description:'Plymouth-based builder est. 1965. Series production motor yachts 35–95ft, known for value and British build quality.'},
+  'FEADSHIP':{country:'Netherlands',flag:'🇳🇱',active:true,description:'Dutch royal yacht builder est. 1949. Fully custom displacement yachts 40–100m+, regarded as the world\'s foremost luxury shipyard.'},
+  'FERRETTI':{country:'Italy',flag:'🇮🇹',active:true,description:'Flagship brand of Ferretti Group, founded 1968. Series motor yachts 18–27m, iconic Italian open-deck designs.'},
+  'HEESEN':{country:'Netherlands',flag:'🇳🇱',active:true,description:'Custom Dutch builder est. 1978. Fast all-aluminium motor yachts 30–80m, known for speed and cutting-edge naval architecture.'},
+  'RIVA':{country:'Italy',flag:'🇮🇹',active:true,description:'Iconic Italian brand since 1842, now part of Ferretti Group. Sport and flybridge yachts 8–40m, renowned for timeless Riviera style.'},
+  'AMELS':{country:'Netherlands',flag:'🇳🇱',active:true,description:'Damen-owned Dutch yard est. 1918. Semi-custom Limited Editions series 55–80m; known for resale value and Winch Design interiors.'},
+  'HORIZON':{country:'Taiwan',flag:'🇹🇼',active:true,description:'Founded 1987 in Kaohsiung. Semi-custom motor yachts and explorer vessels 55–90ft, offering strong value-for-money.'},
+  'HARGRAVE':{country:'USA',flag:'🇺🇸',active:true,description:'Fort Lauderdale custom builder. Motor yachts and flybridge cruisers 24–40m, particularly popular in the US market.'},
+  'HATTERAS':{country:'USA',flag:'🇺🇸',active:true,description:'North Carolina builder est. 1959. Offshore sportfishing and motor yachts 45–80ft. Revived under new ownership in 2021.'},
+  'OVERMARINE':{country:'Italy',flag:'🇮🇹',active:true,description:'Viareggio-based builder of the Mangusta brand. High-performance open and sport yachts 24–50m, built for speed and design impact.'},
+  'PERSHING':{country:'Italy',flag:'🇮🇹',active:true,description:'Ferretti Group brand est. 1981. Ultra-high-performance open motor yachts 17–40m, combining racing DNA with luxury.'},
+  'PALMER JOHNSON':{country:'USA',flag:'🇺🇸',active:false,description:'Historic Wisconsin/Monaco builder. Filed for bankruptcy in 2018 after building iconic steel and carbon yachts up to 72m.'},
+  'ADMIRAL':{country:'Italy',flag:'🇮🇹',active:true,description:'Part of The Italian Sea Group, Viareggio. Fully custom steel and aluminium motor yachts 34–90m+, known for explorer-style builds.'},
+  'BAGLIETTO':{country:'Italy',flag:'🇮🇹',active:true,description:'Est. 1854 in La Spezia. Custom and semi-custom aluminium motor yachts 24–55m, with a long naval heritage.'},
+  'BURGER':{country:'USA',flag:'🇺🇸',active:true,description:'America\'s oldest active shipyard, est. 1863 in Manitowoc, WI. Fully custom motor yachts 28–55m, built to the highest USCG standards.'},
+  'MOONEN':{country:'Netherlands',flag:'🇳🇱',active:true,description:'Den Helder custom builder. Steel and aluminium motor yachts 25–45m, known for ocean-going capability and Dutch engineering.'},
+  'CRN':{country:'Italy',flag:'🇮🇹',active:true,description:'Ancona-based custom builder (Ferretti Group). Fully custom steel motor yachts 40–80m+, with over 200 yachts delivered since 1963.'},
+  'NAUTOR\'S SWAN':{country:'Finland',flag:'🇫🇮',active:true,description:'Est. 1966 in Pietarsaari. Premium performance sailing yachts 36–120ft, famed for regatta wins and exceptional build quality.'},
+  'BROWARD MARINE':{country:'USA',flag:'🇺🇸',active:false,description:'Fort Lauderdale builder active 1945–2007. Built custom steel and aluminium motor yachts 30–60m before ceasing operations.'},
+  'CHEOY LEE':{country:'Hong Kong',flag:'🇭🇰',active:true,description:'Est. 1863 in Hong Kong. One of Asia\'s oldest builders; produces semi-custom motor yachts 24–60m in steel and GRP.'},
+  'VIKING':{country:'USA',flag:'🇺🇸',active:true,description:'New Jersey builder est. 1964. World-class sportfishing convertibles and motor yachts 37–92ft, dominant in offshore tournament fishing.'},
+  'SUNREEF':{country:'Poland',flag:'🇵🇱',active:true,description:'Gdańsk-based builder founded 2002. Luxury sailing and power catamarans 15–50m+, also pioneering solar electric propulsion.'},
+  'LURSSEN':{country:'Germany',flag:'🇩🇪',active:true,description:'Bremen naval and yacht builder since 1875. Fully custom steel motor yachts 50–200m+, responsible for many of the world\'s largest superyachts.'},
+  'CHRISTENSEN':{country:'USA',flag:'🇺🇸',active:true,description:'Vancouver, WA/Nashville builder. Fully custom fibreglass motor yachts 42–50m; known for quality US-built construction since 1980.'},
+  'PERINI NAVI':{country:'Italy',flag:'🇮🇹',active:true,description:'Viareggio sailing superyacht builder est. 1983. Filed bankruptcy in 2021, then acquired by The Italian Sea Group; actively building under new ownership.'},
+  'CODECASA':{country:'Italy',flag:'🇮🇹',active:true,description:'Viareggio family-owned shipyard since 1825. Fully custom steel and aluminium motor yachts 30–80m; one of Italy\'s oldest active yards.'},
+  'TRINITY YACHTS':{country:'USA',flag:'🇺🇸',active:false,description:'New Orleans custom builder, built over 80 yachts 30–60m. Closed operations circa 2016 amid financial difficulties.'},
+  'ABEKING & RASMUSSEN':{country:'Germany',flag:'🇩🇪',active:true,description:'Est. 1907 in Bremen. Fully custom aluminium displacement yachts 30–130m+; also builds US Navy vessels. Exceptional engineering.'},
+  'JONGERT':{country:'Netherlands',flag:'🇳🇱',active:false,description:'Dutch builder active 1953–2018. Built premium custom sailing and motor yachts in steel and aluminium up to 40m.'},
+  'NUMARINE':{country:'Turkey',flag:'🇹🇷',active:true,description:'Istanbul-based builder est. 2004. Explorer-style motor yachts and crossovers 26–45m, known for ocean-going range and modern design.'},
+  'ALLOY YACHTS':{country:'New Zealand',flag:'🇳🇿',active:false,description:'Auckland custom builder 1983–2013. Specialised in performance sailing superyachts in aluminium up to 58m; closed in 2013.'},
+  'WALLY':{country:'Monaco',flag:'🇲🇨',active:true,description:'Founded 1994 in Monaco, now part of Ferretti Group. Iconic minimalist sailing and motor yachts; revolutionised deck design.'},
+  'ISA':{country:'Italy',flag:'🇮🇹',active:true,description:'Ancona custom builder. Steel and aluminium motor yachts 40–65m; focused on long-range explorer and displacement designs.'},
+  'LEOPARD':{country:'South Africa',flag:'🇿🇦',active:true,description:'Robertson & Caine brand, Cape Town. Production sailing and power catamarans widely used for charter, 38–53ft.'},
+  'WESTPORT':{country:'USA',flag:'🇺🇸',active:true,description:'Westport, WA builder est. 1964. Semi-custom fibreglass motor yachts 40–46m; the largest fibreglass yacht producer in the US.'},
+  'OCEAN ALEXANDER':{country:'Taiwan',flag:'🇹🇼',active:true,description:'Kaohsiung-based semi-custom builder. Motor yachts 26–50m, popular in North America for comfort and build quality.'},
+  'LAZZARA':{country:'USA',flag:'🇺🇸',active:true,description:'Tampa, FL builder est. 1964. Original company went bankrupt in 2011; revived under new ownership as Lazzara Custom Yachts, now producing semi-custom motor yachts.'},
+  'GULF CRAFT':{country:'UAE',flag:'🇦🇪',active:true,description:'UAE manufacturer est. 1982. Produces the Majesty luxury range 48–175ft alongside recreational and commercial vessels.'},
+  'JOHNSON':{country:'Taiwan',flag:'🇹🇼',active:true,description:'Kaohsiung-based semi-custom builder. Motor yachts 26–50m, known for solid GRP construction and practical layouts.'},
+  'OCEANCO':{country:'Netherlands',flag:'🇳🇱',active:true,description:'Alblasserdam custom yard est. 1987. Fully custom steel motor yachts 55–110m+; known for technically complex flagship builds.'},
+  'TANKOA':{country:'Italy',flag:'🇮🇹',active:true,description:'Genoa-based custom builder. Steel and aluminium motor yachts 50–75m; focuses on eco-efficient long-range explorer yachts.'},
+  'ROSSINAVI':{country:'Italy',flag:'🇮🇹',active:true,description:'Viareggio custom shipyard. Steel and aluminium motor yachts 40–70m, known for innovative design collaborations.'},
+  'NOBISKRUG':{country:'Germany',flag:'🇩🇪',active:false,description:'Rendsburg shipyard est. 1905. Built landmark yachts including Sailing Yacht A. Filed for insolvency in December 2024.'},
+  'DELTA MARINE':{country:'USA',flag:'🇺🇸',active:true,description:'Seattle custom builder est. 1973. Steel and aluminium motor yachts 40–65m; known for long-range explorer and pilothouse designs.'},
+  'CDM':{country:'Italy',flag:'🇮🇹',active:true,description:'Cantiere delle Marche, Ancona. Explorer and long-range motor yachts 24–45m in steel; specialists in bluewater capable builds.'},
+  'HAKVOORT':{country:'Netherlands',flag:'🇳🇱',active:true,description:'Monnickendam custom yard since 1919. Fully custom steel and aluminium motor yachts 30–65m; boutique Dutch craftsmanship.'},
+  'MONDOMARINE':{country:'Italy',flag:'🇮🇹',active:false,description:'Savona-based custom builder. Produced custom steel motor yachts 30–65m; ceased operations in 2014.'},
+  'BILGIN':{country:'Turkey',flag:'🇹🇷',active:true,description:'Istanbul custom builder est. 1964. Steel and aluminium motor yachts 30–80m+; one of Turkey\'s largest and most established yards.'},
+  'LÜRSSEN':{country:'Germany',flag:'🇩🇪',active:true,description:'Bremen naval and yacht builder since 1875. Fully custom steel yachts 50–200m+; responsible for many of the world\'s largest superyachts.'},
+  'PACIFIC MARINER':{country:'USA',flag:'🇺🇸',active:false,description:'US pilothouse motor yacht builder, active 1990s–2010. Known for the 65 and 78 models. Absorbed into North Pacific Yachts.'},
+  'MARITIMO':{country:'Australia',flag:'🇦🇺',active:true,description:'Gold Coast builder est. 2003. Series production motor cruisers 44–70ft, built for offshore performance and long-range cruising.'},
+};
+
 const BRN={'Fraser Yachts':'Fraser','FRASER YACHTS':'Fraser','fraser':'Fraser','Edmiston & Company':'Edmiston','Edmiston and Company':'Edmiston','Edmiston & Co':'Edmiston','Camper & Nicholsons':'Camper & Nicholsons','Camper and Nicholsons':'Camper & Nicholsons','IYC - Ft.Lauderdale':'IYC','IYC - Monaco':'IYC','IYC-London':'IYC','IYC-London (CA)':'IYC','Drettmann Yachts GmbH':'Drettmann Yachts','Drettmann Yachts':'Drettmann Yachts','Drettman Yachts':'Drettmann Yachts','IKONIC YACHTS':'Ikonik Yachts','Ikonik Yachts':'Ikonik Yachts','Ikonic Yachts':'Ikonik Yachts','Worth Avenue Yachts LLC':'Worth Avenue Yachts','Merle Wood & Associates, Inc.':'Merle Wood & Associates','Merle Wood & Associates, Inc':'Merle Wood & Associates','HMY Yacht Sales':'HMY Yacht Sales','Aqua Marina Yachts':'Aqua Marine','AQUA MARINE':'Aqua Marine','AQUA MARINA YACHTS':'Aqua Marine','Aqua Marine':'Aqua Marine','Fraser':'Fraser','Y.CO':'Y.CO','Smart Yachts':'Smart Yachts','Burgess':'Burgess','Denison Yachting':'Denison Yachting','Northrop & Johnson':'Northrop & Johnson','Ocean Independence':'Ocean Independence','FGI Yacht Group':'FGI Yacht Group','Autograph Yacht Group':'Autograph Yacht Group'};
 function normB(b){if(!b)return b;return BN[b.toUpperCase().trim()]||b.trim();}
 function normBR(b){if(!b||b==='—')return b;return BRN[b.trim()]||b.trim();}
@@ -4053,6 +4191,7 @@ function goBack(){pageStack.pop();const id=pageStack[pageStack.length-1]||'daily
 function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open');}
 function fmtDate(d){const dt=new Date(d+'T00:00:00');return dt.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
 function priceNum(p){if(!p||p==='—'||p==='POA')return 0;return parseFloat(p.replace(/,/g,''))||0;}
+function fmtCommas(p){if(!p||p==='—'||p==='POA')return p;const n=p.toString().replace(/,/g,'');const [int,dec]=n.split('.');const formatted=int.replace(/\B(?=(\d{3})+(?!\d))/g,',');return dec?formatted+'.'+dec:formatted;}
 function allEntries(){return Object.entries(db).flatMap(([d,arr])=>arr.map(e=>({...e,_date:d}))).concat(SOLD_HISTORY);}
 function currentEntries(){return Object.entries(db).flatMap(([d,arr])=>arr.map(e=>({...e,_date:d})));}
 function dateLabel(e){if(!e._date)return '';if(e.type==='sold')return 'Sale date';if(e.type==='new')return 'Listing date';if(e.type==='reduction')return 'Reduction date';if(e.type==='launch')return 'Launch date';if(e.type==='cachange')return 'CA change date';return 'Date';}
@@ -4088,18 +4227,21 @@ document.querySelectorAll('.day-pill').forEach(p=>p.classList.toggle('active',p.
 // THE ONE AND ONLY image getter
 function getImg(name){return VESSEL_IMGS[name]||null;}
 
-function imgHtml(name,height='160px',isDetail=false){
+function imgHtml(name,height='160px',isDetail=false,entryType=''){
   const url=getImg(name);
   const uid='uid_'+name.replace(/[^a-z0-9]/gi,'_');
+  const activeBadge=(entryType==='new')?`<div class="active-badge">Active</div>`:'';
   if(isDetail){
     return `<div class="vessel-detail-img-wrap">
       ${url?`<img src="${url}" alt="${name}" onerror="this.style.display='none'">`:`<div class="vessel-detail-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M5 20V9l7-5 7 5v11"/><path d="M9 20v-5h6v5"/></svg><span style="font-size:11px;color:var(--tx3);margin-top:8px;letter-spacing:1px;text-transform:uppercase">${name}</span></div>`}
+      ${activeBadge}
       <button class="vessel-detail-img-upload-btn" onclick="document.getElementById('${uid}').click()">${url?'Change':'Add'} Photo</button>
       <input type="file" id="${uid}" accept="image/*" style="display:none" onchange="handleUpload('${esc(name)}',this)">
     </div>`;
   }
   return `<div class="card-img-wrap" style="height:${height}" onclick="openVesselPage('${esc(name)}','${activeDate}');event.stopPropagation()">
     ${url?`<img src="${url}" alt="${name}" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.parentElement.innerHTML='<div class=\\'card-img-placeholder\\'><span class=\\'ship-name\\'>${name}</span></div>'">`:`<div class="card-img-placeholder"><span class="ship-name">${name}</span></div>`}
+    ${activeBadge}
     <button class="img-upload-btn" onclick="event.stopPropagation();document.getElementById('${uid}').click()">+ Photo</button>
     <input type="file" id="${uid}" accept="image/*" style="display:none" onchange="event.stopPropagation();handleUpload('${esc(name)}',this)">
   </div>`;
@@ -4148,21 +4290,24 @@ function card(e,isFeature=false){
   else if(e.type==='cachange') brokerHtml=`<div class="ca-change-info">Was: ${brokerSpan(e.cafrom)} &rarr; Now: ${brokerSpan(e.cato)}</div>`;
   else if(e.broker&&e.broker!=='—'&&e.type!=='launch') brokerHtml=`<div class="card-brokers"><span>Broker:</span>${brokerSpan(e.broker)}${caTag(e.catype)}</div>`;
   let priceHtml='',rightHtml='';
+  const isSold=e.type==='sold';
+  const priceLabel=isSold?'Last Asking Price':e.type==='reduction'?'Asking Price':'Asking Price';
   if(e.price&&e.price!=='—'&&e.price!=='POA'){
-    if((e.cur==='USD'||e.cur==='GBP')&&e.est) priceHtml=`<div><div class="price-est">(€${e.est} est.)</div><div class="price-main">${S[e.cur]}${e.price} ${e.cur}</div></div>`;
-    else priceHtml=`<div><div class="price-main">${S[e.cur]||'€'}${e.price}${e.cur==='EUR'?' EUR':' '+e.cur}</div></div>`;
-  } else if(e.price==='POA') priceHtml=`<div><div class="price-main" style="color:var(--tx3);font-size:11px">POA</div></div>`;
+    const fp=fmtCommas(e.price);const fEst=fmtCommas(e.est);
+    if((e.cur==='USD'||e.cur==='GBP')&&e.est) priceHtml=`<div><div class="price-label">${priceLabel}</div><div class="price-est">€${fEst} est.</div><div class="price-main">${S[e.cur]}${fp} ${e.cur}</div>${isSold&&e._date?`<div class="price-sale-date">Sold ${fmtDate(e._date)}</div>`:''}</div>`;
+    else priceHtml=`<div><div class="price-label">${priceLabel}</div><div class="price-main">${S[e.cur]||'€'}${fp}${e.cur==='EUR'?' EUR':' '+e.cur}</div>${isSold&&e._date?`<div class="price-sale-date">Sold ${fmtDate(e._date)}</div>`:''}</div>`;
+  } else if(e.price==='POA') priceHtml=`<div><div class="price-label">${priceLabel}</div><div class="price-main" style="color:var(--tx3);font-size:11px">Price on Application</div></div>`;
   if(e.type==='reduction'&&e.oldprice){const os=S[e.oldcur||e.cur]||'€';rightHtml=`<div style="text-align:right"><div class="reduc-arrow">&#9660; Reduced</div></div>`;
-    const oldPriceTag=`<div class="price-old">${os}${e.oldprice}</div>`;
-    if(priceHtml) priceHtml=priceHtml.replace('<div>','<div>'+oldPriceTag);
-    else priceHtml=`<div>${oldPriceTag}</div>`;
+    const oldPriceTag=`<div class="price-old">${os}${fmtCommas(e.oldprice)}</div>`;
+    if(priceHtml) priceHtml=priceHtml.replace('<div class="price-main">','<div>'+oldPriceTag+'</div><div class="price-main">');
+    else priceHtml=`<div><div class="price-label">${priceLabel}</div>${oldPriceTag}</div>`;
   }
   const priceRow=priceHtml||rightHtml?`<div class="card-price">${priceHtml}<div>${rightHtml}</div></div>`:'';
   const imgH=isFeature?'200px':'160px';
   const sizeBar=e.length?`<span class="meta-item size-bar-wrap"><span class="size-bar-track"><span class="size-bar-fill" style="width:${Math.min(100,Math.round((+e.length/MAX_LEN)*100))}%"></span></span>${e.length}m</span>`:'';
   if(isFeature){
     return `<div class="yacht-card feature" onclick="openVesselPage('${esc(e.name)}','${esc(e._date||activeDate)}')">
-      ${imgHtml(e.name,imgH,false)}
+      ${imgHtml(e.name,imgH,false,e.type)}
       <div class="card-body">
         <div class="card-top"><div>
           <button class="yacht-name-link" onclick="openVesselPage('${esc(e.name)}','${esc(e._date||activeDate)}');event.stopPropagation()">${e.name}</button>
@@ -4174,7 +4319,7 @@ function card(e,isFeature=false){
     </div>`;
   }
   return `<div class="yacht-card">
-    ${imgHtml(e.name,imgH,false)}
+    ${imgHtml(e.name,imgH,false,e.type)}
     <div class="card-top"><div>
       <button class="yacht-name-link" onclick="openVesselPage('${esc(e.name)}','${esc(e._date||activeDate)}');event.stopPropagation()">${e.name}</button>
       ${builderSpan(e.builder)}
@@ -4290,7 +4435,7 @@ function renderCurrentVessel(){
   if(contacts.length){const sellers=contacts.filter(c=>c.role==='seller'||c.role==='both');const buyers=contacts.filter(c=>c.role==='buyer'||c.role==='both');
     if(e.type==='sold'&&(sellers.length||buyers.length)) contactsHtml=`<div style="margin-top:16px"><div style="font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Broker Contacts</div><div class="sold-brokers-grid"><div>${sellers.map(c=>contactPanel(c,'Seller Broker')).join('')}</div><div>${buyers.map(c=>contactPanel(c,'Buyer Broker')).join('')}</div></div></div>`;
     else contactsHtml=`<div style="margin-top:16px"><div style="font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Broker Contacts</div>${contacts.map(c=>contactPanel(c)).join('')}</div>`;}
-  const histRows=entries.map(en=>`<tr><td>${fmtDate(en._date)}</td><td>${typeLabel[en.type]||en.type}</td><td>${en.price&&en.price!=='—'?(S[en.cur]||'€')+en.price:''}</td><td>${en.broker||en.soldseller||en.cafrom||'—'}</td></tr>`).join('');
+  const histRows=entries.map(en=>`<tr><td>${fmtDate(en._date)}</td><td>${typeLabel[en.type]||en.type}</td><td>${en.price&&en.price!=='—'&&en.price!=='POA'?(S[en.cur]||'€')+fmtCommas(en.price):en.price||''}</td><td>${en.broker||en.soldseller||en.cafrom||'—'}</td></tr>`).join('');
   // Price evolution chart
   const pricePoints=entries.filter(en=>en.price&&en.price!=='POA'&&en.price!=='—').map(en=>({date:en._date,val:parseFloat(en.price.replace(/,/g,''))||0,cur:en.cur})).filter(p=>p.val>0).sort((a,b)=>a.date.localeCompare(b.date));
   let priceChartHtml='';
@@ -4316,7 +4461,10 @@ function renderCurrentVessel(){
     const pctChg=Math.abs((pricePoints[pricePoints.length-1].val-pricePoints[0].val)/pricePoints[0].val*100).toFixed(1);
     priceChartHtml=`<div class="table-card" style="margin-top:0"><div class="table-header" style="display:flex;align-items:center;justify-content:space-between"><span>Price Evolution</span><span style="font-size:12px;color:${trendCol};font-weight:700">${trend} ${pctChg}%</span></div><div style="padding:8px 12px 4px"><svg width="100%" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" style="display:block"><defs><linearGradient id="pgrd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E87722" stop-opacity="0.18"/><stop offset="100%" stop-color="#E87722" stop-opacity="0"/></linearGradient></defs><polyline points="${pts} ${polyClose}" fill="url(#pgrd)" stroke="none"/><polyline points="${pts}" fill="none" stroke="#E87722" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>${dots}${labels}${yMin}${yMax}</svg></div></div>`;
   }
-  document.getElementById('vessel-content').innerHTML=`<div class="vessel-detail">${imgHtml(name,'240px',true)}<div class="vessel-detail-body"><div class="vessel-detail-name">${name}</div><button class="vessel-detail-builder" onclick="openBuilderPage('${esc(e.builder)}')">${e.builder||'—'}</button><div class="vessel-detail-grid"><div class="vessel-detail-item"><div class="vessel-detail-label">Length</div><div class="vessel-detail-val">${e.length?e.length+'m':'—'}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Year Built</div><div class="vessel-detail-val">${e.year||'—'}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Location</div><div class="vessel-detail-val">${e.location||'—'}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Price</div><div class="vessel-detail-val" style="color:var(--or)">${e.price&&e.price!=='—'?(S[e.cur]||'€')+e.price:e.price||'—'}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Status</div><div class="vessel-detail-val">${typeLabel[e.type]||e.type}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Builder</div><div class="vessel-detail-val">${e.builder||'—'}</div></div></div>${contactsHtml}</div></div><div class="table-card"><div class="table-header">Activity History</div><div class="table-scroll"><table><thead><tr><th>Date</th><th>Type</th><th>Price</th><th>Broker</th></tr></thead><tbody>${histRows}</tbody></table></div></div>${priceChartHtml}`;
+  const detailPriceLbl=e.type==='sold'?'Last Asking Price':'Asking Price';
+  const detailPriceVal=e.price&&e.price!=='—'&&e.price!=='POA'?`<div style="font-size:9px;color:var(--tx3);text-transform:uppercase;letter-spacing:1.2px;font-weight:500;margin-bottom:3px">${detailPriceLbl}</div><div style="font-size:18px;font-weight:700;color:var(--or)">${S[e.cur]||'€'}${fmtCommas(e.price)}${e.cur==='EUR'?' EUR':' '+e.cur}</div>${e.type==='sold'&&e._date?`<div style="font-size:10px;color:var(--tx3);margin-top:2px">Sold ${fmtDate(e._date)}</div>`:''}`
+    :e.price==='POA'?'Price on Application':'—';
+  document.getElementById('vessel-content').innerHTML=`<div class="vessel-detail">${imgHtml(name,'240px',true,e.type)}<div class="vessel-detail-body"><div class="vessel-detail-name">${name}</div><button class="vessel-detail-builder" onclick="openBuilderPage('${esc(e.builder)}')">${e.builder||'—'}</button><div class="vessel-detail-grid"><div class="vessel-detail-item"><div class="vessel-detail-label">Length</div><div class="vessel-detail-val">${e.length?e.length+'m':'—'}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Year Built</div><div class="vessel-detail-val">${e.year||'—'}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Location</div><div class="vessel-detail-val">${e.location||'—'}</div></div><div class="vessel-detail-item" style="grid-column:span 3">${detailPriceVal}</div><div class="vessel-detail-item"><div class="vessel-detail-label">Status</div><div class="vessel-detail-val">${typeLabel[e.type]||e.type}</div></div><div class="vessel-detail-item"><div class="vessel-detail-label">Builder</div><div class="vessel-detail-val">${e.builder||'—'}</div></div></div>${contactsHtml}</div></div><div class="table-card"><div class="table-header">Activity History</div><div class="table-scroll"><table><thead><tr><th>Date</th><th>Type</th><th>Price</th><th>Broker</th></tr></thead><tbody>${histRows}</tbody></table></div></div>${priceChartHtml}`;
 }
 
 function openBroker(broker){
@@ -4468,8 +4616,22 @@ function openBuilderPage(builder){
     <div class="profile-stat"><div class="profile-stat-val">${sales.length}</div><div class="profile-stat-label">Sales Recorded</div></div>
     <div class="profile-stat"><div class="profile-stat-val">${pc?(S2[cur]||'€')+fmtMil(gross):'—'}</div><div class="profile-stat-label">Sales Volume</div></div>
   </div>`;
+  // Builder info card
+  const info=BUILDER_INFO[norm]||BUILDER_INFO[builder.toUpperCase()]||null;
+  const infoHtml=info?`<div class="builder-info-card">
+    <div class="builder-flag">${info.flag||''}</div>
+    <div class="builder-info-body">
+      <div class="builder-info-country">${info.country}</div>
+      <div class="builder-info-desc">${info.description}</div>
+      <span class="builder-status-badge ${info.active?'builder-status-active':'builder-status-inactive'}">
+        <span class="builder-status-dot" style="background:${info.active?'var(--gr)':'var(--tx3)'}"></span>
+        ${info.active?'Active Shipyard':'No Longer Building'}
+      </span>
+    </div>
+  </div>`:'';
   document.getElementById('cat-content').innerHTML=`
-    <div class="profile-hero">${entityLogoHtml(norm,52)}<div class="profile-hero-body"><div class="profile-hero-name">${norm}</div><div class="profile-hero-sub">Shipbuilder · ${all.length} entries</div></div></div>
+    <div class="profile-hero">${entityLogoHtml(norm,52)}<div class="profile-hero-body"><div class="profile-hero-name">${norm}</div><div class="profile-hero-sub">Shipbuilder · ${uniqueVessels} vessels · ${all.length} entries</div></div></div>
+    ${infoHtml}
     ${statsHtml}
     <div class="yacht-grid">${all.map(e=>card(e)).join('')}</div>`;
   pushPage('category');
