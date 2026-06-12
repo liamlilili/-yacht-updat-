@@ -4,263 +4,305 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yacht Update</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',sans-serif;background:#f5f5f5;color:#111;min-height:100vh}
-:root{--or:#E87722;--orL:#fff4ec;--orB:#ffd4a8;--bd:#e0e0e0;--sf:#f7f7f7;--sf2:#eeeeee;--mu:#777;--gr:#1a9648;--bl:#1a6faf;--pu:#7c3aed}
-.sidebar{position:fixed;left:0;top:0;bottom:0;width:210px;background:#fff;border-right:1px solid var(--bd);display:flex;flex-direction:column;z-index:100;box-shadow:2px 0 8px rgba(0,0,0,.04)}
-.logo{padding:18px 16px 14px;border-bottom:2px solid var(--or)}
-.logo-title{font-size:14px;font-weight:800;color:var(--or);letter-spacing:1px;text-transform:uppercase}
-.logo-sub{font-size:10px;color:var(--mu);margin-top:2px}
-.nav{padding:10px 0;flex:1;overflow-y:auto}
-.nav-item{display:flex;align-items:center;gap:9px;padding:11px 16px;cursor:pointer;font-size:13px;color:#444;border-left:3px solid transparent;transition:all .12s}
-.nav-item:hover{color:var(--or);background:var(--orL)}
-.nav-item.active{color:var(--or);border-left-color:var(--or);background:var(--orL);font-weight:700}
-.sidebar-footer{padding:12px 16px;border-top:1px solid var(--bd);font-size:10px;color:var(--mu)}
-.topnav{display:none;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:2px solid var(--or);background:#fff;position:sticky;top:0;z-index:200}
-.topnav-logo{font-size:12px;font-weight:800;color:var(--or);letter-spacing:1px;text-transform:uppercase}
-.hamburger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:4px}
-.hamburger span{display:block;width:20px;height:2px;background:var(--or);border-radius:2px}
-.mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:300;flex-direction:column;padding:20px}
+:root{
+  --bg:#080808; --s1:#0f0f13; --s2:#16161c; --s3:#1e1e26;
+  --bd:#1e1e28; --bd2:#2a2a38;
+  --tx:#ede9e2; --tx2:#8a8a9a; --tx3:#46465a;
+  --or:#E87722; --orD:#c4621a; --orL:rgba(232,119,34,.07); --orM:rgba(232,119,34,.14); --orB:rgba(232,119,34,.28);
+  --gr:#2e9e62; --grL:rgba(46,158,98,.1);
+  --bl:#3d82c4; --blL:rgba(61,130,196,.1);
+  --pu:#7c3aed; --puL:rgba(124,58,237,.1);
+  --radius:8px; --t:180ms cubic-bezier(.4,0,.2,1);
+}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased}
+/* ── SIDEBAR ── */
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:220px;background:var(--s1);border-right:1px solid var(--bd);display:flex;flex-direction:column;z-index:100}
+.logo{padding:26px 22px 20px;border-bottom:1px solid var(--bd)}
+.logo-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;font-weight:700;color:var(--tx);letter-spacing:.3px}
+.logo-title span{color:var(--or)}
+.logo-sub{font-size:9px;color:var(--tx3);margin-top:5px;text-transform:uppercase;letter-spacing:2.5px;font-weight:500}
+.nav{padding:12px 0;flex:1;overflow-y:auto}
+.nav-item{display:flex;align-items:center;gap:11px;padding:12px 22px;cursor:pointer;font-size:12px;font-weight:500;color:var(--tx2);border-left:2px solid transparent;transition:all var(--t);letter-spacing:.2px}
+.nav-item svg{width:15px;height:15px;flex-shrink:0;opacity:.55;transition:opacity var(--t)}
+.nav-item:hover{color:var(--tx);background:var(--s2)}
+.nav-item:hover svg{opacity:.9}
+.nav-item.active{color:var(--or);border-left-color:var(--or);background:var(--orL);font-weight:600}
+.nav-item.active svg{opacity:1;color:var(--or)}
+.sidebar-footer{padding:14px 22px;border-top:1px solid var(--bd);font-size:9px;color:var(--tx3);text-transform:uppercase;letter-spacing:2px}
+/* ── TOP NAV MOBILE ── */
+.topnav{display:none;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--bd);background:var(--s1);position:sticky;top:0;z-index:200}
+.topnav-logo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--tx);letter-spacing:.3px}
+.topnav-logo span{color:var(--or)}
+.hamburger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:4px}
+.hamburger span{display:block;width:20px;height:1.5px;background:var(--tx2);border-radius:2px;transition:background var(--t)}
+.hamburger:hover span{background:var(--tx)}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--s1);z-index:300;flex-direction:column;padding:24px}
 .mobile-menu.open{display:flex}
-.mobile-menu-close{align-self:flex-end;background:none;border:none;font-size:22px;cursor:pointer;color:var(--mu);margin-bottom:20px}
-.mobile-nav-item{padding:14px 0;font-size:15px;font-weight:600;color:#333;border-bottom:1px solid var(--bd);cursor:pointer}
+.mobile-menu-close{align-self:flex-end;background:none;border:none;font-size:22px;cursor:pointer;color:var(--tx2);margin-bottom:28px;line-height:1}
+.mobile-nav-item{padding:16px 0;font-size:15px;font-weight:500;color:var(--tx2);border-bottom:1px solid var(--bd);cursor:pointer;letter-spacing:.2px}
 .mobile-nav-item.active{color:var(--or)}
-.main{margin-left:210px;min-height:100vh;display:flex;flex-direction:column}
+/* ── LAYOUT ── */
+.main{margin-left:220px;min-height:100vh;display:flex;flex-direction:column}
 .page{display:none;flex-direction:column;flex:1}
 .page.active{display:flex}
-.topbar{background:#fff;border-bottom:1px solid var(--bd);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;gap:10px}
-.topbar h1{font-size:16px;font-weight:700}
-.topbar-left{display:flex;align-items:center;gap:12px;flex-wrap:wrap;flex:1}
+.topbar{background:rgba(8,8,8,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);padding:13px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;gap:10px}
+.topbar h1{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--tx);letter-spacing:.2px}
+.topbar-left{display:flex;align-items:center;gap:13px;flex-wrap:wrap;flex:1}
 .topbar-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.date-badge{background:var(--orL);color:var(--or);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid var(--or)}
-.btn{background:#fff;border:1px solid var(--bd);color:#444;padding:6px 13px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;transition:all .12s;white-space:nowrap}
-.btn:hover{border-color:var(--or);color:var(--or)}
-.btn-or{background:var(--or);border-color:var(--or);color:#fff;font-weight:700}
-.btn-or:hover{background:#c96010}
-.btn-back{background:var(--sf);border:1px solid var(--bd);color:#444;padding:5px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:5px}
-.btn-back:hover{border-color:var(--or);color:var(--or)}
-.content{padding:20px 24px;flex:1}
-.summary-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
-.stat-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:13px 15px;border-top:3px solid transparent}
+.date-badge{background:var(--orL);color:var(--or);font-size:9px;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid var(--orB);letter-spacing:.5px}
+/* ── BUTTONS ── */
+.btn{background:transparent;border:1px solid var(--bd2);color:var(--tx2);padding:7px 16px;border-radius:var(--radius);font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;transition:all var(--t);white-space:nowrap;letter-spacing:.2px}
+.btn:hover{border-color:var(--tx3);color:var(--tx)}
+.btn-or{background:var(--or);border-color:var(--or);color:#fff;font-weight:600}
+.btn-or:hover{background:var(--orD);border-color:var(--orD)}
+.btn-back{background:transparent;border:1px solid var(--bd2);color:var(--tx2);padding:6px 14px;border-radius:var(--radius);font-size:12px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:7px;transition:all var(--t)}
+.btn-back:hover{border-color:var(--tx3);color:var(--tx)}
+.btn-back svg{width:13px;height:13px}
+/* ── CONTENT ── */
+.content{padding:24px 28px;flex:1}
+/* ── STAT CARDS ── */
+.summary-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.stat-card{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);padding:16px 18px;border-top:2px solid transparent}
 .stat-card.new{border-top-color:var(--bl)}.stat-card.reduction{border-top-color:var(--or)}
 .stat-card.sold{border-top-color:var(--gr)}.stat-card.launch{border-top-color:var(--pu)}
-.stat-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;font-weight:600}
-.stat-num{font-size:26px;font-weight:800;margin-top:3px}
+.stat-label{font-size:9px;color:var(--tx3);text-transform:uppercase;letter-spacing:2px;font-weight:600}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;margin-top:6px;line-height:1}
 .stat-card.new .stat-num{color:var(--bl)}.stat-card.reduction .stat-num{color:var(--or)}
 .stat-card.sold .stat-num{color:var(--gr)}.stat-card.launch .stat-num{color:var(--pu)}
-.date-picker{margin-bottom:18px}
-.month-strip{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+/* ── DATE PICKERS ── */
+.date-picker{margin-bottom:20px}
+.month-strip{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
 .month-strip::-webkit-scrollbar{display:none}
-.month-pill{flex-shrink:0;padding:5px 12px;border-radius:20px;border:1px solid var(--bd);background:#fff;font-size:12px;font-weight:600;color:#555;cursor:pointer;transition:all .12s;white-space:nowrap}
-.month-pill:hover{border-color:var(--or);color:var(--or)}
+.month-pill{flex-shrink:0;padding:5px 14px;border-radius:20px;border:1px solid var(--bd2);background:transparent;font-size:11px;font-weight:500;color:var(--tx2);cursor:pointer;transition:all var(--t);white-space:nowrap;letter-spacing:.3px}
+.month-pill:hover{border-color:var(--tx3);color:var(--tx)}
 .month-pill.active{background:var(--or);border-color:var(--or);color:#fff}
 .day-strip{display:flex;gap:5px;overflow-x:auto;padding:8px 0 4px;scrollbar-width:none;flex-wrap:wrap}
 .day-strip::-webkit-scrollbar{display:none}
-.day-pill{flex-shrink:0;padding:4px 9px;border-radius:14px;border:1px solid var(--bd);background:#fff;font-size:11px;font-weight:600;color:#555;cursor:pointer;transition:all .12s;white-space:nowrap}
-.day-pill:hover{border-color:var(--or);color:var(--or)}
+.day-pill{flex-shrink:0;padding:4px 10px;border-radius:20px;border:1px solid var(--bd);background:transparent;font-size:11px;font-weight:500;color:var(--tx2);cursor:pointer;transition:all var(--t);white-space:nowrap}
+.day-pill:hover{border-color:var(--tx3);color:var(--tx)}
 .day-pill.active{background:var(--or);border-color:var(--or);color:#fff}
-.day-pill .day-count{font-size:9px;font-weight:400;opacity:.8;margin-left:2px}
-.section{margin-bottom:24px}
-.section-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
-.section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px}
-.section-count{background:var(--sf2);color:var(--mu);font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px}
-.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.yacht-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
-.yacht-card{background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden;transition:box-shadow .12s}
-.yacht-card:hover{box-shadow:0 3px 14px rgba(232,119,34,.15);border-color:#ccc}
-.card-img-wrap{position:relative;width:100%;height:160px;overflow:hidden;cursor:pointer;background:#f0f0f0}
-.card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.day-pill .day-count{font-size:9px;font-weight:400;opacity:.65;margin-left:3px}
+/* ── SECTIONS ── */
+.section{margin-bottom:28px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
+.section-title{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:var(--tx3)}
+.section-count{background:var(--s3);color:var(--tx2);font-size:9px;font-weight:600;padding:2px 7px;border-radius:10px;border:1px solid var(--bd2)}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+/* ── YACHT GRID & CARDS ── */
+.yacht-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.yacht-card{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);overflow:hidden;transition:border-color var(--t),box-shadow var(--t)}
+.yacht-card:hover{border-color:var(--bd2);box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.card-img-wrap{position:relative;width:100%;height:168px;overflow:hidden;cursor:pointer;background:var(--s2)}
+.card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 380ms ease}
+.yacht-card:hover .card-img-wrap img{transform:scale(1.04)}
 .card-img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
-.card-img-placeholder .ship-icon{font-size:34px;opacity:.35}
-.card-img-placeholder .ship-name{font-size:10px;color:#aaa;font-weight:600;letter-spacing:.5px;text-align:center;padding:0 8px}
-.img-upload-btn{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,.55);color:#fff;border:none;border-radius:5px;font-size:11px;padding:4px 8px;cursor:pointer;display:flex;align-items:center;gap:4px}
-.img-upload-btn:hover{background:rgba(232,119,34,.85)}
+.card-img-placeholder .ship-icon{font-size:28px;opacity:.15}
+.card-img-placeholder .ship-name{font-size:9px;color:var(--tx3);font-weight:600;letter-spacing:1px;text-align:center;padding:0 8px}
+.img-upload-btn{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.72);color:var(--tx2);border:none;border-radius:5px;font-size:10px;padding:4px 9px;cursor:pointer;transition:all var(--t);display:flex;align-items:center;gap:4px;backdrop-filter:blur(4px)}
+.img-upload-btn:hover{background:var(--or);color:#fff}
 .card-img-wrap input[type=file]{display:none}
-.card-top{padding:12px 14px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.yacht-name-link{font-size:13px;font-weight:700;color:var(--bl);cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit;text-align:left;padding:0}
+.card-top{padding:13px 15px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.yacht-name-link{font-size:13px;font-weight:600;color:var(--tx);cursor:pointer;text-decoration:none;background:none;border:none;font-family:inherit;text-align:left;padding:0;transition:color var(--t)}
 .yacht-name-link:hover{color:var(--or)}
-.yacht-builder-link{font-size:11px;color:var(--mu);margin-top:2px;cursor:pointer;text-decoration:underline dotted;display:inline;background:none;border:none;font-family:inherit;padding:0}
+.yacht-builder-link{font-size:11px;color:var(--tx2);margin-top:2px;cursor:pointer;text-decoration:none;display:inline;background:none;border:none;font-family:inherit;padding:0;transition:color var(--t)}
 .yacht-builder-link:hover{color:var(--or)}
-.type-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap;flex-shrink:0;text-transform:uppercase}
-.badge-new{background:#e8f0fb;color:var(--bl);border:1px solid #c5d9f5}
+.type-badge{font-size:8px;font-weight:700;padding:3px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0;text-transform:uppercase;letter-spacing:.8px}
+.badge-new{background:var(--blL);color:var(--bl);border:1px solid rgba(61,130,196,.2)}
 .badge-reduction{background:var(--orL);color:var(--or);border:1px solid var(--orB)}
-.badge-sold{background:#e8f5ee;color:var(--gr);border:1px solid #b5dfc7}
-.badge-launch{background:#f3eeff;color:var(--pu);border:1px solid #d4b8f5}
-.badge-cachange{background:var(--sf2);color:#555;border:1px solid var(--bd)}
-.card-meta{padding:0 14px 9px;display:flex;gap:12px;flex-wrap:wrap}
-.meta-item{font-size:11px;color:var(--mu)}
-.card-price{padding:8px 14px;background:var(--sf);border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px}
-.price-main{font-size:13px;font-weight:700}
-.price-old{font-size:10px;color:var(--mu);text-decoration:line-through}
-.price-est{font-size:10px;color:var(--mu)}
+.badge-sold{background:var(--grL);color:var(--gr);border:1px solid rgba(46,158,98,.2)}
+.badge-launch{background:var(--puL);color:var(--pu);border:1px solid rgba(124,58,237,.2)}
+.badge-cachange{background:var(--s3);color:var(--tx2);border:1px solid var(--bd2)}
+.card-meta{padding:0 15px 10px;display:flex;gap:14px;flex-wrap:wrap}
+.meta-item{font-size:11px;color:var(--tx2)}
+.card-price{padding:10px 15px;background:var(--s2);border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px}
+.price-main{font-size:13px;font-weight:700;color:var(--tx)}
+.price-old{font-size:10px;color:var(--tx3);text-decoration:line-through}
+.price-est{font-size:10px;color:var(--tx3)}
 .reduc-arrow{font-size:10px;color:var(--or);font-weight:700}
-.card-brokers{padding:8px 14px;border-top:1px solid var(--bd);font-size:11px;color:var(--mu);display:flex;gap:5px;flex-wrap:wrap;align-items:center}
-.broker-link{color:var(--bl);font-size:11px;font-weight:600;cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit;padding:0}
+.card-brokers{padding:9px 15px;border-top:1px solid var(--bd);font-size:11px;color:var(--tx2);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.broker-link{color:var(--tx2);font-size:11px;font-weight:500;cursor:pointer;text-decoration:none;background:none;border:none;font-family:inherit;padding:0;transition:color var(--t)}
 .broker-link:hover{color:var(--or)}
-.ca-tag{font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;text-transform:uppercase}
-.ca-CA{background:#e8f0fb;color:var(--bl)}.ca-Open{background:#e8f5ee;color:var(--gr)}.ca-JCA{background:var(--orL);color:var(--or)}
-.ca-change-info{padding:8px 14px;border-top:1px solid var(--bd);font-size:11px;color:var(--mu)}
+.ca-tag{font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:.5px}
+.ca-CA{background:var(--blL);color:var(--bl)}.ca-Open{background:var(--grL);color:var(--gr)}.ca-JCA{background:var(--orL);color:var(--or)}
+.ca-change-info{padding:8px 15px;border-top:1px solid var(--bd);font-size:11px;color:var(--tx2)}
+/* ── ENTITY LOGO ── */
 .logo-img{width:100%;height:100%;object-fit:contain;padding:4px}
-.entity-logo{width:44px;height:44px;border-radius:7px;background:var(--sf);border:1px solid var(--bd);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;cursor:pointer}
-.entity-logo-placeholder{font-size:18px;color:#ccc}
+.entity-logo{width:44px;height:44px;border-radius:7px;background:var(--s2);border:1px solid var(--bd);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;cursor:pointer}
+.entity-logo-placeholder{font-size:16px;color:var(--tx3)}
 .entity-logo input[type=file]{display:none}
-.detail-header{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:18px;margin-bottom:16px;display:flex;gap:16px;align-items:flex-start}
+/* ── DETAIL HEADER ── */
+.detail-header{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);padding:20px;margin-bottom:16px;display:flex;gap:16px;align-items:flex-start}
 .detail-header-info{flex:1}
-.detail-header h2{font-size:19px;font-weight:800}
-.detail-stats{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
-.detail-stat{font-size:12px;color:#444}
-.detail-stat strong{color:var(--or);font-size:16px;font-weight:800;display:block}
-.broker-contact-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:14px;margin-bottom:10px}
-.broker-contact-name{font-size:14px;font-weight:700;color:#111}
-.broker-contact-firm{font-size:12px;color:var(--or);font-weight:600}
-.broker-contact-details{margin-top:8px;display:flex;flex-direction:column;gap:4px;font-size:12px;color:#555}
-.broker-contact-details a{color:var(--bl);text-decoration:none}
-.broker-contact-details a:hover{color:var(--or);text-decoration:underline}
+.detail-header h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--tx)}
+.detail-stats{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px}
+.detail-stat{font-size:11px;color:var(--tx2)}
+.detail-stat strong{color:var(--or);font-size:20px;font-weight:700;font-family:'Cormorant Garamond',serif;display:block}
+/* ── BROKER CONTACT ── */
+.broker-contact-card{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);padding:15px;margin-bottom:10px}
+.broker-contact-name{font-size:14px;font-weight:600;color:var(--tx)}
+.broker-contact-firm{font-size:11px;color:var(--or);font-weight:600;margin-top:2px}
+.broker-contact-details{margin-top:8px;display:flex;flex-direction:column;gap:4px;font-size:11px;color:var(--tx2)}
+.broker-contact-details a{color:var(--tx2);text-decoration:none;transition:color var(--t)}
+.broker-contact-details a:hover{color:var(--or)}
 .contact-deal-list{margin-top:10px;border-top:1px solid var(--bd);padding-top:8px}
-.contact-deal-item{font-size:11px;color:#555;padding:3px 0;border-bottom:1px dashed var(--sf2);display:flex;justify-content:space-between}
+.contact-deal-item{font-size:11px;color:var(--tx2);padding:4px 0;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between}
 .contact-deal-item:last-child{border-bottom:none}
-/* ── Profile page redesign ── */
-.profile-hero{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:22px;margin-bottom:14px;display:flex;gap:18px;align-items:flex-start}
-.profile-hero-logo{width:60px;height:60px;flex-shrink:0;background:var(--sf);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:26px;overflow:hidden}
+/* ── PROFILE ── */
+.profile-hero{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);padding:22px;margin-bottom:14px;display:flex;gap:18px;align-items:flex-start}
+.profile-hero-logo{width:60px;height:60px;flex-shrink:0;background:var(--s2);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:24px;overflow:hidden;border:1px solid var(--bd)}
 .profile-hero-logo img{width:100%;height:100%;object-fit:contain;padding:4px}
 .profile-hero-body{flex:1;min-width:0}
-.profile-hero-name{font-size:20px;font-weight:800;color:#111;letter-spacing:-.3px}
-.profile-hero-sub{font-size:12px;color:var(--mu);margin-top:3px}
-.profile-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
-.profile-stat{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:12px 14px;border-top:3px solid var(--or)}
-.profile-stat-val{font-size:20px;font-weight:800;color:var(--or)}
-.profile-stat-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin-top:2px}
-.profile-stat-sub{font-size:10px;color:var(--mu);margin-top:1px}
+.profile-hero-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--tx)}
+.profile-hero-sub{font-size:11px;color:var(--tx2);margin-top:4px}
+.profile-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.profile-stat{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);padding:14px 16px;border-top:2px solid var(--or)}
+.profile-stat-val{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--or)}
+.profile-stat-label{font-size:9px;color:var(--tx3);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-top:4px}
+.profile-stat-sub{font-size:10px;color:var(--tx3);margin-top:2px}
 .profile-section{margin-bottom:18px}
-.profile-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--mu);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.profile-section-title{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--tx3);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.team-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:13px;cursor:pointer;transition:border-color .12s,box-shadow .12s;position:relative}
-.team-card:hover{border-color:var(--or);box-shadow:0 2px 10px rgba(232,119,34,.12)}
-.team-card-name{font-size:13px;font-weight:700;color:#111}
-.team-card-contact{margin-top:5px;display:flex;flex-direction:column;gap:3px}
-.team-card-contact a,.team-card-contact span{font-size:11px;color:var(--mu);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.team-card{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);padding:14px;cursor:pointer;transition:border-color var(--t),box-shadow var(--t);position:relative}
+.team-card:hover{border-color:var(--bd2);box-shadow:0 4px 20px rgba(0,0,0,.35)}
+.team-card-name{font-size:13px;font-weight:600;color:var(--tx)}
+.team-card-contact{margin-top:6px;display:flex;flex-direction:column;gap:3px}
+.team-card-contact a,.team-card-contact span{font-size:11px;color:var(--tx2);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .team-card-contact a:hover{color:var(--or)}
-.team-card-badge{position:absolute;top:10px;right:10px;background:var(--orL);color:var(--or);font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;border:1px solid var(--orB)}
-.deals-table-wrap{background:#fff;border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+.team-card-badge{position:absolute;top:10px;right:10px;background:var(--orL);color:var(--or);font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;border:1px solid var(--orB)}
+/* ── DEALS TABLE ── */
+.deals-table-wrap{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);overflow:hidden}
 .deals-table{width:100%;border-collapse:collapse;font-size:12px}
-.deals-table th{padding:8px 12px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--mu);border-bottom:1px solid var(--bd);background:var(--sf);font-weight:700}
-.deals-table td{padding:9px 12px;border-bottom:1px solid var(--bd);color:#444;vertical-align:middle}
+.deals-table th{padding:9px 13px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--tx3);border-bottom:1px solid var(--bd);background:var(--s2);font-weight:600}
+.deals-table td{padding:10px 13px;border-bottom:1px solid var(--bd);color:var(--tx2);vertical-align:middle}
 .deals-table tr:last-child td{border-bottom:none}
-.deals-table tr:hover td{background:var(--orL);cursor:pointer}
-.deals-table .td-vessel{font-weight:700;color:#111;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.deals-table tr:hover td{background:var(--s2);cursor:pointer}
+.deals-table .td-vessel{font-weight:600;color:var(--tx);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .deals-table .td-price{color:var(--or);font-weight:700}
-.deal-role-tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase;white-space:nowrap}
-.role-seller{background:#e8f4ec;color:#1a9648}
-.role-buyer{background:#e8eef8;color:#1a6faf}
-.role-listing{background:#fff3e8;color:var(--or)}
-.role-reduction{background:#fef0e8;color:#c0540a}
-.undisclosed-note{font-size:11px;color:var(--mu);font-style:italic;padding:14px;text-align:center;background:var(--sf);border-radius:6px;margin-top:6px}
-.vessel-detail{background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden;margin-bottom:16px}
-.vessel-detail-img-wrap{position:relative;width:100%;height:260px;background:#f0f0f0;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.deal-role-tag{font-size:8px;font-weight:700;padding:2px 7px;border-radius:4px;text-transform:uppercase;white-space:nowrap;letter-spacing:.5px}
+.role-seller{background:var(--grL);color:var(--gr)}.role-buyer{background:var(--blL);color:var(--bl)}
+.role-listing{background:var(--orL);color:var(--or)}.role-reduction{background:var(--orL);color:var(--orD)}
+.undisclosed-note{font-size:11px;color:var(--tx3);font-style:italic;padding:14px;text-align:center;background:var(--s2);border-radius:6px;margin-top:6px}
+/* ── VESSEL DETAIL ── */
+.vessel-detail{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);overflow:hidden;margin-bottom:16px}
+.vessel-detail-img-wrap{position:relative;width:100%;height:280px;background:var(--s2);overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .vessel-detail-img-wrap img{width:100%;height:100%;object-fit:cover}
-.vessel-detail-img-placeholder{font-size:60px;color:#ddd;display:flex;flex-direction:column;align-items:center;gap:8px}
-.vessel-detail-img-upload-btn{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.55);color:#fff;border:none;border-radius:6px;font-size:12px;padding:6px 12px;cursor:pointer}
-.vessel-detail-img-upload-btn:hover{background:rgba(232,119,34,.85)}
+.vessel-detail-img-placeholder{font-size:48px;color:var(--tx3);display:flex;flex-direction:column;align-items:center;gap:8px}
+.vessel-detail-img-upload-btn{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.72);color:var(--tx2);border:none;border-radius:6px;font-size:11px;padding:6px 13px;cursor:pointer;backdrop-filter:blur(4px);transition:all var(--t)}
+.vessel-detail-img-upload-btn:hover{background:var(--or);color:#fff}
 .vessel-detail-img-wrap input[type=file]{display:none}
-.vessel-detail-body{padding:20px}
-.vessel-detail-name{font-size:22px;font-weight:800}
-.vessel-detail-builder{font-size:14px;color:var(--or);font-weight:600;margin-top:4px;cursor:pointer;text-decoration:underline dotted;background:none;border:none;font-family:inherit}
-.vessel-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-.vessel-detail-item{background:var(--sf);border-radius:6px;padding:10px}
-.vessel-detail-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;font-weight:600}
-.vessel-detail-val{font-size:14px;font-weight:700;color:#111;margin-top:3px}
+.vessel-detail-body{padding:22px}
+.vessel-detail-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--tx)}
+.vessel-detail-builder{font-size:13px;color:var(--or);font-weight:600;margin-top:4px;cursor:pointer;text-decoration:none;background:none;border:none;font-family:inherit;transition:color var(--t)}
+.vessel-detail-builder:hover{color:var(--orD)}
+.vessel-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.vessel-detail-item{background:var(--s2);border-radius:6px;padding:12px;border:1px solid var(--bd)}
+.vessel-detail-label{font-size:9px;color:var(--tx3);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+.vessel-detail-val{font-size:14px;font-weight:600;color:var(--tx);margin-top:4px}
 .sold-brokers-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.sold-broker-panel{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:12px}
-.sold-broker-panel h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin-bottom:8px}
-.sold-broker-name{font-size:13px;font-weight:700;color:#111}
-.sold-broker-firm{font-size:12px;color:var(--or);margin-top:2px;font-weight:600}
-.sold-broker-info{margin-top:6px;font-size:11px;color:#555;display:flex;flex-direction:column;gap:3px}
-.sold-broker-info a{color:var(--bl);text-decoration:none}
-.analytics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
-.a-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:15px;border-top:3px solid var(--or)}
-.a-label{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;font-weight:600}
-.a-val{font-size:24px;font-weight:800;color:var(--or);margin-top:5px}
-.a-sub{font-size:11px;color:var(--mu);margin-top:3px}
-.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-.chart-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:16px}
-.chart-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin-bottom:12px}
-.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
-.bar-label{font-size:11px;color:#444;width:130px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
-.bar-label:hover{color:var(--or);text-decoration:underline}
-.bar-track{flex:1;height:5px;background:var(--sf2);border-radius:3px;overflow:hidden}
-.bar-fill{height:100%;border-radius:3px;background:var(--or)}
-.bar-val{font-size:10px;color:var(--mu);width:35px;text-align:right;flex-shrink:0}
-.pie-row{display:flex;align-items:center;gap:8px;margin-bottom:9px;cursor:pointer}
-.pie-row:hover .pie-label{color:var(--or);text-decoration:underline}
-.pie-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.pie-label{font-size:12px;color:#333;flex:1}
-.pie-pct{font-size:12px;font-weight:700}
-.table-card{background:#fff;border:1px solid var(--bd);border-radius:8px;overflow:hidden;margin-bottom:12px}
-.table-header{padding:11px 14px;border-bottom:1px solid var(--bd);font-size:11px;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.sold-broker-panel{background:var(--s2);border:1px solid var(--bd);border-radius:var(--radius);padding:14px}
+.sold-broker-panel h4{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--tx3);margin-bottom:8px}
+.sold-broker-name{font-size:13px;font-weight:600;color:var(--tx)}
+.sold-broker-firm{font-size:11px;color:var(--or);margin-top:3px;font-weight:600}
+.sold-broker-info{margin-top:7px;font-size:11px;color:var(--tx2);display:flex;flex-direction:column;gap:3px}
+.sold-broker-info a{color:var(--tx2);text-decoration:none;transition:color var(--t)}
+.sold-broker-info a:hover{color:var(--or)}
+/* ── ANALYTICS ── */
+.analytics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.a-card{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);padding:17px;border-top:2px solid var(--or)}
+.a-label{font-size:9px;color:var(--tx3);text-transform:uppercase;letter-spacing:2px;font-weight:600}
+.a-val{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--or);margin-top:8px;line-height:1}
+.a-sub{font-size:11px;color:var(--tx3);margin-top:4px}
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.chart-card{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);padding:18px}
+.chart-title{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--tx3);margin-bottom:14px}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.bar-label{font-size:11px;color:var(--tx2);width:130px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;transition:color var(--t)}
+.bar-label:hover{color:var(--or)}
+.bar-track{flex:1;height:3px;background:var(--s3);border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;border-radius:2px;background:var(--or)}
+.bar-val{font-size:10px;color:var(--tx3);width:35px;text-align:right;flex-shrink:0}
+.pie-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;cursor:pointer}
+.pie-row:hover .pie-label{color:var(--or)}
+.pie-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.pie-label{font-size:12px;color:var(--tx2);flex:1;transition:color var(--t)}
+.pie-pct{font-size:12px;font-weight:700;color:var(--tx)}
+.table-card{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);overflow:hidden;margin-bottom:12px}
+.table-header{padding:12px 16px;border-bottom:1px solid var(--bd);font-size:9px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:2px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{width:100%;border-collapse:collapse;font-size:11px;min-width:500px}
-th{padding:8px 12px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--mu);border-bottom:1px solid var(--bd);background:var(--sf);font-weight:700;white-space:nowrap}
-td{padding:8px 12px;border-bottom:1px solid var(--bd);color:#444;white-space:nowrap}
+th{padding:9px 13px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--tx3);border-bottom:1px solid var(--bd);background:var(--s2);font-weight:600;white-space:nowrap}
+td{padding:9px 13px;border-bottom:1px solid var(--bd);color:var(--tx2);white-space:nowrap}
 tr:last-child td{border-bottom:none}
-tr:hover td{background:var(--sf)}
-.td-name{font-weight:700;color:#111}
-.trend-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:16px;margin-bottom:10px}
-.trend-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
-.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#444}
-.legend-dot{width:14px;height:3px;border-radius:2px;flex-shrink:0}
-.chart-tooltip{position:fixed;background:#fff;border:1px solid var(--bd);border-radius:6px;padding:8px 12px;font-size:11px;color:#333;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.1);display:none;z-index:9999}
+tr:hover td{background:var(--s2)}
+.td-name{font-weight:600;color:var(--tx)}
+.trend-card{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);padding:18px;margin-bottom:12px}
+.trend-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--tx2)}
+.legend-dot{width:14px;height:2px;border-radius:2px;flex-shrink:0}
+.chart-tooltip{position:fixed;background:var(--s2);border:1px solid var(--bd2);border-radius:6px;padding:9px 13px;font-size:11px;color:var(--tx);pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.45);display:none;z-index:9999}
 .chart-wrap{position:relative}
-.filter-select{background:#fff;border:1px solid var(--bd);border-radius:5px;padding:5px 8px;font-size:11px;font-family:inherit;color:#333;cursor:pointer}
+.filter-select{background:var(--s2);border:1px solid var(--bd2);border-radius:6px;padding:5px 9px;font-size:11px;font-family:inherit;color:var(--tx2);cursor:pointer}
 .filter-select:focus{outline:none;border-color:var(--or)}
-.sort-btn{background:#fff;border:1px solid var(--bd);color:#444;padding:4px 9px;border-radius:5px;font-size:10px;cursor:pointer;font-family:inherit;transition:all .12s}
-.sort-btn:hover{background:var(--orL);border-color:var(--or);color:var(--or)}
-.sort-btn.active{background:var(--or);border-color:var(--or);color:#fff;font-weight:700}
-.search-type-filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
-.search-type-btn{background:#fff;border:1px solid var(--bd);color:#555;padding:5px 13px;border-radius:20px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .12s;white-space:nowrap}
-.search-type-btn:hover{border-color:var(--or);color:var(--or);background:var(--orL)}
+.sort-btn{background:transparent;border:1px solid var(--bd2);color:var(--tx2);padding:4px 10px;border-radius:6px;font-size:10px;cursor:pointer;font-family:inherit;transition:all var(--t);letter-spacing:.3px}
+.sort-btn:hover{border-color:var(--tx3);color:var(--tx)}
+.sort-btn.active{background:var(--or);border-color:var(--or);color:#fff;font-weight:600}
+/* ── SEARCH ── */
+.search-type-filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.search-type-btn{background:transparent;border:1px solid var(--bd2);color:var(--tx2);padding:5px 14px;border-radius:20px;font-size:11px;font-weight:500;cursor:pointer;font-family:inherit;transition:all var(--t);white-space:nowrap;letter-spacing:.2px}
+.search-type-btn:hover{border-color:var(--tx3);color:var(--tx)}
 .search-type-btn.active{background:var(--or);border-color:var(--or);color:#fff}
-.search-input-wrap{position:relative;margin-bottom:14px}
-.search-input{width:100%;padding:11px 16px 11px 40px;font-size:14px;border:2px solid var(--bd);border-radius:8px;font-family:inherit;background:#fff;transition:border-color .12s}
+.search-input-wrap{position:relative;margin-bottom:16px}
+.search-input{width:100%;padding:13px 18px 13px 44px;font-size:14px;border:1px solid var(--bd2);border-radius:var(--radius);font-family:inherit;background:var(--s1);color:var(--tx);transition:border-color var(--t)}
+.search-input::placeholder{color:var(--tx3)}
 .search-input:focus{outline:none;border-color:var(--or)}
-.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--mu)}
-.search-result-section{margin-bottom:20px}
-.alpha-sidebar{display:flex;flex-wrap:wrap;align-items:center;gap:2px;padding:6px 0 10px;font-size:12px;font-weight:700}
-.alpha-letter{color:var(--or);text-decoration:none;padding:2px 4px;border-radius:3px;cursor:pointer;transition:background .1s}
+.search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--tx3);display:flex;align-items:center}
+.search-icon svg{width:16px;height:16px}
+.search-result-section{margin-bottom:22px}
+.alpha-sidebar{display:flex;flex-wrap:wrap;align-items:center;gap:2px;padding:6px 0 12px;font-size:12px;font-weight:700}
+.alpha-letter{color:var(--or);text-decoration:none;padding:2px 5px;border-radius:3px;cursor:pointer;transition:background var(--t)}
 .alpha-letter:hover{background:var(--orL)}
-.alpha-dot{color:var(--mu);font-size:10px;padding:0 1px}
+.alpha-dot{color:var(--tx3);font-size:10px;padding:0 1px}
 .alpha-anchor{display:block;position:relative;top:-60px;visibility:hidden}
-.search-result-title{font-size:11px;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:1px;padding-bottom:6px;border-bottom:1px solid var(--orB);margin-bottom:10px}
-.search-hit{background:#fff;border:1px solid var(--bd);border-radius:7px;padding:11px 14px;margin-bottom:7px;cursor:pointer;transition:border-color .12s;display:flex;gap:12px;align-items:center}
-.search-hit:hover{border-color:var(--or);background:var(--orL)}
-.search-hit-img{width:52px;height:40px;border-radius:5px;flex-shrink:0;background:#eee;display:flex;align-items:center;justify-content:center;font-size:18px;color:#ccc;overflow:hidden}
+.search-result-title{font-size:9px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:2.5px;padding-bottom:8px;border-bottom:1px solid var(--bd);margin-bottom:10px}
+.search-hit{background:var(--s1);border:1px solid var(--bd);border-radius:var(--radius);padding:12px 15px;margin-bottom:6px;cursor:pointer;transition:border-color var(--t),background var(--t);display:flex;gap:13px;align-items:center}
+.search-hit:hover{border-color:var(--bd2);background:var(--s2)}
+.search-hit-img{width:52px;height:40px;border-radius:5px;flex-shrink:0;background:var(--s2);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--tx3);overflow:hidden}
 .search-hit-img img{width:100%;height:100%;object-fit:cover}
-.search-hit-name{font-size:13px;font-weight:700;color:#111}
-.search-hit-sub{font-size:11px;color:var(--mu);margin-top:2px}
-.search-empty{text-align:center;color:var(--mu);padding:40px;font-size:14px}
-.location-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:8px}
-.location-item{background:var(--sf);border:1px solid var(--bd);border-radius:6px;padding:10px 12px}
-.location-country{font-size:12px;font-weight:700;color:#111}
-.location-count{font-size:11px;color:var(--or);font-weight:700}
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:200;align-items:center;justify-content:center}
+.search-hit-name{font-size:13px;font-weight:600;color:var(--tx)}
+.search-hit-sub{font-size:11px;color:var(--tx2);margin-top:2px}
+.search-empty{text-align:center;color:var(--tx3);padding:48px;font-size:14px}
+.location-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:10px}
+.location-item{background:var(--s2);border:1px solid var(--bd);border-radius:6px;padding:10px 13px}
+.location-country{font-size:12px;font-weight:600;color:var(--tx)}
+.location-count{font-size:11px;color:var(--or);font-weight:600;margin-top:2px}
+/* ── MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);z-index:200;align-items:center;justify-content:center}
 .modal-overlay.open{display:flex}
-.modal{background:#fff;border:1px solid var(--bd);border-radius:10px;width:560px;max-height:88vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.1)}
-.modal-header{padding:16px 20px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:1}
-.modal-title{font-size:14px;font-weight:700;color:var(--or)}
-.modal-close{background:none;border:none;color:var(--mu);font-size:20px;cursor:pointer}
-.modal-body{padding:16px 20px}
+.modal{background:var(--s1);border:1px solid var(--bd2);border-radius:12px;width:560px;max-height:88vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,.55)}
+.modal-header{padding:18px 22px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--s1);z-index:1}
+.modal-title{font-size:14px;font-weight:600;color:var(--tx)}
+.modal-close{background:none;border:none;color:var(--tx3);font-size:19px;cursor:pointer;line-height:1;transition:color var(--t)}
+.modal-close:hover{color:var(--tx)}
+.modal-body{padding:18px 22px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-.form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mu)}
-input,select{background:#fff;border:1px solid var(--bd);border-radius:5px;color:#111;padding:7px 10px;font-size:12px;font-family:inherit;transition:border-color .12s}
+.form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--tx3)}
+input,select{background:var(--s2);border:1px solid var(--bd2);border-radius:6px;color:var(--tx);padding:8px 11px;font-size:12px;font-family:inherit;transition:border-color var(--t)}
+input::placeholder{color:var(--tx3)}
 input:focus,select:focus{outline:none;border-color:var(--or)}
-.form-section{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--or);margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--orB)}
-.modal-footer{padding:12px 20px;border-top:1px solid var(--bd);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:#fff}
-footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:1px solid var(--bd);background:#fff;margin-top:auto}
+select option{background:var(--s2)}
+.form-section{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--tx3);margin:16px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.modal-footer{padding:14px 22px;border-top:1px solid var(--bd);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:var(--s1)}
+footer{text-align:center;padding:16px;font-size:9px;color:var(--tx3);border-top:1px solid var(--bd);text-transform:uppercase;letter-spacing:2px}
 @media(max-width:768px){
-  .sidebar{display:none}.topnav{display:flex}.main{margin-left:0}.topbar{top:49px}
+  .sidebar{display:none}.topnav{display:flex}.main{margin-left:0}.topbar{top:51px}
   .summary-strip,.analytics-grid{grid-template-columns:1fr 1fr}.chart-row{grid-template-columns:1fr}
-  .yacht-grid{grid-template-columns:1fr}.content{padding:14px}.topbar{padding:10px 14px}
+  .yacht-grid{grid-template-columns:1fr}.content{padding:16px 16px}.topbar{padding:11px 16px}
   .form-row{grid-template-columns:1fr}.modal{width:96vw}
   .sold-brokers-grid{grid-template-columns:1fr}.vessel-detail-grid{grid-template-columns:1fr 1fr}
   .profile-stats-bar{grid-template-columns:1fr 1fr}.team-grid{grid-template-columns:1fr}
@@ -270,23 +312,23 @@ footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:
 </head>
 <body>
 <div class="topnav">
-  <div class="topnav-logo">⚓ Yacht Update</div>
+  <div class="topnav-logo">Yacht<span>Update</span></div>
   <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </div>
 <div class="mobile-menu" id="mobile-menu">
-  <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
-  <div class="mobile-nav-item active" onclick="gotoPage('daily');toggleMenu()">📅 Daily Update</div>
-  <div class="mobile-nav-item" onclick="gotoPage('search');toggleMenu()">🔍 Search</div>
-  <div class="mobile-nav-item" onclick="gotoPage('analytics');toggleMenu()">📊 Market Analytics</div>
+  <button class="mobile-menu-close" onclick="toggleMenu()">&times;</button>
+  <div class="mobile-nav-item active" onclick="gotoPage('daily');toggleMenu()">Daily Update</div>
+  <div class="mobile-nav-item" onclick="gotoPage('search');toggleMenu()">Search</div>
+  <div class="mobile-nav-item" onclick="gotoPage('analytics');toggleMenu()">Market Analytics</div>
 </div>
 <div class="sidebar">
-  <div class="logo"><div class="logo-title">⚓ Yacht Update</div><div class="logo-sub">Market Intelligence</div></div>
+  <div class="logo"><div class="logo-title">Yacht<span>Update</span></div><div class="logo-sub">Market Intelligence</div></div>
   <nav class="nav">
-    <div class="nav-item active" id="nav-daily" onclick="gotoPage('daily')">📅 Daily Update</div>
-    <div class="nav-item" id="nav-search" onclick="gotoPage('search')">🔍 Search</div>
-    <div class="nav-item" id="nav-analytics" onclick="gotoPage('analytics')">📊 Market Analytics</div>
+    <div class="nav-item active" id="nav-daily" onclick="gotoPage('daily')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Daily Update</div>
+    <div class="nav-item" id="nav-search" onclick="gotoPage('search')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Search</div>
+    <div class="nav-item" id="nav-analytics" onclick="gotoPage('analytics')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>Market Analytics</div>
   </nav>
-  <div class="sidebar-footer">Yacht Update · v6.1</div>
+  <div class="sidebar-footer">Yacht Update &middot; v6.1</div>
 </div>
 <div class="main">
 <div class="page active" id="page-daily">
@@ -309,13 +351,13 @@ footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:
 <div class="page" id="page-search">
   <div class="topbar"><div class="topbar-left"><h1>Search</h1></div></div>
   <div class="content">
-    <div class="search-input-wrap"><span class="search-icon">🔍</span><input class="search-input" id="search-q" type="text" placeholder="Search vessel, builder, brokerage, or broker…" oninput="runSearch()"></div>
+    <div class="search-input-wrap"><span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><input class="search-input" id="search-q" type="text" placeholder="Search vessel, builder, brokerage, or broker…" oninput="runSearch()"></div>
     <div class="search-type-filters">
       <button class="search-type-btn active" id="stype-all" onclick="setSearchType('all')">All</button>
-      <button class="search-type-btn" id="stype-yacht" onclick="setSearchType('yacht')">🛥️ Yacht</button>
-      <button class="search-type-btn" id="stype-broker" onclick="setSearchType('broker')">👤 Broker</button>
-      <button class="search-type-btn" id="stype-builder" onclick="setSearchType('builder')">🏭 Builder</button>
-      <button class="search-type-btn" id="stype-brokerage" onclick="setSearchType('brokerage')">🤝 Brokerage House</button>
+      <button class="search-type-btn" id="stype-yacht" onclick="setSearchType('yacht')">Vessel</button>
+      <button class="search-type-btn" id="stype-broker" onclick="setSearchType('broker')">Broker</button>
+      <button class="search-type-btn" id="stype-builder" onclick="setSearchType('builder')">Builder</button>
+      <button class="search-type-btn" id="stype-brokerage" onclick="setSearchType('brokerage')">Brokerage</button>
     </div>
     <div id="search-results"><div class="search-empty">Start typing to search…</div></div>
   </div>
@@ -327,22 +369,22 @@ footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:
   <footer>Yacht Update · Market Intelligence Platform</footer>
 </div>
 <div class="page" id="page-broker">
-  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="broker-page-title"></h1></div></div>
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back</button><h1 id="broker-page-title"></h1></div></div>
   <div class="content" id="broker-content"></div>
   <footer>Yacht Update · Market Intelligence Platform</footer>
 </div>
 <div class="page" id="page-category">
-  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="cat-page-title"></h1></div></div>
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back</button><h1 id="cat-page-title"></h1></div></div>
   <div class="content" id="cat-content"></div>
   <footer>Yacht Update · Market Intelligence Platform</footer>
 </div>
 <div class="page" id="page-vessel">
-  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="vessel-page-title"></h1></div></div>
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back</button><h1 id="vessel-page-title"></h1></div></div>
   <div class="content" id="vessel-content"></div>
   <footer>Yacht Update · Market Intelligence Platform</footer>
 </div>
 <div class="page" id="page-contact">
-  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()">← Back</button><h1 id="contact-page-title"></h1></div></div>
+  <div class="topbar"><div class="topbar-left"><button class="btn-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back</button><h1 id="contact-page-title"></h1></div></div>
   <div class="content" id="contact-content"></div>
   <footer>Yacht Update · Market Intelligence Platform</footer>
 </div>
@@ -350,7 +392,7 @@ footer{text-align:center;padding:14px;font-size:11px;color:var(--mu);border-top:
 <div class="chart-tooltip" id="chart-tooltip"></div>
 <div class="modal-overlay" id="modal">
   <div class="modal">
-    <div class="modal-header"><div class="modal-title">Add Yacht Entry</div><button class="modal-close" onclick="closeModal()">✕</button></div>
+    <div class="modal-header"><div class="modal-title">Add Yacht Entry</div><button class="modal-close" onclick="closeModal()">&times;</button></div>
     <div class="modal-body">
       <div class="form-group"><label>Date</label><input type="date" id="f-date"></div>
       <div class="form-section">Category</div>
@@ -1874,14 +1916,14 @@ function imgHtml(name,height='160px',isDetail=false){
   const uid='uid_'+name.replace(/[^a-z0-9]/gi,'_');
   if(isDetail){
     return `<div class="vessel-detail-img-wrap">
-      ${url?`<img src="${url}" alt="${name}" onerror="this.style.display='none'">`:`<div class="vessel-detail-img-placeholder"><span style="font-size:60px">🛥️</span><span style="font-size:13px;color:#bbb;margin-top:8px">${name}</span></div>`}
-      <button class="vessel-detail-img-upload-btn" onclick="document.getElementById('${uid}').click()">📷 ${url?'Change':'Add'} Photo</button>
+      ${url?`<img src="${url}" alt="${name}" onerror="this.style.display='none'">`:`<div class="vessel-detail-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M5 20V9l7-5 7 5v11"/><path d="M9 20v-5h6v5"/></svg><span style="font-size:11px;color:var(--tx3);margin-top:8px;letter-spacing:1px;text-transform:uppercase">${name}</span></div>`}
+      <button class="vessel-detail-img-upload-btn" onclick="document.getElementById('${uid}').click()">${url?'Change':'Add'} Photo</button>
       <input type="file" id="${uid}" accept="image/*" style="display:none" onchange="handleUpload('${esc(name)}',this)">
     </div>`;
   }
   return `<div class="card-img-wrap" style="height:${height}" onclick="openVesselPage('${esc(name)}','${activeDate}');event.stopPropagation()">
-    ${url?`<img src="${url}" alt="${name}" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.parentElement.innerHTML='<div class=\\'card-img-placeholder\\'><span class=\\'ship-icon\\'>🛥️</span><span class=\\'ship-name\\'>${name}</span></div>'">`:`<div class="card-img-placeholder"><span class="ship-icon">🛥️</span><span class="ship-name">${name}</span></div>`}
-    <button class="img-upload-btn" onclick="event.stopPropagation();document.getElementById('${uid}').click()">📷</button>
+    ${url?`<img src="${url}" alt="${name}" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.parentElement.innerHTML='<div class=\\'card-img-placeholder\\'><span class=\\'ship-name\\'>${name}</span></div>'">`:`<div class="card-img-placeholder"><span class="ship-name">${name}</span></div>`}
+    <button class="img-upload-btn" onclick="event.stopPropagation();document.getElementById('${uid}').click()">+ Photo</button>
     <input type="file" id="${uid}" accept="image/*" style="display:none" onchange="event.stopPropagation();handleUpload('${esc(name)}',this)">
   </div>`;
 }
@@ -2107,7 +2149,7 @@ function openContactPage(name){
   const firmBtn=c.firm&&c.firm!=='—'?`<span style="font-size:12px;color:var(--mu)">at </span><button style="font-size:13px;color:var(--or);font-weight:700;background:none;border:none;font-family:inherit;cursor:pointer;text-decoration:underline dotted" onclick="openBroker('${esc(c.firm)}')">${c.firm}</button>`:'';
   document.getElementById('contact-content').innerHTML=`
     <div class="profile-hero">
-      <div class="profile-hero-logo">👤</div>
+      <div class="profile-hero-logo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--tx3)"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
       <div class="profile-hero-body">
         <div class="profile-hero-name">${c.name}</div>
         <div class="profile-hero-sub">${firmBtn}</div>
@@ -2221,7 +2263,7 @@ function runSearch(){
         const fl=e.name[0].toUpperCase();
         if(/[A-Z]/.test(fl)&&fl!==lastLetter){vesselHtml+=`<div class="alpha-anchor" id="vessel-alpha-${fl}"></div>`;lastLetter=fl;}
         const url=getImg(e.name);
-        vesselHtml+=`<div class="search-hit" onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')"><div class="search-hit-img">${url?`<img src="${url}" alt="${e.name}">`:'🛥️'}</div><div><div class="search-hit-name">${e.name}</div><div class="search-hit-sub">${e.builder||''}${e.length?' · '+e.length+'m':''}${e.year?' · '+e.year:''} — ${typeLabel[e.type]||e.type} — ${fmtDate(e._date)}</div></div></div>`;
+        vesselHtml+=`<div class="search-hit" onclick="openVesselPage('${esc(e.name)}','${esc(e._date)}')"><div class="search-hit-img">${url?`<img src="${url}" alt="${e.name}">`:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M2 20h20M5 20V9l7-5 7 5v11"/></svg>'}</div><div><div class="search-hit-name">${e.name}</div><div class="search-hit-sub">${e.builder||''}${e.length?' · '+e.length+'m':''}${e.year?' · '+e.year:''} — ${typeLabel[e.type]||e.type} — ${fmtDate(e._date)}</div></div></div>`;
       });
       html+=`<div class="search-result-section"><div class="search-result-title">Yachts (${byVessel.length})</div>${sidebar}${vesselHtml}</div>`;
     }
@@ -2230,7 +2272,7 @@ function runSearch(){
   // Brokers (individual contacts)
   if(t==='all'||t==='broker'){
     const byContact=CONTACTS.filter(c=>c.name&&(!q||c.name.toLowerCase().includes(q)));
-    if(byContact.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokers (${byContact.length})</div>`;byContact.forEach(c=>{html+=`<div class="search-hit" onclick="openContactPage('${esc(c.name)}')"><div class="search-hit-img">👤</div><div><div class="search-hit-name">${c.name}</div><div class="search-hit-sub">${c.firm||''}${c.email?' · '+c.email:''}</div></div></div>`;});html+='</div>';}
+    if(byContact.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokers (${byContact.length})</div>`;byContact.forEach(c=>{html+=`<div class="search-hit" onclick="openContactPage('${esc(c.name)}')"><div class="search-hit-img"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div><div><div class="search-hit-name">${c.name}</div><div class="search-hit-sub">${c.firm||''}${c.email?' · '+c.email:''}</div></div></div>`;});html+='</div>';}
   }
 
   // Builders
@@ -2238,7 +2280,7 @@ function runSearch(){
     const buildersSeen=new Set(),byBuilder=[];
     all.forEach(e=>{if(e.builder&&(!q||e.builder.toLowerCase().includes(q))&&!buildersSeen.has(e.builder)){buildersSeen.add(e.builder);byBuilder.push(e.builder);}});
     byBuilder.sort();
-    if(byBuilder.length){html+=`<div class="search-result-section"><div class="search-result-title">Builders (${byBuilder.length})</div>`;byBuilder.forEach(b=>{const cnt=all.filter(e=>e.builder===b).length;html+=`<div class="search-hit" onclick="openBuilderPage('${esc(b)}')"><div class="search-hit-img">🏭</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} entries</div></div></div>`;});html+='</div>';}
+    if(byBuilder.length){html+=`<div class="search-result-section"><div class="search-result-title">Builders (${byBuilder.length})</div>`;byBuilder.forEach(b=>{const cnt=all.filter(e=>e.builder===b).length;html+=`<div class="search-hit" onclick="openBuilderPage('${esc(b)}')"><div class="search-hit-img"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M3 21h18M3 7l9-4 9 4M5 7v14M19 7v14M9 12h6M9 17h6"/></svg></div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} entries</div></div></div>`;});html+='</div>';}
   }
 
   // Brokerage Houses
@@ -2258,7 +2300,7 @@ function runSearch(){
       });
     });});
     const allBrokerages=[...byFirm.map(f=>({name:f,type:'firm'})),...byBroker.map(b=>({name:b,type:'broker'}))];
-    if(allBrokerages.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokerage Houses (${allBrokerages.length})</div>`;allBrokerages.forEach(({name:b,type})=>{const cnt=type==='firm'?CONTACTS.filter(c=>c.firm===b).length:all.filter(e=>[e.broker,e.soldseller,e.soldbuyer].some(r=>r&&extractFirmNames(r).some(f=>normBR(f)===normBR(b)))).length;html+=`<div class="search-hit" onclick="openBroker('${esc(b)}')"><div class="search-hit-img">🤝</div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} ${type==='firm'?'broker(s)':'entries'}</div></div></div>`;});html+='</div>';}
+    if(allBrokerages.length){html+=`<div class="search-result-section"><div class="search-result-title">Brokerage Houses (${allBrokerages.length})</div>`;allBrokerages.forEach(({name:b,type})=>{const cnt=type==='firm'?CONTACTS.filter(c=>c.firm===b).length:all.filter(e=>[e.broker,e.soldseller,e.soldbuyer].some(r=>r&&extractFirmNames(r).some(f=>normBR(f)===normBR(b)))).length;html+=`<div class="search-hit" onclick="openBroker('${esc(b)}')"><div class="search-hit-img"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><div class="search-hit-name">${b}</div><div class="search-hit-sub">${cnt} ${type==='firm'?'broker(s)':'entries'}</div></div></div>`;});html+='</div>';}
   }
 
   if(!html) html='<div class="search-empty">No results found.</div>';
